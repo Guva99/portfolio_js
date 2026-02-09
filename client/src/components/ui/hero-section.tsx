@@ -75,6 +75,7 @@ export function HeroSection() {
             <div className="absolute bottom-6 left-6 right-6 p-6 glass-panel rounded-xl z-20">
               <div className="flex justify-between items-end">
                 <div>
+                  <p className="text-sm text-cyan-400 font-mono mb-1">CURRENT STATUS</p>
                   <p className="text-white font-semibold flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                     Available for projects
