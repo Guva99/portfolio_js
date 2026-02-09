@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroPortrait from "@/assets/images/hero-portrait.png";
+import heroPortrait from "@/assets/images/me.webp";
 import bgTexture from "@/assets/images/bg-texture.png";
 import { Download, ChevronRight } from "lucide-react";
 
