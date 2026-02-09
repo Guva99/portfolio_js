@@ -75,22 +75,47 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="rounded-[2rem] bg-[#111] p-8 border border-white/5 flex flex-col justify-between flex-1 min-h-[240px]"
+              className="rounded-[2rem] bg-[#111] p-8 border border-white/5 flex flex-col justify-between flex-1 min-h-[240px] overflow-hidden"
             >
-              <div className="mb-6">
+              <div className="mb-6 relative z-10">
                 <p className="text-slate-400 text-sm mb-1">I constantly try to improve</p>
                 <h3 className="text-2xl font-bold text-white">My tech stack</h3>
               </div>
               
-              <div className="flex flex-wrap gap-2">
-                {["GraphQL", "Firebase", "Ux/Ui design", "CI/CD", "Web Sockets", "GraphQL"].map((tech, i) => (
-                  <span 
-                    key={i} 
-                    className="px-4 py-2 rounded-full bg-[#1A1A2E] text-slate-300 text-xs font-medium border border-white/5 hover:border-violet-500/50 hover:text-violet-300 transition-colors cursor-default"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="relative w-full overflow-hidden mask-linear-gradient">
+                {/* Row 1 - Left Scroll */}
+                <div className="flex gap-2 mb-3 animate-scroll-left w-max">
+                   {[
+                    "GraphQL", "Firebase", "Ux/Ui design", "CI/CD", 
+                    "Web Sockets", "Flutter", "Dart", "React", "Node.js", 
+                    "GraphQL", "Firebase", "Ux/Ui design", "CI/CD", 
+                    "Web Sockets", "Flutter", "Dart", "React", "Node.js"
+                   ].map((tech, i) => (
+                    <span 
+                      key={`row1-${i}`} 
+                      className="px-4 py-2 rounded-full bg-[#1A1A2E] text-slate-300 text-xs font-medium border border-white/5 hover:border-violet-500/50 hover:text-violet-300 transition-colors cursor-default whitespace-nowrap"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Row 2 - Right Scroll */}
+                <div className="flex gap-2 animate-scroll-right w-max">
+                  {[
+                    "Python", "AWS", "Docker", "Kubernetes", "Figma", 
+                    "Tailwind", "Next.js", "TypeScript", "Go",
+                    "Python", "AWS", "Docker", "Kubernetes", "Figma", 
+                    "Tailwind", "Next.js", "TypeScript", "Go"
+                  ].map((tech, i) => (
+                    <span 
+                      key={`row2-${i}`} 
+                      className="px-4 py-2 rounded-full bg-[#1A1A2E] text-slate-300 text-xs font-medium border border-white/5 hover:border-violet-500/50 hover:text-violet-300 transition-colors cursor-default whitespace-nowrap"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
