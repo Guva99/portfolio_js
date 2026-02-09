@@ -73,14 +73,14 @@
 
   @keyframes smoke-stream {
     0% {
-      transform: translate3d(-40%, 40%, 0) scale(0.8) rotate(0deg);
+      transform: translate3d(-10%, 10%, 0) scale(0.8) rotate(0deg);
       opacity: 0;
     }
-    10% {
+    15% {
       opacity: 0.6;
     }
     100% {
-      transform: translate3d(60vw, -20%, 0) scale(3) rotate(30deg);
+      transform: translate3d(40%, -30%, 0) scale(2.5) rotate(20deg);
       opacity: 0;
     }
   }

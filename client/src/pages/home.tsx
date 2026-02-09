@@ -22,7 +22,7 @@ export default function Home() {
         ].map((layer, i) => (
           <div 
             key={i}
-            className={`absolute bottom-0 -left-[10%] w-[80vh] h-[80vh] z-10 ${layer.opacity} animate-smoke-stream mix-blend-screen pointer-events-none ${layer.delay}`}
+            className={`absolute bottom-0 left-[-20%] md:left-[-10%] w-[140vw] h-[140vw] md:w-[80vh] md:h-[80vh] z-10 ${layer.opacity} animate-smoke-stream mix-blend-screen pointer-events-none ${layer.delay}`}
             style={{ 
               maskImage: `url(${smokePlume})`,
               maskMode: 'luminance',
