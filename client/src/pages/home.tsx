@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SkillsSection } from "@/components/ui/skills-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
@@ -8,34 +7,6 @@ import { Footer } from "@/components/ui/footer";
 import smokeVideo from "@/assets/videos/smoke-overlay-v5.mp4";
 
 export default function Home() {
-  const videoRef1 = useRef<HTMLVideoElement>(null);
-  const videoRef2 = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const handlePlayback = (video: HTMLVideoElement | null, delay = 0) => {
-      if (!video) return;
-      
-      // Start fast to show entry
-      video.playbackRate = 2.0;
-      
-      // Smoothly decelerate to 0.7 (safe smooth slow-mo)
-      // 0.2 was too slow causing stutter
-      setTimeout(() => {
-        const decelerate = setInterval(() => {
-          if (video.playbackRate > 0.7) {
-            video.playbackRate -= 0.05;
-          } else {
-            clearInterval(decelerate);
-            video.playbackRate = 0.7; // Smooth slow motion
-          }
-        }, 100);
-      }, 1000 + delay);
-    };
-
-    handlePlayback(videoRef1.current, 0);
-    handlePlayback(videoRef2.current, 1500);
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-violet-500/30 relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
@@ -44,30 +15,16 @@ export default function Home() {
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full mix-blend-screen opacity-100">
           <video 
-            ref={videoRef1}
             src={smokeVideo} 
             autoPlay 
             loop 
             muted 
             playsInline
-            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-125 origin-bottom-left"
+            className="absolute inset-0 w-[150%] h-[150%] object-cover object-bottom scale-125 -translate-x-[10%] translate-y-[10%]"
             style={{ 
-              animation: 'fade-cycle 11.4s linear infinite', 
-              animationDelay: '0s'
-            }}
-          />
-          {/* Second layer for density and seamlessness */}
-           <video 
-            ref={videoRef2}
-            src={smokeVideo} 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-150 origin-bottom-left mix-blend-screen"
-            style={{ 
-              animation: 'fade-cycle 11.4s linear infinite', 
-              animationDelay: '-5.7s' 
+              animation: 'fade-cycle 15s linear infinite', 
+              transformOrigin: 'bottom left',
+              transform: 'rotate(25deg) scale(1.4)'
             }}
           />
         </div>
