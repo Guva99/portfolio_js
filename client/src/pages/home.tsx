@@ -25,7 +25,6 @@ export default function Home() {
             className={`absolute bottom-0 left-[-20%] md:left-[-10%] w-[140vw] h-[140vw] md:w-[80vh] md:h-[80vh] z-10 ${layer.opacity} animate-smoke-stream mix-blend-screen pointer-events-none ${layer.delay}`}
             style={{ 
               maskImage: `url(${smokePlume})`,
-              maskMode: 'luminance',
               maskSize: 'contain',
               maskRepeat: 'no-repeat',
               WebkitMaskImage: `url(${smokePlume})`,
