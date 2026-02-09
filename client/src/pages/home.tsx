@@ -20,11 +20,10 @@ export default function Home() {
             loop 
             muted 
             playsInline
-            className="absolute inset-0 w-[150%] h-[150%] object-cover object-bottom scale-125 -translate-x-[10%] translate-y-[10%]"
+            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-110"
             style={{ 
               animation: 'fade-cycle 15s linear infinite', 
-              transformOrigin: 'bottom left',
-              transform: 'rotate(25deg) scale(1.4)'
+              transformOrigin: 'bottom left'
             }}
           />
         </div>
