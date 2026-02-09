@@ -40,8 +40,30 @@ export function HeroSection() {
           className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen"
         />
 
+        {/* Floating Geometric Elements (based on user request) */}
+        <motion.div 
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 0.2, rotate: 360 }}
+           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+           className="absolute top-20 left-1/2 w-8 h-8 rounded-full border-2 border-slate-500 blur-[2px]"
+        />
+        <motion.div 
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 0.3, rotate: -45 }}
+           className="absolute top-1/3 right-20 text-4xl text-slate-500 font-thin blur-[1px]"
+        >
+           +
+        </motion.div>
+        <motion.div 
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 0.2, rotate: 45 }}
+           className="absolute bottom-1/3 left-20 text-4xl text-slate-500 font-thin blur-[1px]"
+        >
+           ×
+        </motion.div>
+
         <motion.img 
-          src={bgTexture} 
+          src={bgTexture}  
           alt="Texture" 
           className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay z-20"
           animate={{ 
