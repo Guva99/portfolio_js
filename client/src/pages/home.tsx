@@ -4,7 +4,7 @@ import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
 import { Footer } from "@/components/ui/footer";
-import smokeVideo from "@/assets/videos/smoke-overlay-v8.mp4";
+import smokeVideo from "@/assets/videos/smoke-overlay-v9.mp4";
 
 export default function Home() {
   return (
