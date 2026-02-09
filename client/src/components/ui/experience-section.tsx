@@ -38,34 +38,34 @@ const experiences = [
   {
     role: "Lead Flutter Developer",
     company: "Apeiron Space",
-    period: "2023 - Present",
+    period: "Aug 2023 - Sep 2025",
     color: "bg-emerald-500",
     achievements: [
-      "Architecture and development of key internal applications",
-      "Development of the main platform application",
-      "Working with a large-scale production product"
+      "Architecture and development of key internal applications (ODS, SpaceKeeper)",
+      "Development of the main ApeironSpace platform application",
+      "Managed smart hotel features controlled via smartphone"
     ]
   },
   {
     role: "Team Lead Flutter",
     company: "2Sky Mobile",
-    period: "2022 - 2023",
+    period: "Nov 2021 - Oct 2022",
     color: "bg-blue-600",
     achievements: [
-      "Project built entirely from scratch",
-      "Architecture design and roadmap planning",
-      "Full support for iOS / Android / Web platforms"
+      "Initiated and drove the project from scratch",
+      "Designed architecture and defined the roadmap",
+      "Provided full support for iOS, Android, and Web platforms"
     ]
   },
   {
     role: "Senior Flutter Developer",
     company: "Wowtickets.com",
-    period: "2021 - 2022",
+    period: "Mar 2021 - Oct 2022",
     color: "bg-violet-600",
     achievements: [
-      "Application support & infrastructure improvements",
-      "Ticketing system optimization",
-      "Cross-platform feature parity"
+      "Full technical ownership and independent development",
+      "Released app to Google Play, App Store, and AppGallery",
+      "Solved complex architectural challenges"
     ]
   }
 ];
