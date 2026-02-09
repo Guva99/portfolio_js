@@ -1,23 +1,12 @@
-import { useEffect, useRef } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SkillsSection } from "@/components/ui/skills-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
 import { Footer } from "@/components/ui/footer";
-import smokeVideo from "@/assets/videos/smoke-overlay-v9.mp4";
+import smokeVideo from "@/assets/videos/smoke-overlay-v8.mp4";
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      // Slow down video to stretch 8s content to 20s
-      // 8s / 20s = 0.4 playback rate
-      videoRef.current.playbackRate = 0.4;
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-violet-500/30 relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
@@ -25,10 +14,9 @@ export default function Home() {
       {/* Cinematic Smoke Effect Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full mix-blend-screen"
-             style={{ animation: 'fade-cycle 20s linear infinite' }}>
+             style={{ animation: 'fade-cycle 8s linear infinite' }}>
           <div className="relative w-full h-full">
              <video 
-              ref={videoRef}
               src={smokeVideo} 
               autoPlay 
               loop 
@@ -41,8 +29,6 @@ export default function Home() {
               }}
             />
             {/* Rainbow Gradient Overlay */}
-            {/* Using mix-blend-color ensures the white smoke takes the color while preserving its luminance structure */}
-            {/* Using a radial gradient from the source makes it look more natural */}
             <div 
               className="absolute inset-0 w-full h-full mix-blend-color opacity-100"
               style={{
