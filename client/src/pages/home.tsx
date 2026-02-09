@@ -3,38 +3,59 @@ import { SkillsSection } from "@/components/ui/skills-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
+import { useState, useEffect } from "react";
 import { Footer } from "@/components/ui/footer";
-import smokePlumeV2 from "@/assets/images/smoke-plume-v2.png";
+import Lottie from "lottie-react";
+
+// Publicly available smoke animation JSON URL
+const smokeAnimationUrl = "https://assets9.lottiefiles.com/packages/lf20_j3uxewf9.json";
 
 export default function Home() {
+  const [smokeData, setSmokeData] = useState<any>(null);
+
+  useEffect(() => {
+    fetch(smokeAnimationUrl)
+      .then((res) => res.json())
+      .then((data) => setSmokeData(data))
+      .catch((err) => console.error("Failed to load smoke animation:", err));
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-violet-500/30 relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
       
-      {/* Smoke Effect Overlay - Stream from Left */}
+      {/* Lottie Smoke Effect Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         
-        {/* Continuous Stream Layers */}
-        {[
-          { color: "from-violet-600", delay: "delay-1", opacity: "opacity-40" },
-          { color: "from-indigo-600", delay: "delay-2", opacity: "opacity-30" },
-          { color: "from-violet-800", delay: "delay-3", opacity: "opacity-50" }
-        ].map((layer, i) => (
-          <div 
-            key={i}
-            className={`absolute bottom-0 left-[-20%] md:left-[-10%] w-[140vw] h-[140vw] md:w-[80vh] md:h-[80vh] z-10 ${layer.opacity} animate-smoke-stream mix-blend-screen pointer-events-none ${layer.delay}`}
-            style={{ 
-              maskImage: `url(${smokePlumeV2})`,
-              maskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              WebkitMaskImage: `url(${smokePlumeV2})`,
-              WebkitMaskSize: 'contain',
-              WebkitMaskRepeat: 'no-repeat',
-            }}
-          >
-            <div className={`w-full h-full bg-radial-gradient ${layer.color} to-transparent`}></div>
+        {/* Purple Smoke Layer - Left */}
+        {smokeData && (
+          <div className="absolute bottom-[-10%] left-[-10%] w-[100vw] h-[100vw] md:w-[70vw] md:h-[70vw] opacity-60 mix-blend-screen pointer-events-none">
+            <div className="w-full h-full relative">
+               <div className="absolute inset-0 bg-violet-600 mix-blend-color z-10"></div>
+               <Lottie 
+                  animationData={smokeData} 
+                  loop={true} 
+                  className="w-full h-full opacity-80"
+               />
+            </div>
           </div>
-        ))}
+        )}
+
+        {/* Orange Smoke Layer - Right */}
+        {smokeData && (
+          <div className="absolute bottom-[-10%] right-[-10%] w-[100vw] h-[100vw] md:w-[70vw] md:h-[70vw] opacity-50 mix-blend-screen pointer-events-none">
+            <div className="w-full h-full relative">
+               <div className="absolute inset-0 bg-orange-600 mix-blend-color z-10"></div>
+               <Lottie 
+                  animationData={smokeData}
+                  loop={true} 
+                  className="w-full h-full opacity-80"
+                  style={{ transform: 'scaleX(-1)' }} 
+               />
+            </div>
+          </div>
+        )}
+
       </div>
 
       <main className="relative z-10">

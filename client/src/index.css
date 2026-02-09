@@ -74,28 +74,6 @@
   .bg-radial-gradient {
     background: radial-gradient(closest-side, var(--tw-gradient-from), transparent);
   }
-
-  @keyframes smoke-stream {
-    0% {
-      transform: translate3d(-10%, 10%, 0) scale(0.8) rotate(0deg);
-      opacity: 0;
-    }
-    15% {
-      opacity: 0.6;
-    }
-    100% {
-      transform: translate3d(40%, -30%, 0) scale(2.5) rotate(20deg);
-      opacity: 0;
-    }
-  }
-
-  .animate-smoke-stream {
-    animation: smoke-stream 25s ease-out infinite;
-  }
-  
-  .delay-1 { animation-delay: 0s; }
-  .delay-2 { animation-delay: -8s; }
-  .delay-3 { animation-delay: -16s; }
 }
 
 body {
