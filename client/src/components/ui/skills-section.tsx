@@ -177,21 +177,19 @@ export function SkillsSection() {
             transition={{ delay: 0.5 }}
             className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-[#0e0e12]/50 backdrop-blur-md min-h-[300px] group border border-white/5"
           >
-            <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
+            <img 
+              src={bentoCode} 
+              alt="Code snippet" 
+              className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
             
-            <div className="flex h-full flex-col md:flex-row items-center relative z-10">
-              <div className="p-8 md:p-12 md:w-1/2">
+            <div className="flex h-full flex-col md:flex-row items-center relative z-20">
+              <div className="p-8 md:p-12 md:w-3/4">
                 <p className="text-slate-400 text-sm mb-2 uppercase tracking-wider">Exploring New Horizons</p>
                 <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                   Mobile, Web, TV finding unconventional <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Flutter solutions</span>
                 </h3>
-              </div>
-              <div className="md:w-1/2 h-full flex items-center justify-center md:justify-end p-8">
-                <img 
-                  src={bentoCode} 
-                  alt="Code snippet" 
-                  className="rounded-xl shadow-2xl border border-white/10 max-w-full md:max-w-[120%] md:translate-x-10 transition-transform duration-500 group-hover:-translate-x-0" 
-                />
               </div>
             </div>
           </motion.div>
