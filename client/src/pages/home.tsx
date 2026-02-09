@@ -5,7 +5,7 @@ import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
 import { Footer } from "@/components/ui/footer";
-import smokeVideo from "@/assets/videos/smoke-overlay-v3.mp4";
+import smokeVideo from "@/assets/videos/smoke-overlay-v4.mp4";
 
 export default function Home() {
   const videoRef1 = useRef<HTMLVideoElement>(null);
@@ -15,24 +15,24 @@ export default function Home() {
     const handlePlayback = (video: HTMLVideoElement | null, delay = 0) => {
       if (!video) return;
       
-      // Start fast (3x speed) to make the slow-mo video look "normal/fast"
-      video.playbackRate = 3.0;
+      // Start slightly faster to show movement
+      video.playbackRate = 2.0;
       
-      // Decelerate to 1.0 (natural slow motion of the video)
+      // Decelerate very slowly to an even slower rate for that "suspended in air" look
       setTimeout(() => {
         const decelerate = setInterval(() => {
-          if (video.playbackRate > 1.0) {
-            video.playbackRate -= 0.1;
+          if (video.playbackRate > 0.8) {
+            video.playbackRate -= 0.05; // Gentle deceleration
           } else {
             clearInterval(decelerate);
-            video.playbackRate = 1.0; // Native slow speed (smooth)
+            video.playbackRate = 0.8; // Stable super-slow speed (8s video becomes ~10s loop)
           }
-        }, 50);
-      }, 1000 + delay);
+        }, 100);
+      }, 2000 + delay); // Extended fast phase slightly
     };
 
     handlePlayback(videoRef1.current, 0);
-    handlePlayback(videoRef2.current, 1500);
+    handlePlayback(videoRef2.current, 2000);
   }, []);
 
   return (
@@ -60,7 +60,7 @@ export default function Home() {
             muted 
             playsInline
             className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-150 origin-bottom-left opacity-50 mix-blend-screen"
-            style={{ animationDelay: '-3s' }}
+            style={{ animationDelay: '-4s' }}
           />
         </div>
       </div>
