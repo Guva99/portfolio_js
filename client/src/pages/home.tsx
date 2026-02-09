@@ -42,7 +42,7 @@ export default function Home() {
       
       {/* Cinematic Smoke Effect Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 w-full h-full mix-blend-screen opacity-60">
+        <div className="absolute inset-0 w-full h-full mix-blend-screen opacity-100">
           <video 
             ref={videoRef1}
             src={smokeVideo} 
@@ -51,6 +51,10 @@ export default function Home() {
             muted 
             playsInline
             className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-125 origin-bottom-left"
+            style={{ 
+              animation: 'fade-cycle 11.4s linear infinite', 
+              animationDelay: '0s'
+            }}
           />
           {/* Second layer for density and seamlessness */}
            <video 
@@ -60,8 +64,11 @@ export default function Home() {
             loop 
             muted 
             playsInline
-            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-150 origin-bottom-left opacity-50 mix-blend-screen"
-            style={{ animationDelay: '-4s' }}
+            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-150 origin-bottom-left mix-blend-screen"
+            style={{ 
+              animation: 'fade-cycle 11.4s linear infinite', 
+              animationDelay: '-5.7s' 
+            }}
           />
         </div>
       </div>

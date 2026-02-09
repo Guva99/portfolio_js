@@ -100,6 +100,13 @@
   .delay-0 { animation-delay: 0s; }
   .delay-4 { animation-delay: -4s; }
   .delay-8 { animation-delay: -8s; }
+
+  @keyframes fade-cycle {
+    0% { opacity: 0; }
+    15% { opacity: 0.4; }
+    85% { opacity: 0.4; }
+    100% { opacity: 0; }
+  }
 }
 
 body {
