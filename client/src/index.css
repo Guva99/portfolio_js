@@ -103,8 +103,8 @@
 
   @keyframes fade-cycle {
     0% { opacity: 0; }
-    10% { opacity: 0.4; }
-    80% { opacity: 0.4; }
+    5% { opacity: 0.4; }
+    85% { opacity: 0.4; }
     100% { opacity: 0; }
   }
 }

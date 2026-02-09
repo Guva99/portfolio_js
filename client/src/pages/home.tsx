@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SkillsSection } from "@/components/ui/skills-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
@@ -7,6 +8,16 @@ import { Footer } from "@/components/ui/footer";
 import smokeVideo from "@/assets/videos/smoke-overlay-v5.mp4";
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Set playback rate to 0.5 (half speed)
+      // Video is 8s long -> effective duration becomes 16s
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-violet-500/30 relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
@@ -15,6 +26,7 @@ export default function Home() {
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full mix-blend-screen opacity-100">
           <video 
+            ref={videoRef}
             src={smokeVideo} 
             autoPlay 
             loop 
@@ -22,7 +34,9 @@ export default function Home() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-110"
             style={{ 
-              animation: 'fade-cycle 15s linear infinite', 
+              // Animation duration matches video duration (8s / 0.5 = 16s)
+              // This ensures opacity is 0 when video loops
+              animation: 'fade-cycle 16s linear infinite', 
               transformOrigin: 'bottom left'
             }}
           />
