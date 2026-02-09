@@ -54,14 +54,14 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="rounded-[2rem] overflow-hidden relative bg-[#0a0a0a] h-[240px] border border-white/5"
+              className="rounded-[2rem] overflow-hidden relative bg-[#0a0a0a]/50 backdrop-blur-md h-[240px] border border-white/5"
             >
               <img 
                 src={bentoMap} 
                 alt="World Map Timezones" 
-                className="absolute inset-0 w-full h-full object-cover opacity-60"
+                className="absolute inset-0 w-full h-full object-cover opacity-50"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
               <div className="absolute top-6 left-6 max-w-[200px]">
                 <h3 className="text-xl font-bold text-white leading-tight">
                   I'm very flexible with time zone communications
