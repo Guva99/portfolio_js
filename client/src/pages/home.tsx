@@ -32,7 +32,7 @@ export default function Home() {
             loop 
             muted 
             playsInline
-            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-110"
+            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-125"
             style={{ 
               // Animation duration matches video duration (8s / 0.5 = 16s)
               // This ensures opacity is 0 when video loops
