@@ -81,8 +81,9 @@ export function HeroSection() {
             {/* Tech Scan Line */}
             <motion.div 
               className="absolute w-full h-[2px] bg-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.8)] z-20 pointer-events-none"
-              animate={{ top: ["0%", "100%", "0%"] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              initial={{ top: "0%", opacity: 0 }}
+              animate={{ top: "100%", opacity: [0, 1, 1, 0] }}
+              transition={{ delay: 1, duration: 2, ease: "linear" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-violet-900/80 to-transparent z-10 mix-blend-multiply"></div>
             <img 
