@@ -5,7 +5,7 @@ import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
 import { Footer } from "@/components/ui/footer";
-import smokeVideo from "@/assets/videos/smoke-overlay-v2.mp4";
+import smokeVideo from "@/assets/videos/smoke-overlay-v3.mp4";
 
 export default function Home() {
   const videoRef1 = useRef<HTMLVideoElement>(null);
@@ -15,19 +15,19 @@ export default function Home() {
     const handlePlayback = (video: HTMLVideoElement | null, delay = 0) => {
       if (!video) return;
       
-      // Start fast
-      video.playbackRate = 2.5;
+      // Start fast (3x speed) to make the slow-mo video look "normal/fast"
+      video.playbackRate = 3.0;
       
-      // Decelerate to slow motion
+      // Decelerate to 1.0 (natural slow motion of the video)
       setTimeout(() => {
         const decelerate = setInterval(() => {
-          if (video.playbackRate > 0.4) {
+          if (video.playbackRate > 1.0) {
             video.playbackRate -= 0.1;
           } else {
             clearInterval(decelerate);
-            video.playbackRate = 0.4; // Stable slow speed
+            video.playbackRate = 1.0; // Native slow speed (smooth)
           }
-        }, 100);
+        }, 50);
       }, 1000 + delay);
     };
 
