@@ -1,111 +1,172 @@
 import { motion } from "framer-motion";
-import { Code2, Globe, Tv, Layers, Users, Clock, Zap, Coffee } from "lucide-react";
-
-const stack = [
-  { name: "Flutter", icon: Code2, color: "text-cyan-400" },
-  { name: "Dart", icon: Code2, color: "text-blue-400" },
-  { name: "Firebase", icon: Zap, color: "text-yellow-400" },
-  { name: "Riverpod", icon: Layers, color: "text-violet-400" },
-];
+import { ArrowUpRight, Copy, Check } from "lucide-react";
+import { useState } from "react";
+import bentoLaptop from "@/assets/images/bento-laptop.webp";
+import bentoMap from "@/assets/images/bento-map.webp";
+import bentoCode from "@/assets/images/bento-code.webp";
 
 export function SkillsSection() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("contact@example.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Skills & <span className="text-violet-500">Stack</span></h2>
-          <p className="text-slate-400 max-w-2xl text-lg">My toolkit for building world-class applications across all screens.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
-          {/* Main Tech Stack - Large Block */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          
+          {/* Top Row: Laptop (Left) & Right Column (Map + Tech Stack) */}
+          
+          {/* Laptop Card - Spans 7 cols */}
           <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="md:col-span-7 rounded-[2rem] overflow-hidden relative group h-[300px] md:h-auto min-h-[300px]"
           >
-            <div>
-              <div className="w-12 h-12 rounded-full bg-violet-500/20 flex items-center justify-center mb-6">
-                <Code2 className="text-violet-400 w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Core Tech Stack</h3>
-              <p className="text-slate-400">Specialized in the Flutter ecosystem for cross-platform excellence.</p>
+            <div className="absolute inset-0 bg-[#0F111A]"></div>
+            <img 
+              src={bentoLaptop} 
+              alt="Laptop displaying project" 
+              className="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+              <h3 className="text-2xl md:text-3xl font-bold text-white max-w-md leading-tight">
+                I prioritize client collaboration, fostering open communication
+              </h3>
             </div>
+            {/* Arrow decoration */}
+            <div className="absolute top-1/2 left-[10%] -translate-y-1/2 hidden md:block">
+               {/* This would be the purple arrow/pill graphic overlay if needed, using CSS or SVG */}
+            </div>
+          </motion.div>
+
+          {/* Right Column Container - Spans 5 cols */}
+          <div className="md:col-span-5 flex flex-col gap-6">
             
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              {stack.map((item) => (
-                <div key={item.name} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                  <item.icon className={`w-5 h-5 ${item.color}`} />
-                  <span className="font-medium">{item.name}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            {/* Map Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-[2rem] overflow-hidden relative bg-[#0a0a0a] h-[240px] border border-white/5"
+            >
+              <img 
+                src={bentoMap} 
+                alt="World Map Timezones" 
+                className="absolute inset-0 w-full h-full object-cover opacity-60"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
+              <div className="absolute top-6 left-6 max-w-[200px]">
+                <h3 className="text-xl font-bold text-white leading-tight">
+                  I'm very flexible with time zone communications
+                </h3>
+              </div>
+            </motion.div>
 
-          {/* Client Work */}
+            {/* Tech Stack Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="rounded-[2rem] bg-[#111] p-8 border border-white/5 flex flex-col justify-between flex-1 min-h-[240px]"
+            >
+              <div className="mb-6">
+                <p className="text-slate-400 text-sm mb-1">I constantly try to improve</p>
+                <h3 className="text-2xl font-bold text-white">My tech stack</h3>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                {["GraphQL", "Firebase", "Ux/Ui design", "CI/CD", "Web Sockets", "GraphQL"].map((tech, i) => (
+                  <span 
+                    key={i} 
+                    className="px-4 py-2 rounded-full bg-[#1A1A2E] text-slate-300 text-xs font-medium border border-white/5 hover:border-violet-500/50 hover:text-violet-300 transition-colors cursor-default"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Bottom Row */}
+
+          {/* Left Column Container - Spans 4 cols */}
+          <div className="md:col-span-4 flex flex-col gap-6">
+            
+            {/* Tech Enthusiast Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="rounded-[2rem] bg-[#1a1a1a] p-8 border border-white/5 relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <h3 className="text-xl font-bold text-white relative z-10 leading-snug">
+                Tech enthusiast with a passion for development.
+              </h3>
+              <div className="mt-4 w-12 h-1 rounded-full bg-slate-700/50 relative z-10 overflow-hidden">
+                <div className="h-full bg-violet-500 w-2/3"></div>
+              </div>
+            </motion.div>
+
+            {/* CTA Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="rounded-[2rem] bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] p-8 border border-white/5 flex flex-col justify-center items-start"
+            >
+              <h3 className="text-xl font-bold text-white mb-6 leading-snug">
+                Do you want to start a project together?
+              </h3>
+              <button 
+                onClick={copyEmail}
+                className="bg-white/10 hover:bg-white/20 active:scale-95 transition-all text-white px-5 py-3 rounded-xl flex items-center gap-2 text-sm font-medium backdrop-blur-sm border border-white/10 w-full justify-center"
+              >
+                {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                {copied ? "Email Copied!" : "Copy Email Address"}
+              </button>
+            </motion.div>
+
+          </div>
+
+          {/* Code Snippet Card - Spans 8 cols */}
           <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="md:col-span-1 md:row-span-2 glass-card rounded-3xl p-8 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-900 to-violet-950/30"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-[#0e0e12] min-h-[300px] group border border-white/5"
           >
-            <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center mb-6 neon-border">
-              <Users className="text-cyan-400 w-8 h-8" />
-            </div>
-            <h3 className="text-4xl font-bold mb-2 text-white">40+</h3>
-            <p className="text-slate-400 font-medium">Happy Clients</p>
-            <p className="text-slate-500 text-sm mt-4">From startups to enterprise</p>
-          </motion.div>
-
-          {/* Platforms */}
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="glass-card rounded-3xl p-6 flex flex-col justify-center"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="font-bold text-lg">Multi-Platform</h3>
-              <Layers className="text-violet-400 w-5 h-5" />
-            </div>
-            <div className="flex gap-2 mt-2">
-              <div className="px-3 py-1 rounded-full bg-white/10 text-xs">iOS</div>
-              <div className="px-3 py-1 rounded-full bg-white/10 text-xs">Android</div>
-              <div className="px-3 py-1 rounded-full bg-white/10 text-xs">Web</div>
-            </div>
-          </motion.div>
-
-           {/* Passion */}
-           <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="glass-card rounded-3xl p-6 flex flex-col justify-center bg-violet-600 text-white border-none"
-          >
-            <Coffee className="w-8 h-8 mb-4 opacity-80" />
-            <h3 className="font-bold text-xl">Fueled by Coffee & Code</h3>
-          </motion.div>
-
-          {/* Flexibility */}
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="md:col-span-2 glass-card rounded-3xl p-8 flex items-center justify-between"
-          >
-            <div>
-              <h3 className="text-xl font-bold mb-2">Time Flexibility</h3>
-              <p className="text-slate-400">Available for US & EU timezones</p>
-            </div>
-            <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center">
-              <Clock className="text-cyan-400 w-8 h-8" />
+            <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
+            
+            <div className="flex h-full flex-col md:flex-row items-center relative z-10">
+              <div className="p-8 md:p-12 md:w-1/2">
+                <p className="text-slate-400 text-sm mb-2 uppercase tracking-wider">Exploring New Horizons</p>
+                <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                  Mobile, Web, TV finding unconventional <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Flutter solutions</span>
+                </h3>
+              </div>
+              <div className="md:w-1/2 h-full flex items-center justify-center md:justify-end p-8">
+                <img 
+                  src={bentoCode} 
+                  alt="Code snippet" 
+                  className="rounded-xl shadow-2xl border border-white/10 max-w-full md:max-w-[120%] md:translate-x-10 transition-transform duration-500 group-hover:-translate-x-0" 
+                />
+              </div>
             </div>
           </motion.div>
 
-          {/* CTA */}
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="md:col-span-2 glass-card rounded-3xl p-8 flex items-center justify-between group cursor-pointer border-violet-500/30 hover:bg-violet-900/10"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-white group-hover:text-violet-400 transition-colors">Start a Project</h3>
-              <p className="text-slate-400">Let's build something amazing together</p>
-            </div>
-            <div className="w-12 h-12 rounded-full bg-violet-500 flex items-center justify-center shadow-lg shadow-violet-500/40 group-hover:scale-110 transition-transform">
-              <Zap className="text-white w-6 h-6" />
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
