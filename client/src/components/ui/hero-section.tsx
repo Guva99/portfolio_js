@@ -8,12 +8,42 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10">
       {/* Background with texture overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent opacity-90"></div>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent opacity-90 z-10"></div>
+        
+        {/* Animated Orbs */}
+        <motion.div 
+          animate={{ 
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/30 rounded-full blur-[120px] mix-blend-screen"
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -100, 0],
+            y: [0, 100, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-600/30 rounded-full blur-[120px] mix-blend-screen"
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, 50, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.4, 1],
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen"
+        />
+
         <motion.img 
           src={bgTexture} 
           alt="Texture" 
-          className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay z-20"
           animate={{ 
             scale: [1, 1.1, 1],
             opacity: [0.2, 0.3, 0.2],
@@ -25,7 +55,7 @@ export function HeroSection() {
             ease: "easeInOut" 
           }}
         />
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 z-20"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10 grid lg:grid-cols-2 gap-12 items-center">
