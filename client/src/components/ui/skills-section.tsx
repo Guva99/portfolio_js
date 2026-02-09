@@ -83,13 +83,15 @@ export function SkillsSection() {
               </div>
               
               <div className="relative w-full overflow-hidden mask-linear-gradient">
-                {/* Row 1 - Left Scroll */}
+                {/* Row 1 - Left Scroll (Flutter Ecosystem) */}
                 <div className="flex gap-2 mb-3 animate-scroll-left w-max">
                    {[
-                    "GraphQL", "Firebase", "Ux/Ui design", "CI/CD", 
-                    "Web Sockets", "Flutter", "Dart", "React", "Node.js", 
-                    "GraphQL", "Firebase", "Ux/Ui design", "CI/CD", 
-                    "Web Sockets", "Flutter", "Dart", "React", "Node.js"
+                    "Flutter", "Dart", "Riverpod", "Bloc", "Clean Architecture", 
+                    "Animations", "Material 3", "Cupertino", "Widget Testing", 
+                    "Flutter Web", "Performance", "State Management",
+                    "Flutter", "Dart", "Riverpod", "Bloc", "Clean Architecture", 
+                    "Animations", "Material 3", "Cupertino", "Widget Testing", 
+                    "Flutter Web", "Performance", "State Management"
                    ].map((tech, i) => (
                     <span 
                       key={`row1-${i}`} 
@@ -100,13 +102,15 @@ export function SkillsSection() {
                   ))}
                 </div>
 
-                {/* Row 2 - Right Scroll */}
+                {/* Row 2 - Right Scroll (General/Backend/Process) */}
                 <div className="flex gap-2 animate-scroll-right w-max">
                   {[
-                    "Python", "AWS", "Docker", "Kubernetes", "Figma", 
-                    "Tailwind", "Next.js", "TypeScript", "Go",
-                    "Python", "AWS", "Docker", "Kubernetes", "Figma", 
-                    "Tailwind", "Next.js", "TypeScript", "Go"
+                    "Firebase", "Startup MVP", "CI/CD", "App Store Deploy", 
+                    "Roadmap Strategy", "Projects from Scratch", "REST API", "GraphQL",
+                    "Push Notifications", "Analytics", "Agile", "UI/UX",
+                    "Firebase", "Startup MVP", "CI/CD", "App Store Deploy", 
+                    "Roadmap Strategy", "Projects from Scratch", "REST API", "GraphQL",
+                    "Push Notifications", "Analytics", "Agile", "UI/UX"
                   ].map((tech, i) => (
                     <span 
                       key={`row2-${i}`} 
