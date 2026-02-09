@@ -21,11 +21,11 @@ export default function Home() {
       // Decelerate very slowly to an even slower rate for that "suspended in air" look
       setTimeout(() => {
         const decelerate = setInterval(() => {
-          if (video.playbackRate > 0.8) {
-            video.playbackRate -= 0.05; // Gentle deceleration
+          if (video.playbackRate > 0.3) {
+            video.playbackRate -= 0.02; // Very gentle deceleration
           } else {
             clearInterval(decelerate);
-            video.playbackRate = 0.8; // Stable super-slow speed (8s video becomes ~10s loop)
+            video.playbackRate = 0.3; // Extremely slow, barely moving
           }
         }, 100);
       }, 2000 + delay); // Extended fast phase slightly
