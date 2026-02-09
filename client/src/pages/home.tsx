@@ -4,7 +4,7 @@ import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
 import { Footer } from "@/components/ui/footer";
-import colorfulSmoke from "@/assets/images/colorful-smoke.png";
+import smokeVideo from "@/assets/videos/smoke-overlay.mp4";
 
 export default function Home() {
   return (
@@ -13,24 +13,14 @@ export default function Home() {
       
       {/* Cinematic Smoke Effect Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 w-full h-full mix-blend-screen">
-          {/* Layer 1 */}
-          <img 
-            src={colorfulSmoke} 
-            alt="" 
-            className="absolute inset-0 w-full h-full object-cover md:object-contain animate-smoke-emit delay-0 opacity-0"
-          />
-          {/* Layer 2 */}
-          <img 
-            src={colorfulSmoke} 
-            alt="" 
-            className="absolute inset-0 w-full h-full object-cover md:object-contain animate-smoke-emit delay-4 opacity-0"
-          />
-          {/* Layer 3 */}
-          <img 
-            src={colorfulSmoke} 
-            alt="" 
-            className="absolute inset-0 w-full h-full object-cover md:object-contain animate-smoke-emit delay-8 opacity-0"
+        <div className="absolute inset-0 w-full h-full mix-blend-screen opacity-80">
+          <video 
+            src={smokeVideo} 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover scale-110"
           />
         </div>
       </div>
