@@ -36,7 +36,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-24 bg-slate-950">
+    <section className="py-24">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-end mb-16">
           <div>

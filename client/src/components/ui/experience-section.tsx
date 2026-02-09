@@ -30,7 +30,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section className="py-24 bg-slate-950 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Work <span className="text-violet-500">Experience</span></h2>

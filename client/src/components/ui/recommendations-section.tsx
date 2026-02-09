@@ -24,7 +24,7 @@ const recommendations = [
 
 export function RecommendationsSection() {
   return (
-    <section className="py-24 bg-slate-950 relative">
+    <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-16 text-center">What People <span className="text-violet-500">Say</span></h2>
         
