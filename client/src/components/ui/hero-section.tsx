@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroPortrait from "@/assets/images/me-new.jpg";
-import bgTexture from "@/assets/images/bg-texture.png";
+import heroPortrait from "@/assets/images/hero-portrait.webp";
+import bgTexture from "@/assets/images/bg-texture.webp";
 import { Download, ChevronRight } from "lucide-react";
 
 export function HeroSection() {

@@ -8,7 +8,7 @@ import projectWiseCity from "@/assets/images/project-wisecity.webp";
 import projectTavria from "@/assets/images/project-tavria.webp";
 import projectSdvor from "@/assets/images/project-sdvor.webp";
 import project2Sky from "@/assets/images/project-2sky.webp";
-import projectTrueForTwo from "@/assets/images/project-truefortwo.png";
+import projectTrueForTwo from "@/assets/images/project-truefortwo.webp";
 
 const projects = [
   {
