@@ -16,16 +16,12 @@ export default function Home() {
         <div className="absolute inset-0 w-full h-full">
           {/* Ball 1 */}
           <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-blob-1"></div>
-          {/* Ball 2 */}
-          <div className="absolute top-[10%] right-[-10%] w-[450px] h-[450px] bg-yellow-500 rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-blob-2"></div>
           {/* Ball 3 */}
           <div className="absolute bottom-[-20%] left-[20%] w-[600px] h-[600px] bg-pink-600 rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-blob-3"></div>
           {/* Ball 4 */}
           <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-blob-1 animation-delay-2000"></div>
           {/* Ball 5 (Center) */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-blob-2 animation-delay-4000"></div>
-           {/* Ball 6 */}
-          <div className="absolute top-[30%] left-[20%] w-[400px] h-[400px] bg-orange-500 rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-blob-3 animation-delay-6000"></div>
         </div>
       </div>
 

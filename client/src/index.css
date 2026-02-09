@@ -131,15 +131,15 @@
   }
 
   .animate-blob-1 {
-    animation: blob-float-1 25s infinite ease-in-out;
+    animation: blob-float-1 15s infinite ease-in-out;
   }
   
   .animate-blob-2 {
-    animation: blob-float-2 30s infinite ease-in-out;
+    animation: blob-float-2 18s infinite ease-in-out;
   }
   
   .animate-blob-3 {
-    animation: blob-float-3 28s infinite ease-in-out;
+    animation: blob-float-3 16s infinite ease-in-out;
   }
 }
 
