@@ -5,20 +5,35 @@ import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
 import { Footer } from "@/components/ui/footer";
-import smokeVideo from "@/assets/videos/smoke-overlay-v4.mp4";
+import smokeVideo from "@/assets/videos/smoke-overlay-v5.mp4";
 
 export default function Home() {
   const videoRef1 = useRef<HTMLVideoElement>(null);
   const videoRef2 = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const setSlowMo = (video: HTMLVideoElement | null) => {
+    const handlePlayback = (video: HTMLVideoElement | null, delay = 0) => {
       if (!video) return;
-      video.playbackRate = 0.2; // Constant ultra-slow speed (8s / 0.2 = 40s duration)
+      
+      // Start fast to show entry
+      video.playbackRate = 2.0;
+      
+      // Smoothly decelerate to 0.7 (safe smooth slow-mo)
+      // 0.2 was too slow causing stutter
+      setTimeout(() => {
+        const decelerate = setInterval(() => {
+          if (video.playbackRate > 0.7) {
+            video.playbackRate -= 0.05;
+          } else {
+            clearInterval(decelerate);
+            video.playbackRate = 0.7; // Smooth slow motion
+          }
+        }, 100);
+      }, 1000 + delay);
     };
 
-    setSlowMo(videoRef1.current);
-    setSlowMo(videoRef2.current);
+    handlePlayback(videoRef1.current, 0);
+    handlePlayback(videoRef2.current, 1500);
   }, []);
 
   return (
