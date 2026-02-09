@@ -23,10 +23,21 @@ export default function Home() {
               muted 
               playsInline
               className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-125"
-              style={{ transformOrigin: 'bottom left' }}
+              style={{ 
+                transformOrigin: 'bottom left',
+                filter: 'brightness(1.5) contrast(1.2)' // Boost brightness to make colors pop
+              }}
             />
-            {/* Rainbow Gradient Overlay using Multiply to tint the white smoke */}
-            <div className="absolute inset-0 w-full h-full mix-blend-multiply bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-violet-600 via-blue-500 via-emerald-400 via-yellow-400 to-red-500 opacity-80" />
+            {/* Rainbow Gradient Overlay */}
+            {/* Using mix-blend-color ensures the white smoke takes the color while preserving its luminance structure */}
+            {/* Using a radial gradient from the source makes it look more natural */}
+            <div 
+              className="absolute inset-0 w-full h-full mix-blend-color opacity-100"
+              style={{
+                background: 'radial-gradient(circle at bottom left, #8b5cf6, #3b82f6, #10b981, #facc15, #ef4444)',
+                filter: 'saturate(2)'
+              }}
+            />
           </div>
         </div>
       </div>
