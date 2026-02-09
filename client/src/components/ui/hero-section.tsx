@@ -10,10 +10,20 @@ export function HeroSection() {
       {/* Background with texture overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent opacity-90"></div>
-        <img 
+        <motion.img 
           src={bgTexture} 
           alt="Texture" 
           className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+          animate={{ 
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.3, 0.2],
+            filter: ["hue-rotate(0deg)", "hue-rotate(15deg)", "hue-rotate(0deg)"]
+          }}
+          transition={{ 
+            duration: 15, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
         />
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       </div>
@@ -59,11 +69,21 @@ export function HeroSection() {
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 1 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -20, 0] }}
+          transition={{ 
+            opacity: { delay: 0.2, duration: 1 },
+            scale: { delay: 0.2, duration: 1 },
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+          }}
           className="relative lg:h-[600px] flex items-center justify-center"
         >
           <div className="relative z-10 w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden neon-border group">
+            {/* Tech Scan Line */}
+            <motion.div 
+              className="absolute w-full h-[2px] bg-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.8)] z-20 pointer-events-none"
+              animate={{ top: ["0%", "100%", "0%"] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-violet-900/80 to-transparent z-10 mix-blend-multiply"></div>
             <img 
               src={heroPortrait} 
