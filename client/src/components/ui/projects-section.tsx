@@ -7,6 +7,8 @@ import projectLofty from "@/assets/images/project-lofty.webp";
 import projectWiseCity from "@/assets/images/project-wisecity.webp";
 import projectTavria from "@/assets/images/project-tavria.webp";
 import projectSdvor from "@/assets/images/project-sdvor.webp";
+import project2Sky from "@/assets/images/project-2sky.webp";
+import projectTrueForTwo from "@/assets/images/project-truefortwo.png";
 
 const projects = [
   {
@@ -85,6 +87,28 @@ const projects = [
     gradient: "from-yellow-500 to-orange-600",
     shadow: "hover:shadow-yellow-500/40",
     border: "hover:border-yellow-500/50"
+  },
+  {
+    id: 8,
+    title: "2Sky Mobile",
+    category: "eSIM & Connectivity",
+    image: project2Sky,
+    description: "Global eSIM connectivity solution. Traveling soon? Stay connected with affordable rates.",
+    platforms: ["iOS", "Android"],
+    gradient: "from-blue-600 to-indigo-700",
+    shadow: "hover:shadow-blue-500/40",
+    border: "hover:border-blue-500/50"
+  },
+  {
+    id: 9,
+    title: "True for Two",
+    category: "Social & Dating",
+    image: projectTrueForTwo,
+    description: "A unique dating social network for meaningful connections. Find your perfect match.",
+    platforms: ["Web", "Mobile"],
+    gradient: "from-fuchsia-500 to-purple-600",
+    shadow: "hover:shadow-fuchsia-500/40",
+    border: "hover:border-fuchsia-500/50"
   }
 ];
 
