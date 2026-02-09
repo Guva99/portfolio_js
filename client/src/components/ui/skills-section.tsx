@@ -21,7 +21,7 @@ export function SkillsSection() {
           {/* Main Tech Stack - Large Block */}
           <motion.div 
             whileHover={{ scale: 1.02 }}
-            className="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-8 flex flex-col justify-between"
+            className="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between"
           >
             <div>
               <div className="w-12 h-12 rounded-full bg-violet-500/20 flex items-center justify-center mb-6">

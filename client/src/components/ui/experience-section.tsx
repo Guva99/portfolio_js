@@ -43,7 +43,7 @@ export function ExperienceSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glass-card p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start md:items-center group hover:bg-white/5 transition-colors"
+                className="glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start md:items-center group hover:bg-white/5 transition-colors"
               >
                 <div className={`w-16 h-16 rounded-2xl ${exp.color} flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform`}>
                   <exp.icon className="text-white w-8 h-8" />

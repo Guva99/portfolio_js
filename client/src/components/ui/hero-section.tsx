@@ -25,7 +25,7 @@ export function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tighter">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold leading-tight tracking-tighter">
               <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Idea.</span>
               <span className="block text-violet-500 text-glow">Code.</span>
               <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Release.</span>
