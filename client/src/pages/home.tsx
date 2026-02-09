@@ -12,27 +12,13 @@ export default function Home() {
   const videoRef2 = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const handlePlayback = (video: HTMLVideoElement | null, delay = 0) => {
+    const setSlowMo = (video: HTMLVideoElement | null) => {
       if (!video) return;
-      
-      // Start slightly faster to show movement
-      video.playbackRate = 2.0;
-      
-      // Decelerate very slowly to an even slower rate for that "suspended in air" look
-      setTimeout(() => {
-        const decelerate = setInterval(() => {
-          if (video.playbackRate > 0.3) {
-            video.playbackRate -= 0.02; // Very gentle deceleration
-          } else {
-            clearInterval(decelerate);
-            video.playbackRate = 0.3; // Extremely slow, barely moving
-          }
-        }, 100);
-      }, 2000 + delay); // Extended fast phase slightly
+      video.playbackRate = 0.2; // Constant ultra-slow speed (8s / 0.2 = 40s duration)
     };
 
-    handlePlayback(videoRef1.current, 0);
-    handlePlayback(videoRef2.current, 2000);
+    setSlowMo(videoRef1.current);
+    setSlowMo(videoRef2.current);
   }, []);
 
   return (
