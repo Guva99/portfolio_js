@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Copy, Check } from "lucide-react";
+import { ArrowUpRight, Copy, Check, Heart, Terminal } from "lucide-react";
 import { useState } from "react";
 import bentoLaptop from "@/assets/images/bento-laptop.webp";
 import bentoMap from "@/assets/images/bento-map.webp";
@@ -142,8 +142,13 @@ export function SkillsSection() {
               <h3 className="text-xl font-bold text-white relative z-10 leading-snug">
                 Tech enthusiast with a passion for development.
               </h3>
-              <div className="mt-4 w-12 h-1 rounded-full bg-slate-700/50 relative z-10 overflow-hidden">
-                <div className="h-full bg-violet-500 w-2/3"></div>
+              <div className="mt-4 flex gap-3 relative z-10">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/5 shadow-inner">
+                  <Heart className="w-5 h-5 text-rose-500 fill-rose-500/20" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/5 shadow-inner">
+                  <Terminal className="w-5 h-5 text-violet-400" />
+                </div>
               </div>
             </motion.div>
 
