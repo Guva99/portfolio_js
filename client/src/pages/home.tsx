@@ -13,11 +13,24 @@ export default function Home() {
       
       {/* Cinematic Smoke Effect Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 w-full h-full mix-blend-screen animate-smoke-flow">
+        <div className="absolute inset-0 w-full h-full mix-blend-screen">
+          {/* Layer 1 */}
           <img 
             src={colorfulSmoke} 
             alt="" 
-            className="w-full h-full object-cover md:object-contain opacity-90 scale-125"
+            className="absolute inset-0 w-full h-full object-cover md:object-contain animate-smoke-emit delay-0 opacity-0"
+          />
+          {/* Layer 2 */}
+          <img 
+            src={colorfulSmoke} 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-cover md:object-contain animate-smoke-emit delay-4 opacity-0"
+          />
+          {/* Layer 3 */}
+          <img 
+            src={colorfulSmoke} 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-cover md:object-contain animate-smoke-emit delay-8 opacity-0"
           />
         </div>
       </div>
