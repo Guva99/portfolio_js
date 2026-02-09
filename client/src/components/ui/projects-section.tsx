@@ -16,7 +16,9 @@ const projects = [
     image: projectWowtickets,
     description: "Book cheap airline tickets. Application support ticketing and infrastructure improvements.",
     platforms: ["iOS", "Android", "Web"],
-    gradient: "from-violet-600 to-indigo-600"
+    gradient: "from-violet-600 to-indigo-600",
+    shadow: "hover:shadow-violet-500/40",
+    border: "hover:border-violet-500/50"
   },
   {
     id: 2,
@@ -25,7 +27,9 @@ const projects = [
     image: projectApeiron,
     description: "The first smart hotel in Russia, completely controlled from your smartphone.",
     platforms: ["iOS", "Android", "IoT"],
-    gradient: "from-emerald-500 to-teal-600"
+    gradient: "from-emerald-500 to-teal-600",
+    shadow: "hover:shadow-emerald-500/40",
+    border: "hover:border-emerald-500/50"
   },
   {
     id: 3,
@@ -34,7 +38,9 @@ const projects = [
     image: projectPunicapp,
     description: "Mobile app development agency site. 12+ years of experience saving time and costs.",
     platforms: ["Web", "Mobile"],
-    gradient: "from-rose-500 to-pink-600"
+    gradient: "from-rose-500 to-pink-600",
+    shadow: "hover:shadow-rose-500/40",
+    border: "hover:border-rose-500/50"
   },
   {
     id: 4,
@@ -43,7 +49,9 @@ const projects = [
     image: projectLofty,
     description: "Creating and scaling IT & digital products around the world since 2011.",
     platforms: ["Web", "Mobile"],
-    gradient: "from-cyan-500 to-blue-600"
+    gradient: "from-cyan-500 to-blue-600",
+    shadow: "hover:shadow-cyan-500/40",
+    border: "hover:border-cyan-500/50"
   },
   {
     id: 5,
@@ -52,7 +60,9 @@ const projects = [
     image: projectWiseCity,
     description: "A smart home in every apartment. Engineering and IT solutions for modern home comfort.",
     platforms: ["Web", "Mobile", "IoT"],
-    gradient: "from-slate-500 to-slate-700"
+    gradient: "from-slate-500 to-slate-700",
+    shadow: "hover:shadow-slate-500/40",
+    border: "hover:border-slate-500/50"
   },
   {
     id: 6,
@@ -61,7 +71,9 @@ const projects = [
     image: projectTavria,
     description: "Regional information portal and news aggregation platform.",
     platforms: ["Web", "Mobile"],
-    gradient: "from-orange-500 to-amber-600"
+    gradient: "from-orange-500 to-amber-600",
+    shadow: "hover:shadow-orange-500/40",
+    border: "hover:border-orange-500/50"
   },
    {
     id: 7,
@@ -70,7 +82,9 @@ const projects = [
     image: projectSdvor,
     description: "Construction materials and home improvement online store.",
     platforms: ["Web"],
-    gradient: "from-yellow-500 to-orange-600"
+    gradient: "from-yellow-500 to-orange-600",
+    shadow: "hover:shadow-yellow-500/40",
+    border: "hover:border-yellow-500/50"
   }
 ];
 
@@ -96,11 +110,11 @@ export function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative rounded-3xl overflow-hidden glass-card hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-500"
+              className={`group relative rounded-3xl overflow-hidden glass-card hover:shadow-2xl ${project.shadow} ${project.border} transition-all duration-500`}
             >
               {/* Image Container */}
               <div className="aspect-[4/3] overflow-hidden relative">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-40 transition-opacity duration-500 z-10 mix-blend-overlay`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-50 transition-opacity duration-500 z-10 mix-blend-overlay`}></div>
                 <img 
                   src={project.image} 
                   alt={project.title} 
@@ -115,7 +129,7 @@ export function ProjectsSection() {
                     <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-2 block">{project.category}</span>
                     <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-violet-500 transition-colors">
+                  <div className={`w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-gradient-to-br ${project.gradient} transition-all duration-500`}>
                     <ArrowUpRight className="w-5 h-5 text-white" />
                   </div>
                 </div>
