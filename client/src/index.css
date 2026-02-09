@@ -74,6 +74,37 @@
   .bg-radial-gradient {
     background: radial-gradient(closest-side, var(--tw-gradient-from), transparent);
   }
+
+  /* Cinematic Smoke Animations */
+  @keyframes smoke-billow-1 {
+    0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.6; }
+    50% { transform: translate3d(5%, -5%, 0) scale(1.1) rotate(2deg); opacity: 0.8; }
+    100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.6; }
+  }
+
+  @keyframes smoke-billow-2 {
+    0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.5; }
+    50% { transform: translate3d(-5%, -8%, 0) scale(1.15) rotate(-3deg); opacity: 0.7; }
+    100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.5; }
+  }
+
+  @keyframes smoke-billow-3 {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(3%, 3%, 0) scale(1.05); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+  }
+
+  .animate-smoke-billow-1 {
+    animation: smoke-billow-1 20s ease-in-out infinite;
+  }
+
+  .animate-smoke-billow-2 {
+    animation: smoke-billow-2 25s ease-in-out infinite;
+  }
+
+  .animate-smoke-billow-3 {
+    animation: smoke-billow-3 30s ease-in-out infinite;
+  }
 }
 
 body {

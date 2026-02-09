@@ -4,40 +4,51 @@ import { ProjectsSection } from "@/components/ui/projects-section";
 import { RecommendationsSection } from "@/components/ui/recommendations-section";
 import { ExperienceSection } from "@/components/ui/experience-section";
 import { Footer } from "@/components/ui/footer";
-import Lottie from "lottie-react";
-import smokeAnimation from "@/assets/animations/smoke.json";
+import smokePlumeV2 from "@/assets/images/smoke-plume-v2.png";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-violet-500/30 relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
       
-      {/* Lottie Smoke Effect Overlay */}
+      {/* Cinematic Smoke Effect Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         
-        {/* Purple Smoke Layer - Left */}
-        <div className="absolute bottom-[-10%] left-[-10%] w-[100vw] h-[100vw] md:w-[70vw] md:h-[70vw] opacity-60 mix-blend-screen pointer-events-none">
-          <div className="w-full h-full relative">
-             <div className="absolute inset-0 bg-violet-600 mix-blend-color z-10"></div>
-             <Lottie 
-                animationData={smokeAnimation} 
-                loop={true} 
-                className="w-full h-full opacity-80"
-             />
-          </div>
+        {/* Purple Smoke - Bottom Left */}
+        <div className="absolute bottom-[-20%] left-[-20%] w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] mix-blend-screen opacity-80 animate-smoke-billow-1">
+          <img 
+            src={smokePlumeV2} 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ 
+              filter: 'brightness(1.2) sepia(1) hue-rotate(230deg) saturate(3) contrast(1.2)'
+            }}
+          />
         </div>
 
-        {/* Orange Smoke Layer - Right */}
-        <div className="absolute bottom-[-10%] right-[-10%] w-[100vw] h-[100vw] md:w-[70vw] md:h-[70vw] opacity-50 mix-blend-screen pointer-events-none">
-          <div className="w-full h-full relative">
-             <div className="absolute inset-0 bg-orange-600 mix-blend-color z-10"></div>
-             <Lottie 
-                animationData={smokeAnimation}
-                loop={true} 
-                className="w-full h-full opacity-80"
-                style={{ transform: 'scaleX(-1)' }} 
-             />
-          </div>
+        {/* Orange Smoke - Bottom Right */}
+        <div className="absolute bottom-[-10%] right-[-20%] w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] mix-blend-screen opacity-70 animate-smoke-billow-2">
+           <img 
+            src={smokePlumeV2} 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ 
+              transform: 'scaleX(-1)',
+              filter: 'brightness(1.2) sepia(1) hue-rotate(-20deg) saturate(3) contrast(1.2)'
+            }}
+          />
+        </div>
+
+        {/* Secondary Purple Layer for Depth */}
+        <div className="absolute bottom-[-30%] left-[-10%] w-[100vw] h-[100vw] mix-blend-screen opacity-40 animate-smoke-billow-3">
+           <img 
+            src={smokePlumeV2} 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ 
+              filter: 'brightness(0.8) sepia(1) hue-rotate(250deg) saturate(2)'
+            }}
+          />
         </div>
 
       </div>
