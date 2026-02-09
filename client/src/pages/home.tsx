@@ -13,19 +13,21 @@ export default function Home() {
       
       {/* Cinematic Smoke Effect Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 w-full h-full mix-blend-screen opacity-100">
-          <video 
-            src={smokeVideo} 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-125"
-            style={{ 
-              animation: 'fade-cycle 8s linear infinite', 
-              transformOrigin: 'bottom left'
-            }}
-          />
+        <div className="absolute inset-0 w-full h-full mix-blend-screen"
+             style={{ animation: 'fade-cycle 8s linear infinite' }}>
+          <div className="relative w-full h-full">
+             <video 
+              src={smokeVideo} 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover object-left-bottom scale-125"
+              style={{ transformOrigin: 'bottom left' }}
+            />
+            {/* Rainbow Gradient Overlay using Multiply to tint the white smoke */}
+            <div className="absolute inset-0 w-full h-full mix-blend-multiply bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-violet-600 via-blue-500 via-emerald-400 via-yellow-400 to-red-500 opacity-80" />
+          </div>
         </div>
       </div>
 
