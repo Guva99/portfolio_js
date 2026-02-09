@@ -75,7 +75,7 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="rounded-[2rem] bg-[#111] p-8 border border-white/5 flex flex-col justify-between flex-1 min-h-[240px] overflow-hidden"
+              className="rounded-[2rem] bg-[#111]/50 backdrop-blur-md p-8 border border-white/5 flex flex-col justify-between flex-1 min-h-[240px] overflow-hidden"
             >
               <div className="mb-6 relative z-10">
                 <p className="text-slate-400 text-sm mb-1">I constantly try to improve</p>
@@ -136,7 +136,7 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="rounded-[2rem] bg-[#1a1a1a] p-8 border border-white/5 relative overflow-hidden group"
+              className="rounded-[2rem] bg-[#1a1a1a]/50 backdrop-blur-md p-8 border border-white/5 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <h3 className="text-xl font-bold text-white relative z-10 leading-snug">
@@ -153,7 +153,7 @@ export function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="rounded-[2rem] bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] p-8 border border-white/5 flex flex-col justify-center items-start"
+              className="rounded-[2rem] bg-gradient-to-br from-[#1a1a1a]/50 to-[#0f0f0f]/50 backdrop-blur-md p-8 border border-white/5 flex flex-col justify-center items-start"
             >
               <h3 className="text-xl font-bold text-white mb-6 leading-snug">
                 Do you want to start a project together?
@@ -175,7 +175,7 @@ export function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-[#0e0e12] min-h-[300px] group border border-white/5"
+            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-[#0e0e12]/50 backdrop-blur-md min-h-[300px] group border border-white/5"
           >
             <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]"></div>
             
