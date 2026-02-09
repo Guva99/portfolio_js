@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Download } from "lucide-react";
 import projectWowtickets from "@/assets/images/project-wowtickets.webp";
 import projectApeiron from "@/assets/images/project-apeiron.webp";
 import projectPunicapp from "@/assets/images/project-punicapp.webp";
@@ -16,7 +16,11 @@ const projects = [
     title: "Wowtickets.com",
     category: "Travel & Booking",
     image: projectWowtickets,
-    description: "Book cheap airline tickets. Application support ticketing and infrastructure improvements.",
+    details: [
+      "Application support & infrastructure",
+      "Flutter, BLoC, Clean Architecture",
+      "100k+ active users"
+    ],
     platforms: ["iOS", "Android", "Web"],
     gradient: "from-violet-600 to-indigo-600",
     shadow: "hover:shadow-violet-500/40",
@@ -27,7 +31,11 @@ const projects = [
     title: "Apeiron Space",
     category: "Smart Hotel / IoT",
     image: projectApeiron,
-    description: "The first smart hotel in Russia, completely controlled from your smartphone.",
+    details: [
+      "IoT Integration & Real-time control",
+      "Flutter, WebSockets, Custom UI",
+      "First smart hotel in Russia"
+    ],
     platforms: ["iOS", "Android", "IoT"],
     gradient: "from-emerald-500 to-teal-600",
     shadow: "hover:shadow-emerald-500/40",
@@ -35,80 +43,108 @@ const projects = [
   },
   {
     id: 3,
-    title: "PunicApp",
-    category: "Mobile Development",
-    image: projectPunicapp,
-    description: "Mobile app development agency site. 12+ years of experience saving time and costs.",
-    platforms: ["Web", "Mobile"],
-    gradient: "from-rose-500 to-pink-600",
-    shadow: "hover:shadow-rose-500/40",
-    border: "hover:border-rose-500/50"
-  },
-  {
-    id: 4,
-    title: "Lofty",
-    category: "Fintech & Crypto",
-    image: projectLofty,
-    description: "Creating and scaling IT & digital products around the world since 2011.",
-    platforms: ["Web", "Mobile"],
-    gradient: "from-cyan-500 to-blue-600",
-    shadow: "hover:shadow-cyan-500/40",
-    border: "hover:border-cyan-500/50"
-  },
-  {
-    id: 5,
-    title: "Wise City",
-    category: "Smart Home",
-    image: projectWiseCity,
-    description: "A smart home in every apartment. Engineering and IT solutions for modern home comfort.",
-    platforms: ["Web", "Mobile", "IoT"],
-    gradient: "from-slate-500 to-slate-700",
-    shadow: "hover:shadow-slate-500/40",
-    border: "hover:border-slate-500/50"
-  },
-  {
-    id: 6,
-    title: "Tavria",
-    category: "News & Info",
-    image: projectTavria,
-    description: "Regional information portal and news aggregation platform.",
-    platforms: ["Web", "Mobile"],
-    gradient: "from-orange-500 to-amber-600",
-    shadow: "hover:shadow-orange-500/40",
-    border: "hover:border-orange-500/50"
-  },
-   {
-    id: 7,
-    title: "S.Dvor",
-    category: "E-Commerce",
-    image: projectSdvor,
-    description: "Construction materials and home improvement online store.",
-    platforms: ["Web"],
-    gradient: "from-yellow-500 to-orange-600",
-    shadow: "hover:shadow-yellow-500/40",
-    border: "hover:border-yellow-500/50"
-  },
-  {
-    id: 8,
     title: "2Sky Mobile",
     category: "eSIM & Connectivity",
     image: project2Sky,
-    description: "Global eSIM connectivity solution. Traveling soon? Stay connected with affordable rates.",
+    details: [
+      "Built from scratch to release",
+      "Architecture, Roadmap, White-label",
+      "Global eSIM connectivity"
+    ],
     platforms: ["iOS", "Android"],
     gradient: "from-blue-600 to-indigo-700",
     shadow: "hover:shadow-blue-500/40",
     border: "hover:border-blue-500/50"
   },
   {
-    id: 9,
+    id: 4,
     title: "True for Two",
     category: "Social & Dating",
     image: projectTrueForTwo,
-    description: "A unique dating social network for meaningful connections. Find your perfect match.",
+    details: [
+      "Dating app architecture",
+      "Real-time matching & chat",
+      "Flutter, Riverpod, Firebase"
+    ],
     platforms: ["Web", "Mobile"],
     gradient: "from-fuchsia-500 to-purple-600",
     shadow: "hover:shadow-fuchsia-500/40",
     border: "hover:border-fuchsia-500/50"
+  },
+  {
+    id: 5,
+    title: "PunicApp",
+    category: "Mobile Development",
+    image: projectPunicapp,
+    details: [
+      "Agency portfolio development",
+      "UI/UX Implementation",
+      "Cross-platform optimization"
+    ],
+    platforms: ["Web", "Mobile"],
+    gradient: "from-rose-500 to-pink-600",
+    shadow: "hover:shadow-rose-500/40",
+    border: "hover:border-rose-500/50"
+  },
+  {
+    id: 6,
+    title: "Lofty",
+    category: "Fintech & Crypto",
+    image: projectLofty,
+    details: [
+      "Fintech product scaling",
+      "Complex data visualization",
+      "Secure transaction handling"
+    ],
+    platforms: ["Web", "Mobile"],
+    gradient: "from-cyan-500 to-blue-600",
+    shadow: "hover:shadow-cyan-500/40",
+    border: "hover:border-cyan-500/50"
+  },
+  {
+    id: 7,
+    title: "Wise City",
+    category: "Smart Home",
+    image: projectWiseCity,
+    details: [
+      "Smart home ecosystem",
+      "Engineering solutions integration",
+      "Modern comfort automation"
+    ],
+    platforms: ["Web", "Mobile", "IoT"],
+    gradient: "from-slate-500 to-slate-700",
+    shadow: "hover:shadow-slate-500/40",
+    border: "hover:border-slate-500/50"
+  },
+  {
+    id: 8,
+    title: "Tavria",
+    category: "News & Info",
+    image: projectTavria,
+    details: [
+      "Regional news aggregation",
+      "Content delivery optimization",
+      "High load resistance"
+    ],
+    platforms: ["Web", "Mobile"],
+    gradient: "from-orange-500 to-amber-600",
+    shadow: "hover:shadow-orange-500/40",
+    border: "hover:border-orange-500/50"
+  },
+   {
+    id: 9,
+    title: "S.Dvor",
+    category: "E-Commerce",
+    image: projectSdvor,
+    details: [
+      "E-commerce platform",
+      "Catalog & Cart logic",
+      "Payment gateway integration"
+    ],
+    platforms: ["Web"],
+    gradient: "from-yellow-500 to-orange-600",
+    shadow: "hover:shadow-yellow-500/40",
+    border: "hover:border-yellow-500/50"
   }
 ];
 
@@ -158,7 +194,14 @@ export function ProjectsSection() {
                   </div>
                 </div>
                 
-                <p className="text-slate-400 text-sm mb-6 line-clamp-2">{project.description}</p>
+                <ul className="space-y-2 mb-6">
+                  {project.details.map((detail, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
+                      <span className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-br ${project.gradient} shrink-0`} />
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.platforms.map(platform => (
