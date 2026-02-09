@@ -153,11 +153,11 @@
   }
 
   .animate-scroll-left {
-    animation: scroll-left 35s linear infinite;
+    animation: scroll-left 70s linear infinite;
   }
 
   .animate-scroll-right {
-    animation: scroll-right 35s linear infinite;
+    animation: scroll-right 70s linear infinite;
   }
 }
 
