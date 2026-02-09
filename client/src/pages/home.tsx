@@ -12,10 +12,37 @@ export default function Home() {
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
       
       {/* Smoke Effect Overlay */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 opacity-20 mix-blend-screen animate-smoke w-[200%] flex">
-            <img src={smokeTexture} alt="" className="w-1/2 h-full object-cover" />
-            <img src={smokeTexture} alt="" className="w-1/2 h-full object-cover" />
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
+        {/* Purple Smoke Layer */}
+        <div 
+          className="absolute inset-0 z-10 opacity-60 animate-smoke w-[200%] flex blur-3xl mix-blend-screen"
+          style={{ 
+            maskImage: `url(${smokeTexture})`,
+            maskMode: 'luminance',
+            maskSize: 'contain',
+            maskRepeat: 'repeat',
+            WebkitMaskImage: `url(${smokeTexture})`,
+            WebkitMaskSize: 'contain',
+            WebkitMaskRepeat: 'repeat',
+          }}
+        >
+          <div className="w-full h-full bg-violet-600/50"></div>
+        </div>
+
+        {/* Orange Smoke Layer - Moving Reverse */}
+        <div 
+          className="absolute inset-0 z-10 opacity-50 animate-smoke-reverse w-[200%] flex blur-3xl mix-blend-screen"
+          style={{ 
+            maskImage: `url(${smokeTexture})`,
+            maskMode: 'luminance',
+            maskSize: 'contain',
+            maskRepeat: 'repeat',
+            WebkitMaskImage: `url(${smokeTexture})`,
+            WebkitMaskSize: 'contain',
+            WebkitMaskRepeat: 'repeat',
+          }}
+        >
+           <div className="w-full h-full bg-orange-500/50"></div>
         </div>
       </div>
 

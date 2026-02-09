@@ -76,8 +76,17 @@
     100% { transform: translate3d(-50%, 0, 0); }
   }
 
+  @keyframes smoke-drift-reverse {
+    0% { transform: translate3d(-50%, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
   .animate-smoke {
-    animation: smoke-drift 60s linear infinite;
+    animation: smoke-drift 80s linear infinite;
+  }
+  
+  .animate-smoke-reverse {
+    animation: smoke-drift-reverse 90s linear infinite;
   }
 }
 
