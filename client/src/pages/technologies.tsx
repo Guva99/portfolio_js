@@ -227,16 +227,51 @@ export default function Technologies() {
           </div>
 
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <p className="text-slate-400 mb-8">Looking for a Flutter expert for your next project?</p>
-            <a 
-              href="/#experience"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d3f3] text-black font-bold rounded-full hover:bg-[#00b8d4] transition-colors shadow-[0_0_20px_rgba(0,211,243,0.3)]"
+          {/* Enhanced Call to Action */}
+          <div className="relative max-w-5xl mx-auto mt-20 mb-20">
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 blur-3xl rounded-3xl -z-10"></div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-12 md:p-20 text-center overflow-hidden"
             >
-              <span>Let's Discuss</span>
-              <ArrowRight className="w-5 h-5" />
-            </a>
+              {/* Decorative elements */}
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent"></div>
+              
+              <div className="absolute -right-20 -top-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl opacity-50"></div>
+              <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl opacity-50"></div>
+              
+              {/* Content */}
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="mb-8 p-4 bg-slate-800/50 rounded-2xl border border-white/5 shadow-inner rotate-3 hover:rotate-6 transition-transform duration-300">
+                  <Rocket className="w-10 h-10 text-cyan-400" />
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                  Ready to bring your <br className="hidden md:block" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">ideas to life?</span>
+                </h2>
+                
+                <p className="text-slate-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                  Let's collaborate to build scalable, high-performance applications that deliver exceptional user experiences across all platforms.
+                </p>
+                
+                <motion.a 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="/#experience"
+                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-950 font-bold text-lg rounded-full overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-violet-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Start a Project</span>
+                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
