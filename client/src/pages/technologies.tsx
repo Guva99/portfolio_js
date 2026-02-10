@@ -1,3 +1,9 @@
+import { motion } from "framer-motion";
+import { Navbar } from "@/components/ui/navbar";
+import { BackgroundElements } from "@/components/ui/background-elements";
+import Lottie from "lottie-react";
+import mobileAnimation from "@/assets/animations/mobile-devices.json";
+
 // Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
 import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap } from "lucide-react";
 
