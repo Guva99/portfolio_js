@@ -3,6 +3,9 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap } from "lucide-react";
 
+// Import new asset
+import heroDevices from "@/assets/images/flutter-devices-hero.png";
+
 export default function Technologies() {
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
@@ -55,14 +58,19 @@ export default function Technologies() {
 
               {/* Visual Section */}
               <div className="relative z-10 flex flex-col items-center justify-center min-w-[200px]">
-                 <div className="relative w-48 h-48 md:w-64 md:h-64">
+                 <div className="relative w-64 h-64 md:w-80 md:h-80">
                     <div className="absolute inset-0 bg-cyan-500/20 blur-[60px] rounded-full animate-pulse"></div>
-                    <div className="relative w-full h-full border border-white/10 rounded-full flex items-center justify-center bg-black/20 backdrop-blur-sm">
-                      <div className="w-3/4 h-3/4 border border-cyan-500/30 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
-                        <div className="w-2 h-2 bg-cyan-400 rounded-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_#22d3ee]"></div>
-                      </div>
-                      <Code className="w-20 h-20 text-white relative z-10" />
-                    </div>
+                    <motion.div 
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="relative w-full h-full"
+                    >
+                      <img 
+                        src={heroDevices} 
+                        alt="Mobile Applications" 
+                        className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                      />
+                    </motion.div>
                  </div>
                  
                  {/* Decorative Circles */}
