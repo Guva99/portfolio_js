@@ -73,13 +73,13 @@ export default function Technologies() {
       
         <div className="container mx-auto px-4 pt-32 pb-24">
           {/* Hero Section */}
-          <div className="max-w-6xl mx-auto mb-24 relative">
-            <div className="relative bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-5">
+          <div className="max-w-6xl mx-auto mb-16 md:mb-24 relative">
+            <div className="relative bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-6 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10 md:gap-5">
               {/* Background Glow */}
               <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-900/20 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
               {/* Text Content */}
-              <div className="relative z-10 text-left max-w-2xl md:pr-8">
+              <div className="relative z-10 text-center md:text-left max-w-2xl md:pr-8">
                 <motion.div
                   initial={{ opacity: 0, y: 80 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -93,12 +93,12 @@ export default function Technologies() {
                   <span className="text-[#00d3f3]">Development</span>
                 </h1>
                 
-                <p className="text-xl text-slate-400 leading-relaxed mb-8 pr-[30px]">
+                <p className="text-xl text-slate-400 leading-relaxed mb-8 md:pr-[30px]">
                   Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
                 </p>
 
                 {/* Platform Icons */}
-                <div className="flex flex-wrap gap-6 items-center">
+                <div className="flex flex-wrap justify-center md:justify-start gap-6 items-center">
                   <div className="flex flex-col items-center gap-2 group">
                     <div className="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center border border-white/10 group-hover:border-cyan-500/50 group-hover:bg-cyan-950/30 transition-all">
                       <Smartphone className="w-5 h-5 text-slate-300 group-hover:text-cyan-400 transition-colors" />
@@ -157,9 +157,9 @@ export default function Technologies() {
           </div>
 
           {/* Tech Stack Strip */}
-          <div className="max-w-6xl mx-auto mb-32">
-            <h2 className="text-3xl font-bold text-center mb-12">My Tech <span className="text-[#00d3f3]">Stack</span></h2>
-            <div className="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-2xl py-8 px-4 overflow-hidden">
+          <div className="max-w-6xl mx-auto mb-20 md:mb-32">
+            <h2 className="text-3xl font-bold text-center mb-8 md:mb-12">My Tech <span className="text-[#00d3f3]">Stack</span></h2>
+            <div className="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-2xl py-6 md:py-8 px-4 overflow-hidden">
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
                 {techStack.map((tech, index) => (
                   <motion.div
@@ -179,9 +179,9 @@ export default function Technologies() {
           </div>
 
           {/* Areas of Expertise (New Section) */}
-          <div className="max-w-6xl mx-auto mb-32">
+          <div className="max-w-6xl mx-auto mb-20 md:mb-32">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Areas of <span className="text-[#00d3f3]">Expertise</span></h2>
-            <p className="text-slate-400 text-center max-w-2xl mx-auto mb-16 text-lg">
+            <p className="text-slate-400 text-center max-w-2xl mx-auto mb-10 md:mb-16 text-lg">
               Delivering specialized development solutions tailored to diverse business needs and project scales.
             </p>
             
