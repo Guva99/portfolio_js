@@ -81,9 +81,9 @@ export default function Technologies() {
               <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-900/20 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
               {/* Text Content */}
-              <div className="relative z-10 text-left max-w-2xl pr-0">
+              <div className="relative z-10 text-left max-w-2xl md:pr-8">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 80 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="inline-block p-3 rounded-xl bg-cyan-950/30 border border-cyan-500/20 mb-6"
                 >
