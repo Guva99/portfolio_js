@@ -174,11 +174,6 @@ export default function Technologies() {
                   <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
                     {area.description}
                   </p>
-                  
-                  <div className="flex items-center gap-2 text-sm font-bold text-[#00d3f3] opacity-80 group-hover:opacity-100 transition-opacity mt-auto cursor-pointer">
-                    <span>Explore</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
                 </motion.div>
               ))}
             </div>
