@@ -1,5 +1,5 @@
 // Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
-import { Database, Cloud, BarChart, Server, FileJson } from "lucide-react";
+import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap } from "lucide-react";
 
 // Mock data for tech stack
 const techStack = [
