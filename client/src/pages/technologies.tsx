@@ -195,10 +195,13 @@ export default function Technologies() {
                   transition={{ delay: index * 0.1 }}
                   className="relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-slate-900/60 hover:border-cyan-500/30 transition-all duration-500 group flex flex-col items-center text-center overflow-hidden"
                 >
-                  {/* Grid Pattern Background */}
-                  <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none" 
-                       style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                  </div>
+                  {/* Abstract Background */}
+                  <div className="absolute -right-12 -top-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-all duration-500"></div>
+                  <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-violet-500/5 rounded-full blur-3xl group-hover:bg-violet-500/15 transition-all duration-500"></div>
+                  <svg className="absolute inset-0 w-full h-full opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M0 100 L100 0" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                    <circle cx="0" cy="100" r="50" fill="currentColor" className="opacity-20" />
+                  </svg>
                   
                   {/* Corner Accents */}
                   <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-white/0 group-hover:border-cyan-500/50 transition-all duration-500 rounded-tl-lg"></div>
