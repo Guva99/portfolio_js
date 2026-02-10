@@ -1,47 +1,59 @@
 import { motion } from "framer-motion";
-import { Briefcase, Layers, Rocket, Monitor, Smartphone, Cpu, CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { useState } from "react";
+
+// Import 3D generated icons
+import iconLaunch from "../../assets/images/icon-launch.png";
+import iconArchitecture from "../../assets/images/icon-architecture.png";
+import iconLeadership from "../../assets/images/icon-leadership.png";
+import iconDevices from "../../assets/images/icon-devices.png";
+import iconCleanCode from "../../assets/images/icon-clean-code.png";
 
 const highlights = [
   {
-    icon: Rocket,
+    image: iconLaunch,
     text: "10+ applications released in App Store / Google Play",
     color: "text-rose-400",
     from: "from-rose-500/20",
     to: "to-orange-500/20",
-    border: "group-hover:border-rose-500/50"
+    border: "group-hover:border-rose-500/50",
+    glow: "shadow-rose-500/20"
   },
   {
-    icon: Layers,
+    image: iconArchitecture,
     text: "Projects from scratch: architecture → release → support",
     color: "text-amber-400",
     from: "from-amber-500/20",
     to: "to-yellow-500/20",
-    border: "group-hover:border-amber-500/50"
+    border: "group-hover:border-amber-500/50",
+    glow: "shadow-amber-500/20"
   },
   {
-    icon: Briefcase,
+    image: iconLeadership,
     text: "Team Lead & architectural decision making",
     color: "text-emerald-400",
     from: "from-emerald-500/20",
     to: "to-teal-500/20",
-    border: "group-hover:border-emerald-500/50"
+    border: "group-hover:border-emerald-500/50",
+    glow: "shadow-emerald-500/20"
   },
   {
-    icon: Monitor,
+    image: iconDevices,
     text: "Mobile + Web + TV apps expertise",
     color: "text-blue-400",
     from: "from-blue-500/20",
     to: "to-cyan-500/20",
-    border: "group-hover:border-blue-500/50"
+    border: "group-hover:border-blue-500/50",
+    glow: "shadow-blue-500/20"
   },
   {
-    icon: Cpu,
+    image: iconCleanCode,
     text: "Clean Architecture & Scalable Solutions",
     color: "text-violet-400",
     from: "from-violet-500/20",
     to: "to-purple-500/20",
-    border: "group-hover:border-violet-500/50"
+    border: "group-hover:border-violet-500/50",
+    glow: "shadow-violet-500/20"
   }
 ];
 
@@ -88,48 +100,40 @@ function TechCard({ item, index }: { item: any; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative h-full bg-slate-900/40 border border-white/5 overflow-hidden"
+      className="group relative h-full"
     >
-      {/* Tech Borders - Corners */}
-      <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-slate-600 transition-colors group-hover:border-white/50"></div>
-      <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-slate-600 transition-colors group-hover:border-white/50"></div>
-      <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-slate-600 transition-colors group-hover:border-white/50"></div>
-      <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-slate-600 transition-colors group-hover:border-white/50"></div>
+      <div className={`relative z-10 h-full p-8 flex flex-col items-center text-center bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:border-white/20 hover:shadow-2xl ${item.glow} hover:shadow-[0_0_40px_-10px_rgba(var(--tw-shadow-color),0.3)]`}>
+        
+        {/* Top Glow Gradient */}
+        <div className={`absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+        <div className={`absolute top-0 inset-x-0 h-24 bg-gradient-to-b ${item.from} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
-      {/* Scanning Line Effect */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 animate-scan"></div>
-      </div>
-
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
-
-      <div className="relative z-10 p-6 flex flex-col h-full">
-        {/* Header with Tech ID */}
-        <div className="flex justify-between items-start mb-6">
-          <div className={`p-3 rounded-xl bg-slate-950 border border-white/10 ${item.color} shadow-[0_0_20px_rgba(0,0,0,0.3)] group-hover:scale-110 transition-transform duration-300`}>
-            <item.icon className="w-8 h-8" />
-          </div>
-          <span className="text-[10px] font-mono text-slate-600 group-hover:text-cyan-500 transition-colors tracking-widest uppercase border border-white/5 px-2 py-1 rounded bg-slate-950/50">
-            SYS.0{index + 1}
-          </span>
+        {/* 3D Icon Container */}
+        <div className="relative mb-6 transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+          <div className={`absolute inset-0 bg-white/20 blur-2xl rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
+          <img 
+            src={item.image} 
+            alt={item.text}
+            className="w-32 h-32 object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+          />
         </div>
 
         {/* Content */}
-        <div className="mb-6">
-          <h4 className="text-xl font-bold text-slate-200 mb-3 group-hover:text-white transition-colors">
+        <div className="relative z-10 flex flex-col h-full w-full">
+          <h4 className="text-xl font-bold text-white mb-4 leading-tight">
             {item.text}
           </h4>
-          <p className="text-sm text-slate-400 leading-relaxed">
+          
+          <p className="text-sm text-slate-400 leading-relaxed mb-6">
             Advanced implementation and scaling of {item.text.toLowerCase().split(' ')[0]} systems.
           </p>
-        </div>
-        
-        {/* Bottom Link Style */}
-        <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between group-hover:border-cyan-500/30 transition-colors">
-           <span className="text-sm font-medium text-slate-400 group-hover:text-cyan-400 transition-colors flex items-center gap-2">
-             Explore Details <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-           </span>
+          
+          {/* Bottom Link Style */}
+          <div className="mt-auto flex justify-center">
+             <span className={`text-sm font-semibold ${item.color} flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-all`}>
+               Explore Details <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+             </span>
+          </div>
         </div>
       </div>
     </motion.div>
