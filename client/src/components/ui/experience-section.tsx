@@ -1,59 +1,42 @@
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { Briefcase, Layers, Rocket, Monitor, Cpu, CheckCircle, ArrowRight, Code, Database, Globe } from "lucide-react";
 import { useState } from "react";
-
-// Import 3D generated icons
-import iconLaunch from "../../assets/images/icon-launch.png";
-import iconArchitecture from "../../assets/images/icon-architecture.png";
-import iconLeadership from "../../assets/images/icon-leadership.png";
-import iconDevices from "../../assets/images/icon-devices.png";
-import iconCleanCode from "../../assets/images/icon-clean-code.png";
 
 const highlights = [
   {
-    image: iconLaunch,
+    icon: Rocket,
     text: "10+ applications released in App Store / Google Play",
-    color: "text-rose-400",
-    from: "from-rose-500/20",
-    to: "to-orange-500/20",
-    border: "group-hover:border-rose-500/50",
-    glow: "shadow-rose-500/20"
+    color: "group-hover:text-rose-400",
+    bg: "group-hover:bg-rose-500/10",
+    border: "group-hover:border-rose-500/20"
   },
   {
-    image: iconArchitecture,
+    icon: Layers,
     text: "Projects from scratch: architecture → release → support",
-    color: "text-amber-400",
-    from: "from-amber-500/20",
-    to: "to-yellow-500/20",
-    border: "group-hover:border-amber-500/50",
-    glow: "shadow-amber-500/20"
+    color: "group-hover:text-amber-400",
+    bg: "group-hover:bg-amber-500/10",
+    border: "group-hover:border-amber-500/20"
   },
   {
-    image: iconLeadership,
+    icon: Briefcase,
     text: "Team Lead & architectural decision making",
-    color: "text-emerald-400",
-    from: "from-emerald-500/20",
-    to: "to-teal-500/20",
-    border: "group-hover:border-emerald-500/50",
-    glow: "shadow-emerald-500/20"
+    color: "group-hover:text-emerald-400",
+    bg: "group-hover:bg-emerald-500/10",
+    border: "group-hover:border-emerald-500/20"
   },
   {
-    image: iconDevices,
+    icon: Monitor,
     text: "Mobile + Web + TV apps expertise",
-    color: "text-blue-400",
-    from: "from-blue-500/20",
-    to: "to-cyan-500/20",
-    border: "group-hover:border-blue-500/50",
-    glow: "shadow-blue-500/20"
+    color: "group-hover:text-blue-400",
+    bg: "group-hover:bg-blue-500/10",
+    border: "group-hover:border-blue-500/20"
   },
   {
-    image: iconCleanCode,
+    icon: Cpu,
     text: "Clean Architecture & Scalable Solutions",
-    color: "text-violet-400",
-    from: "from-violet-500/20",
-    to: "to-purple-500/20",
-    border: "group-hover:border-violet-500/50",
-    glow: "shadow-violet-500/20"
+    color: "group-hover:text-violet-400",
+    bg: "group-hover:bg-violet-500/10",
+    border: "group-hover:border-violet-500/20"
   }
 ];
 
@@ -100,41 +83,39 @@ function TechCard({ item, index }: { item: any; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative h-full"
+      className="h-full"
     >
-      <div className={`relative z-10 h-full p-8 flex flex-col items-center text-center bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:border-white/20 hover:shadow-2xl ${item.glow} hover:shadow-[0_0_40px_-10px_rgba(var(--tw-shadow-color),0.3)]`}>
-        
-        {/* Top Glow Gradient */}
-        <div className={`absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-        <div className={`absolute top-0 inset-x-0 h-24 bg-gradient-to-b ${item.from} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+      <div className={`group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 p-6 flex flex-col transition-all duration-300 hover:border-white/10 ${item.bg}`}>
+        {/* Minimalist Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
-        {/* 3D Icon Container */}
-        <div className="relative mb-6 transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-500 ease-out">
-          <div className={`absolute inset-0 bg-white/20 blur-2xl rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-          <img 
-            src={item.image} 
-            alt={item.text}
-            className="w-32 h-32 object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
-          />
-        </div>
+        <div className="relative z-10 flex flex-col h-full">
+          {/* Header */}
+          <div className="flex justify-between items-start mb-6">
+            <div className={`p-2 rounded-md bg-white/5 border border-white/5 transition-colors duration-300 ${item.color} ${item.border}`}>
+              <item.icon className="w-5 h-5" strokeWidth={1.5} />
+            </div>
+            <div className="font-mono text-[10px] text-slate-600 tracking-wider">
+              0{index + 1}
+            </div>
+          </div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col h-full w-full">
-          <h4 className="text-xl font-bold text-white mb-4 leading-tight">
-            {item.text}
-          </h4>
+          {/* Text Content */}
+          <div className="mb-4">
+            <h4 className="text-lg font-medium text-slate-200 group-hover:text-white transition-colors duration-300 leading-snug">
+              {item.text}
+            </h4>
+          </div>
           
-          <p className="text-sm text-slate-400 leading-relaxed mb-6">
-            Advanced implementation and scaling of {item.text.toLowerCase().split(' ')[0]} systems.
-          </p>
-          
-          {/* Bottom Link Style */}
-          <div className="mt-auto flex justify-center">
-             <span className={`text-sm font-semibold ${item.color} flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-all`}>
-               Explore Details <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-             </span>
+          <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+            <div className="h-px w-8 bg-slate-700 group-hover:w-16 group-hover:bg-slate-500 transition-all duration-500"></div>
+            <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-slate-400 group-hover:-rotate-45 transition-all duration-300" strokeWidth={1.5} />
           </div>
         </div>
+        
+        {/* Hover Corner Accents */}
+        <div className="absolute top-0 right-0 w-0 h-0 border-t-[1px] border-r-[1px] border-transparent group-hover:border-white/20 group-hover:w-4 group-hover:h-4 transition-all duration-300"></div>
+        <div className="absolute bottom-0 left-0 w-0 h-0 border-b-[1px] border-l-[1px] border-transparent group-hover:border-white/20 group-hover:w-4 group-hover:h-4 transition-all duration-300"></div>
       </div>
     </motion.div>
   );
@@ -165,29 +146,29 @@ export function ExperienceSection() {
               <TechCard key={index} item={item} index={index} />
             ))}
             
-            {/* Stats Card - Tech Style */}
+            {/* Stats Card - Minimal Style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              className="group relative h-full bg-gradient-to-br from-violet-900/20 to-slate-900/40 border border-white/5 overflow-hidden flex flex-col items-center justify-center min-h-[200px]"
+              className="group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center min-h-[200px]"
             >
-              {/* Animated Rings Background */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                 <div className="w-40 h-40 border border-cyan-500 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                 <div className="absolute w-32 h-32 border border-violet-500 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+              {/* Minimal Circle Background */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-5">
+                 <div className="w-32 h-32 border border-white rounded-full"></div>
+                 <div className="absolute w-24 h-24 border border-white rounded-full border-dashed"></div>
               </div>
 
               <div className="relative z-10 text-center">
-                 <div className="font-mono text-xs text-cyan-400 mb-2 tracking-widest">EXP_LEVEL</div>
-                 <h3 className="text-5xl font-bold text-white mb-1 tracking-tighter">5+</h3>
-                 <p className="text-slate-400 text-sm uppercase tracking-wide">Years Active</p>
+                 <div className="font-mono text-[10px] text-slate-500 mb-2 tracking-widest uppercase">Experience</div>
+                 <h3 className="text-6xl font-light text-white mb-1 tracking-tighter">5+</h3>
+                 <p className="text-slate-500 text-xs uppercase tracking-widest">Years</p>
               </div>
 
-              {/* Tech Corners */}
-              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-cyan-500/50"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-cyan-500/50"></div>
+              {/* Minimal Corners */}
+              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20"></div>
             </motion.div>
           </div>
         </div>
