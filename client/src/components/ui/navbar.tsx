@@ -2,17 +2,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, BookOpen, HeartPulse, Plane, Home as HomeIcon, Tv, Code, User, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "wouter";
 
 const menuItems = [
   {
     title: "Projects",
-    href: "#projects",
+    href: "/#projects",
     dropdown: [
-      { title: "Education", icon: BookOpen, href: "#project-education" },
-      { title: "Healthcare", icon: HeartPulse, href: "#project-healthcare" },
-      { title: "Travel", icon: Plane, href: "#project-travel" },
-      { title: "Smart Home", icon: HomeIcon, href: "#project-smarthome" },
-      { title: "Media", icon: Tv, href: "#project-media" },
+      { title: "Education", icon: BookOpen, href: "/#project-education" },
+      { title: "Healthcare", icon: HeartPulse, href: "/#project-healthcare" },
+      { title: "Travel", icon: Plane, href: "/#project-travel" },
+      { title: "Smart Home", icon: HomeIcon, href: "/#project-smarthome" },
+      { title: "Media", icon: Tv, href: "/#project-media" },
     ]
   },
   {
@@ -22,7 +23,7 @@ const menuItems = [
   },
   {
     title: "Experience",
-    href: "#experience",
+    href: "/#experience",
     icon: Briefcase
   }
 ];
@@ -31,6 +32,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,11 +53,13 @@ export function Navbar() {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
-          <a href="#" className="text-2xl font-bold font-mono tracking-tighter group">
-            <span className="text-violet-500">&lt;</span>
-            <span className="text-white group-hover:text-cyan-400 transition-colors">Dev</span>
-            <span className="text-violet-500">/&gt;</span>
-          </a>
+          <Link href="/">
+            <a className="text-2xl font-bold font-mono tracking-tighter group cursor-pointer">
+              <span className="text-violet-500">&lt;</span>
+              <span className="text-white group-hover:text-cyan-400 transition-colors">Dev</span>
+              <span className="text-violet-500">/&gt;</span>
+            </a>
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8">
@@ -66,14 +70,19 @@ export function Navbar() {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <a 
-                  href={item.href}
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-white font-medium transition-colors py-2"
-                >
-                  {item.icon && <item.icon className="w-4 h-4" />}
-                  {item.title}
-                  {item.dropdown && <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />}
-                </a>
+                <Link href={item.href}>
+                  <a 
+                    className={`flex items-center gap-1.5 font-medium transition-colors py-2 ${
+                      location === item.href 
+                        ? "text-cyan-400" 
+                        : "text-slate-300 hover:text-white"
+                    }`}
+                  >
+                    {item.icon && <item.icon className="w-4 h-4" />}
+                    {item.title}
+                    {item.dropdown && <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />}
+                  </a>
+                </Link>
 
                 {/* Dropdown Menu */}
                 {item.dropdown && (
@@ -90,18 +99,18 @@ export function Navbar() {
                         
                         <div className="relative flex flex-col gap-1">
                           {item.dropdown.map((subItem, subIndex) => (
-                            <a
-                              key={subIndex}
-                              href={subItem.href}
-                              className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/5 transition-colors group/item"
-                            >
-                              <div className="p-2 rounded-md bg-white/5 group-hover/item:bg-violet-500/20 group-hover/item:text-violet-300 text-slate-400 transition-colors">
-                                <subItem.icon className="w-5 h-5" />
-                              </div>
-                              <span className="text-sm font-medium text-slate-200 group-hover/item:text-white">
-                                {subItem.title}
-                              </span>
-                            </a>
+                            <Link key={subIndex} href={subItem.href}>
+                              <a
+                                className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/5 transition-colors group/item"
+                              >
+                                <div className="p-2 rounded-md bg-white/5 group-hover/item:bg-violet-500/20 group-hover/item:text-violet-300 text-slate-400 transition-colors">
+                                  <subItem.icon className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm font-medium text-slate-200 group-hover/item:text-white">
+                                  {subItem.title}
+                                </span>
+                              </a>
+                            </Link>
                           ))}
                         </div>
                       </motion.div>
@@ -149,26 +158,29 @@ export function Navbar() {
               <div className="flex flex-col gap-6 flex-1 overflow-y-auto">
                 {menuItems.map((item, index) => (
                   <div key={index} className="space-y-4">
-                    <a
-                      href={item.href}
-                      onClick={() => !item.dropdown && setMobileMenuOpen(false)}
-                      className="text-2xl font-bold text-white flex items-center gap-3"
-                    >
-                      {item.title}
-                    </a>
+                    <Link href={item.href}>
+                      <a
+                        onClick={() => !item.dropdown && setMobileMenuOpen(false)}
+                        className={`text-2xl font-bold flex items-center gap-3 ${
+                          location === item.href ? "text-cyan-400" : "text-white"
+                        }`}
+                      >
+                        {item.title}
+                      </a>
+                    </Link>
                     
                     {item.dropdown && (
                       <div className="grid grid-cols-1 gap-2 pl-4 border-l-2 border-white/10 ml-2">
                         {item.dropdown.map((subItem, subIndex) => (
-                          <a
-                            key={subIndex}
-                            href={subItem.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="flex items-center gap-3 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 transition-all"
-                          >
-                            <subItem.icon className="w-5 h-5 text-violet-400" />
-                            <span className="text-lg text-slate-200">{subItem.title}</span>
-                          </a>
+                          <Link key={subIndex} href={subItem.href}>
+                            <a
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-3 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 transition-all"
+                            >
+                              <subItem.icon className="w-5 h-5 text-violet-400" />
+                              <span className="text-lg text-slate-200">{subItem.title}</span>
+                            </a>
+                          </Link>
                         ))}
                       </div>
                     )}
