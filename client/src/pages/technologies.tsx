@@ -233,7 +233,7 @@ export default function Technologies() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative bg-[#0B0F19] border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 shadow-2xl"
+              className="relative bg-[#0B0F19]/50 backdrop-blur-md border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 shadow-2xl"
             >
               {/* Background Gradients */}
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
