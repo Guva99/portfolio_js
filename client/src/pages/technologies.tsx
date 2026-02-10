@@ -76,12 +76,12 @@ export default function Technologies() {
         <div className="container mx-auto px-4 pt-32 pb-24">
           {/* Hero Section */}
           <div className="max-w-6xl mx-auto mb-24 relative">
-            <div className="relative bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="relative bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-5">
               {/* Background Glow */}
               <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-900/20 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
               {/* Text Content */}
-              <div className="relative z-10 text-left max-w-2xl">
+              <div className="relative z-10 text-left max-w-2xl pr-0">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
