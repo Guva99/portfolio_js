@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import mobileAnimation from "@/assets/animations/mobile-devices.json";
 
 // Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
-import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap } from "lucide-react";
+import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase } from "lucide-react";
 
 // Mock data for tech stack
 const techStack = [
@@ -15,6 +15,39 @@ const techStack = [
   { name: "Rowy", icon: FileJson, color: "text-purple-400" }, // Placeholder
   { name: "Supabase", icon: Cloud, color: "text-emerald-400" },
   { name: "Google Analytics", icon: BarChart, color: "text-orange-400" }
+];
+
+const expertiseAreas = [
+  {
+    title: "Startup Ecosystems",
+    description: "Helping founders navigate from zero to one. I build scalable architectures that allow rapid iteration and growth without technical debt.",
+    icon: Rocket,
+    color: "text-orange-500"
+  },
+  {
+    title: "Cross-Platform Mastery",
+    description: "Unified development for iOS, Android, and Web. Native performance with 40% less development time and consistent brand identity.",
+    icon: MonitorSmartphone,
+    color: "text-cyan-500"
+  },
+  {
+    title: "Rapid MVP Delivery",
+    description: "Speed to market matters. I prioritize core value propositions to validate business hypotheses with functional, polished prototypes.",
+    icon: Zap,
+    color: "text-yellow-500"
+  },
+  {
+    title: "Enterprise Scale",
+    description: "Robust solutions for complex domains. Clean architecture, automated testing, and CI/CD pipelines for mission-critical applications.",
+    icon: Server,
+    color: "text-purple-500"
+  },
+  {
+    title: "Business Automation",
+    description: "Digitalizing workflows. Custom internal tools and dashboards that optimize operations and provide actionable data insights.",
+    icon: Briefcase,
+    color: "text-emerald-500"
+  }
 ];
 
 export default function Technologies() {
@@ -113,6 +146,41 @@ export default function Technologies() {
                   </motion.div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* Areas of Expertise (New Section) */}
+          <div className="max-w-6xl mx-auto mb-32">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Areas of <span className="text-[#00d3f3]">Expertise</span></h2>
+            <p className="text-slate-400 text-center max-w-2xl mx-auto mb-16 text-lg">
+              Delivering specialized development solutions tailored to diverse business needs and project scales.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-6">
+              {expertiseAreas.map((area, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-slate-900/60 hover:border-cyan-500/20 transition-all group flex flex-col items-center text-center"
+                >
+                  <div className={`w-14 h-14 rounded-xl bg-slate-800/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-white/5 group-hover:border-${area.color.split('-')[1]}-500/30`}>
+                    <area.icon className={`w-7 h-7 ${area.color}`} />
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{area.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                    {area.description}
+                  </p>
+                  
+                  <div className="flex items-center gap-2 text-sm font-bold text-[#00d3f3] opacity-80 group-hover:opacity-100 transition-opacity mt-auto cursor-pointer">
+                    <span>Explore</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
 
