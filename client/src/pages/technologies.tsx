@@ -227,48 +227,41 @@ export default function Technologies() {
           </div>
 
 
-          {/* Enhanced Call to Action */}
-          <div className="relative max-w-5xl mx-auto mt-20 mb-20">
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 blur-3xl rounded-3xl -z-10"></div>
-            
+          {/* Redesigned Call to Action */}
+          <div className="relative max-w-6xl mx-auto mt-20 mb-20 px-4">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-12 md:p-20 text-center overflow-hidden"
+              className="relative bg-[#0B0F19] border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 shadow-2xl"
             >
+              {/* Background Gradients */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-600/10 blur-[80px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+              
               {/* Decorative elements */}
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent"></div>
-              
-              <div className="absolute -right-20 -top-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl opacity-50"></div>
-              <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl opacity-50"></div>
-              
-              {/* Content */}
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="mb-8 p-4 bg-slate-800/50 rounded-2xl border border-white/5 shadow-inner rotate-3 hover:rotate-6 transition-transform duration-300">
-                  <Rocket className="w-10 h-10 text-cyan-400" />
-                </div>
-                
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                  Ready to bring your <br className="hidden md:block" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">ideas to life?</span>
+              <div className="absolute right-20 bottom-10 w-16 h-16 border border-white/5 rounded-full opacity-50 pointer-events-none"></div>
+              <div className="absolute right-12 bottom-16 w-8 h-8 border border-white/5 rounded-full opacity-50 pointer-events-none"></div>
+
+              {/* Text Content */}
+              <div className="relative z-10 text-center md:text-left max-w-2xl">
+                <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight uppercase">
+                  Ready to create <br />
+                  <span className="text-[#8b5cf6]">a unique experience ?</span> <br />
+                  Let's do it together!
                 </h2>
-                
-                <p className="text-slate-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-                  Let's collaborate to build scalable, high-performance applications that deliver exceptional user experiences across all platforms.
-                </p>
-                
+              </div>
+              
+              {/* Button */}
+              <div className="relative z-10 flex-shrink-0">
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="/#experience"
-                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-950 font-bold text-lg rounded-full overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b5cf6] text-white font-bold text-lg rounded-xl hover:bg-[#7c3aed] transition-colors shadow-lg shadow-violet-500/20"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-violet-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                  <span className="relative z-10">Start a Project</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                  <Briefcase className="w-5 h-5 fill-current" />
+                  <span>Contact me now</span>
                 </motion.a>
               </div>
             </motion.div>
