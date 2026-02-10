@@ -175,7 +175,7 @@ export function ExperienceSection() {
 
         {/* Experience Section */}
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">Work <span className="text-violet-500">Experience</span></h2>
+          <h2 className="text-4xl font-bold mb-12 text-center">Work <span className="text-[#00d3f3]">Experience</span></h2>
           
           <div className="relative border-l-2 border-slate-800 ml-3 md:ml-6 space-y-12">
             {experiences.map((exp, index) => (
