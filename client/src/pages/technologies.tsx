@@ -28,32 +28,50 @@ export default function Technologies() {
       
         <div className="container mx-auto px-4 pt-32 pb-24">
           {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-24 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block p-4 rounded-full bg-cyan-950/30 border border-cyan-500/20 mb-6"
-            >
-              <Smartphone className="w-12 h-12 text-cyan-400" />
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
-            >
-              Mastering <span className="text-[#00d3f3] text-glow">Flutter</span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto"
-            >
-              Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
-            </motion.p>
+          <div className="max-w-6xl mx-auto mb-24 relative">
+            <div className="relative bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
+              {/* Background Glow */}
+              <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-900/20 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+              {/* Text Content */}
+              <div className="relative z-10 text-left max-w-2xl">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="inline-block p-3 rounded-xl bg-cyan-950/30 border border-cyan-500/20 mb-6"
+                >
+                  <Smartphone className="w-8 h-8 text-cyan-400" />
+                </motion.div>
+                
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-tight">
+                  MASTERING <br />
+                  <span className="text-[#00d3f3]">FLUTTER DEVELOPMENT</span>
+                </h1>
+                
+                <p className="text-xl text-slate-400 leading-relaxed">
+                  Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
+                </p>
+              </div>
+
+              {/* Visual Section */}
+              <div className="relative z-10 flex flex-col items-center justify-center min-w-[200px]">
+                 <div className="relative w-48 h-48 md:w-64 md:h-64">
+                    <div className="absolute inset-0 bg-cyan-500/20 blur-[60px] rounded-full animate-pulse"></div>
+                    <div className="relative w-full h-full border border-white/10 rounded-full flex items-center justify-center bg-black/20 backdrop-blur-sm">
+                      <div className="w-3/4 h-3/4 border border-cyan-500/30 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_#22d3ee]"></div>
+                      </div>
+                      <Code className="w-20 h-20 text-white relative z-10" />
+                    </div>
+                 </div>
+                 
+                 {/* Decorative Circles */}
+                 <div className="absolute -bottom-10 -right-10 w-32 h-32 opacity-20">
+                    <div className="absolute right-0 bottom-0 w-16 h-16 rounded-full border border-slate-400"></div>
+                    <div className="absolute right-8 bottom-4 w-12 h-12 rounded-full border border-slate-400"></div>
+                 </div>
+              </div>
+            </div>
           </div>
 
           {/* What is Flutter Section */}
