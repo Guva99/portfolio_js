@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, Layers, Rocket, Monitor, Cpu, CheckCircle, ArrowRight, Code, Database, Globe } from "lucide-react";
+import { Briefcase, Layers, Rocket, Monitor, Cpu, CheckCircle, ArrowRight, Code, Database, Globe, MessageSquare } from "lucide-react";
 import { useState } from "react";
 
 const highlights = [
@@ -214,14 +214,44 @@ export function ExperienceSection() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-full text-white font-bold text-lg shadow-xl shadow-violet-500/20 hover:shadow-violet-500/40 transition-shadow"
-            >
-              Contact Me For Work
-            </motion.button>
+          <div className="mt-32 relative max-w-6xl mx-auto">
+            <div className="relative bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
+              {/* Background Glow */}
+              <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-900/20 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+              {/* Text Content */}
+              <div className="relative z-10 text-left">
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight">
+                  READY TO CREATE
+                </h3>
+                <h3 className="text-3xl md:text-5xl font-bold text-[#9d74f5] mb-3 tracking-tight relative inline-block">
+                  A UNIQUE EXPERIENCE ?
+                  {/* Decorative Plus */}
+                  <div className="absolute -left-16 top-1/2 -translate-y-1/2 text-white/10 text-9xl font-light pointer-events-none select-none blur-[2px] hidden md:block">+</div>
+                </h3>
+                <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+                  LET'S DO IT TOGETHER!
+                </h3>
+              </div>
+
+              {/* Button Section */}
+              <div className="relative z-10 flex flex-col items-center gap-8 min-w-[200px]">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center gap-3 px-8 py-4 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white rounded-2xl font-semibold text-lg transition-all shadow-[0_0_30px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_0_40px_-5px_rgba(139,92,246,0.5)]"
+                >
+                  <MessageSquare className="w-5 h-5 fill-white" />
+                  <span>Contact me now</span>
+                </motion.button>
+                
+                {/* Decorative Circles */}
+                <div className="relative w-12 h-8 opacity-40">
+                  <div className="absolute left-0 top-0 w-6 h-6 rounded-full border border-slate-400"></div>
+                  <div className="absolute left-3 top-2 w-6 h-6 rounded-full border border-slate-400"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
