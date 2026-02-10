@@ -164,16 +164,30 @@ export default function Technologies() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-slate-900/60 hover:border-cyan-500/20 transition-all group flex flex-col items-center text-center"
+                  className="relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-slate-900/60 hover:border-cyan-500/30 transition-all duration-500 group flex flex-col items-center text-center overflow-hidden"
                 >
-                  <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <area.icon className={`w-10 h-10 ${area.color}`} />
+                  {/* Grid Pattern Background */}
+                  <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none" 
+                       style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{area.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                    {area.description}
-                  </p>
+                  {/* Corner Accents */}
+                  <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-white/0 group-hover:border-cyan-500/50 transition-all duration-500 rounded-tl-lg"></div>
+                  <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-white/0 group-hover:border-cyan-500/50 transition-all duration-500 rounded-tr-lg"></div>
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-white/0 group-hover:border-cyan-500/50 transition-all duration-500 rounded-bl-lg"></div>
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-white/0 group-hover:border-cyan-500/50 transition-all duration-500 rounded-br-lg"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-col items-center h-full">
+                    <div className="mb-6 group-hover:scale-110 transition-transform duration-300 filter drop-shadow-[0_0_10px_rgba(0,211,243,0.2)]">
+                      <area.icon className={`w-12 h-12 ${area.color}`} strokeWidth={1.5} />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors tracking-wide">{area.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-2 flex-grow">
+                      {area.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
