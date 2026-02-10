@@ -227,7 +227,7 @@ export default function Technologies() {
           </div>
 
 
-          {/* Redesigned Call to Action */}
+          {/* Call to Action */}
           <div className="relative max-w-6xl mx-auto mt-20 mb-20 px-4">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
@@ -244,12 +244,14 @@ export default function Technologies() {
               <div className="absolute right-12 bottom-16 w-8 h-8 border border-white/5 rounded-full opacity-50 pointer-events-none"></div>
 
               {/* Text Content */}
-              <div className="relative z-10 text-center md:text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight uppercase">
-                  Ready to create <br />
-                  <span className="text-[#8b5cf6]">a unique experience ?</span> <br />
-                  Let's do it together!
+              <div className="relative z-10 text-center md:text-left max-w-3xl">
+                <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                  Ready to bring your <br />
+                  <span className="text-[#8b5cf6]">ideas to life?</span>
                 </h2>
+                <p className="text-slate-400 text-lg leading-relaxed mb-0">
+                  Let's collaborate to build scalable, high-performance applications that deliver exceptional user experiences across all platforms.
+                </p>
               </div>
               
               {/* Button */}
@@ -260,8 +262,8 @@ export default function Technologies() {
                   href="/#experience"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b5cf6] text-white font-bold text-lg rounded-xl hover:bg-[#7c3aed] transition-colors shadow-lg shadow-violet-500/20"
                 >
-                  <Briefcase className="w-5 h-5 fill-current" />
-                  <span>Contact me now</span>
+                  <Rocket className="w-5 h-5 fill-current" />
+                  <span>Start a Project</span>
                 </motion.a>
               </div>
             </motion.div>
