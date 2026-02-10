@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import mobileAnimation from "@/assets/animations/mobile-devices.json";
 
 // Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
-import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase } from "lucide-react";
+import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase, Globe, Monitor, Tv, Laptop } from "lucide-react";
 
 // Mock data for tech stack
 const techStack = [
@@ -87,17 +87,48 @@ export default function Technologies() {
                   animate={{ opacity: 1, y: 0 }}
                   className="inline-block p-3 rounded-xl bg-cyan-950/30 border border-cyan-500/20 mb-6"
                 >
-                  <Smartphone className="w-8 h-8 text-cyan-400" />
+                  <Code className="w-8 h-8 text-cyan-400" />
                 </motion.div>
                 
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-tight">
-                  MASTERING <br />
-                  <span className="text-[#00d3f3]">FLUTTER DEVELOPMENT</span>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+                  Flutter Application <br />
+                  <span className="text-[#00d3f3]">Development</span>
                 </h1>
                 
-                <p className="text-xl text-slate-400 leading-relaxed">
+                <p className="text-xl text-slate-400 leading-relaxed mb-8">
                   Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
                 </p>
+
+                {/* Platform Icons */}
+                <div className="flex flex-wrap gap-6 items-center">
+                  <div className="flex flex-col items-center gap-2 group">
+                    <div className="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center border border-white/10 group-hover:border-cyan-500/50 group-hover:bg-cyan-950/30 transition-all">
+                      <Smartphone className="w-5 h-5 text-slate-300 group-hover:text-cyan-400 transition-colors" />
+                    </div>
+                    <span className="text-xs text-slate-500 font-medium group-hover:text-cyan-400/80 transition-colors">Mobile</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center gap-2 group">
+                    <div className="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center border border-white/10 group-hover:border-cyan-500/50 group-hover:bg-cyan-950/30 transition-all">
+                      <Globe className="w-5 h-5 text-slate-300 group-hover:text-cyan-400 transition-colors" />
+                    </div>
+                    <span className="text-xs text-slate-500 font-medium group-hover:text-cyan-400/80 transition-colors">Web</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center gap-2 group">
+                    <div className="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center border border-white/10 group-hover:border-cyan-500/50 group-hover:bg-cyan-950/30 transition-all">
+                      <Monitor className="w-5 h-5 text-slate-300 group-hover:text-cyan-400 transition-colors" />
+                    </div>
+                    <span className="text-xs text-slate-500 font-medium group-hover:text-cyan-400/80 transition-colors">Desktop</span>
+                  </div>
+
+                  <div className="flex flex-col items-center gap-2 group">
+                    <div className="w-12 h-12 rounded-full bg-slate-800/50 flex items-center justify-center border border-white/10 group-hover:border-cyan-500/50 group-hover:bg-cyan-950/30 transition-all">
+                      <Tv className="w-5 h-5 text-slate-300 group-hover:text-cyan-400 transition-colors" />
+                    </div>
+                    <span className="text-xs text-slate-500 font-medium group-hover:text-cyan-400/80 transition-colors">TV</span>
+                  </div>
+                </div>
               </div>
 
               {/* Visual Section */}
