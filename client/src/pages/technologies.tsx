@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap } from "lucide-react";
+import Lottie from "lottie-react";
 
 // Import new asset
-import heroDevices from "@/assets/images/flutter-devices-hero.png";
+import mobileAnimation from "@/assets/animations/mobile-devices.json";
 
 export default function Technologies() {
   return (
@@ -61,14 +62,15 @@ export default function Technologies() {
                  <div className="relative w-64 h-64 md:w-80 md:h-80">
                     <div className="absolute inset-0 bg-cyan-500/20 blur-[60px] rounded-full animate-pulse"></div>
                     <motion.div 
-                      animate={{ y: [0, -10, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.8 }}
                       className="relative w-full h-full"
                     >
-                      <img 
-                        src={heroDevices} 
-                        alt="Mobile Applications" 
-                        className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                      <Lottie 
+                        animationData={mobileAnimation} 
+                        loop={true}
+                        className="w-full h-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                       />
                     </motion.div>
                  </div>
