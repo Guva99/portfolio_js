@@ -17,7 +17,7 @@ const menuItems = [
   },
   {
     title: "Technologies",
-    href: "#skills",
+    href: "/technologies",
     icon: Code
   },
   {
