@@ -93,7 +93,7 @@ export default function Technologies() {
                   <span className="text-[#00d3f3]">Development</span>
                 </h1>
                 
-                <p className="text-xl text-slate-400 leading-relaxed mb-8">
+                <p className="text-xl text-slate-400 leading-relaxed mb-8 pr-[30px]">
                   Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
                 </p>
 
