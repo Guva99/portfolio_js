@@ -2,10 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import heroPortrait from "@/assets/images/hero-portrait.webp";
 import bgTexture from "@/assets/images/bg-texture.webp";
-import geoPlus from "@/assets/images/geo-plus.png";
-import geoTriangle from "@/assets/images/geo-triangle.png";
-import geoThunder from "@/assets/images/geo-thunder.png";
-import geoCircle from "@/assets/images/geo-circle.png";
 import { Download, ChevronRight } from "lucide-react";
 
 export function HeroSection() {
@@ -42,56 +38,6 @@ export function HeroSection() {
           }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen"
-        />
-
-        {/* Floating Geometric Elements (Images) */}
-        <motion.img 
-           src={geoPlus}
-           alt="Plus"
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 0.4, rotate: 360, y: [0, -20, 0] }}
-           transition={{ 
-             opacity: { duration: 1 },
-             rotate: { duration: 40, repeat: Infinity, ease: "linear" },
-             y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-           }}
-           className="absolute top-20 left-[20%] w-16 h-16 blur-[2px] opacity-40 mix-blend-overlay"
-        />
-        <motion.img 
-           src={geoTriangle}
-           alt="Triangle"
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 0.3, rotate: -360, y: [0, 30, 0] }}
-           transition={{ 
-             opacity: { duration: 1, delay: 0.5 },
-             rotate: { duration: 50, repeat: Infinity, ease: "linear" },
-             y: { duration: 7, repeat: Infinity, ease: "easeInOut" }
-           }}
-           className="absolute top-1/3 right-[15%] w-24 h-24 blur-[3px] opacity-30 mix-blend-overlay"
-        />
-        <motion.img 
-           src={geoThunder}
-           alt="Thunder"
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 0.4, rotate: 180, y: [0, -40, 0] }}
-           transition={{ 
-             opacity: { duration: 1, delay: 0.2 },
-             rotate: { duration: 35, repeat: Infinity, ease: "linear", repeatType: "reverse" },
-             y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-           }}
-           className="absolute bottom-1/3 left-[10%] w-20 h-20 blur-[2px] opacity-40 mix-blend-overlay"
-        />
-        <motion.img 
-           src={geoCircle}
-           alt="Circle"
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 0.3, rotate: 360, scale: [1, 1.1, 1] }}
-           transition={{ 
-             opacity: { duration: 1, delay: 0.8 },
-             rotate: { duration: 60, repeat: Infinity, ease: "linear" },
-             scale: { duration: 10, repeat: Infinity, ease: "easeInOut" }
-           }}
-           className="absolute bottom-20 right-[25%] w-28 h-28 blur-[4px] opacity-30 mix-blend-overlay"
         />
 
         <motion.img 
