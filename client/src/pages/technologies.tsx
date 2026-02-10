@@ -54,7 +54,6 @@ export default function Technologies() {
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
-
       {/* Gradient Balls Background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
@@ -68,7 +67,6 @@ export default function Technologies() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-30 animate-blob-2 animation-delay-4000"></div>
         </div>
       </div>
-      
       <div className="relative z-10">
         <BackgroundElements />
         <Navbar />
@@ -95,7 +93,7 @@ export default function Technologies() {
                   <span className="text-[#00d3f3]">Development</span>
                 </h1>
                 
-                <p className="text-xl text-slate-400 leading-relaxed mb-8">
+                <p className="text-xl text-slate-400 leading-relaxed mb-8 pl-[60px] pr-[60px]">
                   Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
                 </p>
 
