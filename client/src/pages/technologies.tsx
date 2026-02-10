@@ -166,8 +166,8 @@ export default function Technologies() {
                   transition={{ delay: index * 0.1 }}
                   className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-slate-900/60 hover:border-cyan-500/20 transition-all group flex flex-col items-center text-center"
                 >
-                  <div className={`w-14 h-14 rounded-xl bg-slate-800/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-white/5 group-hover:border-${area.color.split('-')[1]}-500/30`}>
-                    <area.icon className={`w-7 h-7 ${area.color}`} />
+                  <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <area.icon className={`w-10 h-10 ${area.color}`} />
                   </div>
                   
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{area.title}</h3>
