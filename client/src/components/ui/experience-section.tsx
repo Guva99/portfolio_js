@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, Layers, Rocket, Monitor, Smartphone, Cpu, CheckCircle } from "lucide-react";
+import { Briefcase, Layers, Rocket, Monitor, Smartphone, Cpu, CheckCircle, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 const highlights = [
@@ -106,31 +106,30 @@ function TechCard({ item, index }: { item: any; index: number }) {
 
       <div className="relative z-10 p-6 flex flex-col h-full">
         {/* Header with Tech ID */}
-        <div className="flex justify-between items-start mb-4">
-          <div className={`p-2 rounded bg-slate-950 border border-white/10 ${item.color} shadow-[0_0_15px_rgba(0,0,0,0.5)]`}>
-            <item.icon className="w-5 h-5" />
+        <div className="flex justify-between items-start mb-6">
+          <div className={`p-3 rounded-xl bg-slate-950 border border-white/10 ${item.color} shadow-[0_0_20px_rgba(0,0,0,0.3)] group-hover:scale-110 transition-transform duration-300`}>
+            <item.icon className="w-8 h-8" />
           </div>
-          <span className="text-[10px] font-mono text-slate-500 tracking-widest uppercase">
+          <span className="text-[10px] font-mono text-slate-600 group-hover:text-cyan-500 transition-colors tracking-widest uppercase border border-white/5 px-2 py-1 rounded bg-slate-950/50">
             SYS.0{index + 1}
           </span>
         </div>
 
         {/* Content */}
-        <div className="mt-auto">
-          <h4 className="text-slate-200 font-medium leading-snug group-hover:text-white transition-colors relative">
-            <span className="absolute -left-4 top-1 w-0.5 h-4 bg-slate-700 group-hover:bg-cyan-400 transition-colors"></span>
+        <div className="mb-6">
+          <h4 className="text-xl font-bold text-slate-200 mb-3 group-hover:text-white transition-colors">
             {item.text}
           </h4>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Advanced implementation and scaling of {item.text.toLowerCase().split(' ')[0]} systems.
+          </p>
         </div>
         
-        {/* Bottom Tech Decoration */}
-        <div className="mt-4 pt-4 border-t border-white/5 flex justify-between items-center opacity-50 group-hover:opacity-100 transition-opacity">
-           <div className="flex gap-1">
-             <div className="w-1 h-1 bg-slate-500 rounded-full"></div>
-             <div className="w-1 h-1 bg-slate-500 rounded-full"></div>
-             <div className="w-1 h-1 bg-slate-500 rounded-full"></div>
-           </div>
-           <div className="h-0.5 w-10 bg-gradient-to-r from-transparent via-slate-500 to-transparent"></div>
+        {/* Bottom Link Style */}
+        <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between group-hover:border-cyan-500/30 transition-colors">
+           <span className="text-sm font-medium text-slate-400 group-hover:text-cyan-400 transition-colors flex items-center gap-2">
+             Explore Details <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+           </span>
         </div>
       </div>
     </motion.div>
