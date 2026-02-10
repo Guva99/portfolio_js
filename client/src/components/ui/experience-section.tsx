@@ -237,7 +237,7 @@ export function ExperienceSection() {
           </div>
 
           {/* Button Section */}
-          <div className="relative z-10 flex flex-col items-center gap-8 min-w-[200px]">
+          <div className="relative z-10 flex flex-col items-center min-w-[200px]">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -248,7 +248,7 @@ export function ExperienceSection() {
             </motion.button>
             
             {/* Decorative Circles */}
-            <div className="relative w-12 h-8 opacity-40">
+            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-12 h-8 opacity-40">
               <div className="absolute left-0 top-0 w-6 h-6 rounded-full border border-slate-400"></div>
               <div className="absolute left-3 top-2 w-6 h-6 rounded-full border border-slate-400"></div>
             </div>
