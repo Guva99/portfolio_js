@@ -1,11 +1,15 @@
-import { motion } from "framer-motion";
-import { Navbar } from "@/components/ui/navbar";
-import { BackgroundElements } from "@/components/ui/background-elements";
-import { ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap } from "lucide-react";
-import Lottie from "lottie-react";
+// Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
+import { Database, Cloud, BarChart, Server, FileJson } from "lucide-react";
 
-// Import new asset
-import mobileAnimation from "@/assets/animations/mobile-devices.json";
+// Mock data for tech stack
+const techStack = [
+  { name: "Flutter", icon: Smartphone, color: "text-cyan-400" },
+  { name: "SQLite", icon: Database, color: "text-blue-400" },
+  { name: "Firebase", icon: Zap, color: "text-yellow-400" },
+  { name: "Rowy", icon: FileJson, color: "text-purple-400" }, // Placeholder
+  { name: "Supabase", icon: Cloud, color: "text-emerald-400" },
+  { name: "Google Analytics", icon: BarChart, color: "text-orange-400" }
+];
 
 export default function Technologies() {
   return (
@@ -80,6 +84,28 @@ export default function Technologies() {
                     <div className="absolute right-0 bottom-0 w-16 h-16 rounded-full border border-slate-400"></div>
                     <div className="absolute right-8 bottom-4 w-12 h-12 rounded-full border border-slate-400"></div>
                  </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tech Stack Strip */}
+          <div className="max-w-6xl mx-auto mb-32">
+            <h2 className="text-3xl font-bold text-center mb-12">My Tech <span className="text-[#00d3f3]">Stack</span></h2>
+            <div className="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-2xl py-8 px-4 overflow-hidden">
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                {techStack.map((tech, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-3 group cursor-default"
+                  >
+                    <tech.icon className={`w-6 h-6 ${tech.color} group-hover:scale-110 transition-transform duration-300`} />
+                    <span className="text-lg font-medium text-slate-300 group-hover:text-white transition-colors">{tech.name}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
