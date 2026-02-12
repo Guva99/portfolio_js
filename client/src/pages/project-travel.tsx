@@ -4,9 +4,9 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Activity, Map, Pill, Smartphone, Globe, Plane, ZoomIn, Users } from "lucide-react";
 import wowMainImage from "@/assets/images/wowtickets/main.png";
-import iconGooglePlay from "@/assets/images/icon-google-play.png";
-import iconAppStore from "@/assets/images/icon-app-store.png";
-import iconHuawei from "@/assets/images/icon-huawei.png";
+import iconGooglePlay from "@assets/Group_1770916804080.png";
+import iconAppStore from "@assets/Page-1_1770916804079.png";
+import iconHuawei from "@assets/Vector_1770916804080.png";
 import screen1 from "@/assets/images/wowtickets/screen1.webp";
 import screen2 from "@/assets/images/wowtickets/screen2.webp";
 import screen3 from "@/assets/images/wowtickets/screen3.webp";
@@ -151,7 +151,7 @@ export default function ProjectTravel() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#B632DA] via-purple-500 to-[#B632DA] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain invert" />
+                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Download on the</span>
                              <span className="text-sm font-bold text-white">App Store</span>
@@ -167,7 +167,7 @@ export default function ProjectTravel() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#B632DA] via-purple-500 to-[#B632DA] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain invert" />
+                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
                              <span className="text-sm font-bold text-white">Google Play</span>
@@ -183,7 +183,7 @@ export default function ProjectTravel() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#B632DA] via-purple-500 to-[#B632DA] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconHuawei} alt="AppGallery" className="w-6 h-6 object-contain invert" />
+                          <img src={iconHuawei} alt="AppGallery" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Explore it on</span>
                              <span className="text-sm font-bold text-white">AppGallery</span>

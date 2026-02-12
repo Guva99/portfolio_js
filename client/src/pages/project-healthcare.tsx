@@ -3,8 +3,8 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Activity, Map, Pill, Smartphone, Globe } from "lucide-react";
 import pulsarImage from "@/assets/images/pulsar-bonus.png";
-import iconGooglePlay from "@/assets/images/icon-google-play.png";
-import iconAppStore from "@/assets/images/icon-app-store.png";
+import iconGooglePlay from "@assets/Group_1770916804080.png";
+import iconAppStore from "@assets/Page-1_1770916804079.png";
 import screen1 from "@/assets/images/pulsar/screen1.webp";
 import screen2 from "@/assets/images/pulsar/screen2.webp";
 import screen3 from "@/assets/images/pulsar/screen3.webp";
@@ -145,7 +145,7 @@ export default function ProjectHealthcare() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain invert" />
+                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Download on the</span>
                              <span className="text-sm font-bold text-white">App Store</span>
@@ -161,7 +161,7 @@ export default function ProjectHealthcare() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain invert" />
+                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
                              <span className="text-sm font-bold text-white">Google Play</span>
