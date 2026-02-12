@@ -88,7 +88,6 @@ export default function ProjectHealthcare() {
                <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
                  <p className="text-[#06BA00] font-medium mb-1">Platform</p>
                  <div className="flex gap-4 text-white text-lg font-bold">
-                   <span className="flex items-center gap-2"><Smartphone className="w-5 h-5" /> iOS & Android</span>
                  </div>
                </div>
             </motion.div>
