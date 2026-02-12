@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { ExternalLink, Smartphone, Server, Database, Wifi, Lock, Zap, Layers, Code, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Smartphone, Server, Database, Wifi, Lock, Zap, Layers, Code, CheckCircle2, ZoomIn, X } from "lucide-react";
 import apeironHero from "@assets/image_1770928345854.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
@@ -29,6 +30,9 @@ import odsLogin from "@assets/00_-_login_screen_1770929401621.png";
 import odsOrders1 from "@assets/01_-_Экран_подачи_завтраков_(1)_1770929401622.png";
 import odsOrders2 from "@assets/01_-_Экран_подачи_завтраков_1770929401622.png";
 
+// Recommendation Letter
+import letterApeiron from "@/assets/images/letter-apeiron.png";
+
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
@@ -47,6 +51,7 @@ const odsImages = [odsSplash, odsLogin, odsOrders1, odsOrders2];
 
 export default function ProjectApeiron() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })])
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-[#326159]/30 font-sans overflow-x-hidden relative">
@@ -515,9 +520,72 @@ export default function ProjectApeiron() {
 
             </div>
 
+            {/* Recommendation Letter */}
+            <div className="mb-24 flex justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="max-w-4xl w-full"
+              >
+                <div className="bg-[#326159]/10 border border-[#326159]/20 rounded-3xl p-8 md:p-12 text-center">
+                  <h3 className="text-2xl font-bold text-white mb-8">Recommendation Letter</h3>
+                  
+                  <div 
+                    className="relative max-w-sm mx-auto cursor-pointer group rounded-lg overflow-hidden shadow-2xl"
+                    onClick={() => setIsLightboxOpen(true)}
+                  >
+                    <div className="aspect-[3/4] relative bg-white rounded-lg">
+                      <img 
+                        src={letterApeiron} 
+                        alt="Recommendation Letter from ApeironSpace" 
+                        className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" 
+                      />
+                      <div className="absolute inset-0 bg-[#326159]/0 group-hover:bg-[#326159]/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div className="bg-white/90 p-4 rounded-full shadow-lg backdrop-blur-sm transform scale-90 group-hover:scale-100 transition-transform">
+                          <ZoomIn className="w-8 h-8 text-[#326159]" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-slate-400 mt-6 max-w-xl mx-auto">
+                    Reference from the CEO regarding my contributions to the ApeironSpace ecosystem and development leadership.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {isLightboxOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative max-w-3xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={letterApeiron} 
+              alt="Recommendation Letter Full" 
+              className="w-full h-full max-h-[90vh] object-contain rounded-lg shadow-2xl bg-white"
+            />
+            <button 
+              className="absolute -top-12 right-0 md:top-4 md:right-4 bg-white/10 text-white p-2 rounded-full hover:bg-white/20 transition-colors"
+              onClick={() => setIsLightboxOpen(false)}
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
