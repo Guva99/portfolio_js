@@ -51,7 +51,7 @@ export default function ProjectSmartHome() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="group relative bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
+                className="group relative bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-cyan-500/30 hover:bg-[#172B29] transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
                 <div className="h-64 overflow-hidden">
