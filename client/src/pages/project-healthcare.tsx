@@ -177,10 +177,6 @@ export default function ProjectHealthcare() {
 
               {/* Right Column: Scrolling Screenshots */}
               <div className="relative h-[600px] overflow-hidden rounded-2xl">
-                 {/* Fade overlays */}
-                 <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-950 to-transparent z-10 pointer-events-none"></div>
-                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-10 pointer-events-none"></div>
-
                  <div className="grid grid-cols-3 gap-4 h-full">
                     {/* Column 1 - Scroll Up */}
                     <div className="relative overflow-hidden h-full">
