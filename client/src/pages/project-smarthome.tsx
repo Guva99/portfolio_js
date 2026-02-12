@@ -56,7 +56,7 @@ export default function ProjectSmartHome() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="group relative bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-cyan-500/50 hover:bg-[#172B29]/60 hover:shadow-cyan-500/10 transition-all duration-500 cursor-pointer h-full flex flex-col"
+                  className="group relative bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-cyan-500/50 hover:bg-[#172B29]/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 cursor-pointer h-full flex flex-col"
                 >
                   <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-5 h-5 text-white" />
@@ -68,10 +68,10 @@ export default function ProjectSmartHome() {
                   
                   <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow">
                     <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
-                       <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20">
+                       <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow duration-500">
                           <img src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
                        </div>
-                       <h2 className="text-2xl font-bold text-white">ApeironSpace</h2>
+                       <h2 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">ApeironSpace</h2>
                     </div>
                     
                     <p className="text-slate-300 mb-6 leading-relaxed">
@@ -80,22 +80,22 @@ export default function ProjectSmartHome() {
 
                     <div className="space-y-4 mb-8 flex-grow">
                       <div className="flex items-start gap-3">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-shadow duration-300"></div>
                         <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Apeiron Space App:</span> Main guest application for booking rooms and controlling the smart home environment, including lighting, climate, and curtains.</p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-shadow duration-300"></div>
                         <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">SpaceKeeper:</span> Housekeeping & staff management app with task tracking and smart home controls for efficient room service and maintenance.</p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-shadow duration-300"></div>
                         <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">ODS (Kitchen Display):</span> System for chefs to track incoming orders from the guest application ensuring timely food preparation and delivery.</p>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mt-auto">
                       {["Flutter", "Clean Architecture", "CI/CD", "WebSocket"].map((tech) => (
-                        <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
+                        <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5 group-hover:border-cyan-500/30 transition-colors duration-300">
                           {tech}
                         </span>
                       ))}
