@@ -7,6 +7,7 @@ import Technologies from "@/pages/technologies";
 import ProjectHealthcare from "@/pages/project-healthcare";
 import ProjectTravel from "@/pages/project-travel";
 import ProjectSmartHome from "@/pages/project-smarthome";
+import ProjectWise from "@/pages/project-wise";
 import ProjectApeiron from "@/pages/project-apeiron";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/projects/healthcare" component={ProjectHealthcare} />
       <Route path="/projects/travel" component={ProjectTravel} />
       <Route path="/projects/smarthome" component={ProjectSmartHome} />
+      <Route path="/projects/wise" component={ProjectWise} />
       <Route path="/projects/apeiron" component={ProjectApeiron} />
       <Route component={NotFound} />
     </Switch>
