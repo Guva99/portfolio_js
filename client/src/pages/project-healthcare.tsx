@@ -1,0 +1,161 @@
+import { motion } from "framer-motion";
+import { Navbar } from "@/components/ui/navbar";
+import { BackgroundElements } from "@/components/ui/background-elements";
+import { ExternalLink, Activity, Map, Pill, Smartphone, Globe } from "lucide-react";
+import pulsarImage from "@/assets/images/pulsar-bonus.png";
+
+export default function ProjectHealthcare() {
+  return (
+    <div className="min-h-screen bg-slate-950 text-white selection:bg-emerald-500/30 font-sans overflow-x-hidden relative">
+      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 z-50"></div>
+      
+      {/* Background Gradients */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
+         <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-emerald-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"></div>
+         <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-teal-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"></div>
+      </div>
+
+      <div className="relative z-10">
+        <BackgroundElements />
+        <Navbar />
+
+        <div className="container mx-auto px-4 pt-32 pb-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-5xl mx-auto"
+          >
+            {/* Header */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-medium border border-emerald-500/20 flex items-center gap-1.5">
+                    <Activity className="w-3.5 h-3.5" /> Healthcare
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-sm font-medium border border-white/10">Full Stack</span>
+                </div>
+                <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                  PulSarBonus <span className="text-emerald-400">App</span>
+                </h1>
+              </div>
+              
+              <div className="flex gap-3">
+                <a 
+                   href="https://pulsarbonus.ru/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-emerald-500/20"
+                 >
+                   Visit Website <ExternalLink className="w-4 h-4" />
+                 </a>
+              </div>
+            </div>
+
+            {/* Main Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-16 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
+            >
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
+               <img src={pulsarImage} alt="PulSarBonus Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
+               
+               <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
+                 <p className="text-emerald-400 font-medium mb-1">Platform</p>
+                 <div className="flex gap-4 text-white text-lg font-bold">
+                   <span className="flex items-center gap-2"><Smartphone className="w-5 h-5" /> iOS & Android</span>
+                   <span className="flex items-center gap-2"><Globe className="w-5 h-5" /> Web</span>
+                 </div>
+               </div>
+            </motion.div>
+
+            {/* Content Grid */}
+            <div className="grid md:grid-cols-3 gap-10 md:gap-16">
+              
+              <div className="md:col-span-2">
+                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                   <span className="w-8 h-1 bg-emerald-500 rounded-full"></span>
+                   Project Overview
+                 </h3>
+                 <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                   I developed both the mobile application and the responsive website for PulSarBonus, a comprehensive loyalty program for pharmacy chains. The platform creates a seamless ecosystem connecting customers with pharmacies.
+                 </p>
+                 <p className="text-slate-400 leading-relaxed mb-8">
+                   The solution was built to handle complex user data while providing an intuitive interface for users of all ages. My role involved full-cycle development, from architecture design to frontend implementation and backend integration.
+                 </p>
+
+                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                   <span className="w-8 h-1 bg-emerald-500 rounded-full"></span>
+                   Key Contributions
+                 </h3>
+                 <div className="space-y-6">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-emerald-500/30 transition-colors">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
+                          <Pill className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-white mb-2">Home First Aid Kit</h4>
+                          <p className="text-slate-400">Designed and implemented a feature allowing users to digitally track their medicine inventory, expiration dates, and get reminders for restocking.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-emerald-500/30 transition-colors">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
+                          <Activity className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-white mb-2">Course Treatment</h4>
+                          <p className="text-slate-400">Built a smart notification system for medication adherence, helping users track their treatment progress and stay compliant with doctor prescriptions.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-emerald-500/30 transition-colors">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
+                          <Map className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-white mb-2">Interactive Maps</h4>
+                          <p className="text-slate-400">Integrated map services to help users locate nearby pharmacies, check stock availability in real-time, and get turn-by-turn directions.</p>
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div className="md:col-span-1">
+                <div className="sticky top-32 space-y-8">
+                  <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
+                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["Flutter", "React", "TypeScript", "Node.js", "PostgreSQL", "Google Maps API", "Firebase"].map((tech) => (
+                        <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-emerald-900/20 to-slate-900/60 border border-emerald-500/10 rounded-2xl p-6">
+                    <h4 className="text-lg font-bold text-white mb-2">Result</h4>
+                    <p className="text-slate-400 text-sm mb-4">
+                      Successfully launched the platform with over 10k+ active users in the first month. improved user retention by 40% through the course treatment feature.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -9,7 +9,7 @@ const menuItems = [
     title: "Projects",
     href: "/#projects",
     dropdown: [
-      { title: "Healthcare", icon: HeartPulse, href: "/#project-healthcare" },
+      { title: "Healthcare", icon: HeartPulse, href: "/projects/healthcare" },
       { title: "Travel", icon: Plane, href: "/#project-travel" },
       { title: "Smart Home", icon: HomeIcon, href: "/#project-smarthome" },
       { title: "Media", icon: Tv, href: "/#project-media" },
