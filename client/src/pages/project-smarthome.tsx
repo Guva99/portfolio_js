@@ -73,15 +73,15 @@ export default function ProjectSmartHome() {
                   <div className="space-y-4 mb-8">
                     <div className="flex items-start gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Resident App:</span> Main mobile interface for controlling apartment systems.</p>
+                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Apeiron Space App:</span> Main guest application for booking rooms and controlling the smart home environment.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Concierge Tablet:</span> Administrative dashboard for building staff.</p>
+                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">SpaceKeeper:</span> Housekeeping & staff management app with task tracking and smart home controls.</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Access Control:</span> Secure digital key system integration.</p>
+                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">ODS (Kitchen Display):</span> System for chefs to track incoming orders from the guest application.</p>
                     </div>
                   </div>
 
