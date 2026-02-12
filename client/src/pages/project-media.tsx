@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
@@ -38,6 +38,13 @@ export default function ProjectMedia() {
   const prevTvSlide = () => {
     setCurrentTvSlide((prev) => (prev - 1 + tvScreens.length) % tvScreens.length);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTvSlide();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-[#FECB0E]/30 font-sans overflow-x-hidden relative">
