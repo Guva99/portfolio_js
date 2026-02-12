@@ -63,7 +63,6 @@ export default function ProjectTravel() {
                   <span className="px-3 py-1 rounded-full bg-[#B632DA]/10 text-[#B632DA] text-sm font-medium border border-[#B632DA]/20 flex items-center gap-1.5">
                     <Plane className="w-3.5 h-3.5" /> Travel
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-sm font-medium border border-white/10">Senior Lead</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                   WowTickets <span className="text-[#B632DA]">App</span>
