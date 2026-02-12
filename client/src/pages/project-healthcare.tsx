@@ -3,6 +3,20 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Activity, Map, Pill, Smartphone, Globe } from "lucide-react";
 import pulsarImage from "@/assets/images/pulsar-bonus.png";
+import screen1 from "@/assets/images/pulsar/screen1.webp";
+import screen2 from "@/assets/images/pulsar/screen2.webp";
+import screen3 from "@/assets/images/pulsar/screen3.webp";
+import screen4 from "@/assets/images/pulsar/screen4.webp";
+import screen5 from "@/assets/images/pulsar/screen5.webp";
+import screen6 from "@/assets/images/pulsar/screen6.webp";
+import screen7 from "@/assets/images/pulsar/screen7.webp";
+import screen8 from "@/assets/images/pulsar/screen8.webp";
+import screen9 from "@/assets/images/pulsar/screen9.webp";
+
+// App Screenshots - grouped for columns
+const column1 = [screen1, screen2, screen3, screen1, screen2, screen3];
+const column2 = [screen4, screen5, screen6, screen4, screen5, screen6];
+const column3 = [screen7, screen8, screen9, screen7, screen8, screen9];
 
 export default function ProjectHealthcare() {
   return (
@@ -32,7 +46,7 @@ export default function ProjectHealthcare() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
@@ -65,7 +79,7 @@ export default function ProjectHealthcare() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-16 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
+              className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
             >
                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
                <img src={pulsarImage} alt="PulSarBonus Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
@@ -79,7 +93,48 @@ export default function ProjectHealthcare() {
                </div>
             </motion.div>
 
-            <div className="flex justify-center md:justify-start gap-4 mb-16">
+            {/* Mobile App Showcase Section */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-24 items-center">
+              
+              {/* Left Column: Text & Buttons */}
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                    Easy & Smart <br />
+                    <span className="text-emerald-400">Health Management</span>
+                  </h2>
+                  
+                  <p className="text-slate-300 text-lg leading-relaxed mb-8">
+                    PulSarBonus is more than just a loyalty program - it's a comprehensive digital health assistant. Users can manage their home medicine cabinet, track treatment courses, and quickly find medications at nearby pharmacies.
+                  </p>
+                  
+                  <h3 className="text-xl font-semibold text-white mb-4">As part of my work on this project, I was responsible for:</h3>
+                  
+                  <ul className="space-y-3 mb-10 text-slate-400">
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+                      <span className="leading-relaxed">Designing and developing key features, including Home Medicine Cabinet, Course Treatment Tracker, and Pharmacy Map.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+                      <span className="leading-relaxed">Ensuring cross-platform support (Web & Mobile) to provide a seamless experience for all users.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+                      <span className="leading-relaxed">Optimizing the interface and user experience, making the service intuitive and easy to use.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>
+                      <span className="leading-relaxed">Implementing geolocation and barcode scanning technologies to simplify app interactions.</span>
+                    </li>
+                  </ul>
+
+                  {/* App Store Buttons */}
+                  <div className="flex flex-wrap gap-4">
                     <a 
                        href="https://apps.apple.com/app/id1630734569" 
                        target="_blank" 
@@ -116,9 +171,73 @@ export default function ProjectHealthcare() {
                           </div>
                        </div>
                     </a>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column: Scrolling Screenshots */}
+              <div className="relative h-[600px] overflow-hidden rounded-2xl bg-slate-900/20 border border-white/5 p-4">
+                 {/* Fade overlays */}
+                 <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-10 pointer-events-none"></div>
+
+                 <div className="grid grid-cols-3 gap-4 h-full">
+                    {/* Column 1 - Scroll Up */}
+                    <div className="relative overflow-hidden h-full">
+                       <motion.div
+                         animate={{ y: ["0%", "-50%"] }}
+                         transition={{ 
+                           duration: 20, 
+                           repeat: Infinity, 
+                           ease: "linear" 
+                         }}
+                         className="flex flex-col gap-4 w-full"
+                       >
+                         {column1.map((img, i) => (
+                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl shadow-lg border border-white/10" />
+                         ))}
+                       </motion.div>
+                    </div>
+
+                    {/* Column 2 - Scroll Down */}
+                    <div className="relative overflow-hidden h-full">
+                       <motion.div
+                         animate={{ y: ["-50%", "0%"] }}
+                         transition={{ 
+                           duration: 25, 
+                           repeat: Infinity, 
+                           ease: "linear" 
+                         }}
+                         className="flex flex-col gap-4 w-full"
+                       >
+                         {column2.map((img, i) => (
+                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl shadow-lg border border-white/10" />
+                         ))}
+                       </motion.div>
+                    </div>
+
+                    {/* Column 3 - Scroll Up */}
+                    <div className="relative overflow-hidden h-full">
+                       <motion.div
+                         animate={{ y: ["0%", "-50%"] }}
+                         transition={{ 
+                           duration: 22, 
+                           repeat: Infinity, 
+                           ease: "linear" 
+                         }}
+                         className="flex flex-col gap-4 w-full"
+                       >
+                         {column3.map((img, i) => (
+                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl shadow-lg border border-white/10" />
+                         ))}
+                       </motion.div>
+                    </div>
+                 </div>
+              </div>
+              
             </div>
 
-            {/* Content Grid */}
+            {/* Content Grid (Remaining content) */}
             <div className="grid md:grid-cols-3 gap-10 md:gap-16">
               
               <div className="md:col-span-2">
