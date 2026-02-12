@@ -351,7 +351,7 @@ export default function ProjectTravel() {
 
                   {/* Recommendation Letter */}
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
-                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Recommendation</h4>
+                    <h4 className="text-lg font-bold text-white mb-4">Recommendation</h4>
                     <div 
                       className="group relative cursor-pointer overflow-hidden rounded-xl border border-slate-700 aspect-[3/4]"
                       onClick={() => setSelectedImage(letterWowTickets)}
