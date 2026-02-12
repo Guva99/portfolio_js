@@ -242,7 +242,7 @@ export default function ProjectHealthcare() {
                    Project Overview
                  </h3>
                  <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                   I developed both the mobile application and the responsive website for PulSarBonus, a comprehensive loyalty program for pharmacy chains. The platform creates a seamless ecosystem connecting customers with pharmacies.
+                   I participated in the development of both the mobile application and the responsive website for PulSarBonus, a comprehensive loyalty program for pharmacy chains. The platform creates a seamless ecosystem connecting customers with pharmacies.
                  </p>
                  <p className="text-slate-400 leading-relaxed mb-8">
                    The solution was built to handle complex user data while providing an intuitive interface for users of all ages. My role involved full-cycle development, from architecture design to frontend implementation and backend integration.
