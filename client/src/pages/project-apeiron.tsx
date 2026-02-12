@@ -515,45 +515,29 @@ export default function ProjectApeiron() {
                       </ul>
                     </div>
                   </div>
-                </div>
-              </div>
 
-            </div>
-
-            {/* Recommendation Letter */}
-            <div className="mb-24 flex justify-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="max-w-4xl w-full"
-              >
-                <div className="bg-[#326159]/10 border border-[#326159]/20 rounded-3xl p-8 md:p-12 text-center">
-                  <h3 className="text-2xl font-bold text-white mb-8">Recommendation Letter</h3>
-                  
-                  <div 
-                    className="relative max-w-sm mx-auto cursor-pointer group rounded-lg overflow-hidden shadow-2xl"
-                    onClick={() => setIsLightboxOpen(true)}
-                  >
-                    <div className="aspect-[3/4] relative bg-white rounded-lg">
+                  {/* Recommendation Letter */}
+                  <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6 mt-6">
+                    <h4 className="text-lg font-bold text-white mb-4">Recommendation</h4>
+                    <div 
+                      className="group relative cursor-pointer overflow-hidden rounded-xl border border-slate-700 aspect-[3/4]"
+                      onClick={() => setIsLightboxOpen(true)}
+                    >
                       <img 
                         src={letterApeiron} 
-                        alt="Recommendation Letter from ApeironSpace" 
-                        className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" 
+                        alt="ApeironSpace Recommendation Letter" 
+                        className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-[#326159]/0 group-hover:bg-[#326159]/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div className="bg-white/90 p-4 rounded-full shadow-lg backdrop-blur-sm transform scale-90 group-hover:scale-100 transition-transform">
-                          <ZoomIn className="w-8 h-8 text-[#326159]" />
-                        </div>
+                      <div className="absolute inset-0 bg-[#326159]/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                         <div className="bg-white/90 p-3 rounded-full shadow-lg backdrop-blur-sm">
+                           <ZoomIn className="w-6 h-6 text-[#326159]" />
+                         </div>
                       </div>
                     </div>
                   </div>
-                  
-                  <p className="text-slate-400 mt-6 max-w-xl mx-auto">
-                    Reference from the CEO regarding my contributions to the ApeironSpace ecosystem and development leadership.
-                  </p>
                 </div>
-              </motion.div>
+              </div>
+
             </div>
 
           </motion.div>
