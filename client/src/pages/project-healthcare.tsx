@@ -49,7 +49,7 @@ export default function ProjectHealthcare() {
             className="max-w-6xl mx-auto"
           >
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="px-3 py-1 rounded-full bg-[#06BA00]/10 text-[#06BA00] text-sm font-medium border border-[#06BA00]/20 flex items-center gap-1.5">
