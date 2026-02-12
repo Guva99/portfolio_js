@@ -11,7 +11,7 @@ const menuItems = [
     dropdown: [
       { title: "Healthcare", icon: HeartPulse, href: "/projects/healthcare" },
       { title: "Travel", icon: Plane, href: "/projects/travel" },
-      { title: "Smart Home", icon: HomeIcon, href: "/#project-smarthome" },
+      { title: "Smart Home", icon: HomeIcon, href: "/projects/smarthome" },
       { title: "Media", icon: Tv, href: "/#project-media" },
     ]
   },
