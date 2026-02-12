@@ -144,7 +144,7 @@ export default function ProjectSmartHome() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-auto">
-                    {["Swift", "Kotlin", "Zigbee", "Wirenboard", "React Native"].map((tech) => (
+                    {["Swift", "Kotlin", "Zigbee", "Wirenboard", "React Native", "WebRTC", "RTSP", "WebSocket"].map((tech) => (
                       <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
                         {tech}
                       </span>
