@@ -279,7 +279,7 @@ export default function ProjectWise() {
                  </div>
               </div>
 
-              <div className="md:col-span-1">
+              <div className="md:col-span-1 mt-14">
                 <div className="sticky top-32 space-y-8">
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
