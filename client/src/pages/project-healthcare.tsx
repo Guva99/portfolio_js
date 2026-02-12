@@ -194,7 +194,7 @@ export default function ProjectHealthcare() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column1.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl shadow-lg border border-white/10" />
+                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
                          ))}
                        </motion.div>
                     </div>
@@ -211,7 +211,7 @@ export default function ProjectHealthcare() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column2.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl shadow-lg border border-white/10" />
+                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
                          ))}
                        </motion.div>
                     </div>
@@ -228,7 +228,7 @@ export default function ProjectHealthcare() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column3.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl shadow-lg border border-white/10" />
+                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
                          ))}
                        </motion.div>
                     </div>
