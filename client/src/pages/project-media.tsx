@@ -23,20 +23,20 @@ const column3 = [screen5, screen7, screen6, screen5, screen7, screen6];
 
 export default function ProjectMedia() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white selection:bg-[#FABA53]/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FABA53] via-orange-400 to-[#FABA53] z-50"></div>
+    <div className="min-h-screen bg-slate-950 text-white selection:bg-[#FECB0E]/30 font-sans overflow-x-hidden relative">
+      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] z-50"></div>
       
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
           {/* Ball 1 */}
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#FABA53] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
           {/* Ball 3 */}
-          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-orange-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
+          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-yellow-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
           {/* Ball 4 */}
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#FABA53] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
           {/* Ball 5 (Center) */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#FABA53] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10 animate-blob-2 animation-delay-4000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10 animate-blob-2 animation-delay-4000"></div>
         </div>
       </div>
 
@@ -55,12 +55,12 @@ export default function ProjectMedia() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-[#FABA53]/10 text-[#FABA53] text-sm font-medium border border-[#FABA53]/20 flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-[#FECB0E]/10 text-[#FECB0E] text-sm font-medium border border-[#FECB0E]/20 flex items-center gap-1.5">
                     <Tv className="w-3.5 h-3.5" /> Media & Streaming
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  Tavria.<span className="text-[#FABA53]">TV</span>
+                  Tavria.<span className="text-[#FECB0E]">TV</span>
                 </h1>
               </div>
               
@@ -69,7 +69,7 @@ export default function ProjectMedia() {
                    href="https://tavria.tv" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#FABA53] hover:bg-orange-500 text-slate-900 rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-[#FABA53]/20"
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#FECB0E] hover:bg-yellow-500 text-slate-900 rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-[#FECB0E]/20"
                  >
                    Visit Website <ExternalLink className="w-4 h-4" />
                  </a>
@@ -99,7 +99,7 @@ export default function ProjectMedia() {
                 >
                   <h2 className="text-3xl md:text-5xl font-bold mb-6">
                     A Seamless <br />
-                    <span className="text-[#FABA53]">Streaming Experience</span>
+                    <span className="text-[#FECB0E]">Streaming Experience</span>
                   </h2>
                   
                   <p className="text-slate-300 text-lg leading-relaxed mb-8">
@@ -110,19 +110,19 @@ export default function ProjectMedia() {
                   
                   <ul className="space-y-3 mb-10 text-slate-400">
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FABA53] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FECB0E] flex-shrink-0"></div>
                       <span className="leading-relaxed"><strong className="text-white">Live Streaming:</strong> Watch broadcasts in real-time with low latency.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FABA53] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FECB0E] flex-shrink-0"></div>
                       <span className="leading-relaxed"><strong className="text-white">Custom Video Player:</strong> Optimized playback, smooth scrubbing, and video quality control using FFmpeg & HLS.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FABA53] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FECB0E] flex-shrink-0"></div>
                       <span className="leading-relaxed"><strong className="text-white">Smart TV Support:</strong> Remote-friendly navigation with an interface adapted for large screens.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FABA53] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FECB0E] flex-shrink-0"></div>
                       <span className="leading-relaxed"><strong className="text-white">On-Demand Archives:</strong> Access past broadcasts and exclusive content anytime.</span>
                     </li>
                   </ul>
@@ -135,7 +135,7 @@ export default function ProjectMedia() {
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-[#FABA53] via-orange-400 to-[#FABA53] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
@@ -151,9 +151,9 @@ export default function ProjectMedia() {
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-[#FABA53] via-orange-400 to-[#FABA53] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <Download className="w-6 h-6 text-[#FABA53]" />
+                          <Download className="w-6 h-6 text-[#FECB0E]" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
                              <span className="text-sm font-bold text-white">RuStore</span>
@@ -167,9 +167,9 @@ export default function ProjectMedia() {
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-[#FABA53] via-orange-400 to-[#FABA53] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <div className="w-6 h-6 flex items-center justify-center bg-[#FABA53] rounded-full text-slate-900 font-bold text-xs">H</div>
+                          <div className="w-6 h-6 flex items-center justify-center bg-[#FECB0E] rounded-full text-slate-900 font-bold text-xs">H</div>
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Explore it on</span>
                              <span className="text-sm font-bold text-white">AppGallery</span>
@@ -243,13 +243,13 @@ export default function ProjectMedia() {
               
               <div className="md:col-span-2">
                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                   <span className="w-8 h-1 bg-[#FABA53] rounded-full"></span>
+                   <span className="w-8 h-1 bg-[#FECB0E] rounded-full"></span>
                    My Contribution
                  </h3>
                  <div className="space-y-6">
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#FABA53]/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#FECB0E]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-[#FABA53]/10 text-[#FABA53] shrink-0">
+                        <div className="p-3 rounded-lg bg-[#FECB0E]/10 text-[#FECB0E] shrink-0">
                           <Tv className="w-6 h-6" />
                         </div>
                         <div>
@@ -259,9 +259,9 @@ export default function ProjectMedia() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#FABA53]/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#FECB0E]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-[#FABA53]/10 text-[#FABA53] shrink-0">
+                        <div className="p-3 rounded-lg bg-[#FECB0E]/10 text-[#FECB0E] shrink-0">
                           <Play className="w-6 h-6" />
                         </div>
                         <div>
@@ -271,9 +271,9 @@ export default function ProjectMedia() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#FABA53]/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#FECB0E]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-[#FABA53]/10 text-[#FABA53] shrink-0">
+                        <div className="p-3 rounded-lg bg-[#FECB0E]/10 text-[#FECB0E] shrink-0">
                           <Server className="w-6 h-6" />
                         </div>
                         <div>
@@ -291,14 +291,14 @@ export default function ProjectMedia() {
                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Flutter", "Dart", "Firebase", "REST API", "GraphQL", "FFmpeg", "HLS", "Provider", "Bloc", "Fastlane", "Codemagic"].map((tech) => (
-                        <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5 hover:border-[#FABA53]/30 transition-colors">
+                        <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5 hover:border-[#FECB0E]/30 transition-colors">
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-[#FABA53]/20 to-slate-900/60 border border-[#FABA53]/10 rounded-2xl p-6">
+                  <div className="bg-gradient-to-br from-[#FECB0E]/20 to-slate-900/60 border border-[#FECB0E]/10 rounded-2xl p-6">
                     <h4 className="text-lg font-bold text-white mb-3">Project Role</h4>
                     <div className="space-y-3 text-slate-400 text-sm">
                       <p>

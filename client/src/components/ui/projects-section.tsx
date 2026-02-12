@@ -148,9 +148,9 @@ const projects = [
       "High load resistance"
     ],
     platforms: ["Web", "Mobile"],
-    gradient: "from-orange-500 to-amber-600",
-    shadow: "hover:shadow-orange-500/40",
-    border: "hover:border-orange-500/50",
+    gradient: "from-yellow-400 to-[#FECB0E]",
+    shadow: "hover:shadow-yellow-400/40",
+    border: "hover:border-[#FECB0E]/50",
     link: "/projects/media"
   },
    {
