@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { ExternalLink, Smartphone, Server, Database, Wifi, Lock, Zap, Layers, Code, CheckCircle2, ZoomIn, X } from "lucide-react";
+import { ExternalLink, Smartphone, Server, Database, Wifi, Lock, Zap, Layers, Code, CheckCircle2, ZoomIn, X, Users } from "lucide-react";
 import apeironHero from "@assets/image_1770928345854.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
@@ -484,6 +484,18 @@ export default function ProjectApeiron() {
                         <div>
                           <h4 className="text-xl font-bold text-white mb-2">Process Optimization</h4>
                           <p className="text-slate-400">Optimized internal processes improving team efficiency and established a structured project framework that enhanced collaboration.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#326159]/30 transition-colors">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-[#326159]/10 text-[#4A857C] shrink-0">
+                          <Users className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-white mb-2">Product Strategy & Mentorship</h4>
+                          <p className="text-slate-400">Played a key role in roadmap planning and decision-making. Created architectural flowcharts to visualize the ecosystem and mentored junior developers to accelerate their growth.</p>
                         </div>
                       </div>
                     </div>
