@@ -57,7 +57,6 @@ export default function ProjectHealthcare() {
                   <span className="px-3 py-1 rounded-full bg-[#06BA00]/10 text-[#06BA00] text-sm font-medium border border-[#06BA00]/20 flex items-center gap-1.5">
                     <Activity className="w-3.5 h-3.5" /> Healthcare
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-sm font-medium border border-white/10">Lead Developer</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                   PulSarBonus <span className="text-[#06BA00]">App</span>
