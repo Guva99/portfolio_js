@@ -5,6 +5,7 @@ import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Smartphone, Server, Database, Wifi, Play, Tv, Radio, Search, Cast, Globe, Download, ChevronLeft, ChevronRight, Monitor, Keyboard } from "lucide-react";
 import tavriaHero from "@assets/tavria_1770932142157.webp";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
+import iconAppGallery from "@assets/icon-appgallery.png";
 import appTv1 from "@assets/apptv_1_1770932465780.webp";
 import appTv2 from "@assets/apptv-2_1770932465781.webp";
 import appTv3 from "@assets/apptv-3_1770932465781.webp";
@@ -185,7 +186,7 @@ export default function ProjectMedia() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <div className="w-6 h-6 flex items-center justify-center bg-[#FECB0E] rounded-full text-slate-900 font-bold text-xs">H</div>
+                          <img src={iconAppGallery} alt="AppGallery" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Explore it on</span>
                              <span className="text-sm font-bold text-white">AppGallery</span>
