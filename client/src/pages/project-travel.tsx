@@ -326,7 +326,13 @@ export default function ProjectTravel() {
                   {/* Recommendation Letter */}
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
                     <h4 className="text-lg font-bold text-white mb-4">Recommendation</h4>
-                    <div 
+                    <motion.div 
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
                       className="group relative cursor-pointer overflow-hidden rounded-xl border border-slate-700 aspect-[3/4]"
                       onClick={() => setSelectedImage(letterWowTickets)}
                     >
@@ -340,7 +346,7 @@ export default function ProjectTravel() {
                            <ZoomIn className="w-6 h-6 text-[#B632DA]" />
                          </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
