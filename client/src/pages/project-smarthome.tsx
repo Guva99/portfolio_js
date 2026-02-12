@@ -9,7 +9,6 @@ export default function ProjectSmartHome() {
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 z-50"></div>
-      
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
@@ -17,7 +16,6 @@ export default function ProjectSmartHome() {
           <div className="absolute bottom-[-20%] right-[20%] w-[600px] h-[600px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob-3"></div>
         </div>
       </div>
-
       <div className="relative z-10">
         <BackgroundElements />
         <Navbar />
@@ -61,7 +59,7 @@ export default function ProjectSmartHome() {
                 </div>
                 
                 <div className="relative z-20 p-8 mt-[-100px]">
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                      <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
                         <Layers className="w-6 h-6" />
                      </div>
