@@ -21,20 +21,20 @@ const column3 = [screen7, screen8, screen9, screen7, screen8, screen9];
 
 export default function ProjectApeiron() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 z-50"></div>
+    <div className="min-h-screen bg-slate-950 text-white selection:bg-[#1C545B]/30 font-sans overflow-x-hidden relative">
+      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1C545B] via-[#2A757E] to-[#1C545B] z-50"></div>
       
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
           {/* Ball 1 */}
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-cyan-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#1C545B] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
           {/* Ball 3 */}
-          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
+          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-[#2A757E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
           {/* Ball 4 */}
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-cyan-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#1C545B] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
           {/* Ball 5 (Center) */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-blue-500 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10 animate-blob-2 animation-delay-4000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#1C545B] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10 animate-blob-2 animation-delay-4000"></div>
         </div>
       </div>
 
@@ -53,12 +53,12 @@ export default function ProjectApeiron() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-medium border border-cyan-500/20 flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-[#1C545B]/10 text-[#2A757E] text-sm font-medium border border-[#1C545B]/20 flex items-center gap-1.5">
                     <Layers className="w-3.5 h-3.5" /> Smart Hotel
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  ApeironSpace <span className="text-cyan-400">App</span>
+                  ApeironSpace <span className="text-[#2A757E]">App</span>
                 </h1>
               </div>
               
@@ -67,7 +67,7 @@ export default function ProjectApeiron() {
                    href="https://apeironspace.ru/en/main/" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-cyan-500/20"
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#1C545B] hover:bg-[#2A757E] text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-[#1C545B]/20"
                  >
                    Visit Website <ExternalLink className="w-4 h-4" />
                  </a>
@@ -98,7 +98,7 @@ export default function ProjectApeiron() {
                 >
                   <h2 className="text-3xl md:text-5xl font-bold mb-6">
                     Future of Hospitality <br />
-                    <span className="text-cyan-400">In Your Pocket</span>
+                    <span className="text-[#2A757E]">In Your Pocket</span>
                   </h2>
                   
                   <p className="text-slate-300 text-lg leading-relaxed mb-8">
@@ -109,19 +109,19 @@ export default function ProjectApeiron() {
                   
                   <ul className="space-y-3 mb-10 text-slate-400">
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#1C545B] flex-shrink-0"></div>
                       <span className="leading-relaxed">Integrating payment systems for commercial services.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#1C545B] flex-shrink-0"></div>
                       <span className="leading-relaxed">Refactoring code to enhance performance and maintainability.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#1C545B] flex-shrink-0"></div>
                       <span className="leading-relaxed">Developing smart home functionality, including IoT device integration.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#1C545B] flex-shrink-0"></div>
                       <span className="leading-relaxed">Creating internal tools for staff and kitchen personnel to automate processes.</span>
                     </li>
                   </ul>
@@ -134,7 +134,7 @@ export default function ProjectApeiron() {
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#1C545B] via-[#2A757E] to-[#1C545B] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
@@ -150,7 +150,7 @@ export default function ProjectApeiron() {
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#1C545B] via-[#2A757E] to-[#1C545B] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
@@ -226,7 +226,7 @@ export default function ProjectApeiron() {
               
               <div className="md:col-span-2">
                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                   <span className="w-8 h-1 bg-cyan-500 rounded-full"></span>
+                   <span className="w-8 h-1 bg-[#1C545B] rounded-full"></span>
                    Project Overview
                  </h3>
                  <p className="text-slate-300 text-lg leading-relaxed mb-6">
@@ -237,13 +237,13 @@ export default function ProjectApeiron() {
                  </p>
 
                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                   <span className="w-8 h-1 bg-cyan-500 rounded-full"></span>
+                   <span className="w-8 h-1 bg-[#1C545B] rounded-full"></span>
                    Achievements & Results
                  </h3>
                  <div className="space-y-6">
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#1C545B]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
+                        <div className="p-3 rounded-lg bg-[#1C545B]/10 text-[#2A757E] shrink-0">
                           <Zap className="w-6 h-6" />
                         </div>
                         <div>
@@ -253,9 +253,9 @@ export default function ProjectApeiron() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#1C545B]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
+                        <div className="p-3 rounded-lg bg-[#1C545B]/10 text-[#2A757E] shrink-0">
                           <Wifi className="w-6 h-6" />
                         </div>
                         <div>
@@ -265,9 +265,9 @@ export default function ProjectApeiron() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-cyan-500/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#1C545B]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
+                        <div className="p-3 rounded-lg bg-[#1C545B]/10 text-[#2A757E] shrink-0">
                           <CheckCircle2 className="w-6 h-6" />
                         </div>
                         <div>
@@ -292,7 +292,7 @@ export default function ProjectApeiron() {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-cyan-500/20 to-slate-900/60 border border-cyan-500/10 rounded-2xl p-6">
+                  <div className="bg-gradient-to-br from-[#1C545B]/20 to-slate-900/60 border border-[#1C545B]/10 rounded-2xl p-6">
                     <h4 className="text-lg font-bold text-white mb-2">Impact</h4>
                     <p className="text-slate-400 text-sm mb-4">
                       Delivered a robust, high-performance application that powers the daily operations of a fully automated smart hotel, handling thousands of guest interactions securely and reliably.
