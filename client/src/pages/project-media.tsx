@@ -2,9 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { ExternalLink, Smartphone, Server, Database, Wifi, Play, Tv, Radio, Search, Cast, Globe, Download } from "lucide-react";
+import { ExternalLink, Smartphone, Server, Database, Wifi, Play, Tv, Radio, Search, Cast, Globe, Download, ChevronLeft, ChevronRight, Monitor, Keyboard } from "lucide-react";
 import tavriaHero from "@assets/tavria_1770932142157.webp";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
+import appTv1 from "@assets/apptv_1_1770932465780.webp";
+import appTv2 from "@assets/apptv-2_1770932465781.webp";
+import appTv3 from "@assets/apptv-3_1770932465781.webp";
+import appTv4 from "@assets/apptv-4_1770932465781.webp";
 
 // Tavria Screenshots
 import screen1 from "@assets/tavria1_1770931443694.webp"; // Radio
@@ -21,7 +25,19 @@ const column1 = [screen2, screen4, screen6, screen2, screen4, screen6];
 const column2 = [screen3, screen8, screen1, screen3, screen8, screen1];
 const column3 = [screen5, screen7, screen6, screen5, screen7, screen6];
 
+const tvScreens = [appTv1, appTv2, appTv3, appTv4];
+
 export default function ProjectMedia() {
+  const [currentTvSlide, setCurrentTvSlide] = useState(0);
+
+  const nextTvSlide = () => {
+    setCurrentTvSlide((prev) => (prev + 1) % tvScreens.length);
+  };
+
+  const prevTvSlide = () => {
+    setCurrentTvSlide((prev) => (prev - 1 + tvScreens.length) % tvScreens.length);
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-[#FECB0E]/30 font-sans overflow-x-hidden relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] z-50"></div>
@@ -236,6 +252,101 @@ export default function ProjectMedia() {
                  </div>
               </div>
               
+            </div>
+
+            {/* TV Application Showcase */}
+            <div className="mb-24">
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 className="text-center mb-12"
+               >
+                 <span className="px-3 py-1 rounded-full bg-[#FECB0E]/10 text-[#FECB0E] text-sm font-medium border border-[#FECB0E]/20 inline-flex items-center gap-1.5 mb-4">
+                    <Monitor className="w-3.5 h-3.5" /> Smart TV Experience
+                 </span>
+                 <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                   Big Screen <span className="text-[#FECB0E]">Innovation</span>
+                 </h2>
+                 <p className="text-slate-400 max-w-2xl mx-auto">
+                   Fully optimized application for Android TV and Apple tvOS, featuring a custom-built keyboard for seamless navigation on remote-controlled devices.
+                 </p>
+               </motion.div>
+
+               <div className="relative max-w-5xl mx-auto">
+                 {/* TV Frame */}
+                 <div className="relative bg-slate-900 rounded-t-3xl rounded-b-lg p-2 md:p-4 shadow-2xl border-4 border-slate-800">
+                    <div className="relative aspect-video bg-black overflow-hidden rounded-lg">
+                       {/* Slides */}
+                       <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentTvSlide * 100}%)` }}>
+                         {tvScreens.map((screen, index) => (
+                           <div key={index} className="min-w-full h-full relative">
+                             <img src={screen} alt={`TV Screen ${index + 1}`} className="w-full h-full object-cover" />
+                           </div>
+                         ))}
+                       </div>
+                       
+                       {/* Overlay Gradient */}
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+
+                       {/* Navigation Controls */}
+                       <button 
+                         onClick={prevTvSlide}
+                         className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-[#FECB0E] hover:text-slate-900 backdrop-blur-md flex items-center justify-center transition-all group z-20"
+                       >
+                         <ChevronLeft className="w-6 h-6 text-white group-hover:text-slate-900" />
+                       </button>
+
+                       <button 
+                         onClick={nextTvSlide}
+                         className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-[#FECB0E] hover:text-slate-900 backdrop-blur-md flex items-center justify-center transition-all group z-20"
+                       >
+                         <ChevronRight className="w-6 h-6 text-white group-hover:text-slate-900" />
+                       </button>
+
+                       {/* Dots Indicator */}
+                       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                         {tvScreens.map((_, index) => (
+                           <button
+                             key={index}
+                             onClick={() => setCurrentTvSlide(index)}
+                             className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                               currentTvSlide === index ? "w-6 bg-[#FECB0E]" : "bg-white/30 hover:bg-white/60"
+                             }`}
+                           />
+                         ))}
+                       </div>
+                    </div>
+                    
+                    {/* TV Stand / Logo Area */}
+                    <div className="h-8 md:h-12 bg-slate-800 flex items-center justify-center mt-[-1px] rounded-b-md relative overflow-hidden">
+                       <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"></div>
+                       <div className="relative flex items-center gap-1.5 opacity-50">
+                         <div className="w-1 h-1 rounded-full bg-red-500 animate-pulse"></div>
+                         <span className="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">Smart TV</span>
+                       </div>
+                    </div>
+                 </div>
+
+                 {/* Feature Highlights Below TV */}
+                 <div className="grid md:grid-cols-3 gap-6 mt-12">
+                   <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 hover:border-[#FECB0E]/30 transition-colors">
+                     <Keyboard className="w-8 h-8 text-[#FECB0E] mb-4" />
+                     <h4 className="text-lg font-bold text-white mb-2">Custom Keyboard</h4>
+                     <p className="text-slate-400 text-sm">Developed a custom on-screen keyboard in Flutter specifically optimized for D-pad navigation.</p>
+                   </div>
+                   <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 hover:border-[#FECB0E]/30 transition-colors">
+                     <div className="w-8 h-8 flex items-center justify-center bg-[#FECB0E]/10 rounded-lg text-[#FECB0E] mb-4 font-bold">TV</div>
+                     <h4 className="text-lg font-bold text-white mb-2">Android TV</h4>
+                     <p className="text-slate-400 text-sm">Full compatibility with Android TV ecosystem, supporting voice search and recommendations.</p>
+                   </div>
+                   <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 hover:border-[#FECB0E]/30 transition-colors">
+                     <div className="w-8 h-8 flex items-center justify-center bg-[#FECB0E]/10 rounded-lg text-[#FECB0E] mb-4 font-bold"></div>
+                     <h4 className="text-lg font-bold text-white mb-2">Apple tvOS</h4>
+                     <p className="text-slate-400 text-sm">Native-like experience on Apple TV with smooth animations and focus engine integration.</p>
+                   </div>
+                 </div>
+               </div>
             </div>
 
             {/* Achievements & Tech Stack */}
