@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Smartphone, Server, Database, Wifi, Lock, Zap, Layers, Code, CheckCircle2 } from "lucide-react";
-import apeironHero from "@assets/apeiron3_1770928057162.webp";
+import apeironHero from "@assets/image_1770928345854.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
 import screen1 from "@assets/apeiron1_1770928057161.webp";
