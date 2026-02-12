@@ -128,7 +128,7 @@ export default function ProjectSmartHome() {
                       Add to App Module
                     </h3>
                     <p className="text-sm text-slate-400 leading-relaxed">
-                      Designed as a white-label solution for Wise clients, this module enabled external companies to embed the complex IoT pairing process (discovery, QR scanning, handshake) directly into their own customer-facing apps and web portals.
+                      Developed a cross-platform module for Wise clients designed for integration into native Android and iOS applications. Additionally, I designed and implemented a web module to enable functionality in hybrid Cordova-based apps. This solution allowed clients to rapidly integrate the service into various client applications without restructuring their main architecture.
                     </p>
                   </div>
 
