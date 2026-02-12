@@ -145,7 +145,7 @@ export default function ProjectHealthcare() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain brightness-0 invert" />
+                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain invert" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Download on the</span>
                              <span className="text-sm font-bold text-white">App Store</span>
@@ -161,7 +161,7 @@ export default function ProjectHealthcare() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain brightness-0 invert" />
+                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain invert" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
                              <span className="text-sm font-bold text-white">Google Play</span>
