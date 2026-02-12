@@ -11,47 +11,16 @@ export default function ProjectHealthcare() {
       
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
-         <motion.div 
-           animate={{ 
-             x: [0, 30, 0],
-             y: [0, -30, 0],
-             scale: [1, 1.1, 1]
-           }}
-           transition={{ 
-             duration: 15, 
-             repeat: Infinity,
-             ease: "easeInOut" 
-           }}
-           className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-emerald-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"
-         ></motion.div>
-         <motion.div 
-           animate={{ 
-             x: [0, -40, 0],
-             y: [0, 40, 0],
-             scale: [1, 1.2, 1]
-           }}
-           transition={{ 
-             duration: 20, 
-             repeat: Infinity,
-             ease: "easeInOut",
-             delay: 2
-           }}
-           className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-teal-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"
-         ></motion.div>
-         <motion.div 
-           animate={{ 
-             x: [0, 20, 0],
-             y: [0, 20, 0],
-             opacity: [0.2, 0.4, 0.2]
-           }}
-           transition={{ 
-             duration: 12, 
-             repeat: Infinity,
-             ease: "easeInOut",
-             delay: 5
-           }}
-           className="absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] opacity-20"
-         ></motion.div>
+        <div className="absolute inset-0 w-full h-full">
+          {/* Ball 1 */}
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-emerald-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1"></div>
+          {/* Ball 3 */}
+          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-teal-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-3"></div>
+          {/* Ball 4 */}
+          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-emerald-700 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1 animation-delay-2000"></div>
+          {/* Ball 5 (Center) */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-30 animate-blob-2 animation-delay-4000"></div>
+        </div>
       </div>
 
       <div className="relative z-10">
@@ -79,7 +48,7 @@ export default function ProjectHealthcare() {
                 </h1>
               </div>
               
-              <div className="flex flex-wrap gap-3">
+              <div className="flex gap-3">
                 <a 
                    href="https://pulsarbonus.ru/" 
                    target="_blank" 
@@ -88,8 +57,29 @@ export default function ProjectHealthcare() {
                  >
                    Visit Website <ExternalLink className="w-4 h-4" />
                  </a>
+              </div>
+            </div>
 
-                 <div className="flex gap-2">
+            {/* Main Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-16 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
+            >
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
+               <img src={pulsarImage} alt="PulSarBonus Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
+               
+               <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
+                 <p className="text-emerald-400 font-medium mb-1">Platform</p>
+                 <div className="flex gap-4 text-white text-lg font-bold">
+                   <span className="flex items-center gap-2"><Smartphone className="w-5 h-5" /> iOS & Android</span>
+                   <span className="flex items-center gap-2"><Globe className="w-5 h-5" /> Web</span>
+                 </div>
+               </div>
+            </motion.div>
+
+            <div className="flex justify-center md:justify-start gap-4 mb-16">
                     <a 
                        href="https://apps.apple.com/app/id1630734569" 
                        target="_blank" 
@@ -126,28 +116,7 @@ export default function ProjectHealthcare() {
                           </div>
                        </div>
                     </a>
-                 </div>
-              </div>
             </div>
-
-            {/* Main Image */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-16 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
-            >
-               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
-               <img src={pulsarImage} alt="PulSarBonus Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
-               
-               <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
-                 <p className="text-emerald-400 font-medium mb-1">Platform</p>
-                 <div className="flex gap-4 text-white text-lg font-bold">
-                   <span className="flex items-center gap-2"><Smartphone className="w-5 h-5" /> iOS & Android</span>
-                   <span className="flex items-center gap-2"><Globe className="w-5 h-5" /> Web</span>
-                 </div>
-               </div>
-            </motion.div>
 
             {/* Content Grid */}
             <div className="grid md:grid-cols-3 gap-10 md:gap-16">
