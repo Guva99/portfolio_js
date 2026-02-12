@@ -4,6 +4,8 @@ import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Home, Smartphone, Layers, Code, Database, Server, Wifi } from "lucide-react";
 import apeironImage from "@assets/image_1770921547262.png";
 import wiseImage from "@assets/image_1770921682400.png";
+import apeironLogo from "@assets/01_splashscreen_1770922545091.png";
+import wiseLogo from "@assets/Frame_26_1770922552516.png";
 
 export default function ProjectSmartHome() {
   return (
@@ -60,8 +62,8 @@ export default function ProjectSmartHome() {
                 
                 <div className="relative z-20 p-8 mt-[-100px]">
                   <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
-                     <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
-                        <Layers className="w-6 h-6" />
+                     <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20">
+                        <img src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
                      </div>
                      <h2 className="text-2xl font-bold text-white">ApeironSpace</h2>
                   </div>
@@ -110,8 +112,8 @@ export default function ProjectSmartHome() {
                 
                 <div className="relative z-20 p-8 mt-[-100px]">
                   <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
-                     <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
-                        <Smartphone className="w-6 h-6" />
+                     <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20">
+                        <img src={wiseLogo} alt="Wise Logo" className="w-full h-full object-cover" />
                      </div>
                      <h2 className="text-2xl font-bold text-white">Wise Home</h2>
                   </div>
