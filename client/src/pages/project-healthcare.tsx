@@ -11,8 +11,47 @@ export default function ProjectHealthcare() {
       
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
-         <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-emerald-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"></div>
-         <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-teal-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"></div>
+         <motion.div 
+           animate={{ 
+             x: [0, 30, 0],
+             y: [0, -30, 0],
+             scale: [1, 1.1, 1]
+           }}
+           transition={{ 
+             duration: 15, 
+             repeat: Infinity,
+             ease: "easeInOut" 
+           }}
+           className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-emerald-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"
+         ></motion.div>
+         <motion.div 
+           animate={{ 
+             x: [0, -40, 0],
+             y: [0, 40, 0],
+             scale: [1, 1.2, 1]
+           }}
+           transition={{ 
+             duration: 20, 
+             repeat: Infinity,
+             ease: "easeInOut",
+             delay: 2
+           }}
+           className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-teal-600/20 rounded-full blur-[80px] md:blur-[120px] opacity-30"
+         ></motion.div>
+         <motion.div 
+           animate={{ 
+             x: [0, 20, 0],
+             y: [0, 20, 0],
+             opacity: [0.2, 0.4, 0.2]
+           }}
+           transition={{ 
+             duration: 12, 
+             repeat: Infinity,
+             ease: "easeInOut",
+             delay: 5
+           }}
+           className="absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] opacity-20"
+         ></motion.div>
       </div>
 
       <div className="relative z-10">
@@ -40,7 +79,7 @@ export default function ProjectHealthcare() {
                 </h1>
               </div>
               
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 <a 
                    href="https://pulsarbonus.ru/" 
                    target="_blank" 
@@ -49,6 +88,45 @@ export default function ProjectHealthcare() {
                  >
                    Visit Website <ExternalLink className="w-4 h-4" />
                  </a>
+
+                 <div className="flex gap-2">
+                    <a 
+                       href="https://apps.apple.com/app/id1630734569" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
+                    >
+                       <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
+                          <Smartphone className="w-5 h-5 text-white" />
+                          <div className="flex flex-col items-start leading-none">
+                             <span className="text-[10px] text-slate-400 uppercase font-medium">Download on the</span>
+                             <span className="text-sm font-bold text-white">App Store</span>
+                          </div>
+                       </div>
+                    </a>
+
+                    <a 
+                       href="https://play.google.com/store/apps/details?id=ru.pulsarbonus" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
+                    >
+                       <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
+                          <div className="relative w-5 h-5">
+                             {/* Simple Android Icon using generic shape/icon as lucide doesn't have brand icons */}
+                             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-white">
+                                <path d="M17.523 15.3414C17.523 16.7468 16.377 17.8928 14.9716 17.8928C13.5661 17.8928 12.4201 16.7468 12.4201 15.3414C12.4201 13.936 13.5661 12.79 14.9716 12.79C16.377 12.79 17.523 13.936 17.523 15.3414ZM7.92484 15.3414C7.92484 16.7468 6.77884 17.8928 5.37341 17.8928C3.96798 17.8928 2.82198 16.7468 2.82198 15.3414C2.82198 13.936 3.96798 12.79 5.37341 12.79C6.77884 12.79 7.92484 13.936 7.92484 15.3414ZM18.3375 6.35515L20.2796 2.99222C20.3756 2.82512 20.3182 2.61208 20.1511 2.51608C19.983 2.41908 19.771 2.47648 19.674 2.64461L17.7126 6.03964C16.0343 5.2753 14.156 4.8361 12.1645 4.8361C10.1601 4.8361 8.2709 5.28689 6.58667 6.06451L4.63622 2.64461C4.54023 2.47648 4.32719 2.42008 4.16009 2.51608C3.99299 2.61208 3.93559 2.82512 4.03159 2.99222L5.98565 6.3769C2.65158 8.19455 0.368164 11.6661 0.368164 15.6559C0.368164 15.7271 0.373905 15.7972 0.380614 15.8673H23.8617C23.8742 15.7915 23.8809 15.7149 23.8809 15.6377C23.8809 11.6249 21.6425 8.13809 18.3375 6.35515Z" />
+                             </svg>
+                          </div>
+                          <div className="flex flex-col items-start leading-none">
+                             <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
+                             <span className="text-sm font-bold text-white">Google Play</span>
+                          </div>
+                       </div>
+                    </a>
+                 </div>
               </div>
             </div>
 
