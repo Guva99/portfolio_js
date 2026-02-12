@@ -418,11 +418,21 @@ export default function ProjectMedia() {
                   </div>
 
                   <div className="bg-gradient-to-br from-[#FECB0E]/20 to-slate-900/60 border border-[#FECB0E]/10 rounded-2xl p-6">
-                    <h4 className="text-lg font-bold text-white mb-3">Project Result</h4>
-                    <div className="space-y-3 text-slate-400 text-sm">
-                      <p>
-                        The project was successfully completed and launched. I fully implemented the ecosystem for Smart TV (Android TV & Apple tvOS) as well as mobile applications for both iOS and Android.
-                      </p>
+                    <h4 className="text-lg font-bold text-white mb-3">Role & Outcome</h4>
+                    <div className="space-y-4 text-slate-400 text-sm">
+                      <div>
+                        <strong className="text-[#FECB0E] block mb-1">Lead Developer</strong>
+                        <p>
+                          Decomposed tasks, managed sprints, interacted directly with the client, and created technical specifications for the development team.
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <strong className="text-[#FECB0E] block mb-1">Result</strong>
+                        <p>
+                          The project was successfully completed and launched. I fully implemented the ecosystem for Smart TV (Android TV & Apple tvOS) as well as mobile applications for both iOS and Android.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
