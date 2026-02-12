@@ -7,6 +7,8 @@ import wiseImage from "@assets/image_1770921682400.png";
 import apeironLogo from "@assets/01_splashscreen_1770922545091.png";
 import wiseLogo from "@assets/Frame_26_1770922552516.png";
 
+import { Link } from "wouter";
+
 export default function ProjectSmartHome() {
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
@@ -48,19 +50,23 @@ export default function ProjectSmartHome() {
             <div className="grid lg:grid-cols-2 gap-8 mb-20">
               
               {/* ApeironSpace Project */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-cyan-500/30 hover:bg-[#172B29]/50 transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
-                <div className="h-64 overflow-hidden">
-                   <img src={apeironImage} alt="ApeironSpace" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                
-                <div className="relative z-20 p-8 mt-[-100px]">
+              <Link href="/projects/apeiron">
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-cyan-500/30 hover:bg-[#172B29]/50 transition-all duration-300 cursor-pointer"
+                >
+                  <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ExternalLink className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
+                  <div className="h-64 overflow-hidden">
+                     <img src={apeironImage} alt="ApeironSpace" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                  
+                  <div className="relative z-20 p-8 mt-[-100px]">
                   <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                      <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20">
                         <img src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
@@ -96,6 +102,7 @@ export default function ProjectSmartHome() {
                   </div>
                 </div>
               </motion.div>
+              </Link>
 
               {/* Wise Home Project */}
               <motion.div 
