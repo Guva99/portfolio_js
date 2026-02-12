@@ -119,7 +119,7 @@ export default function ProjectSmartHome() {
                   </div>
                   
                   <p className="text-slate-300 mb-6 leading-relaxed">
-                    Developed a specialized "Add to App" module for the Wise Home ecosystem, streamlining the device onboarding process for users.
+                    Developed a versatile "Add to App" SDK for Wise Home partners, enabling seamless IoT device onboarding integration into third-party mobile and web applications.
                   </p>
 
                   <div className="bg-slate-800/50 rounded-xl p-5 border border-white/5 mb-8">
@@ -128,7 +128,7 @@ export default function ProjectSmartHome() {
                       Add to App Module
                     </h3>
                     <p className="text-sm text-slate-400 leading-relaxed">
-                      This critical module simplified the complex process of connecting new IoT devices to the network. I implemented the entire flow, including device discovery, QR code scanning, and initial configuration handshake.
+                      Designed as a white-label solution for Wise clients, this module enabled external companies to embed the complex IoT pairing process (discovery, QR scanning, handshake) directly into their own customer-facing apps and web portals.
                     </p>
                   </div>
 
