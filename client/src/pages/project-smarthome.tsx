@@ -56,12 +56,12 @@ export default function ProjectSmartHome() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-cyan-500/30 hover:bg-[#172B29]/50 transition-all duration-300 cursor-pointer h-full flex flex-col"
+                  className="group relative bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-cyan-500/50 hover:bg-[#172B29]/60 hover:shadow-cyan-500/10 transition-all duration-500 cursor-pointer h-full flex flex-col"
                 >
                   <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-5 h-5 text-white" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10"></div>
                   <div className="h-64 overflow-hidden shrink-0">
                      <img src={apeironImage} alt="ApeironSpace" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                   </div>
@@ -81,15 +81,15 @@ export default function ProjectSmartHome() {
                     <div className="space-y-4 mb-8 flex-grow">
                       <div className="flex items-start gap-3">
                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Apeiron Space App:</span> Main guest application for booking rooms and controlling the smart home environment.</p>
+                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Apeiron Space App:</span> Main guest application for booking rooms and controlling the smart home environment, including lighting, climate, and curtains.</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">SpaceKeeper:</span> Housekeeping & staff management app with task tracking and smart home controls.</p>
+                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">SpaceKeeper:</span> Housekeeping & staff management app with task tracking and smart home controls for efficient room service and maintenance.</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">ODS (Kitchen Display):</span> System for chefs to track incoming orders from the guest application.</p>
+                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">ODS (Kitchen Display):</span> System for chefs to track incoming orders from the guest application ensuring timely food preparation and delivery.</p>
                       </div>
                     </div>
 
@@ -110,9 +110,9 @@ export default function ProjectSmartHome() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 hover:bg-[#3776F0]/50 transition-all duration-300 h-full flex flex-col"
+                className="group relative bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-blue-500/50 hover:bg-[#3776F0]/20 hover:shadow-blue-500/10 transition-all duration-500 h-full flex flex-col"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10"></div>
                 <div className="h-64 overflow-hidden shrink-0">
                    <img src={wiseImage} alt="Wise Home" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 </div>
