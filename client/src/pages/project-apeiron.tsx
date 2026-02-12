@@ -14,10 +14,24 @@ import screen7 from "@assets/apeiron7_1770928057163.webp";
 import screen8 from "@assets/apeiron8_1770928057163.webp";
 import screen9 from "@assets/apeiron9_1770928057164.webp";
 
+// SpaceKeeper Images
+import skScreen1 from "@assets/помещение_задача_назначена_1770929185015.png";
+import skScreen2 from "@assets/2026-02-12_23.45.03_1770929185019.jpg";
+import skScreen3 from "@assets/Задачи1_1770929185020.png";
+import skScreen4 from "@assets/Задачи_—_копия_1770929185022.png";
+import skScreen5 from "@assets/заставка_1770929185022.png";
+import skScreen6 from "@assets/Задачи_1770929185022.png";
+import skScreen7 from "@assets/задача_1770929185022.png";
+
 // App Screenshots - grouped for columns
 const column1 = [screen1, screen2, screen4, screen1, screen2, screen4];
 const column2 = [screen5, screen6, screen5, screen6, screen5, screen6];
 const column3 = [screen7, screen8, screen9, screen7, screen8, screen9];
+
+// SpaceKeeper Screenshots
+const skColumn1 = [skScreen1, skScreen3, skScreen7, skScreen1, skScreen3, skScreen7];
+const skColumn2 = [skScreen2, skScreen5, skScreen2, skScreen5, skScreen2, skScreen5];
+const skColumn3 = [skScreen6, skScreen4, skScreen6, skScreen4, skScreen6, skScreen4];
 
 export default function ProjectApeiron() {
   return (
@@ -219,6 +233,112 @@ export default function ProjectApeiron() {
                  </div>
               </div>
               
+            </div>
+
+            {/* SpaceKeeper Section */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-24 items-center">
+              
+              {/* Left Column: Scrolling Screenshots (Swapped for variety) */}
+              <div className="relative h-[600px] overflow-hidden rounded-2xl order-2 lg:order-1">
+                 <div className="grid grid-cols-3 gap-4 h-full">
+                    {/* Column 1 - Scroll Down */}
+                    <div className="relative overflow-hidden h-full">
+                       <motion.div
+                         animate={{ y: ["-50%", "0%"] }}
+                         transition={{ 
+                           duration: 22, 
+                           repeat: Infinity, 
+                           ease: "linear" 
+                         }}
+                         className="flex flex-col gap-4 w-full"
+                       >
+                         {skColumn1.map((img, i) => (
+                           <img key={i} src={img} alt={`SpaceKeeper Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                         ))}
+                       </motion.div>
+                    </div>
+
+                    {/* Column 2 - Scroll Up */}
+                    <div className="relative overflow-hidden h-full">
+                       <motion.div
+                         animate={{ y: ["0%", "-50%"] }}
+                         transition={{ 
+                           duration: 28, 
+                           repeat: Infinity, 
+                           ease: "linear" 
+                         }}
+                         className="flex flex-col gap-4 w-full"
+                       >
+                         {skColumn2.map((img, i) => (
+                           <img key={i} src={img} alt={`SpaceKeeper Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                         ))}
+                       </motion.div>
+                    </div>
+
+                    {/* Column 3 - Scroll Down */}
+                    <div className="relative overflow-hidden h-full">
+                       <motion.div
+                         animate={{ y: ["-50%", "0%"] }}
+                         transition={{ 
+                           duration: 24, 
+                           repeat: Infinity, 
+                           ease: "linear" 
+                         }}
+                         className="flex flex-col gap-4 w-full"
+                       >
+                         {skColumn3.map((img, i) => (
+                           <img key={i} src={img} alt={`SpaceKeeper Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                         ))}
+                       </motion.div>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Right Column: Text */}
+              <div className="order-1 lg:order-2">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 rounded-full bg-[#326159]/10 text-[#4A857C] text-sm font-medium border border-[#326159]/20 flex items-center gap-1.5">
+                      <Layers className="w-3.5 h-3.5" /> Staff App
+                    </span>
+                  </div>
+                  
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                    SpaceKeeper <br />
+                    <span className="text-[#4A857C]">Staff Management</span>
+                  </h2>
+                  
+                  <p className="text-slate-300 text-lg leading-relaxed mb-8">
+                    An internal super-app for hotel personnel. SpaceKeeper digitizes all operational workflows - from housekeeping and maintenance tasks to room inspections and inventory management.
+                  </p>
+                  
+                  <h3 className="text-xl font-semibold text-white mb-4">Key Features:</h3>
+                  
+                  <ul className="space-y-3 mb-10 text-slate-400">
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#326159] flex-shrink-0"></div>
+                      <span className="leading-relaxed">Real-time task assignment and tracking for housekeeping.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#326159] flex-shrink-0"></div>
+                      <span className="leading-relaxed">Room status monitoring and instant maintenance reporting.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#326159] flex-shrink-0"></div>
+                      <span className="leading-relaxed">Digital checklists for quality control and inspections.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#326159] flex-shrink-0"></div>
+                      <span className="leading-relaxed">Integrated inventory management for hotel supplies.</span>
+                    </li>
+                  </ul>
+                </motion.div>
+              </div>
+
             </div>
 
             {/* Content Grid (Remaining content) */}
