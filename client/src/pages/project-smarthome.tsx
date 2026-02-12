@@ -50,58 +50,58 @@ export default function ProjectSmartHome() {
             <div className="grid lg:grid-cols-2 gap-8 mb-20">
               
               {/* ApeironSpace Project */}
-              <Link href="/projects/apeiron">
+              <Link href="/projects/apeiron" className="block h-full">
                 <motion.div 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-cyan-500/30 hover:bg-[#172B29]/50 transition-all duration-300 cursor-pointer"
+                  className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-cyan-500/30 hover:bg-[#172B29]/50 transition-all duration-300 cursor-pointer h-full flex flex-col"
                 >
                   <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-5 h-5 text-white" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
-                  <div className="h-64 overflow-hidden">
+                  <div className="h-64 overflow-hidden shrink-0">
                      <img src={apeironImage} alt="ApeironSpace" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   
-                  <div className="relative z-20 p-8 mt-[-100px]">
-                  <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
-                     <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20">
-                        <img src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
-                     </div>
-                     <h2 className="text-2xl font-bold text-white">ApeironSpace</h2>
-                  </div>
-                  
-                  <p className="text-slate-300 mb-6 leading-relaxed">
-                    A comprehensive smart home ecosystem where I led the development of three major sub-projects, enhancing the resident experience through digital integration.
-                  </p>
+                  <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow">
+                    <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
+                       <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20">
+                          <img src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
+                       </div>
+                       <h2 className="text-2xl font-bold text-white">ApeironSpace</h2>
+                    </div>
+                    
+                    <p className="text-slate-300 mb-6 leading-relaxed">
+                      A comprehensive smart home ecosystem where I led the development of three major sub-projects. I was responsible for the entire mobile architecture, ensuring a seamless experience for guests and staff through deep digital integration.
+                    </p>
 
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-start gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Apeiron Space App:</span> Main guest application for booking rooms and controlling the smart home environment.</p>
+                    <div className="space-y-4 mb-8 flex-grow">
+                      <div className="flex items-start gap-3">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
+                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Apeiron Space App:</span> Main guest application for booking rooms and controlling the smart home environment.</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
+                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">SpaceKeeper:</span> Housekeeping & staff management app with task tracking and smart home controls.</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
+                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">ODS (Kitchen Display):</span> System for chefs to track incoming orders from the guest application.</p>
+                      </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">SpaceKeeper:</span> Housekeeping & staff management app with task tracking and smart home controls.</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
-                      <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">ODS (Kitchen Display):</span> System for chefs to track incoming orders from the guest application.</p>
-                    </div>
-                  </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {["Flutter", "Clean Architecture", "CI/CD", "WebSocket"].map((tech) => (
-                      <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
-                        {tech}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {["Flutter", "Clean Architecture", "CI/CD", "WebSocket"].map((tech) => (
+                        <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
               </Link>
 
               {/* Wise Home Project */}
@@ -110,14 +110,14 @@ export default function ProjectSmartHome() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 hover:bg-[#3776F0]/50 transition-all duration-300"
+                className="group relative bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 hover:bg-[#3776F0]/50 transition-all duration-300 h-full flex flex-col"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
-                <div className="h-64 overflow-hidden">
+                <div className="h-64 overflow-hidden shrink-0">
                    <img src={wiseImage} alt="Wise Home" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 
-                <div className="relative z-20 p-8 mt-[-100px]">
+                <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow">
                   <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                      <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20">
                         <img src={wiseLogo} alt="Wise Logo" className="w-full h-full object-cover" />
@@ -129,13 +129,13 @@ export default function ProjectSmartHome() {
                     Developed a versatile "Add to App" SDK for Wise Home partners, enabling seamless IoT device onboarding integration into third-party mobile and web applications.
                   </p>
 
-                  <div className="bg-slate-800/50 rounded-xl p-5 border border-white/5 mb-8">
+                  <div className="bg-slate-800/50 rounded-xl p-5 border border-white/5 mb-8 flex-grow">
                     <h3 className="text-white font-medium mb-2 flex items-center gap-2">
                       <Code className="w-4 h-4 text-blue-400" />
                       Add to App Module
                     </h3>
                     <p className="text-sm text-slate-400 leading-relaxed">
-                      Developed a cross-platform module for Wise clients designed for integration into native Android and iOS applications. Additionally, I designed and implemented a web module to enable functionality in hybrid Cordova-based apps. This solution allowed clients to rapidly integrate the service into various client applications without restructuring their main architecture.
+                      Designed a cross-platform module for native Android and iOS apps, plus a web module for hybrid Cordova environments. This solution enabled clients to rapidly integrate IoT services without restructuring their main architecture.
                     </p>
                   </div>
 
