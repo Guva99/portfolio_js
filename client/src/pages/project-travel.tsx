@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { ExternalLink, Activity, Map, Pill, Smartphone, Globe, Plane, ZoomIn } from "lucide-react";
+import { ExternalLink, Activity, Map, Pill, Smartphone, Globe, Plane, ZoomIn, Users } from "lucide-react";
 import wowMainImage from "@/assets/images/wowtickets/main.png";
 import screen1 from "@/assets/images/wowtickets/screen1.webp";
 import screen2 from "@/assets/images/wowtickets/screen2.webp";
@@ -271,6 +271,18 @@ export default function ProjectTravel() {
                         <div>
                           <h4 className="text-xl font-bold text-white mb-2">Architecture & Development</h4>
                           <p className="text-slate-400">Designed and built the scalable Flutter architecture from the ground up, ensuring code maintainability and high performance across both iOS and Android platforms.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#B632DA]/30 transition-colors">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-[#B632DA]/10 text-[#B632DA] shrink-0">
+                          <Users className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-white mb-2">Team Leadership</h4>
+                          <p className="text-slate-400">As a Senior Developer, I managed a team of two developers, performing code reviews, task decomposition, and overseeing the entire development lifecycle through to release.</p>
                         </div>
                       </div>
                     </div>
