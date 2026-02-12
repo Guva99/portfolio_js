@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { ExternalLink, Activity, Map, Pill, Smartphone, Globe, Plane } from "lucide-react";
+import { ExternalLink, Activity, Map, Pill, Smartphone, Globe, Plane, ZoomIn } from "lucide-react";
 import wowMainImage from "@/assets/images/wowtickets/main.png";
 import screen1 from "@/assets/images/wowtickets/screen1.webp";
 import screen2 from "@/assets/images/wowtickets/screen2.webp";
@@ -13,6 +14,7 @@ import screen7 from "@/assets/images/wowtickets/screen7.webp";
 import screen8 from "@/assets/images/wowtickets/screen8.webp";
 import screen9 from "@/assets/images/wowtickets/screen9.webp";
 import screen10 from "@/assets/images/wowtickets/screen10.webp";
+import letterWowTickets from "@/assets/images/letter-wowtickets.png";
 
 // App Screenshots - grouped for columns
 const column1 = [screen1, screen2, screen3, screen1, screen2, screen3];
@@ -20,6 +22,8 @@ const column2 = [screen4, screen5, screen6, screen4, screen5, screen6];
 const column3 = [screen7, screen8, screen9, screen7, screen8, screen9];
 
 export default function ProjectTravel() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-[#B632DA]/30 font-sans overflow-x-hidden relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#B632DA] via-purple-500 to-[#B632DA] z-50"></div>
@@ -137,23 +141,7 @@ export default function ProjectTravel() {
                   {/* App Store Buttons */}
                   <div className="flex flex-wrap gap-4">
                     <a 
-                       href="#" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
-                    >
-                       <div className="absolute inset-0 bg-gradient-to-r from-[#B632DA] via-purple-500 to-[#B632DA] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
-                       <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <Smartphone className="w-5 h-5 text-white" />
-                          <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">Download on the</span>
-                             <span className="text-sm font-bold text-white">App Store</span>
-                          </div>
-                       </div>
-                    </a>
-
-                    <a 
-                       href="#" 
+                       href="https://play.google.com/store/apps/details?id=com.wowtickets.app" 
                        target="_blank" 
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
@@ -169,6 +157,27 @@ export default function ProjectTravel() {
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
                              <span className="text-sm font-bold text-white">Google Play</span>
+                          </div>
+                       </div>
+                    </a>
+
+                    <a 
+                       href="https://appgallery.huawei.com/app/C109490527" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
+                    >
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#B632DA] via-purple-500 to-[#B632DA] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
+                          <div className="relative w-5 h-5">
+                            {/* Huawei AppGallery Icon (Simple Briefcase style as placeholder or generic app store) */}
+                            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-white">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                          </div>
+                          <div className="flex flex-col items-start leading-none">
+                             <span className="text-[10px] text-slate-400 uppercase font-medium">Explore it on</span>
+                             <span className="text-sm font-bold text-white">AppGallery</span>
                           </div>
                        </div>
                     </a>
@@ -243,7 +252,7 @@ export default function ProjectTravel() {
                    Project Overview
                  </h3>
                  <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                   I participated in the development of WowTickets, a cutting-edge travel booking platform. The project focused on simplifying the flight booking process while offering competitive prices and a user-friendly interface.
+                   I built the WowTickets mobile application from scratch, designing the entire architecture and successfully leading it to release. The project focused on simplifying the flight booking process while offering competitive prices and a user-friendly interface.
                  </p>
                  <p className="text-slate-400 leading-relaxed mb-8">
                    The platform connects to multiple global distribution systems (GDS) to aggregate flight data, requiring optimized backend performance and a responsive frontend to handle real-time updates and bookings.
@@ -260,8 +269,8 @@ export default function ProjectTravel() {
                           <Plane className="w-6 h-6" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-white mb-2">Flight Search Engine</h4>
-                          <p className="text-slate-400">Optimized search algorithms to deliver fast and accurate flight results, including multi-city and round-trip options.</p>
+                          <h4 className="text-xl font-bold text-white mb-2">Architecture & Development</h4>
+                          <p className="text-slate-400">Designed and built the scalable Flutter architecture from the ground up, ensuring code maintainability and high performance across both iOS and Android platforms.</p>
                         </div>
                       </div>
                     </div>
@@ -308,8 +317,28 @@ export default function ProjectTravel() {
                   <div className="bg-gradient-to-br from-[#B632DA]/20 to-slate-900/60 border border-[#B632DA]/10 rounded-2xl p-6">
                     <h4 className="text-lg font-bold text-white mb-2">Result</h4>
                     <p className="text-slate-400 text-sm mb-4">
-                      Achieved a 30% increase in booking conversions and expanded user base to over 50 countries within the first year of launch.
+                      Successfully published the application on Google Play and Huawei AppGallery, achieving a 30% increase in booking conversions and expanding the user base to over 50 countries.
                     </p>
+                  </div>
+
+                  {/* Recommendation Letter */}
+                  <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
+                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Recommendation</h4>
+                    <div 
+                      className="group relative cursor-pointer overflow-hidden rounded-xl border border-slate-700 aspect-[3/4]"
+                      onClick={() => setSelectedImage(letterWowTickets)}
+                    >
+                      <img 
+                        src={letterWowTickets} 
+                        alt="WowTickets Recommendation Letter" 
+                        className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-violet-900/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                         <div className="bg-white/90 p-3 rounded-full shadow-lg backdrop-blur-sm">
+                           <ZoomIn className="w-6 h-6 text-[#B632DA]" />
+                         </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -319,6 +348,39 @@ export default function ProjectTravel() {
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="relative max-w-4xl max-h-[90vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={selectedImage} 
+                alt="Recommendation Letter Full" 
+                className="w-full h-full max-h-[90vh] object-contain rounded-lg shadow-2xl bg-white"
+              />
+              <button 
+                className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+                onClick={() => setSelectedImage(null)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
