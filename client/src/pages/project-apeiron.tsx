@@ -499,10 +499,16 @@ export default function ProjectApeiron() {
                   </div>
 
                   <div className="bg-gradient-to-br from-[#326159]/20 to-slate-900/60 border border-[#326159]/10 rounded-2xl p-6">
-                    <h4 className="text-lg font-bold text-white mb-2">Impact</h4>
-                    <p className="text-slate-400 text-sm mb-4">
-                      Delivered a robust, high-performance application that powers the daily operations of a fully automated smart hotel, handling thousands of guest interactions securely and reliably.
-                    </p>
+                    <h4 className="text-lg font-bold text-white mb-3">Result</h4>
+                    <div className="space-y-3 text-slate-400 text-sm">
+                      <p>
+                        Developed 2 full-fledged products from scratch (SpaceKeeper & ODS), expanding the Apeiron ecosystem.
+                      </p>
+                      <ul className="list-disc pl-4 space-y-1 text-slate-400/90">
+                         <li>Contributed to the development of in-app Chat and Smart Home features for the guest application.</li>
+                         <li>Integrated secure payment systems including Alfa Pay and SBP (Faster Payments System).</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
