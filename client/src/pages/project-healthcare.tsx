@@ -3,6 +3,8 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Activity, Map, Pill, Smartphone, Globe } from "lucide-react";
 import pulsarImage from "@/assets/images/pulsar-bonus.png";
+import iconGooglePlay from "@/assets/images/icon-google-play.png";
+import iconAppStore from "@/assets/images/icon-app-store.png";
 import screen1 from "@/assets/images/pulsar/screen1.webp";
 import screen2 from "@/assets/images/pulsar/screen2.webp";
 import screen3 from "@/assets/images/pulsar/screen3.webp";
@@ -143,7 +145,7 @@ export default function ProjectHealthcare() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <Smartphone className="w-5 h-5 text-white" />
+                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain brightness-0 invert" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Download on the</span>
                              <span className="text-sm font-bold text-white">App Store</span>
@@ -159,12 +161,7 @@ export default function ProjectHealthcare() {
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <div className="relative w-5 h-5">
-                             {/* Simple Android Icon using generic shape/icon as lucide doesn't have brand icons */}
-                             <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-white">
-                                <path d="M17.523 15.3414C17.523 16.7468 16.377 17.8928 14.9716 17.8928C13.5661 17.8928 12.4201 16.7468 12.4201 15.3414C12.4201 13.936 13.5661 12.79 14.9716 12.79C16.377 12.79 17.523 13.936 17.523 15.3414ZM7.92484 15.3414C7.92484 16.7468 6.77884 17.8928 5.37341 17.8928C3.96798 17.8928 2.82198 16.7468 2.82198 15.3414C2.82198 13.936 3.96798 12.79 5.37341 12.79C6.77884 12.79 7.92484 13.936 7.92484 15.3414ZM18.3375 6.35515L20.2796 2.99222C20.3756 2.82512 20.3182 2.61208 20.1511 2.51608C19.983 2.41908 19.771 2.47648 19.674 2.64461L17.7126 6.03964C16.0343 5.2753 14.156 4.8361 12.1645 4.8361C10.1601 4.8361 8.2709 5.28689 6.58667 6.06451L4.63622 2.64461C4.54023 2.47648 4.32719 2.42008 4.16009 2.51608C3.99299 2.61208 3.93559 2.82512 4.03159 2.99222L5.98565 6.3769C2.65158 8.19455 0.368164 11.6661 0.368164 15.6559C0.368164 15.7271 0.373905 15.7972 0.380614 15.8673H23.8617C23.8742 15.7915 23.8809 15.7149 23.8809 15.6377C23.8809 11.6249 21.6425 8.13809 18.3375 6.35515Z" />
-                             </svg>
-                          </div>
+                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain brightness-0 invert" />
                           <div className="flex flex-col items-start leading-none">
                              <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
                              <span className="text-sm font-bold text-white">Google Play</span>
