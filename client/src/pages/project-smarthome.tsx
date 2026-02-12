@@ -88,7 +88,7 @@ export default function ProjectSmartHome() {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {["React Native", "IoT", "WebSocket", "Node.js"].map((tech) => (
+                    {["Flutter", "Clean Architecture", "CI/CD", "WebSocket"].map((tech) => (
                       <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
                         {tech}
                       </span>
