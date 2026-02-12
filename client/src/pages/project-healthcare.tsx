@@ -296,7 +296,7 @@ export default function ProjectHealthcare() {
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Flutter", "React", "TypeScript", "Node.js", "PostgreSQL", "Google Maps API", "Firebase"].map((tech) => (
+                      {["Flutter", "Flutter Web", "MobX", "Clean Architecture", "CI/CD", "Google Maps API", "Firebase"].map((tech) => (
                         <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5">
                           {tech}
                         </span>
