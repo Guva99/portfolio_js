@@ -91,13 +91,6 @@ export default function ProjectTravel() {
                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
                <img src={wowMainImage} alt="WowTickets Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
                
-               <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
-                 <p className="text-[#B632DA] font-medium mb-1">Platform</p>
-                 <div className="flex gap-4 text-white text-lg font-bold">
-                   <span className="flex items-center gap-2"><Smartphone className="w-5 h-5" /> iOS & Android</span>
-                   <span className="flex items-center gap-2"><Globe className="w-5 h-5" /> Web</span>
-                 </div>
-               </div>
             </motion.div>
 
             {/* Mobile App Showcase Section */}
