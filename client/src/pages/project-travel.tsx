@@ -303,17 +303,6 @@ export default function ProjectTravel() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#B632DA]/30 transition-colors">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-[#B632DA]/10 text-[#B632DA] shrink-0">
-                          <Activity className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-bold text-white mb-2">Real-time Updates</h4>
-                          <p className="text-slate-400">Implemented WebSocket connections to provide real-time updates on flight status, price changes, and booking confirmations.</p>
-                        </div>
-                      </div>
-                    </div>
 
                     <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#B632DA]/30 transition-colors">
                       <div className="flex items-start gap-4">
