@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Home, Smartphone, Layers, Code, Database, Server, Wifi } from "lucide-react";
-import apeironImage from "@/assets/images/smarthome/apeiron-main.jpg";
-import wiseImage from "@/assets/images/smarthome/wise-home.jpg";
+import apeironImage from "@assets/image_1770921547262.png";
+import wiseImage from "@assets/image_1770921682400.png";
 
 export default function ProjectSmartHome() {
   return (
