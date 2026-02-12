@@ -109,7 +109,7 @@ export default function ProjectSmartHome() {
                 </div>
                 
                 <div className="relative z-20 p-8 mt-[-100px]">
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                      <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
                         <Smartphone className="w-6 h-6" />
                      </div>
