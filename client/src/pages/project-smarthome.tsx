@@ -103,7 +103,7 @@ export default function ProjectSmartHome() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="group relative bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 transition-all duration-300"
+                className="group relative bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 hover:bg-[#3776F0] transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-slate-950 z-10"></div>
                 <div className="h-64 overflow-hidden">
@@ -133,7 +133,7 @@ export default function ProjectSmartHome() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-auto">
-                    {["Swift", "Kotlin", "BLE", "mDNS"].map((tech) => (
+                    {["Swift", "Kotlin", "Zigbee", "Wirenboard", "React Native"].map((tech) => (
                       <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
                         {tech}
                       </span>
