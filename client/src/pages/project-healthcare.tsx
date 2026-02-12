@@ -176,7 +176,7 @@ export default function ProjectHealthcare() {
               </div>
 
               {/* Right Column: Scrolling Screenshots */}
-              <div className="relative h-[600px] overflow-hidden rounded-2xl bg-slate-900/20 border border-white/5 p-4">
+              <div className="relative h-[600px] overflow-hidden rounded-2xl">
                  {/* Fade overlays */}
                  <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-950 to-transparent z-10 pointer-events-none"></div>
                  <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-10 pointer-events-none"></div>
