@@ -23,6 +23,15 @@ import skScreen5 from "@assets/заставка_1770929185022.png";
 import skScreen6 from "@assets/Задачи_1770929185022.png";
 import skScreen7 from "@assets/задача_1770929185022.png";
 
+// ODS Images
+import odsSplash from "@assets/00_-_splash_1770929401621.png";
+import odsLogin from "@assets/00_-_login_screen_1770929401621.png";
+import odsOrders1 from "@assets/01_-_Экран_подачи_завтраков_(1)_1770929401622.png";
+import odsOrders2 from "@assets/01_-_Экран_подачи_завтраков_1770929401622.png";
+
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+
 // App Screenshots - grouped for columns
 const column1 = [screen1, screen2, screen4, screen1, screen2, screen4];
 const column2 = [screen5, screen6, screen5, screen6, screen5, screen6];
@@ -33,7 +42,12 @@ const skColumn1 = [skScreen1, skScreen3, skScreen7, skScreen1, skScreen3, skScre
 const skColumn2 = [skScreen2, skScreen5, skScreen2, skScreen5, skScreen2, skScreen5];
 const skColumn3 = [skScreen6, skScreen4, skScreen6, skScreen4, skScreen6, skScreen4];
 
+// ODS Screenshots
+const odsImages = [odsSplash, odsLogin, odsOrders1, odsOrders2];
+
 export default function ProjectApeiron() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })])
+
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-[#326159]/30 font-sans overflow-x-hidden relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#326159] via-[#4A857C] to-[#326159] z-50"></div>
@@ -339,6 +353,78 @@ export default function ProjectApeiron() {
                 </motion.div>
               </div>
 
+            </div>
+
+            {/* ODS Section */}
+            <div className="mb-24">
+              <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                {/* Left Column: Text */}
+                <div className="md:w-1/2">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="px-3 py-1 rounded-full bg-[#326159]/10 text-[#4A857C] text-sm font-medium border border-[#326159]/20 flex items-center gap-1.5">
+                        <Server className="w-3.5 h-3.5" /> Kitchen Display
+                      </span>
+                    </div>
+                    
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                      ODS <br />
+                      <span className="text-[#4A857C]">Orders Display System</span>
+                    </h2>
+                    
+                    <p className="text-slate-300 text-lg leading-relaxed mb-8">
+                      A dedicated tablet application for kitchen staff and service personnel. ODS provides a real-time visualization of incoming orders from guests, ensuring timely preparation and delivery.
+                    </p>
+                    
+                    <h3 className="text-xl font-semibold text-white mb-4">Capabilities:</h3>
+                    
+                    <ul className="space-y-3 mb-10 text-slate-400">
+                      <li className="flex gap-3">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#326159] flex-shrink-0"></div>
+                        <span className="leading-relaxed">Instant order notification with audible alerts.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#326159] flex-shrink-0"></div>
+                        <span className="leading-relaxed">Detailed order breakdown with guest preferences and notes.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#326159] flex-shrink-0"></div>
+                        <span className="leading-relaxed">Status tracking (Received, Preparing, Ready for Delivery).</span>
+                      </li>
+                    </ul>
+                  </motion.div>
+                </div>
+
+                {/* Right Column: Tablet Carousel */}
+                <div className="md:w-1/2 w-full">
+                  <div className="relative mx-auto border-gray-800 bg-gray-900 border-[14px] rounded-[2.5rem] h-[300px] md:h-[400px] w-full max-w-[600px] shadow-xl">
+                    <div className="h-[32px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                    <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                    <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                    <div className="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                    <div className="rounded-[2rem] overflow-hidden h-full w-full bg-slate-800 relative">
+                      {/* Embla Carousel */}
+                      <div className="overflow-hidden h-full" ref={emblaRef}>
+                        <div className="flex h-full">
+                          {odsImages.map((src, index) => (
+                            <div className="flex-[0_0_100%] min-w-0 h-full relative" key={index}>
+                              <img 
+                                src={src} 
+                                alt={`ODS Screen ${index + 1}`} 
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Content Grid (Remaining content) */}
