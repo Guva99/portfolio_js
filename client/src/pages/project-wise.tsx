@@ -129,7 +129,7 @@ export default function ProjectWise() {
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#3776F0] flex-shrink-0"></div>
-                      <span className="leading-relaxed">Web Performance Optimization: Reducing bundle size, implementing lazy loading for heavy screens, and configuring caching.</span>
+                      <span className="leading-relaxed">Web Modules for Cordova: Separate web builds adapted for the Cordova shell and browser limitations while preserving a consistent UX.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#3776F0] flex-shrink-0"></div>
