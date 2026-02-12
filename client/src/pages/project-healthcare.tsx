@@ -20,20 +20,20 @@ const column3 = [screen7, screen8, screen9, screen7, screen8, screen9];
 
 export default function ProjectHealthcare() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white selection:bg-[#052AFF]/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#052AFF] via-blue-500 to-[#052AFF] z-50"></div>
+    <div className="min-h-screen bg-slate-950 text-white selection:bg-[#06BA00]/30 font-sans overflow-x-hidden relative">
+      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] z-50"></div>
       
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
           {/* Ball 1 */}
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#052AFF] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#06BA00] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1"></div>
           {/* Ball 3 */}
-          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-3"></div>
+          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-green-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-3"></div>
           {/* Ball 4 */}
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#052AFF] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1 animation-delay-2000"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#06BA00] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1 animation-delay-2000"></div>
           {/* Ball 5 (Center) */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#052AFF] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-30 animate-blob-2 animation-delay-4000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#06BA00] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-30 animate-blob-2 animation-delay-4000"></div>
         </div>
       </div>
 
@@ -52,13 +52,13 @@ export default function ProjectHealthcare() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-[#052AFF]/10 text-[#052AFF] text-sm font-medium border border-[#052AFF]/20 flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-[#06BA00]/10 text-[#06BA00] text-sm font-medium border border-[#06BA00]/20 flex items-center gap-1.5">
                     <Activity className="w-3.5 h-3.5" /> Healthcare
                   </span>
                   <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-sm font-medium border border-white/10">Full Stack</span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  PulSarBonus <span className="text-[#052AFF]">App</span>
+                  PulSarBonus <span className="text-[#06BA00]">App</span>
                 </h1>
               </div>
               
@@ -67,7 +67,7 @@ export default function ProjectHealthcare() {
                    href="https://pulsarbonus.ru/" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#052AFF] hover:bg-[#052AFF]/90 text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-[#052AFF]/20"
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#06BA00] hover:bg-[#06BA00]/90 text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-[#06BA00]/20"
                  >
                    Visit Website <ExternalLink className="w-4 h-4" />
                  </a>
@@ -85,7 +85,7 @@ export default function ProjectHealthcare() {
                <img src={pulsarImage} alt="PulSarBonus Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
                
                <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
-                 <p className="text-[#052AFF] font-medium mb-1">Platform</p>
+                 <p className="text-[#06BA00] font-medium mb-1">Platform</p>
                  <div className="flex gap-4 text-white text-lg font-bold">
                    <span className="flex items-center gap-2"><Smartphone className="w-5 h-5" /> iOS & Android</span>
                    <span className="flex items-center gap-2"><Globe className="w-5 h-5" /> Web</span>
@@ -105,7 +105,7 @@ export default function ProjectHealthcare() {
                 >
                   <h2 className="text-3xl md:text-5xl font-bold mb-6">
                     Easy & Smart <br />
-                    <span className="text-[#052AFF]">Health Management</span>
+                    <span className="text-[#06BA00]">Health Management</span>
                   </h2>
                   
                   <p className="text-slate-300 text-lg leading-relaxed mb-8">
@@ -116,19 +116,19 @@ export default function ProjectHealthcare() {
                   
                   <ul className="space-y-3 mb-10 text-slate-400">
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#052AFF] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#06BA00] flex-shrink-0"></div>
                       <span className="leading-relaxed">Designing and developing key features, including Home Medicine Cabinet, Course Treatment Tracker, and Pharmacy Map.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#052AFF] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#06BA00] flex-shrink-0"></div>
                       <span className="leading-relaxed">Ensuring cross-platform support (Web & Mobile) to provide a seamless experience for all users.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#052AFF] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#06BA00] flex-shrink-0"></div>
                       <span className="leading-relaxed">Optimizing the interface and user experience, making the service intuitive and easy to use.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#052AFF] flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#06BA00] flex-shrink-0"></div>
                       <span className="leading-relaxed">Implementing geolocation and barcode scanning technologies to simplify app interactions.</span>
                     </li>
                   </ul>
@@ -141,7 +141,7 @@ export default function ProjectHealthcare() {
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-[#052AFF] via-blue-500 to-[#052AFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <Smartphone className="w-5 h-5 text-white" />
                           <div className="flex flex-col items-start leading-none">
@@ -157,7 +157,7 @@ export default function ProjectHealthcare() {
                        rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-[#052AFF] via-blue-500 to-[#052AFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#06BA00] via-green-500 to-[#06BA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <div className="relative w-5 h-5">
                              {/* Simple Android Icon using generic shape/icon as lucide doesn't have brand icons */}
@@ -238,7 +238,7 @@ export default function ProjectHealthcare() {
               
               <div className="md:col-span-2">
                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                   <span className="w-8 h-1 bg-[#052AFF] rounded-full"></span>
+                   <span className="w-8 h-1 bg-[#06BA00] rounded-full"></span>
                    Project Overview
                  </h3>
                  <p className="text-slate-300 text-lg leading-relaxed mb-6">
@@ -249,13 +249,13 @@ export default function ProjectHealthcare() {
                  </p>
 
                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                   <span className="w-8 h-1 bg-[#052AFF] rounded-full"></span>
+                   <span className="w-8 h-1 bg-[#06BA00] rounded-full"></span>
                    Key Contributions
                  </h3>
                  <div className="space-y-6">
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#052AFF]/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#06BA00]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-[#052AFF]/10 text-[#052AFF] shrink-0">
+                        <div className="p-3 rounded-lg bg-[#06BA00]/10 text-[#06BA00] shrink-0">
                           <Pill className="w-6 h-6" />
                         </div>
                         <div>
@@ -265,9 +265,9 @@ export default function ProjectHealthcare() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#052AFF]/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#06BA00]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-[#052AFF]/10 text-[#052AFF] shrink-0">
+                        <div className="p-3 rounded-lg bg-[#06BA00]/10 text-[#06BA00] shrink-0">
                           <Activity className="w-6 h-6" />
                         </div>
                         <div>
@@ -277,9 +277,9 @@ export default function ProjectHealthcare() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#052AFF]/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#06BA00]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-[#052AFF]/10 text-[#052AFF] shrink-0">
+                        <div className="p-3 rounded-lg bg-[#06BA00]/10 text-[#06BA00] shrink-0">
                           <Map className="w-6 h-6" />
                         </div>
                         <div>
@@ -304,7 +304,7 @@ export default function ProjectHealthcare() {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-[#052AFF]/20 to-slate-900/60 border border-[#052AFF]/10 rounded-2xl p-6">
+                  <div className="bg-gradient-to-br from-[#06BA00]/20 to-slate-900/60 border border-[#06BA00]/10 rounded-2xl p-6">
                     <h4 className="text-lg font-bold text-white mb-2">Result</h4>
                     <p className="text-slate-400 text-sm mb-4">
                       Successfully launched the platform with over 10k+ active users in the first month. improved user retention by 40% through the course treatment feature.
