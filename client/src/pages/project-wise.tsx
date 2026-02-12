@@ -284,7 +284,7 @@ export default function ProjectWise() {
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Flutter", "Dart", "MVVM/Bloc/Cubit", "REST API", "WebSocket", "CI/CD", "Figma", "GitLab"].map((tech) => (
+                      {["Flutter", "Dart", "MVVM/Bloc/Cubit", "REST API", "WebSocket", "WebRTC", "RTSP", "CI/CD", "Figma", "GitLab"].map((tech) => (
                         <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5">
                           {tech}
                         </span>
