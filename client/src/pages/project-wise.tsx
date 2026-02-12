@@ -125,6 +125,10 @@ export default function ProjectWise() {
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#3776F0] flex-shrink-0"></div>
+                      <span className="leading-relaxed">Video Streaming & Communication: Implemented WebRTC for real-time intercom video calls and RTSP streams for surveillance cameras.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#3776F0] flex-shrink-0"></div>
                       <span className="leading-relaxed">Web Performance Optimization: Reducing bundle size, implementing lazy loading for heavy screens, and configuring caching.</span>
                     </li>
                     <li className="flex gap-3">
