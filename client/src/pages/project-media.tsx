@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Smartphone, Server, Database, Wifi, Play, Tv, Radio, Search, Cast, Globe, Download, ChevronLeft, ChevronRight, Monitor, Keyboard } from "lucide-react";
-import tavriaHero from "@assets/tavria_1770932142157.webp";
+import tavriaHero from "@assets/image_1770932932101.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
 import iconAppGallery from "@assets/icon-appgallery.png";
 import appTv1 from "@assets/apptv_1_1770932465780.webp";
