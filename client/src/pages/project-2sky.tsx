@@ -91,32 +91,32 @@ export default function Project2Sky() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                    Global Connectivity <br />
-                    <span className="text-blue-500">Without Borders</span>
+                    eSIM Management <br />
+                    <span className="text-blue-500">Platform</span>
                   </h2>
                   
                   <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                    2Sky Mobile provides seamless eSIM connectivity for travelers worldwide. The app allows users to purchase data plans, manage their eSIMs, and stay connected in over 190 countries without changing physical SIM cards.
+                    2SkyMobile is a convenient and reliable solution for managing eSIM. Users can choose tariffs, manage connections, and make payments directly within the app. The designed architecture enables easy platform scaling and the addition of new features.
                   </p>
                   
-                  <h3 className="text-xl font-semibold text-white mb-4">My Key Contributions:</h3>
+                  <h3 className="text-xl font-semibold text-white mb-4">As part of the project, I was responsible for:</h3>
                   
                   <ul className="space-y-3 mb-10 text-slate-400">
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Built the project from scratch, establishing the architecture and development roadmap.</span>
+                      <span className="leading-relaxed">Developing and optimizing the mobile application, enhancing its performance.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Developed a white-label solution allowing for easy rebranding and deployment for partners.</span>
+                      <span className="leading-relaxed">Integrating the Stripe payment system, ensuring secure and seamless transactions.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Integrated eSIM provisioning and activation flows.</span>
+                      <span className="leading-relaxed">Implementing authentication and a personal account, improving the user experience.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Led the development team and ensured code quality and timely delivery.</span>
+                      <span className="leading-relaxed">Designing the architecture and roadmap, ensuring stable project development.</span>
                     </li>
                   </ul>
 
@@ -246,8 +246,8 @@ export default function Project2Sky() {
                           <Signal className="w-6 h-6" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-white mb-2">eSIM Integration</h4>
-                          <p className="text-slate-400">Implemented complex logic for provisioning and managing eSIM profiles directly within the app.</p>
+                          <h4 className="text-xl font-bold text-white mb-2">Scalable Architecture</h4>
+                          <p className="text-slate-400">Designed a modular architecture enabling seamless project expansion and easy addition of new features.</p>
                         </div>
                       </div>
                     </div>
@@ -258,8 +258,8 @@ export default function Project2Sky() {
                           <Globe className="w-6 h-6" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-white mb-2">Scalable Architecture</h4>
-                          <p className="text-slate-400">Designed a modular architecture to support white-labeling, allowing for quick deployment of branded versions for partners.</p>
+                          <h4 className="text-xl font-bold text-white mb-2">Secure Payments</h4>
+                          <p className="text-slate-400">Integrated Stripe for secure transactions and optimized the eSIM activation process for a better user experience.</p>
                         </div>
                       </div>
                     </div>
@@ -271,7 +271,7 @@ export default function Project2Sky() {
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Flutter", "Dart", "BLoC", "Clean Architecture", "eSIM API", "Stripe", "CI/CD"].map((tech) => (
+                      {["Flutter", "Dart", "BLoC", "Provider", "Firebase Auth", "Stripe API", "REST API", "GraphQL"].map((tech) => (
                         <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5">
                           {tech}
                         </span>
