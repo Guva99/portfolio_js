@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, BookOpen, HeartPulse, Plane, Home as HomeIcon, Tv, Code, User, Briefcase } from "lucide-react";
+import { Menu, X, ChevronDown, BookOpen, HeartPulse, Plane, Home as HomeIcon, Tv, Code, User, Briefcase, Users, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 
@@ -13,6 +13,8 @@ const menuItems = [
       { title: "Travel", icon: Plane, href: "/projects/travel" },
       { title: "Smart Home", icon: HomeIcon, href: "/projects/smarthome" },
       { title: "Media", icon: Tv, href: "/projects/media" },
+      { title: "Social", icon: Users, href: "/projects/truefortwo" },
+      { title: "Connectivity", icon: Wifi, href: "/projects/2sky" },
     ]
   },
   {

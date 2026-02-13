@@ -11,6 +11,8 @@ import ProjectSmartHome from "@/pages/project-smarthome";
 import ProjectWise from "@/pages/project-wise";
 import ProjectApeiron from "@/pages/project-apeiron";
 import ProjectMedia from "@/pages/project-media";
+import ProjectTrueForTwo from "@/pages/project-truefortwo";
+import Project2Sky from "@/pages/project-2sky";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
@@ -24,6 +26,8 @@ function Router() {
       <Route path="/projects/wise" component={ProjectWise} />
       <Route path="/projects/apeiron" component={ProjectApeiron} />
       <Route path="/projects/media" component={ProjectMedia} />
+      <Route path="/projects/truefortwo" component={ProjectTrueForTwo} />
+      <Route path="/projects/2sky" component={Project2Sky} />
       <Route path="/" component={Home} />
       <Route component={NotFound} />
     </Switch>
