@@ -113,19 +113,19 @@ export default function ProjectTrueForTwo() {
                   <ul className="space-y-3 mb-10 text-slate-400">
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
-                      <span className="leading-relaxed">Developed the entire mobile application architecture using Flutter.</span>
+                      <span className="leading-relaxed"><strong className="text-slate-200">Lead Developer:</strong> Led the development team, ensuring successful deadline compliance and high-quality delivery.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
-                      <span className="leading-relaxed">Implemented real-time chat functionality with WebSocket integration.</span>
+                      <span className="leading-relaxed">Implemented complex <strong>WebSocket chat</strong> with integrated moderation flows.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
-                      <span className="leading-relaxed">Created a smooth, gesture-based matching interface.</span>
+                      <span className="leading-relaxed">Integrated <strong>native gallery</strong> features for seamless media selection and handling.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
-                      <span className="leading-relaxed">Integrated secure authentication and user verification systems.</span>
+                      <span className="leading-relaxed">Developed <strong>custom libraries</strong> to optimize performance across different devices.</span>
                     </li>
                   </ul>
 
@@ -256,7 +256,7 @@ export default function ProjectTrueForTwo() {
                         </div>
                         <div>
                           <h4 className="text-xl font-bold text-white mb-2">Real-time Messaging</h4>
-                          <p className="text-slate-400">Built a robust chat system using WebSockets for instant message delivery and status updates.</p>
+                          <p className="text-slate-400">Built a robust WebSocket chat system with instant delivery and integrated moderation flows for user safety.</p>
                         </div>
                       </div>
                     </div>
@@ -267,8 +267,8 @@ export default function ProjectTrueForTwo() {
                           <Zap className="w-6 h-6" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-white mb-2">High Performance</h4>
-                          <p className="text-slate-400">Optimized app performance to handle image uploads and heavy user interaction smoothly.</p>
+                          <h4 className="text-xl font-bold text-white mb-2">Optimization & Custom Libs</h4>
+                          <p className="text-slate-400">Wrote custom libraries to ensure smooth performance and layout optimization across all device types.</p>
                         </div>
                       </div>
                     </div>
