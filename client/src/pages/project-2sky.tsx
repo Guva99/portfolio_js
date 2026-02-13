@@ -3,17 +3,26 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
-import { ExternalLink, Smartphone, Globe, Signal, Wifi, Server, Radio } from "lucide-react";
-import project2Sky from "@/assets/images/project-2sky.webp";
+import { ExternalLink, Smartphone, Globe, Signal, Wifi, Server, Radio, FileText, Layout } from "lucide-react";
+import project2Sky from "@assets/twosky1_1770975112969.webp";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
 
-// 2Sky Screenshots (placeholder)
-const screen1 = project2Sky;
+import screen1 from "@assets/twosky6_1770975112969.webp";
+import screen2 from "@assets/twosky7_1770975112969.webp";
+import screen3 from "@assets/twosky5_1770975112970.webp";
+import screen4 from "@assets/twosky3_1770975112971.webp";
+import screen5 from "@assets/twosky10_1770975112971.webp";
+import screen6 from "@assets/twosky4_1770975112972.webp";
+import screen7 from "@assets/twosky2_1770975112972.webp";
+import screen8 from "@assets/twosky9_1770975112973.webp";
+import screen9 from "@assets/twosky11_1770975112973.webp";
+import screen10 from "@assets/twosky8_1770975112973.webp";
 
-const column1 = [screen1, screen1, screen1, screen1];
-const column2 = [screen1, screen1, screen1, screen1];
-const column3 = [screen1, screen1, screen1, screen1];
+// 2Sky Screenshots
+const column1 = [screen1, screen2, screen3, screen4, screen1, screen2];
+const column2 = [screen5, screen6, screen7, screen5, screen6, screen7];
+const column3 = [screen8, screen9, screen10, screen8, screen9, screen10];
 
 export default function Project2Sky() {
   return (
@@ -96,27 +105,27 @@ export default function Project2Sky() {
                   </h2>
                   
                   <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                    2SkyMobile is a convenient and reliable solution for managing eSIM. Users can choose tariffs, manage connections, and make payments directly within the app. The designed architecture enables easy platform scaling and the addition of new features.
+                    2SkyMobile is a convenient and reliable solution for managing eSIMs. Users can choose tariffs, manage connections, and make payments directly within the app. The platform includes a mobile app, a tablet version, and a responsive website built on Flutter Web.
                   </p>
                   
-                  <h3 className="text-xl font-semibold text-white mb-4">As part of the project, I was responsible for:</h3>
+                  <h3 className="text-xl font-semibold text-white mb-4">My Key Contributions (Lead Developer):</h3>
                   
                   <ul className="space-y-3 mb-10 text-slate-400">
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Developing and optimizing the mobile application, enhancing its performance.</span>
+                      <span className="leading-relaxed"><strong>Project Leadership:</strong> Built the project from scratch, creating a comprehensive roadmap and designing the entire architecture on a single code base.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Integrating the Stripe payment system, ensuring secure and seamless transactions.</span>
+                      <span className="leading-relaxed"><strong>Cross-Platform Development:</strong> Successfully implemented and supported mobile, tablet, and Flutter Web versions.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Implementing authentication and a personal account, improving the user experience.</span>
+                      <span className="leading-relaxed"><strong>Team Collaboration:</strong> Maintained close interaction with clients and backend developers to ensure seamless integration and timely delivery.</span>
                     </li>
                     <li className="flex gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></div>
-                      <span className="leading-relaxed">Designing the architecture and roadmap, ensuring stable project development.</span>
+                      <span className="leading-relaxed"><strong>Technical Execution:</strong> Integrated Stripe, implemented complex eSIM flows, and optimized performance across all platforms.</span>
                     </li>
                   </ul>
 
@@ -243,11 +252,11 @@ export default function Project2Sky() {
                     <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-blue-600/30 transition-colors">
                       <div className="flex items-start gap-4">
                         <div className="p-3 rounded-lg bg-blue-600/10 text-blue-400 shrink-0">
-                          <Signal className="w-6 h-6" />
+                          <Layout className="w-6 h-6" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-white mb-2">Scalable Architecture</h4>
-                          <p className="text-slate-400">Designed a modular architecture enabling seamless project expansion and easy addition of new features.</p>
+                          <h4 className="text-xl font-bold text-white mb-2">Unified Codebase</h4>
+                          <p className="text-slate-400">Designed a single codebase architecture supporting Mobile (iOS/Android), Tablet, and Web (Flutter Web) platforms.</p>
                         </div>
                       </div>
                     </div>
@@ -255,11 +264,11 @@ export default function Project2Sky() {
                     <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-blue-600/30 transition-colors">
                       <div className="flex items-start gap-4">
                         <div className="p-3 rounded-lg bg-blue-600/10 text-blue-400 shrink-0">
-                          <Globe className="w-6 h-6" />
+                          <FileText className="w-6 h-6" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-white mb-2">Secure Payments</h4>
-                          <p className="text-slate-400">Integrated Stripe for secure transactions and optimized the eSIM activation process for a better user experience.</p>
+                          <h4 className="text-xl font-bold text-white mb-2">Client Recommendation</h4>
+                          <p className="text-slate-400">Received a recommendation letter highlighting successful project delivery, architectural expertise, and effective team leadership.</p>
                         </div>
                       </div>
                     </div>
@@ -271,7 +280,7 @@ export default function Project2Sky() {
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Flutter", "Dart", "BLoC", "Provider", "Firebase Auth", "Stripe API", "REST API", "GraphQL"].map((tech) => (
+                      {["Flutter", "Flutter Web", "Dart", "BLoC", "Provider", "Firebase Auth", "Stripe API", "REST API", "GraphQL"].map((tech) => (
                         <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5">
                           {tech}
                         </span>
