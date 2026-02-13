@@ -3,6 +3,9 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import { LoadingScreen } from "@/components/ui/loading-screen";
 import ScrollToTop from "@/components/scroll-to-top";
 import Technologies from "@/pages/technologies";
 import ProjectHealthcare from "@/pages/project-healthcare";
@@ -35,9 +38,31 @@ function Router() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Lock scroll during loading
+    document.body.style.overflow = "hidden";
+
+    // Artificial delay to ensure the loading screen is visible and assets have time to load
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.overflow = "unset";
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <AnimatePresence mode="wait">
+          {isLoading && <LoadingScreen key="loader" />}
+        </AnimatePresence>
+
         <ScrollToTop />
         <Toaster />
         <Router />
