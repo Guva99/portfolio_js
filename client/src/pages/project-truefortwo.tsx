@@ -26,15 +26,15 @@ const column3 = [screen8, screen9, screen10, screen8, screen9, screen10];
 
 export default function ProjectTrueForTwo() {
   return (
-    <div className="min-h-[100dvh] bg-slate-950 text-white selection:bg-fuchsia-500/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-fuchsia-500 z-50"></div>
+    <div className="min-h-[100dvh] bg-slate-950 text-white selection:bg-[#8389F9]/30 font-sans overflow-x-hidden relative">
+      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#8389F9] via-purple-500 to-[#8389F9] z-50"></div>
       
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-fuchsia-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#8389F9] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
           <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-purple-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-fuchsia-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#8389F9] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
         </div>
       </div>
 
@@ -53,19 +53,19 @@ export default function ProjectTrueForTwo() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-400 text-sm font-medium border border-fuchsia-500/20 flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-[#8389F9]/10 text-[#8389F9] text-sm font-medium border border-[#8389F9]/20 flex items-center gap-1.5">
                     <Users className="w-3.5 h-3.5" /> Social & Dating
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  True for Two <span className="text-fuchsia-500">App</span>
+                  True for Two <span className="text-[#8389F9]">App</span>
                 </h1>
               </div>
               
               <div className="flex gap-3">
                 <a 
                    href="#" 
-                   className="inline-flex items-center gap-2 px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-500 text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-fuchsia-500/20"
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#8389F9] hover:bg-[#8389F9]/80 text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-[#8389F9]/20"
                  >
                    Visit Website <ExternalLink className="w-4 h-4" />
                  </a>
@@ -84,7 +84,7 @@ export default function ProjectTrueForTwo() {
                  src={projectTrueForTwo} 
                  alt="True for Two Application Interface" 
                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                 shimmerColor="bg-fuchsia-500/20"
+                 shimmerColor="bg-[#8389F9]/20"
                  wrapperClassName="w-full h-full"
                />
             </motion.div>
@@ -101,7 +101,7 @@ export default function ProjectTrueForTwo() {
                 >
                   <h2 className="text-3xl md:text-5xl font-bold mb-6">
                     Connect & Meet <br />
-                    <span className="text-fuchsia-500">Real People</span>
+                    <span className="text-[#8389F9]">Real People</span>
                   </h2>
                   
                   <p className="text-slate-300 text-lg leading-relaxed mb-8">
@@ -112,19 +112,19 @@ export default function ProjectTrueForTwo() {
                   
                   <ul className="space-y-3 mb-10 text-slate-400">
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fuchsia-500 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
                       <span className="leading-relaxed">Developed the entire mobile application architecture using Flutter.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fuchsia-500 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
                       <span className="leading-relaxed">Implemented real-time chat functionality with WebSocket integration.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fuchsia-500 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
                       <span className="leading-relaxed">Created a smooth, gesture-based matching interface.</span>
                     </li>
                     <li className="flex gap-3">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-fuchsia-500 flex-shrink-0"></div>
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8389F9] flex-shrink-0"></div>
                       <span className="leading-relaxed">Integrated secure authentication and user verification systems.</span>
                     </li>
                   </ul>
@@ -135,7 +135,7 @@ export default function ProjectTrueForTwo() {
                        href="#" 
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#8389F9] via-purple-500 to-[#8389F9] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
@@ -149,7 +149,7 @@ export default function ProjectTrueForTwo() {
                        href="#" 
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
-                       <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
+                       <div className="absolute inset-0 bg-gradient-to-r from-[#8389F9] via-purple-500 to-[#8389F9] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
@@ -182,7 +182,7 @@ export default function ProjectTrueForTwo() {
                              src={img} 
                              alt={`App Screen ${i}`} 
                              className="w-full rounded-xl border border-white/10"
-                             shimmerColor="bg-fuchsia-500/20"
+                             shimmerColor="bg-[#8389F9]/20"
                              wrapperClassName="w-full rounded-xl"
                            />
                          ))}
@@ -206,7 +206,7 @@ export default function ProjectTrueForTwo() {
                              src={img} 
                              alt={`App Screen ${i}`} 
                              className="w-full rounded-xl border border-white/10"
-                             shimmerColor="bg-fuchsia-500/20"
+                             shimmerColor="bg-[#8389F9]/20"
                              wrapperClassName="w-full rounded-xl"
                            />
                          ))}
@@ -230,7 +230,7 @@ export default function ProjectTrueForTwo() {
                              src={img} 
                              alt={`App Screen ${i}`} 
                              className="w-full rounded-xl border border-white/10"
-                             shimmerColor="bg-fuchsia-500/20"
+                             shimmerColor="bg-[#8389F9]/20"
                              wrapperClassName="w-full rounded-xl"
                            />
                          ))}
@@ -245,13 +245,13 @@ export default function ProjectTrueForTwo() {
             <div className="grid md:grid-cols-3 gap-10 md:gap-16">
               <div className="md:col-span-2">
                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                   <span className="w-8 h-1 bg-fuchsia-500 rounded-full"></span>
+                   <span className="w-8 h-1 bg-[#8389F9] rounded-full"></span>
                    Technical Highlights
                  </h3>
                  <div className="space-y-6">
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-fuchsia-500/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#8389F9]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-fuchsia-500/10 text-fuchsia-400 shrink-0">
+                        <div className="p-3 rounded-lg bg-[#8389F9]/10 text-[#8389F9] shrink-0">
                           <MessageSquare className="w-6 h-6" />
                         </div>
                         <div>
@@ -261,9 +261,9 @@ export default function ProjectTrueForTwo() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-fuchsia-500/30 transition-colors">
+                    <div className="bg-slate-900/40 border border-white/5 rounded-xl p-6 hover:border-[#8389F9]/30 transition-colors">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-fuchsia-500/10 text-fuchsia-400 shrink-0">
+                        <div className="p-3 rounded-lg bg-[#8389F9]/10 text-[#8389F9] shrink-0">
                           <Zap className="w-6 h-6" />
                         </div>
                         <div>
