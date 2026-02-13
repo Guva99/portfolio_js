@@ -324,7 +324,7 @@ export default function ProjectHealthcare() {
                   <div className="bg-gradient-to-br from-[#06BA00]/20 to-slate-900/60 border border-[#06BA00]/10 rounded-2xl p-6">
                     <h4 className="text-lg font-bold text-white mb-2">Result</h4>
                     <p className="text-slate-400 text-sm mb-4">
-                      Successfully launched the platform with over 10k+ active users in the first month. improved user retention by 40% through the course treatment feature.
+                      Successfully published on the App Store and Google Play, delivering a seamless user flow with polished animations. The user experience was optimized through rigorous A/B testing, resulting in a rapidly growing active user base.
                     </p>
                   </div>
                 </div>
