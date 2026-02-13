@@ -142,6 +142,19 @@
     animation: blob-float-3 8s infinite ease-in-out;
   }
 
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .blur-\[120px\] {
+      filter: blur(60px);
+    }
+    .blur-\[80px\] {
+      filter: blur(40px);
+    }
+    .animate-blob-1, .animate-blob-2, .animate-blob-3 {
+      will-change: transform;
+    }
+  }
+
   @keyframes scroll-left {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }

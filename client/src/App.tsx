@@ -44,11 +44,15 @@ function App() {
     // Lock scroll during loading
     document.body.style.overflow = "hidden";
 
+    // Detect mobile device (crude check, but effective for this purpose)
+    const isMobile = window.innerWidth <= 768;
+    const loadTime = isMobile ? 800 : 2000; // Shorter load time on mobile for better UX perception
+
     // Artificial delay to ensure the loading screen is visible and assets have time to load
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.style.overflow = "unset";
-    }, 2000);
+    }, loadTime);
 
     return () => {
       clearTimeout(timer);
