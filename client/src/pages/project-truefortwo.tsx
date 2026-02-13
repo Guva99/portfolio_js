@@ -132,7 +132,9 @@ export default function ProjectTrueForTwo() {
                   {/* App Store Buttons */}
                   <div className="flex flex-wrap gap-4">
                     <a 
-                       href="#" 
+                       href="https://apps.apple.com/us/app/true-for-two-serious-dating/id6745731904" 
+                       target="_blank"
+                       rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#8389F9] via-purple-500 to-[#8389F9] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
@@ -146,7 +148,9 @@ export default function ProjectTrueForTwo() {
                     </a>
 
                     <a 
-                       href="#" 
+                       href="https://play.google.com/store/apps/details?id=io.myhalf.app&hl=en" 
+                       target="_blank"
+                       rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-[#8389F9] via-purple-500 to-[#8389F9] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
