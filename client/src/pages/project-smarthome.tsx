@@ -50,23 +50,23 @@ export default function ProjectSmartHome() {
             <div className="grid lg:grid-cols-2 gap-8 mb-20">
               
               {/* ApeironSpace Project */}
-              <Link href="/projects/apeiron" className="block h-full">
+              <Link href="/projects/apeiron" className="block h-full relative group">
                 <motion.div 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="group relative bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-cyan-500/50 hover:bg-[#172B29]/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 cursor-pointer h-full flex flex-col"
+                  className="bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-cyan-500/50 hover:bg-[#172B29]/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 cursor-pointer h-full flex flex-col"
                 >
-                  <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                     <ExternalLink className="w-5 h-5 text-white" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10"></div>
-                  <div className="h-64 overflow-hidden shrink-0">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10 pointer-events-none"></div>
+                  <div className="h-64 overflow-hidden shrink-0 pointer-events-none">
                      <img src={apeironImage} alt="ApeironSpace" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   
-                  <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow">
+                  <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow pointer-events-none">
                     <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                        <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow duration-500">
                           <img src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
@@ -102,26 +102,30 @@ export default function ProjectSmartHome() {
                     </div>
                   </div>
                 </motion.div>
+                {/* Mobile tap indicator text - visible only on small screens */}
+                <div className="absolute bottom-4 right-4 text-xs text-cyan-400 font-medium md:hidden opacity-70">
+                  Tap to view details &rarr;
+                </div>
               </Link>
 
               {/* Wise Home Project */}
-              <Link href="/projects/wise" className="block h-full">
+              <Link href="/projects/wise" className="block h-full relative group">
               <motion.div 
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="group relative bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-blue-500/50 hover:bg-[#3776F0]/20 hover:shadow-blue-500/10 transition-all duration-500 h-full flex flex-col"
+                className="bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-blue-500/50 hover:bg-[#3776F0]/20 hover:shadow-blue-500/10 transition-all duration-500 h-full flex flex-col"
               >
-                <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                     <ExternalLink className="w-5 h-5 text-white" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10"></div>
-                <div className="h-64 overflow-hidden shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10 pointer-events-none"></div>
+                <div className="h-64 overflow-hidden shrink-0 pointer-events-none">
                    <img src={wiseImage} alt="Wise Home" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 
-                <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow">
+                <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow pointer-events-none">
                   <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                      <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20">
                         <img src={wiseLogo} alt="Wise Logo" className="w-full h-full object-cover" />
@@ -152,6 +156,10 @@ export default function ProjectSmartHome() {
                   </div>
                 </div>
               </motion.div>
+                {/* Mobile tap indicator text - visible only on small screens */}
+                <div className="absolute bottom-4 right-4 text-xs text-blue-400 font-medium md:hidden opacity-70">
+                  Tap to view details &rarr;
+                </div>
               </Link>
 
             </div>
