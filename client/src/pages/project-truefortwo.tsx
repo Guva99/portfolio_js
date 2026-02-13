@@ -4,17 +4,25 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
 import { ExternalLink, Users, Code, Smartphone, Zap, MessageSquare } from "lucide-react";
-import projectTrueForTwo from "@/assets/images/project-truefortwo.webp";
+import projectTrueForTwo from "@assets/Group_1_1770974052433.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
 
-// TrueForTwo Screenshots (using placeholders for now as specific screenshots weren't provided in context, 
-// using the main image as placeholder for the scrolling gallery to maintain structure)
-const screen1 = projectTrueForTwo;
+import screen1 from "@assets/IMG_5481_1_1770974122382.png";
+import screen2 from "@assets/IMG_5477_1_1770974122383.png";
+import screen3 from "@assets/IMG_5470_1_1770974122383.png";
+import screen4 from "@assets/IMG_5469_1_1770974122383.png";
+import screen5 from "@assets/IMG_5468_1_1770974122383.png";
+import screen6 from "@assets/IMG_5467_1_1770974122384.png";
+import screen7 from "@assets/IMG_FF3D6A972248-1_1_1770974122384.png";
+import screen8 from "@assets/2.1.1_Name_1770974126856.png";
+import screen9 from "@assets/professional_life_1770974126858.png";
+import screen10 from "@assets/waiting_list_1770974126858.png";
 
-const column1 = [screen1, screen1, screen1, screen1];
-const column2 = [screen1, screen1, screen1, screen1];
-const column3 = [screen1, screen1, screen1, screen1];
+// TrueForTwo Screenshots
+const column1 = [screen1, screen2, screen3, screen4, screen1, screen2];
+const column2 = [screen5, screen6, screen7, screen5, screen6, screen7];
+const column3 = [screen8, screen9, screen10, screen8, screen9, screen10];
 
 export default function ProjectTrueForTwo() {
   return (
