@@ -4,7 +4,7 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
 import { ExternalLink, Smartphone, Globe, Signal, Wifi, Server, Radio, FileText, Layout } from "lucide-react";
-import project2Sky from "@assets/twosky1_1770975112969.webp";
+import project2Sky from "@assets/image_1770975442018.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
 
