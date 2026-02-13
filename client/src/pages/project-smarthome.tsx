@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { ExternalLink, Home, Smartphone, Layers, Code, Database, Server, Wifi } from "lucide-react";
+import { ArrowUpRight, Home, Smartphone, Layers, Code, Database, Server, Wifi } from "lucide-react";
 import apeironImage from "@assets/image_1770921547262.png";
 import wiseImage from "@assets/image_1770921682400.png";
 import apeironLogo from "@assets/01_splashscreen_1770922545091.png";
@@ -56,10 +56,10 @@ export default function ProjectSmartHome() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-cyan-500/50 hover:bg-[#172B29]/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 cursor-pointer h-full flex flex-col"
+                  className="bg-slate-800/50 md:bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-cyan-500/50 hover:bg-[#172B29]/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 cursor-pointer h-full flex flex-col"
                 >
-                  <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <ExternalLink className="w-5 h-5 text-white" />
+                  <div className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-cyan-500/20 md:bg-white/10 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none border border-cyan-500/30 md:border-transparent">
+                    <ArrowUpRight className="w-5 h-5 text-cyan-400 md:text-white" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10 pointer-events-none"></div>
                   <div className="h-64 overflow-hidden shrink-0 pointer-events-none">
@@ -115,10 +115,10 @@ export default function ProjectSmartHome() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-blue-500/50 hover:bg-[#3776F0]/20 hover:shadow-blue-500/10 transition-all duration-500 h-full flex flex-col"
+                className="bg-slate-800/50 md:bg-slate-900/30 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-blue-500/50 hover:bg-[#3776F0]/20 hover:shadow-blue-500/10 transition-all duration-500 h-full flex flex-col"
               >
-                <div className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <ExternalLink className="w-5 h-5 text-white" />
+                <div className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-blue-500/20 md:bg-white/10 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none border border-blue-500/30 md:border-transparent">
+                    <ArrowUpRight className="w-5 h-5 text-blue-400 md:text-white" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10 pointer-events-none"></div>
                 <div className="h-64 overflow-hidden shrink-0 pointer-events-none">
