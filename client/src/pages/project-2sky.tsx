@@ -64,7 +64,9 @@ export default function Project2Sky() {
               
               <div className="flex gap-3">
                 <a 
-                   href="#" 
+                   href="https://www.2skymobile.com/" 
+                   target="_blank"
+                   rel="noopener noreferrer"
                    className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium transition-all hover:scale-105 shadow-lg shadow-blue-500/20"
                  >
                    Visit Website <ExternalLink className="w-4 h-4" />
@@ -129,8 +131,8 @@ export default function Project2Sky() {
                     </li>
                   </ul>
 
-                  {/* App Store Buttons */}
-                  <div className="flex flex-wrap gap-4">
+                  {/* App Store Buttons - Removed per request */}
+                  {/* <div className="flex flex-wrap gap-4">
                     <a 
                        href="https://www.2skymobile.com/" 
                        target="_blank"
@@ -146,7 +148,7 @@ export default function Project2Sky() {
                           </div>
                        </div>
                     </a>
-                  </div>
+                  </div> */}
                 </motion.div>
               </div>
 
