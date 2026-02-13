@@ -276,9 +276,20 @@ export default function ProjectMedia() {
                  <h2 className="text-3xl md:text-5xl font-bold mb-4">
                    Big Screen <span className="text-[#FECB0E]">Innovation</span>
                  </h2>
-                 <p className="text-slate-400 max-w-2xl mx-auto">
+                 <p className="text-slate-400 max-w-2xl mx-auto mb-6">
                    Fully optimized application for Android TV and Apple tvOS, featuring a custom-built keyboard for seamless navigation on remote-controlled devices.
                  </p>
+                 
+                 <a 
+                   href="https://www.rustore.ru/catalog/app/com.tavria.tv" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-white/10 text-white text-sm font-medium transition-all hover:scale-105 group"
+                 >
+                   <Download className="w-4 h-4 text-[#FECB0E]" />
+                   <span>Download TV App on RuStore</span>
+                   <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+                 </a>
                </motion.div>
 
                <div className="relative max-w-5xl mx-auto">
