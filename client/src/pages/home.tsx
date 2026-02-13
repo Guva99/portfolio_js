@@ -10,7 +10,7 @@ import smokeVideo from "@/assets/videos/smoke-overlay-v8.mp4";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-violet-500/30 relative">
+    <div className="min-h-[100dvh] bg-background text-foreground overflow-x-hidden selection:bg-violet-500/30 relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
       
       <Navbar />

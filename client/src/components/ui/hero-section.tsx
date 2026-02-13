@@ -6,7 +6,7 @@ import { Download, ChevronRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10">
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 pb-16">
       {/* Background with texture overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent opacity-90 z-10"></div>
@@ -62,7 +62,8 @@ export function HeroSection() {
         <div className="space-y-8">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold leading-tight tracking-tighter">
@@ -75,7 +76,8 @@ export function HeroSection() {
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl text-slate-400 max-w-lg font-light border-l-2 border-violet-500 pl-6"
           >
@@ -84,7 +86,8 @@ export function HeroSection() {
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.6, duration: 0.8 }}
             className="flex flex-wrap gap-4"
           >
@@ -99,7 +102,9 @@ export function HeroSection() {
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -20, 0] }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          animate={{ y: [0, -20, 0] }}
           transition={{ 
             opacity: { delay: 0.2, duration: 1 },
             scale: { delay: 0.2, duration: 1 },

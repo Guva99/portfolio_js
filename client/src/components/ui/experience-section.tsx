@@ -81,8 +81,8 @@ function TechCard({ item, index }: { item: any; index: number }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       className="h-full"
     >
       <div className={`group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 p-6 flex flex-col transition-all duration-300 hover:border-white/10 ${item.bg}`}>
@@ -150,8 +150,8 @@ export function ExperienceSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               className="group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center min-h-[200px]"
             >
               {/* Minimal Circle Background */}
@@ -183,8 +183,8 @@ export function ExperienceSection() {
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative pl-8 md:pl-12"
               >
                 {/* Timeline Dot */}

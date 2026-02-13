@@ -190,8 +190,8 @@ export function ProjectsSection() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`group relative rounded-3xl overflow-hidden glass-card hover:shadow-2xl ${project.shadow} ${project.border} transition-all duration-500 cursor-pointer h-full`}
               >
                 {/* Image Container */}
