@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
+import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
 import { ExternalLink, Activity, Map, Pill, Smartphone, Globe } from "lucide-react";
 import pulsarImage from "@/assets/images/pulsar-bonus.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
@@ -83,7 +84,13 @@ export default function ProjectHealthcare() {
               className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
             >
                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
-               <img src={pulsarImage} alt="PulSarBonus Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
+               <ImageWithShimmer 
+                 src={pulsarImage} 
+                 alt="PulSarBonus Application Interface" 
+                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                 shimmerColor="bg-[#06BA00]/20"
+                 wrapperClassName="w-full h-full"
+               />
                
             </motion.div>
 
@@ -179,7 +186,14 @@ export default function ProjectHealthcare() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column1.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`App Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#06BA00]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -196,7 +210,14 @@ export default function ProjectHealthcare() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column2.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`App Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#06BA00]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -213,7 +234,14 @@ export default function ProjectHealthcare() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column3.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`App Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#06BA00]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>

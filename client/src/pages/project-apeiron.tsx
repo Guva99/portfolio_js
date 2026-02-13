@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
+import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
 import { ExternalLink, Smartphone, Server, Database, Wifi, Lock, Zap, Layers, Code, CheckCircle2, ZoomIn, X, Users } from "lucide-react";
 import apeironHero from "@assets/image_1770928345854.png";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
@@ -115,7 +116,13 @@ export default function ProjectApeiron() {
               className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
             >
                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
-               <img src={apeironHero} alt="ApeironSpace Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" />
+               <ImageWithShimmer 
+                 src={apeironHero} 
+                 alt="ApeironSpace Application Interface" 
+                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                 shimmerColor="bg-[#326159]/20"
+                 wrapperClassName="w-full h-full"
+               />
                
             </motion.div>
 
@@ -211,7 +218,14 @@ export default function ProjectApeiron() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column1.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`App Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#326159]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -228,7 +242,14 @@ export default function ProjectApeiron() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column2.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`App Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#326159]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -245,7 +266,14 @@ export default function ProjectApeiron() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {column3.map((img, i) => (
-                           <img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`App Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#326159]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -272,7 +300,14 @@ export default function ProjectApeiron() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {skColumn1.map((img, i) => (
-                           <img key={i} src={img} alt={`SpaceKeeper Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`SpaceKeeper Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#326159]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -289,7 +324,14 @@ export default function ProjectApeiron() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {skColumn2.map((img, i) => (
-                           <img key={i} src={img} alt={`SpaceKeeper Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`SpaceKeeper Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#326159]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -306,7 +348,14 @@ export default function ProjectApeiron() {
                          className="flex flex-col gap-4 w-full"
                        >
                          {skColumn3.map((img, i) => (
-                           <img key={i} src={img} alt={`SpaceKeeper Screen ${i}`} className="w-full rounded-xl border border-white/10" />
+                           <ImageWithShimmer 
+                             key={i} 
+                             src={img} 
+                             alt={`SpaceKeeper Screen ${i}`} 
+                             className="w-full rounded-xl border border-white/10"
+                             shimmerColor="bg-[#326159]/20"
+                             wrapperClassName="w-full rounded-xl"
+                           />
                          ))}
                        </motion.div>
                     </div>
@@ -417,10 +466,12 @@ export default function ProjectApeiron() {
                         <div className="flex h-full">
                           {odsImages.map((src, index) => (
                             <div className="flex-[0_0_100%] min-w-0 h-full relative" key={index}>
-                              <img 
+                              <ImageWithShimmer 
                                 src={src} 
                                 alt={`ODS Screen ${index + 1}`} 
                                 className="w-full h-full object-cover"
+                                shimmerColor="bg-[#326159]/20"
+                                wrapperClassName="w-full h-full"
                               />
                             </div>
                           ))}
