@@ -5,7 +5,7 @@ import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Smartphone, Server, Database, Wifi, Play, Tv, Radio, Search, Cast, Globe, Download, ChevronLeft, ChevronRight, Monitor, Keyboard } from "lucide-react";
 import tavriaHero from "@assets/image_1770932932101.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
-import iconAppGallery from "@assets/icon-appgallery.png";
+import iconAppGallery from "@assets/Vector_1770972155250.png";
 import appTv1 from "@assets/apptv_1_1770932465780.webp";
 import appTv2 from "@assets/apptv-2_1770932465781.webp";
 import appTv3 from "@assets/apptv-3_1770932465781.webp";
