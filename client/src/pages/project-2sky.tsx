@@ -132,29 +132,17 @@ export default function Project2Sky() {
                   {/* App Store Buttons */}
                   <div className="flex flex-wrap gap-4">
                     <a 
-                       href="#" 
+                       href="https://www.2skymobile.com/" 
+                       target="_blank"
+                       rel="noopener noreferrer"
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
                     >
                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
+                          <Globe className="w-6 h-6 text-blue-400" />
                           <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">Download on the</span>
-                             <span className="text-sm font-bold text-white">App Store</span>
-                          </div>
-                       </div>
-                    </a>
-
-                    <a 
-                       href="#" 
-                       className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95"
-                    >
-                       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
-                       <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain" />
-                          <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">Get it on</span>
-                             <span className="text-sm font-bold text-white">Google Play</span>
+                             <span className="text-[10px] text-slate-400 uppercase font-medium">Visit Website</span>
+                             <span className="text-sm font-bold text-white">2Sky Mobile</span>
                           </div>
                        </div>
                     </a>
