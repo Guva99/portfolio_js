@@ -287,6 +287,13 @@ export default function ProjectTrueForTwo() {
                       ))}
                     </div>
                   </div>
+
+                  <div className="bg-gradient-to-br from-[#8389F9]/20 to-slate-900/60 border border-[#8389F9]/10 rounded-2xl p-6">
+                    <h4 className="text-lg font-bold text-white mb-2">Result</h4>
+                    <p className="text-slate-400 text-sm mb-4">
+                      Successfully published on the App Store and Google Play, delivering a seamless user flow with polished animations. The user experience was optimized through rigorous A/B testing, resulting in a rapidly growing active user base.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
