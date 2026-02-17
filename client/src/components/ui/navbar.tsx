@@ -24,7 +24,7 @@ const menuItems = [
   },
   {
     title: "Experience",
-    href: "/#experience",
+    href: "/experience",
     icon: Briefcase
   }
 ];
@@ -110,10 +110,6 @@ export function Navbar() {
                 )}
               </div>
             ))}
-            
-            <Button size="sm" className="bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white border-0 rounded-full px-6 shadow-lg shadow-violet-500/25">
-              Contact
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
