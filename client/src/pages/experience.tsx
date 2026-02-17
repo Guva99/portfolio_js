@@ -44,18 +44,18 @@ export default function Experience() {
   const education = [
     {
       school: "Moscow Technical University of Communications and Informatics (MTUCI)",
-      degree: "Master's in Telecommunications Systems, Networks and Devices — Robotics",
-      year: "2028 (Expected)",
+      degree: "PhD in Telecommunications Systems, Networks and Devices — Robotics",
+      year: "2024 — 2028 (Expected)",
     },
     {
       school: "Moscow Technical University of Communications and Informatics (MTUCI)",
-      degree: "Bachelor's in Robotics and Robotic Systems",
-      year: "2024",
+      degree: "Master's in Robotics and Robotic Systems",
+      year: "2022 — 2024",
     },
     {
       school: "Moscow Technical University of Communications and Informatics (MTUCI)",
       degree: "Bachelor's in Information Technology — System Technologies",
-      year: "2022",
+      year: "2018 — 2022",
     }
   ];
 
