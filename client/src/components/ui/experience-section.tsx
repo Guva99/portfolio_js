@@ -231,9 +231,17 @@ export function ExperienceSection() {
               {/* Decorative Plus */}
               <div className="absolute -left-16 top-1/2 -translate-y-1/2 text-white/10 text-9xl font-light pointer-events-none select-none blur-[2px] hidden md:block">+</div>
             </h3>
-            <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+            <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-8">
               LET'S DO IT TOGETHER!
             </h3>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/experience"
+              className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5 text-lg"
+            >
+              Learn more about my journey <ArrowRight className="w-4 h-4" />
+            </motion.a>
           </div>
 
           {/* Button Section */}
