@@ -49,7 +49,7 @@ export default function Experience() {
     },
     {
       school: "Moscow Technical University of Communications and Informatics (MTUCI)",
-      degree: "Master's in Robotics and Robotic Systems",
+      degree: "Master's in Digital Business Transformation — Economics",
       year: "2022 — 2024",
     },
     {
