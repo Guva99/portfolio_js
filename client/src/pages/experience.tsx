@@ -112,13 +112,10 @@ export default function Experience() {
                   </h1>
                   <div className="prose prose-lg prose-invert text-slate-300 max-w-none">
                     <p>
-                      I'm a detail-oriented Flutter developer with deep experience building mobile, web, and TV applications. 
-                      My journey involves working on a variety of projects that have helped me develop a strong sense of 
-                      clean architecture, code quality, and scalable design—all of which I consider essential for delivering successful products.
+                      Senior Flutter developer with hands-on experience delivering products end-to-end—from initial requirements to App Store / Google Play release. I focus on clean architecture, predictable delivery, and maintainable codebases that scale with product growth.
                     </p>
                     <p>
-                      I believe the success of any project depends on team cohesion. I adapt quickly to new teams, actively contribute 
-                      to productivity, and foster knowledge-sharing through code reviews and collaborative problem-solving.
+                      Experienced in startup environments: gathering requirements, translating them into clear technical tasks/specifications for development teams, and driving execution from MVP to stable production release.
                     </p>
                   </div>
                 </div>
