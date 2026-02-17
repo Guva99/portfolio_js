@@ -165,8 +165,11 @@ export function Navbar() {
                 ))}
               </div>
 
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <Button className="w-full h-14 text-lg bg-gradient-to-r from-violet-600 to-cyan-600 rounded-xl">
+            <div className="mt-8 pt-8 border-t border-white/10">
+                <Button 
+                  className="w-full h-14 text-lg bg-gradient-to-r from-violet-600 to-cyan-600 rounded-xl"
+                  onClick={() => window.open('https://t.me/guvva', '_blank')}
+                >
                   Contact Me
                 </Button>
               </div>

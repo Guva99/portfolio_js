@@ -11,9 +11,14 @@ export function Footer() {
           </div>
           
           <div className="flex gap-6">
-            {[Github, Twitter, Linkedin, Mail].map((Icon, i) => (
-              <a key={i} href="#" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-white hover:text-black transition-all group">
-                <Icon className="w-5 h-5 text-slate-400 group-hover:text-black" />
+            {[
+              { Icon: Github, href: "https://github.com/Guva99" },
+              { Icon: Twitter, href: "#" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/guvva/" },
+              { Icon: Mail, href: "mailto:g_avezov@bk.ru" }
+            ].map((item, i) => (
+              <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-white hover:text-black transition-all group">
+                <item.Icon className="w-5 h-5 text-slate-400 group-hover:text-black" />
               </a>
             ))}
           </div>

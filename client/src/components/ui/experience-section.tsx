@@ -238,14 +238,17 @@ export function ExperienceSection() {
 
           {/* Button Section */}
           <div className="relative z-10 flex flex-col items-center min-w-[200px]">
-            <motion.button
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              href="https://t.me/guvva"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 px-8 py-4 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white rounded-2xl font-semibold text-lg transition-all shadow-[0_0_30px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_0_40px_-5px_rgba(139,92,246,0.5)]"
             >
               <MessageSquare className="w-5 h-5 fill-white" />
               <span>Contact me now</span>
-            </motion.button>
+            </motion.a>
             
             {/* Decorative Circles */}
             <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-12 h-8 opacity-40">

@@ -259,7 +259,9 @@ export default function Technologies() {
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="/#experience"
+                  href="https://t.me/guvva"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b5cf6] text-white font-bold text-lg rounded-xl hover:bg-[#7c3aed] transition-colors shadow-lg shadow-violet-500/20"
                 >
                   <Rocket className="w-5 h-5 fill-current" />

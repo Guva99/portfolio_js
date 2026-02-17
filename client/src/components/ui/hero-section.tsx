@@ -96,7 +96,12 @@ export function HeroSection() {
                 Download CV <Download className="ml-2 w-5 h-5" />
               </Button>
             </a>
-            <Button variant="outline" size="lg" className="h-14 px-8 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-lg backdrop-blur-sm bg-white/5">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="h-14 px-8 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-lg backdrop-blur-sm bg-white/5"
+              onClick={() => window.open('https://t.me/guvva', '_blank')}
+            >
               Contact Me <ChevronRight className="ml-2 w-5 h-5" />
             </Button>
           </motion.div>
