@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowUpRight, Github, Download } from "lucide-react";
+import { ArrowUpRight, Github, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Code, ShoppingCart, Globe, Wallet } from "lucide-react";
 import projectWowtickets from "@/assets/images/project-wowtickets.webp";
 import projectApeiron from "@/assets/images/project-apeiron.webp";
 import projectPunicapp from "@/assets/images/project-punicapp.webp";
@@ -12,229 +12,211 @@ import project2Sky from "@/assets/images/project-2sky.webp";
 import projectTrueForTwo from "@/assets/images/project-truefortwo.webp";
 import pulsarImage from "@/assets/images/pulsar-bonus.png";
 
+// Define categories to match Navbar structure
+const categories = [
+  { id: "healthcare", title: "Healthcare", icon: HeartPulse, color: "text-green-400" },
+  { id: "travel", title: "Travel", icon: Plane, color: "text-blue-400" },
+  { id: "smarthome", title: "Smart Home", icon: HomeIcon, color: "text-cyan-400" },
+  { id: "media", title: "Media", icon: Tv, color: "text-yellow-400" },
+  { id: "social", title: "Social", icon: Users, color: "text-fuchsia-400" },
+  { id: "connectivity", title: "Connectivity", icon: Wifi, color: "text-indigo-400" },
+  { id: "fintech", title: "Fintech", icon: Wallet, color: "text-emerald-400" },
+  { id: "ecommerce", title: "E-Commerce", icon: ShoppingCart, color: "text-orange-400" },
+  { id: "mobile", title: "Mobile Dev", icon: Code, color: "text-rose-400" },
+];
+
 const projects = [
   {
     id: 1,
     title: "Wowtickets.com",
-    category: "Travel & Booking",
+    categoryId: "travel",
     image: projectWowtickets,
-    details: [
-      "Application support & infrastructure",
-      "Flutter, BLoC, Clean Architecture",
-      "100k+ active users"
-    ],
-    platforms: ["iOS", "Android", "Web"],
-    gradient: "from-violet-600 to-indigo-600",
-    shadow: "hover:shadow-violet-500/40",
-    border: "hover:border-violet-500/50",
-    link: "/projects/travel"
+    details: "Application support & infrastructure for travel booking platform.",
+    tags: ["Flutter", "BLoC", "Clean Architecture"],
+    link: "/projects/travel",
+    gradient: "from-violet-600 to-indigo-600"
   },
   {
     id: 10,
     title: "PulSarBonus",
-    category: "Healthcare & Loyalty",
+    categoryId: "healthcare",
     image: pulsarImage,
-    details: [
-      "Medicine tracking & Reminders",
-      "Flutter, MobX, Maps Integration",
-      "10k+ active users"
-    ],
-    platforms: ["iOS", "Android", "Web"],
-    gradient: "from-[#06BA00] to-green-600",
-    shadow: "hover:shadow-green-500/40",
-    border: "hover:border-green-500/50",
-    link: "/projects/healthcare"
+    details: "Medicine tracking & reminders app with map integration.",
+    tags: ["Flutter", "MobX", "Maps"],
+    link: "/projects/healthcare",
+    gradient: "from-[#06BA00] to-green-600"
   },
   {
     id: 2,
     title: "Apeiron Space",
-    category: "Smart Hotel / IoT",
+    categoryId: "smarthome",
     image: projectApeiron,
-    details: [
-      "IoT Integration & Real-time control",
-      "Flutter, WebSockets, Custom UI",
-      "First smart hotel in Russia"
-    ],
-    platforms: ["iOS", "Android", "IoT"],
-    gradient: "from-emerald-500 to-teal-600",
-    shadow: "hover:shadow-emerald-500/40",
-    border: "hover:border-emerald-500/50",
-    link: "/projects/smarthome"
+    details: "IoT integration & real-time control for smart hotels.",
+    tags: ["Flutter", "WebSockets", "IoT"],
+    link: "/projects/smarthome",
+    gradient: "from-emerald-500 to-teal-600"
   },
   {
     id: 3,
     title: "2Sky Mobile",
-    category: "eSIM & Connectivity",
+    categoryId: "connectivity",
     image: project2Sky,
-    details: [
-      "Built from scratch to release",
-      "Architecture, Roadmap, White-label",
-      "Global eSIM connectivity"
-    ],
-    platforms: ["iOS", "Android"],
-    gradient: "from-blue-600 to-indigo-700",
-    shadow: "hover:shadow-blue-500/40",
-    border: "hover:border-blue-500/50"
+    details: "Global eSIM connectivity platform built from scratch.",
+    tags: ["iOS", "Android", "Web"],
+    link: "/projects/2sky",
+    gradient: "from-blue-600 to-indigo-700"
   },
   {
     id: 4,
     title: "True for Two",
-    category: "Social & Dating",
+    categoryId: "social",
     image: projectTrueForTwo,
-    details: [
-      "Dating app architecture",
-      "Real-time matching & chat",
-      "Flutter, Riverpod, Firebase"
-    ],
-    platforms: ["Web", "Mobile"],
-    gradient: "from-fuchsia-500 to-purple-600",
-    shadow: "hover:shadow-fuchsia-500/40",
-    border: "hover:border-fuchsia-500/50"
+    details: "Dating app with real-time matching & chat features.",
+    tags: ["Flutter", "Riverpod", "Firebase"],
+    link: "/projects/truefortwo",
+    gradient: "from-fuchsia-500 to-purple-600"
   },
   {
     id: 5,
     title: "PunicApp",
-    category: "Mobile Development",
+    categoryId: "mobile",
     image: projectPunicapp,
-    details: [
-      "Agency portfolio development",
-      "UI/UX Implementation",
-      "Cross-platform optimization"
-    ],
-    platforms: ["Web", "Mobile"],
-    gradient: "from-rose-500 to-pink-600",
-    shadow: "hover:shadow-rose-500/40",
-    border: "hover:border-rose-500/50"
+    details: "Agency portfolio development with UI/UX implementation.",
+    tags: ["Web", "Mobile", "UI/UX"],
+    link: "#", // No specific page yet
+    gradient: "from-rose-500 to-pink-600"
   },
   {
     id: 6,
     title: "Lofty",
-    category: "Fintech & Crypto",
+    categoryId: "fintech",
     image: projectLofty,
-    details: [
-      "Fintech product scaling",
-      "Complex data visualization",
-      "Secure transaction handling"
-    ],
-    platforms: ["Web", "Mobile"],
-    gradient: "from-cyan-500 to-blue-600",
-    shadow: "hover:shadow-cyan-500/40",
-    border: "hover:border-cyan-500/50"
+    details: "Fintech product scaling and secure transaction handling.",
+    tags: ["Web", "Mobile", "Crypto"],
+    link: "#", // No specific page yet
+    gradient: "from-cyan-500 to-blue-600"
   },
   {
     id: 7,
     title: "Wise City",
-    category: "Smart Home",
+    categoryId: "smarthome",
     image: projectWiseCity,
-    details: [
-      "Smart home ecosystem",
-      "Engineering solutions integration",
-      "Modern comfort automation"
-    ],
-    platforms: ["Web", "Mobile", "IoT"],
-    gradient: "from-slate-500 to-slate-700",
-    shadow: "hover:shadow-slate-500/40",
-    border: "hover:border-slate-500/50",
-    link: "/projects/smarthome"
+    details: "Engineering solutions integration for smart home ecosystems.",
+    tags: ["Web", "Mobile", "IoT"],
+    link: "/projects/wise",
+    gradient: "from-slate-500 to-slate-700"
   },
   {
     id: 8,
     title: "Tavria",
-    category: "News & Info",
+    categoryId: "media",
     image: projectTavria,
-    details: [
-      "Regional news aggregation",
-      "Content delivery optimization",
-      "High load resistance"
-    ],
-    platforms: ["Web", "Mobile"],
-    gradient: "from-yellow-400 to-[#FECB0E]",
-    shadow: "hover:shadow-yellow-400/40",
-    border: "hover:border-[#FECB0E]/50",
-    link: "/projects/media"
+    details: "Regional news aggregation with high load resistance.",
+    tags: ["Web", "Mobile", "News"],
+    link: "/projects/media",
+    gradient: "from-yellow-400 to-[#FECB0E]"
   },
    {
     id: 9,
     title: "S.Dvor",
-    category: "E-Commerce",
+    categoryId: "ecommerce",
     image: projectSdvor,
-    details: [
-      "E-commerce platform",
-      "Catalog & Cart logic",
-      "Payment gateway integration"
-    ],
-    platforms: ["Web"],
-    gradient: "from-yellow-500 to-orange-600",
-    shadow: "hover:shadow-yellow-500/40",
-    border: "hover:border-yellow-500/50"
+    details: "E-commerce platform with catalog & cart logic.",
+    tags: ["Web", "Catalog", "Payments"],
+    link: "#", // No specific page yet
+    gradient: "from-yellow-500 to-orange-600"
   }
 ];
 
 export function ProjectsSection() {
+  // Group projects by category
+  const groupedProjects = categories.map(cat => ({
+    ...cat,
+    projects: projects.filter(p => p.categoryId === cat.id)
+  })).filter(group => group.projects.length > 0);
+
   return (
-    <section className="py-24">
+    <section className="py-24 relative overflow-hidden" id="projects">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-blue-900/10 rounded-full mix-blend-screen filter blur-[100px]"></div>
+        <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-violet-900/10 rounded-full mix-blend-screen filter blur-[100px]"></div>
+      </div>
+
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-end mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Recent <span className="text-cyan-400">Projects</span></h2>
-            <p className="text-slate-400">Selected works demonstrating expertise across various domains.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Recent <span className="text-cyan-400">Projects</span></h2>
+            <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
+              A curated selection of my work across various industries, demonstrating expertise in 
+              building scalable, high-performance applications.
+            </p>
           </div>
-          <button className="text-violet-400 hover:text-white transition-colors flex items-center gap-2 font-mono">
+          
+          <button className="text-violet-400 hover:text-white transition-colors flex items-center gap-2 font-mono border border-violet-500/30 px-4 py-2 rounded-full hover:bg-violet-500/10">
             View GitHub <Github className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Link href={project.link || "#"} key={project.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative rounded-3xl overflow-hidden glass-card hover:shadow-2xl ${project.shadow} ${project.border} transition-all duration-500 cursor-pointer h-full`}
-              >
-                {/* Image Container */}
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-50 transition-opacity duration-500 z-10 mix-blend-overlay`}></div>
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 object-top"
-                  />
+        <div className="space-y-24">
+          {groupedProjects.map((group, groupIndex) => (
+            <div key={group.id} className="relative">
+              {/* Category Header */}
+              <div className="flex items-center gap-4 mb-8">
+                <div className={`p-3 rounded-xl bg-slate-900/50 border border-white/10 ${group.color}`}>
+                  <group.icon className="w-6 h-6" />
                 </div>
+                <h3 className="text-2xl font-bold text-white">{group.title}</h3>
+                <div className="h-[1px] flex-grow bg-gradient-to-r from-white/10 to-transparent ml-4"></div>
+              </div>
 
-                {/* Content */}
-                <div className="p-6 relative z-20">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-2 block">{project.category}</span>
-                      <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                    </div>
-                    <div className={`w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-gradient-to-br ${project.gradient} transition-all duration-500`}>
-                      <ArrowUpRight className="w-5 h-5 text-white" />
-                    </div>
-                  </div>
-                  
-                  <ul className="space-y-2 mb-6">
-                    {project.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
-                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-br ${project.gradient} shrink-0`} />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.platforms.map(platform => (
-                      <span key={platform} className="px-3 py-1 rounded-full bg-slate-800 text-xs text-slate-300 border border-slate-700">
-                        {platform}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
+              {/* Projects Grid for this Category */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {group.projects.map((project, index) => (
+                  <Link href={project.link || "#"} key={project.id}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      className="group relative h-full bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-white/20 hover:bg-slate-800/60 transition-all duration-300 flex flex-col"
+                    >
+                      {/* Image Area */}
+                      <div className="h-48 overflow-hidden relative">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-40 transition-opacity duration-500 z-10 mix-blend-overlay`}></div>
+                        <img 
+                          src={project.image} 
+                          alt={project.title} 
+                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10">
+                            <ArrowUpRight className="w-4 h-4 text-white" />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Content Area */}
+                      <div className="p-5 flex flex-col flex-grow">
+                        <h4 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{project.title}</h4>
+                        <p className="text-slate-400 text-sm mb-4 leading-relaxed flex-grow">
+                          {project.details}
+                        </p>
+                        
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5">
+                          {project.tags.map(tag => (
+                            <span key={tag} className="text-[10px] uppercase font-medium tracking-wider px-2 py-1 rounded bg-white/5 text-slate-300 group-hover:bg-white/10 transition-colors">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
