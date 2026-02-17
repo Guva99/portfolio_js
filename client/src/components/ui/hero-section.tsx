@@ -91,9 +91,11 @@ export function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="flex flex-wrap gap-4"
           >
-            <Button size="lg" className="h-14 px-8 bg-violet-600 hover:bg-violet-700 text-white rounded-full text-lg shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all hover:scale-105">
-              Download CV <Download className="ml-2 w-5 h-5" />
-            </Button>
+            <a href="https://drive.google.com/file/d/1rguh4rfz_BhMf7RodFDOPsuCTCYPcrCW/view" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="h-14 px-8 bg-violet-600 hover:bg-violet-700 text-white rounded-full text-lg shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all hover:scale-105">
+                Download CV <Download className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
             <Button variant="outline" size="lg" className="h-14 px-8 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-lg backdrop-blur-sm bg-white/5">
               Contact Me <ChevronRight className="ml-2 w-5 h-5" />
             </Button>
