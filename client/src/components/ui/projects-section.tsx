@@ -95,36 +95,6 @@ const categories = [
     ],
     link: "/projects/2sky"
   },
-  { 
-    id: "fintech", 
-    title: "Fintech", 
-    icon: Wallet, 
-    color: "text-emerald-400",
-    bgColor: "bg-emerald-500/10",
-    borderColor: "border-emerald-500/20",
-    description: "Secure financial applications for crypto management, transaction processing, and portfolio visualization.",
-    tech: [
-        { name: "Crypto", icon: Database },
-        { name: "Security", icon: Code },
-        { name: "Charts", icon: Zap }
-    ],
-    link: "#"
-  },
-  { 
-    id: "ecommerce", 
-    title: "E-Commerce", 
-    icon: ShoppingCart, 
-    color: "text-orange-400",
-    bgColor: "bg-orange-500/10",
-    borderColor: "border-orange-500/20",
-    description: "Digital marketplaces with complex catalog logic, cart management, and payment gateway integration.",
-    tech: [
-        { name: "Web", icon: Globe },
-        { name: "Payments", icon: Wallet },
-        { name: "Catalog", icon: Database }
-    ],
-    link: "#"
-  },
 ];
 
 export function ProjectsSection() {
