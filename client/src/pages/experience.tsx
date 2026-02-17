@@ -107,7 +107,7 @@ export default function Experience() {
               <div className="grid md:grid-cols-[1.5fr_1fr] gap-12 items-start">
                 <div>
                   <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-8">
-                    Passionate <span className="text-blue-500">Flutter Developer</span><br />
+                    Senior <span className="text-blue-500">Flutter Developer</span><br />
                     & Team Lead
                   </h1>
                   <div className="prose prose-lg prose-invert text-slate-300 max-w-none">
