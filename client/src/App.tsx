@@ -19,6 +19,7 @@ import Project2Sky from "@/pages/project-2sky";
 import Experience from "@/pages/experience";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import { Footer } from "@/components/ui/footer";
 
 function Router() {
   return (
@@ -72,6 +73,7 @@ function App() {
         <ScrollToTop />
         <Toaster />
         <Router />
+        <Footer />
       </TooltipProvider>
     </QueryClientProvider>
   );
