@@ -5,16 +5,16 @@ import Lottie from "lottie-react";
 import mobileAnimation from "@/assets/animations/mobile-devices.json";
 
 // Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
-import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase, Globe, Monitor, Tv, Laptop } from "lucide-react";
+import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase, Globe, Monitor, Tv, Laptop, Flame } from "lucide-react";
+import { SiFlutter, SiSqlite, SiFirebase, SiDart } from "@react-icons/all-files/si";
 
 // Mock data for tech stack
 const techStack = [
-  { name: "Flutter", icon: Smartphone, color: "text-cyan-400" },
-  { name: "SQLite", icon: Database, color: "text-blue-400" },
-  { name: "Firebase", icon: Zap, color: "text-yellow-400" },
-  { name: "Rowy", icon: FileJson, color: "text-purple-400" }, // Placeholder
-  { name: "Supabase", icon: Cloud, color: "text-emerald-400" },
-  { name: "Google Analytics", icon: BarChart, color: "text-orange-400" }
+  { name: "Flame Engine", icon: Flame, color: "text-[#FF4040]" },
+  { name: "Dart Backend (gRPC)", icon: SiDart, color: "text-[#00B4AB]" },
+  { name: "Flutter", icon: SiFlutter, color: "text-[#02569B]" },
+  { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28]" },
+  { name: "SQLite", icon: SiSqlite, color: "text-[#003B57]" }
 ];
 
 const expertiseAreas = [
