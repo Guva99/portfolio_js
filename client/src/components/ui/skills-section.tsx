@@ -9,7 +9,7 @@ export function SkillsSection() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("contact@example.com");
+    navigator.clipboard.writeText("g_avezov@bk.ru");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -168,7 +168,7 @@ export function SkillsSection() {
                 className="bg-white/10 hover:bg-white/20 active:scale-95 transition-all text-white px-5 py-3 rounded-xl flex items-center gap-2 text-sm font-medium backdrop-blur-sm border border-white/10 w-full justify-center"
               >
                 {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
-                {copied ? "Email Copied!" : "Copy Email Address"}
+                {copied ? "g_avezov@bk.ru Copied!" : "Copy Email Address"}
               </button>
             </motion.div>
 
