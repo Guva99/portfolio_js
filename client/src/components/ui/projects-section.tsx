@@ -129,11 +129,11 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`group relative h-full bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:bg-slate-800/60 transition-all duration-300 flex flex-col cursor-pointer hover:border-white/10`}
+                className={`group relative h-full bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:bg-slate-800/60 transition-colors duration-300 flex flex-col cursor-pointer hover:border-white/10`}
               >
                 {/* Header */}
                 <div className="flex justify-between items-start mb-6">
-                  <div className={`p-3 rounded-2xl ${category.bgColor} ${category.color} border ${category.borderColor} group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`p-3 rounded-2xl ${category.bgColor} ${category.color} border ${category.borderColor} md:group-hover:scale-110 transition-transform duration-300`}>
                     <category.icon className="w-8 h-8" />
                   </div>
                   <div className="bg-white/5 rounded-full p-2 group-hover:bg-white/10 transition-colors">
