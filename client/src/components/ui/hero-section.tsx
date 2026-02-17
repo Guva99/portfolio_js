@@ -81,7 +81,8 @@ export function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl text-slate-400 max-w-lg font-light border-l-2 border-violet-500 pl-6"
           >
-            Senior Flutter Developer with 5+ years of experience crafting high-performance, pixel-perfect mobile experiences.
+            I am a Flutter developer with over 5 years of commercial experience. Throughout my career, I've built and led the development of complex, high-performance mobile applications across varlous industrles
+            - from startups to large-scale enterprise systems. My focus has always been on clean architecture, scalability, and creating products that deliver real value to users.
           </motion.p>
 
           <motion.div 
