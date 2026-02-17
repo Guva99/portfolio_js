@@ -4,6 +4,7 @@ import { BackgroundElements } from "@/components/ui/background-elements";
 import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, BrainCircuit, Microscope, Award } from "lucide-react";
 import kukaArm from "@/assets/images/kuka-arm.png";
 import kukaVision from "@/assets/images/kuka-vision.png";
+import profilePhoto from "@/assets/images/profile-photo.png";
 
 export default function Experience() {
   const experiences = [
@@ -102,20 +103,37 @@ export default function Experience() {
                   <User className="w-3.5 h-3.5" /> About Me
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-8">
-                Passionate <span className="text-blue-500">Flutter Developer</span><br />
-                & Team Lead
-              </h1>
-              <div className="prose prose-lg prose-invert text-slate-300 max-w-none">
-                <p>
-                  I'm a detail-oriented Flutter developer with deep experience building mobile, web, and TV applications. 
-                  My journey involves working on a variety of projects that have helped me develop a strong sense of 
-                  clean architecture, code quality, and scalable design—all of which I consider essential for delivering successful products.
-                </p>
-                <p>
-                  I believe the success of any project depends on team cohesion. I adapt quickly to new teams, actively contribute 
-                  to productivity, and foster knowledge-sharing through code reviews and collaborative problem-solving.
-                </p>
+              
+              <div className="grid md:grid-cols-[1.5fr_1fr] gap-12 items-start">
+                <div>
+                  <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-8">
+                    Passionate <span className="text-blue-500">Flutter Developer</span><br />
+                    & Team Lead
+                  </h1>
+                  <div className="prose prose-lg prose-invert text-slate-300 max-w-none">
+                    <p>
+                      I'm a detail-oriented Flutter developer with deep experience building mobile, web, and TV applications. 
+                      My journey involves working on a variety of projects that have helped me develop a strong sense of 
+                      clean architecture, code quality, and scalable design—all of which I consider essential for delivering successful products.
+                    </p>
+                    <p>
+                      I believe the success of any project depends on team cohesion. I adapt quickly to new teams, actively contribute 
+                      to productivity, and foster knowledge-sharing through code reviews and collaborative problem-solving.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                  <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[3/4] md:aspect-[4/5] shadow-2xl">
+                    <div className="absolute inset-0 bg-blue-900/10 mix-blend-overlay z-10"></div>
+                    <img 
+                      src={profilePhoto} 
+                      alt="Avezov Guvanch" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
