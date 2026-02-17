@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2 } from "lucide-react";
+import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, BrainCircuit, Microscope, Award } from "lucide-react";
+import kukaArm from "@/assets/images/kuka-arm.png";
+import kukaVision from "@/assets/images/kuka-vision.png";
 
 export default function Experience() {
   const experiences = [
@@ -108,6 +110,72 @@ export default function Experience() {
                   I believe the success of any project depends on team cohesion. I adapt quickly to new teams, actively contribute 
                   to productivity, and foster knowledge-sharing through code reviews and collaborative problem-solving.
                 </p>
+              </div>
+            </div>
+
+             {/* Scientific & Robotics Section - NEW */}
+             <div className="mb-20">
+              <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                <Bot className="w-6 h-6 text-cyan-500" />
+                Scientific & Robotics Activity
+              </h2>
+
+              <div className="bg-slate-900/40 border border-white/10 rounded-2xl overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="p-8 flex flex-col justify-center">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold border border-cyan-500/20 uppercase tracking-wider">
+                        Robotics Research
+                      </span>
+                      <span className="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold border border-purple-500/20 uppercase tracking-wider">
+                        Computer Vision
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-white mb-4">KUKA Manipulator Software Development</h3>
+                    
+                    <p className="text-slate-300 mb-6 leading-relaxed">
+                      Active researcher and developer in the field of industrial robotics. I specialize in developing control software 
+                      for KUKA manipulators, integrating computer vision algorithms for precise object recognition and manipulation.
+                    </p>
+
+                    <ul className="space-y-3 mb-8">
+                      <li className="flex items-start gap-3">
+                        <BrainCircuit className="w-5 h-5 text-cyan-400 mt-0.5" />
+                        <span className="text-slate-300 text-sm">Development of intelligent control algorithms for automated robotic tasks.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Microscope className="w-5 h-5 text-cyan-400 mt-0.5" />
+                        <span className="text-slate-300 text-sm">Regular participant and speaker at scientific conferences on robotics and automation.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Award className="w-5 h-5 text-cyan-400 mt-0.5" />
+                        <span className="text-slate-300 text-sm">Contribution to scientific research in the field of adaptive robotic systems.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="relative h-full min-h-[300px] bg-slate-800/50">
+                    <div className="absolute inset-0 grid grid-rows-2">
+                       <div className="relative overflow-hidden group">
+                         <div className="absolute inset-0 bg-cyan-900/20 group-hover:bg-transparent transition-colors z-10"></div>
+                         <img 
+                           src={kukaArm} 
+                           alt="KUKA Manipulator" 
+                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                         />
+                       </div>
+                       <div className="relative overflow-hidden group border-t border-white/10">
+                         <div className="absolute inset-0 bg-purple-900/20 group-hover:bg-transparent transition-colors z-10"></div>
+                         <img 
+                           src={kukaVision} 
+                           alt="Computer Vision Analysis" 
+                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                         />
+                       </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
