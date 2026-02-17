@@ -6,7 +6,7 @@ import mobileAnimation from "@/assets/animations/mobile-devices.json";
 
 // Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
 import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase, Globe, Monitor, Tv, Laptop, Flame } from "lucide-react";
-import { SiFlutter, SiSqlite, SiFirebase, SiDart } from "@react-icons/all-files/si";
+import { SiFlutter, SiSqlite, SiFirebase, SiDart } from "react-icons/si";
 
 // Mock data for tech stack
 const techStack = [
