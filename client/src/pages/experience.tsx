@@ -134,8 +134,113 @@ export default function Experience() {
               </div>
             </div>
 
-             {/* Scientific & Robotics Section - NEW */}
-             <div className="mb-20">
+             {/* Work Experience */}
+            <div className="mb-20">
+              <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                <Briefcase className="w-6 h-6 text-blue-500" />
+                Work Experience
+              </h2>
+              
+              <div className="space-y-12">
+                {experiences.map((exp, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="relative pl-8 border-l border-white/10"
+                  >
+                    <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                    
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                        <div className="text-blue-400 font-medium">{exp.company}</div>
+                      </div>
+                      <div className="text-slate-500 text-sm flex flex-col items-start md:items-end gap-1">
+                        <div className="flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5" /> {exp.period}
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <MapPin className="w-3.5 h-3.5" /> {exp.location}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-slate-300 mb-4 leading-relaxed">
+                      {exp.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Education & Hobbies Grid */}
+            <div className="grid md:grid-cols-2 gap-12 mb-20">
+              {/* Education */}
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                  <GraduationCap className="w-6 h-6 text-purple-500" />
+                  Education
+                </h2>
+                <div className="space-y-8">
+                  {education.map((edu, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-slate-900/30 border border-white/5 rounded-xl p-5"
+                    >
+                      <div className="text-purple-400 text-sm font-medium mb-1">{edu.year}</div>
+                      <h3 className="text-white font-bold mb-1">{edu.school}</h3>
+                      <p className="text-slate-400 text-sm">{edu.degree}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Hobbies & Interests */}
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                  <Heart className="w-6 h-6 text-pink-500" />
+                  Interests & Hobbies
+                </h2>
+                <div className="grid grid-cols-1 gap-4">
+                  {hobbies.map((hobby, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-slate-900/30 border border-white/5 rounded-xl p-4 flex items-center gap-4 hover:bg-white/5 transition-colors"
+                    >
+                      <div className="p-2 rounded-lg bg-pink-500/10 text-pink-400">
+                        {hobby.icon}
+                      </div>
+                      <div>
+                        <div className="text-white font-medium">{hobby.name}</div>
+                        <div className="text-slate-500 text-sm">{hobby.desc}</div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Scientific & Robotics Section - NEW */}
+            <div className="mb-20">
               <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                 <Bot className="w-6 h-6 text-cyan-500" />
                 Scientific & Robotics Activity
@@ -196,111 +301,6 @@ export default function Experience() {
                        </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Work Experience */}
-            <div className="mb-20">
-              <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                <Briefcase className="w-6 h-6 text-blue-500" />
-                Work Experience
-              </h2>
-              
-              <div className="space-y-12">
-                {experiences.map((exp, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="relative pl-8 border-l border-white/10"
-                  >
-                    <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
-                    
-                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                        <div className="text-blue-400 font-medium">{exp.company}</div>
-                      </div>
-                      <div className="text-slate-500 text-sm flex flex-col items-start md:items-end gap-1">
-                        <div className="flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5" /> {exp.period}
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <MapPin className="w-3.5 h-3.5" /> {exp.location}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <p className="text-slate-300 mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech) => (
-                        <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Education & Hobbies Grid */}
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Education */}
-              <div>
-                <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                  <GraduationCap className="w-6 h-6 text-purple-500" />
-                  Education
-                </h2>
-                <div className="space-y-8">
-                  {education.map((edu, index) => (
-                    <motion.div 
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="bg-slate-900/30 border border-white/5 rounded-xl p-5"
-                    >
-                      <div className="text-purple-400 text-sm font-medium mb-1">{edu.year}</div>
-                      <h3 className="text-white font-bold mb-1">{edu.school}</h3>
-                      <p className="text-slate-400 text-sm">{edu.degree}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Hobbies & Interests */}
-              <div>
-                <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                  <Heart className="w-6 h-6 text-pink-500" />
-                  Interests & Hobbies
-                </h2>
-                <div className="grid grid-cols-1 gap-4">
-                  {hobbies.map((hobby, index) => (
-                    <motion.div 
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="bg-slate-900/30 border border-white/5 rounded-xl p-4 flex items-center gap-4 hover:bg-white/5 transition-colors"
-                    >
-                      <div className="p-2 rounded-lg bg-pink-500/10 text-pink-400">
-                        {hobby.icon}
-                      </div>
-                      <div>
-                        <div className="text-white font-medium">{hobby.name}</div>
-                        <div className="text-slate-500 text-sm">{hobby.desc}</div>
-                      </div>
-                    </motion.div>
-                  ))}
                 </div>
               </div>
             </div>
