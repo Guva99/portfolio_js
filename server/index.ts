@@ -14,7 +14,7 @@ declare module "http" {
 
 app.use(
   express.json({
-    verify: (req, _res, buf) => {
+    verify: (req: { rawBody: any; }, _res: any, buf: any) => {
       req.rawBody = buf;
     },
   }),
@@ -94,7 +94,6 @@ app.use((req, res, next) => {
     {
       port,
       host: "0.0.0.0",
-      reusePort: true,
     },
     () => {
       log(`serving on port ${port}`);
