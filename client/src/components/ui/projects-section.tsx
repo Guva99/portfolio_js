@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowUpRight, Github, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Code, ShoppingCart, Wallet, Server, Globe, Smartphone, Database, Zap } from "lucide-react";
+import { ArrowUpRight, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Code, ShoppingCart, Wallet, Server, Globe, Smartphone, Database, Zap } from "lucide-react";
 import { SiFlutter, SiFirebase, SiReact, SiDart, SiGooglemaps, SiApple, SiAndroid, SiNodedotjs, SiGraphql, SiBluetooth } from "react-icons/si";
 
 // Define categories to match Navbar structure
@@ -115,10 +115,6 @@ export function ProjectsSection() {
               with modern technology stacks.
             </p>
           </div>
-          
-          <button className="text-violet-400 hover:text-white transition-colors flex items-center gap-2 font-mono border border-violet-500/30 px-4 py-2 rounded-full hover:bg-violet-500/10">
-            View GitHub <Github className="w-4 h-4" />
-          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

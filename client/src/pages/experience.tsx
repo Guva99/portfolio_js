@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, BrainCircuit, Microscope, Award } from "lucide-react";
+import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, BrainCircuit, Microscope, Award, Download } from "lucide-react";
 import kukaArm from "@/assets/images/kuka-arm.png";
 import kukaVision from "@/assets/images/kuka-vision.png";
 import profilePhoto from "@/assets/images/profile-photo.png";
@@ -11,33 +11,41 @@ export default function Experience() {
     {
       company: "Apeiron Space",
       role: "Lead Flutter Developer",
-      period: "August 2023 — September 2025",
+      period: "August 2024 — January 2026",
       location: "Moscow",
-      description: "Led the mobile development for a staffless hotel ecosystem with smart-home features. Delivered two internal projects (ODS for kitchen operations and SpaceKeeper for housekeepers) and developed the main ApeironSpace guest app.",
+      description: "Apeiron Space is a staffless hotel platform with smart-home functionality. Led development of the main mobile application (iOS), delivered and maintained internal systems (ODS — kitchen operations, SpaceKeeper — housekeeping). Owned application architecture, release cycles, and internal tooling.",
       technologies: ["Flutter", "Dart", "Clean Architecture", "WebSocket", "CI/CD"]
+    },
+    {
+      company: "Freelance",
+      role: "Freelance / Contract Flutter Developer",
+      period: "September 2023 — August 2024",
+      location: "Remote",
+      description: "Worked as an independent Flutter developer on multiple commercial projects: WiseCity (smart home platform), Tavria Media (mobile and Smart TV app), True for Two (lifestyle app), PulsarBonus (pharmacy loyalty system). Full-cycle development from requirements to App Store / Google Play publication.",
+      technologies: ["Flutter", "REST API", "Firebase", "Smart TV", "CI/CD"]
     },
     {
       company: "2Sky Mobile",
       role: "Senior Flutter Developer / Team Lead",
       period: "October 2022 — August 2023",
       location: "USA (Remote)",
-      description: "Initiated and drove the project from scratch. Defined the roadmap, designed the architecture, and provided ongoing support across Web, Android, and iOS platforms. Acted as a Team Lead ensuring successful delivery.",
-      technologies: ["Flutter", "Rest API", "Bloc", "Freezed", "Injectable", "GetIt"]
+      description: "Initiated and led the project from scratch. Defined product roadmap and application architecture. Provided ongoing support across Web, Android, and iOS platforms. Coordinated development processes and technical decisions.",
+      technologies: ["Flutter", "REST API", "BLoC", "Freezed", "Clean Architecture", "Injectable", "GetIt"]
     },
     {
       company: "Wowtickets",
       role: "Senior Flutter Developer",
-      period: "March 2021 — October 2022",
-      location: "Great Britain (Remote)",
-      description: "Worked independently with full responsibility for publication. Ensured deadlines were met, solved complex architectural challenges, and released the app to Google Play, App Store, and AppGallery.",
-      technologies: ["Flutter", "Clean Architecture", "Bloc", "Freezed", "Git"]
+      period: "November 2021 — October 2022",
+      location: "UK (Remote)",
+      description: "Worked independently with full technical ownership of the project. Solved complex architectural challenges. Released applications to Google Play, App Store, and AppGallery. Ensured timely delivery and production stability.",
+      technologies: ["Flutter", "Clean Architecture", "BLoC", "Freezed", "Git"]
     },
     {
       company: "Lofty",
       role: "Junior Flutter Developer",
-      period: "November 2021 — October 2022",
-      location: "Great Britain (Remote)",
-      description: "Developed the application from the ground up—from concept and design through to its release. Handled requirements analysis, architectural design, feature implementation, and testing.",
+      period: "January 2021 — November 2021",
+      location: "UK (Remote)",
+      description: "Developed the application from concept to production release. Participated in the full development lifecycle: requirements, architecture, development, testing. Platforms: Android and iOS.",
       technologies: ["Android", "iOS", "Flutter", "UI/UX"]
     }
   ];
@@ -136,10 +144,22 @@ export default function Experience() {
 
              {/* Work Experience */}
             <div className="mb-20">
-              <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                <Briefcase className="w-6 h-6 text-blue-500" />
-                Work Experience
-              </h2>
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+                <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                  <Briefcase className="w-6 h-6 text-blue-500" />
+                  Work Experience
+                </h2>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://docs.google.com/document/d/1xLWBrmvplRhp6I5BuJBSSJp-_VmLavbwK5gob2VuN6k/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium transition-all shadow-[0_0_20px_rgba(139,92,246,0.4)]"
+                >
+                  Download CV <Download className="w-4 h-4" />
+                </motion.a>
+              </div>
               
               <div className="space-y-12">
                 {experiences.map((exp, index) => (
