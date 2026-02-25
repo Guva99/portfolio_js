@@ -44,34 +44,56 @@ const experiences = [
   {
     role: "Lead Flutter Developer",
     company: "Apeiron Space",
-    period: "Aug 2023 - Sep 2025",
+    period: "Aug 2024 - Jan 2026",
     color: "bg-emerald-500",
     achievements: [
-      "Architecture and development of key internal applications (ODS, SpaceKeeper)",
-      "Development of the main ApeironSpace platform application",
-      "Managed smart hotel features controlled via smartphone"
+      "Led development of the main Apeiron Space mobile application (iOS)",
+      "Delivered and maintained internal systems: ODS & SpaceKeeper",
+      "Owned application architecture, release cycles, and internal tooling"
     ]
   },
   {
-    role: "Team Lead Flutter",
+    role: "Freelance / Contract Flutter Developer",
+    company: "Freelance",
+    period: "Sep 2023 - Aug 2024",
+    color: "bg-amber-500",
+    achievements: [
+      "Full-cycle Flutter development on commercial projects (WiseCity, Tavria Media, True for Two, PulsarBonus)",
+      "Development of mobile (iOS, Android) and Smart TV applications",
+      "Integration with REST APIs, Firebase, and third-party services"
+    ]
+  },
+  {
+    role: "Senior Flutter Developer / Team Lead",
     company: "2Sky Mobile",
-    period: "Nov 2021 - Oct 2022",
+    period: "Oct 2022 - Aug 2023",
     color: "bg-blue-600",
     achievements: [
-      "Initiated and drove the project from scratch",
-      "Designed architecture and defined the roadmap",
-      "Provided full support for iOS, Android, and Web platforms"
+      "Initiated and led the project from scratch",
+      "Defined product roadmap and application architecture",
+      "Provided ongoing support across Web, Android, and iOS platforms"
     ]
   },
   {
-    role: "Senior Flutter Developer",
-    company: "Wowtickets.com",
-    period: "Mar 2021 - Oct 2022",
+    role: "Middle Flutter Developer",
+    company: "Wowtickets",
+    period: "Nov 2021 - Oct 2022",
     color: "bg-violet-600",
     achievements: [
       "Full technical ownership and independent development",
       "Released app to Google Play, App Store, and AppGallery",
       "Solved complex architectural challenges"
+    ]
+  },
+  {
+    role: "Junior Flutter Developer",
+    company: "Lofty",
+    period: "Jan 2021 - Nov 2021",
+    color: "bg-rose-500",
+    achievements: [
+      "Developed the application from concept to production release",
+      "Full development lifecycle: requirements, architecture, development, testing",
+      "Platforms: Android and iOS"
     ]
   }
 ];

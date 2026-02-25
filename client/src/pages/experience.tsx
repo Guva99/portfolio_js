@@ -34,7 +34,7 @@ export default function Experience() {
     },
     {
       company: "Wowtickets",
-      role: "Senior Flutter Developer",
+      role: "Middle Flutter Developer",
       period: "November 2021 — October 2022",
       location: "UK (Remote)",
       description: "Worked independently with full technical ownership of the project. Solved complex architectural challenges. Released applications to Google Play, App Store, and AppGallery. Ensured timely delivery and production stability.",
