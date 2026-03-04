@@ -19,7 +19,7 @@ export default function Experience() {
     {
       company: "Freelance",
       role: "Freelance / Contract Flutter Developer",
-      period: "September 2023 — August 2024",
+      period: "September 2023 — January 2025",
       location: "Remote",
       description: "Worked as an independent Flutter developer on multiple commercial projects: WiseCity (smart home platform), Tavria Media (mobile and Smart TV app), True for Two (lifestyle app), PulsarBonus (pharmacy loyalty system). Full-cycle development from requirements to App Store / Google Play publication.",
       technologies: ["Flutter", "REST API", "Firebase", "Smart TV", "CI/CD"]

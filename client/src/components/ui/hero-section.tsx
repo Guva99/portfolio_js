@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import heroPortrait from "@/assets/images/hero-portrait.webp";
 import bgTexture from "@/assets/images/bg-texture.webp";
-import { Download, ChevronRight } from "lucide-react";
+import { Download, ChevronRight, Linkedin, Mail, Briefcase } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -86,25 +86,40 @@ export function HeroSection() {
           </motion.p>
 
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-wrap gap-4"
+            transition={{ delay: 0.3, duration: 0.4 }}
+            className="flex flex-row flex-wrap items-center gap-3"
           >
             <a href="https://docs.google.com/document/d/1xLWBrmvplRhp6I5BuJBSSJp-_VmLavbwK5gob2VuN6k/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="h-14 px-8 bg-violet-600 hover:bg-violet-700 text-white rounded-full text-lg shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all hover:scale-105">
-                Download CV <Download className="ml-2 w-5 h-5" />
+              <Button size="lg" className="h-12 px-6 bg-violet-600 hover:bg-violet-700 text-white rounded-full text-base shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all hover:scale-105">
+                Download CV <Download className="ml-2 w-4 h-4" />
               </Button>
             </a>
             <Button 
               variant="outline" 
               size="lg" 
-              className="h-14 px-8 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-lg backdrop-blur-sm bg-white/5"
+              className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-base backdrop-blur-sm bg-white/5"
               onClick={() => window.open('https://t.me/guvva', '_blank')}
             >
-              Contact Me <ChevronRight className="ml-2 w-5 h-5" />
+              Contact Me <ChevronRight className="ml-2 w-4 h-4" />
             </Button>
+            <a href="https://www.linkedin.com/in/guvanch-avezov-29810a349/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-[#0A66C2] rounded-full text-base backdrop-blur-sm bg-white/5 hover:bg-[#0A66C2]/10">
+                LinkedIn <Linkedin className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+            <a href="mailto:g_avezov@bk.ru">
+              <Button variant="outline" size="lg" className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-base backdrop-blur-sm bg-white/5">
+                Email <Mail className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+            <a href="https://hh.ru/resume/8e35e946ff0910b7b00039ed1f4c6a6666666c" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-red-500 rounded-full text-base backdrop-blur-sm bg-white/5 hover:bg-red-500/10">
+                hh.ru <Briefcase className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
           </motion.div>
         </div>
 

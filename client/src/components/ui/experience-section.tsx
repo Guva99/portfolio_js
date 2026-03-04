@@ -55,7 +55,7 @@ const experiences = [
   {
     role: "Freelance / Contract Flutter Developer",
     company: "Freelance",
-    period: "Sep 2023 - Aug 2024",
+    period: "Sep 2023 - Jan 2025",
     color: "bg-amber-500",
     achievements: [
       "Full-cycle Flutter development on commercial projects (WiseCity, Tavria Media, True for Two, PulsarBonus)",
@@ -129,9 +129,8 @@ function TechCard({ item, index }: { item: any; index: number }) {
             </h4>
           </div>
           
-          <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+          <div className="mt-auto pt-4 border-t border-white/5 flex items-center">
             <div className="h-px w-8 bg-slate-700 group-hover:w-16 group-hover:bg-slate-500 transition-all duration-500"></div>
-            <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-slate-400 group-hover:-rotate-45 transition-all duration-300" strokeWidth={1.5} />
           </div>
         </div>
         
