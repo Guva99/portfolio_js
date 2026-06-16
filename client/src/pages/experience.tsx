@@ -1,78 +1,92 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
-import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, BrainCircuit, Microscope, Award, Download } from "lucide-react";
+import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, BrainCircuit, Microscope, Award, Download, ExternalLink, CheckCircle2 } from "lucide-react";
 import kukaArm from "@/assets/images/kuka-arm.png";
-import kukaVision from "@/assets/images/kuka-vision.png";
+import kukaVision from "@/assets/images/kuka-collision.jpg";
 import profilePhoto from "@/assets/images/profile-photo.png";
+import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 
 export default function Experience() {
+  const { t } = useTranslation();
+
   const experiences = [
     {
-      company: "Apeiron Space",
-      role: "Lead Flutter Developer",
-      period: "August 2024 — January 2026",
-      location: "Moscow",
-      description: "Apeiron Space is a staffless hotel platform with smart-home functionality. Led development of the main mobile application (iOS), delivered and maintained internal systems (ODS — kitchen operations, SpaceKeeper — housekeeping). Owned application architecture, release cycles, and internal tooling.",
-      technologies: ["Flutter", "Dart", "Clean Architecture", "WebSocket", "CI/CD"]
+      company: t("experiencePage.jobs.freelance.company"),
+      role: t("experiencePage.jobs.freelance.role"),
+      period: t("experiencePage.jobs.freelance.period"),
+      location: t("experiencePage.jobs.freelance.location"),
+      description: t("experiencePage.jobs.freelance.description"),
+      achievements: t("experiencePage.jobs.freelance.achievements", { returnObjects: true }) as string[],
+      technologies: ["Flutter", "Add-to-App", "iOS", "Android", "Cordova", "Web"],
+      projectUrl: "/projects/wise"
     },
     {
-      company: "Freelance",
-      role: "Freelance / Contract Flutter Developer",
-      period: "September 2023 — January 2025",
-      location: "Remote",
-      description: "Worked as an independent Flutter developer on multiple commercial projects: WiseCity (smart home platform), Tavria Media (mobile and Smart TV app), True for Two (lifestyle app), PulsarBonus (pharmacy loyalty system). Full-cycle development from requirements to App Store / Google Play publication.",
-      technologies: ["Flutter", "REST API", "Firebase", "Smart TV", "CI/CD"]
+      company: t("experiencePage.jobs.apeiron.company"),
+      role: t("experiencePage.jobs.apeiron.role"),
+      period: t("experiencePage.jobs.apeiron.period"),
+      location: t("experiencePage.jobs.apeiron.location"),
+      description: t("experiencePage.jobs.apeiron.description"),
+      achievements: t("experiencePage.jobs.apeiron.achievements", { returnObjects: true }) as string[],
+      technologies: ["Flutter", "Dart", "Clean Architecture", "WebSocket", "CI/CD"],
+      projectUrl: "/projects/apeiron"
     },
     {
-      company: "2Sky Mobile",
-      role: "Senior Flutter Developer / Team Lead",
-      period: "October 2022 — August 2023",
-      location: "USA (Remote)",
-      description: "Initiated and led the project from scratch. Defined product roadmap and application architecture. Provided ongoing support across Web, Android, and iOS platforms. Coordinated development processes and technical decisions.",
-      technologies: ["Flutter", "REST API", "BLoC", "Freezed", "Clean Architecture", "Injectable", "GetIt"]
+      company: t("experiencePage.jobs.twosky.company"),
+      role: t("experiencePage.jobs.twosky.role"),
+      period: t("experiencePage.jobs.twosky.period"),
+      location: t("experiencePage.jobs.twosky.location"),
+      description: t("experiencePage.jobs.twosky.description"),
+      achievements: t("experiencePage.jobs.twosky.achievements", { returnObjects: true }) as string[],
+      technologies: ["Flutter", "REST API", "BLoC", "Freezed", "Clean Architecture", "Injectable", "GetIt"],
+      projectUrl: "/projects/2sky"
     },
     {
-      company: "Wowtickets",
-      role: "Middle Flutter Developer",
-      period: "November 2021 — October 2022",
-      location: "UK (Remote)",
-      description: "Worked independently with full technical ownership of the project. Solved complex architectural challenges. Released applications to Google Play, App Store, and AppGallery. Ensured timely delivery and production stability.",
-      technologies: ["Flutter", "Clean Architecture", "BLoC", "Freezed", "Git"]
+      company: t("experiencePage.jobs.wowtickets.company"),
+      role: t("experiencePage.jobs.wowtickets.role"),
+      period: t("experiencePage.jobs.wowtickets.period"),
+      location: t("experiencePage.jobs.wowtickets.location"),
+      description: t("experiencePage.jobs.wowtickets.description"),
+      achievements: t("experiencePage.jobs.wowtickets.achievements", { returnObjects: true }) as string[],
+      technologies: ["Flutter", "Clean Architecture", "BLoC", "Freezed", "Git"],
+      projectUrl: "/projects/travel"
     },
     {
-      company: "Lofty",
-      role: "Junior Flutter Developer",
-      period: "January 2021 — November 2021",
-      location: "UK (Remote)",
-      description: "Developed the application from concept to production release. Participated in the full development lifecycle: requirements, architecture, development, testing. Platforms: Android and iOS.",
-      technologies: ["Android", "iOS", "Flutter", "UI/UX"]
+      company: t("experiencePage.jobs.lofty.company"),
+      role: t("experiencePage.jobs.lofty.role"),
+      period: t("experiencePage.jobs.lofty.period"),
+      location: t("experiencePage.jobs.lofty.location"),
+      description: t("experiencePage.jobs.lofty.description"),
+      achievements: t("experiencePage.jobs.lofty.achievements", { returnObjects: true }) as string[],
+      technologies: ["Android", "iOS", "Flutter", "UI/UX"],
+      projectUrl: null
     }
   ];
 
   const education = [
     {
-      school: "Moscow Technical University of Communications and Informatics (MTUCI)",
-      degree: "PhD in Telecommunications Systems, Networks and Devices — Robotics",
-      year: "2024 — 2028 (Expected)",
+      school: t("experiencePage.edu.mtuci1.school"),
+      degree: t("experiencePage.edu.mtuci1.degree"),
+      year: t("experiencePage.edu.mtuci1.year"),
     },
     {
-      school: "Moscow Technical University of Communications and Informatics (MTUCI)",
-      degree: "Master's in Digital Business Transformation — Economics",
-      year: "2022 — 2024",
+      school: t("experiencePage.edu.mtuci2.school"),
+      degree: t("experiencePage.edu.mtuci2.degree"),
+      year: t("experiencePage.edu.mtuci2.year"),
     },
     {
-      school: "Moscow Technical University of Communications and Informatics (MTUCI)",
-      degree: "Bachelor's in Information Technology — System Technologies",
-      year: "2018 — 2022",
+      school: t("experiencePage.edu.mtuci3.school"),
+      degree: t("experiencePage.edu.mtuci3.degree"),
+      year: t("experiencePage.edu.mtuci3.year"),
     }
   ];
 
   const hobbies = [
-    { icon: <Code className="w-5 h-5" />, name: "Open Source", desc: "Contributing to Flutter libraries" },
-    { icon: <User className="w-5 h-5" />, name: "Mentoring", desc: "Guiding junior developers" },
-    { icon: <Heart className="w-5 h-5" />, name: "Travel", desc: "Exploring new cultures" },
-    { icon: <Building2 className="w-5 h-5" />, name: "Architecture", desc: "Designing scalable systems" },
+    { icon: <Bot className="w-5 h-5" />, name: t("experiencePage.hobbiesItems.openSource.name"), desc: t("experiencePage.hobbiesItems.openSource.desc") },
+    { icon: <User className="w-5 h-5" />, name: t("experiencePage.hobbiesItems.mentoring.name"), desc: t("experiencePage.hobbiesItems.mentoring.desc") },
+    { icon: <Heart className="w-5 h-5" />, name: t("experiencePage.hobbiesItems.travel.name"), desc: t("experiencePage.hobbiesItems.travel.desc") },
+    { icon: <Building2 className="w-5 h-5" />, name: t("experiencePage.hobbiesItems.architecture.name"), desc: t("experiencePage.hobbiesItems.architecture.desc") },
   ];
 
   return (
@@ -82,13 +96,9 @@ export default function Experience() {
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
-          {/* Ball 1 */}
           <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1"></div>
-          {/* Ball 3 */}
           <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-pink-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-3"></div>
-          {/* Ball 4 */}
           <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1 animation-delay-2000"></div>
-          {/* Ball 5 (Center) */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-30 animate-blob-2 animation-delay-4000"></div>
         </div>
       </div>
@@ -120,10 +130,10 @@ export default function Experience() {
                   </h1>
                   <div className="prose prose-lg prose-invert text-slate-300 max-w-none">
                     <p>
-                      Senior Flutter developer with hands-on experience delivering products end-to-end—from initial requirements to App Store / Google Play release. I focus on clean architecture, predictable delivery, and maintainable codebases that scale with product growth.
+                      {t("experiencePage.about.bio1")}
                     </p>
                     <p>
-                      Experienced in startup environments: gathering requirements, translating them into clear technical tasks/specifications for development teams, and driving execution from MVP to stable production release.
+                      {t("experiencePage.about.bio2")}
                     </p>
                   </div>
                 </div>
@@ -142,22 +152,25 @@ export default function Experience() {
               </div>
             </div>
 
-             {/* Work Experience */}
+            {/* Work Experience */}
             <div className="mb-20">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-                <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                <h2 className="text-2xl font-bold text-white flex items-center gap-3 flex-wrap">
                   <Briefcase className="w-6 h-6 text-blue-500" />
-                  Work Experience
+                  {t("experiencePage.workExperience")}
+                  <span className="text-sm font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full px-3 py-1">
+                    {t("experiencePage.totalExperience")}
+                  </span>
                 </h2>
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://docs.google.com/document/d/1xLWBrmvplRhp6I5BuJBSSJp-_VmLavbwK5gob2VuN6k/edit?usp=sharing"
+                  href={t("cvUrl")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium transition-all shadow-[0_0_20px_rgba(139,92,246,0.4)]"
                 >
-                  Download CV <Download className="w-4 h-4" />
+                  {t("experiencePage.downloadCv")} <Download className="w-4 h-4" />
                 </motion.a>
               </div>
               
@@ -176,7 +189,14 @@ export default function Experience() {
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                       <div>
                         <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                        <div className="text-blue-400 font-medium">{exp.company}</div>
+                        {exp.projectUrl ? (
+                          <Link href={exp.projectUrl} className="inline-flex items-center gap-1 text-blue-400 font-medium hover:text-blue-300 transition-colors group">
+                            {exp.company}
+                            <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </Link>
+                        ) : (
+                          <span className="text-blue-400 font-medium">{exp.company}</span>
+                        )}
                       </div>
                       <div className="text-slate-500 text-sm flex flex-col items-start md:items-end gap-1">
                         <div className="flex items-center gap-1.5">
@@ -191,7 +211,18 @@ export default function Experience() {
                     <p className="text-slate-300 mb-4 leading-relaxed">
                       {exp.description}
                     </p>
-                    
+
+                    {exp.achievements?.length > 0 && (
+                      <ul className="space-y-2 mb-4">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-slate-400 text-sm leading-relaxed">
+                            <CheckCircle2 className="w-4 h-4 text-blue-500/70 shrink-0 mt-0.5" />
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
                         <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-slate-400 text-xs border border-white/5">
@@ -210,7 +241,7 @@ export default function Experience() {
               <div>
                 <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                   <GraduationCap className="w-6 h-6 text-purple-500" />
-                  Education
+                  {t("experiencePage.education")}
                 </h2>
                 <div className="space-y-8">
                   {education.map((edu, index) => (
@@ -234,7 +265,7 @@ export default function Experience() {
               <div>
                 <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                   <Heart className="w-6 h-6 text-pink-500" />
-                  Interests & Hobbies
+                  {t("experiencePage.hobbies")}
                 </h2>
                 <div className="grid grid-cols-1 gap-4">
                   {hobbies.map((hobby, index) => (
@@ -259,11 +290,11 @@ export default function Experience() {
               </div>
             </div>
 
-            {/* Scientific & Robotics Section - NEW */}
+            {/* Scientific & Robotics Section */}
             <div className="mb-20">
               <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                 <Bot className="w-6 h-6 text-cyan-500" />
-                Scientific & Robotics Activity
+                {t("experiencePage.robotics")}
               </h2>
 
               <div className="bg-slate-900/40 border border-white/10 rounded-2xl overflow-hidden">
@@ -278,25 +309,28 @@ export default function Experience() {
                       </span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-4">KUKA Manipulator Software Development</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">{t("experiencePage.roboticsTitle")}</h3>
                     
                     <p className="text-slate-300 mb-6 leading-relaxed">
-                      Active researcher and developer in the field of industrial robotics. I specialize in developing control software 
-                      for KUKA manipulators, integrating computer vision algorithms for precise object recognition and manipulation.
+                      {t("experiencePage.roboticsDesc")}
                     </p>
 
                     <ul className="space-y-3 mb-8">
                       <li className="flex items-start gap-3">
                         <BrainCircuit className="w-5 h-5 text-cyan-400 mt-0.5" />
-                        <span className="text-slate-300 text-sm">Development of intelligent control algorithms for automated robotic tasks.</span>
+                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet1")}</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <Microscope className="w-5 h-5 text-cyan-400 mt-0.5" />
-                        <span className="text-slate-300 text-sm">Regular participant and speaker at scientific conferences on robotics and automation.</span>
+                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet2")}</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <Award className="w-5 h-5 text-cyan-400 mt-0.5" />
-                        <span className="text-slate-300 text-sm">Contribution to scientific research in the field of adaptive robotic systems.</span>
+                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet3")}</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Bot className="w-5 h-5 text-cyan-400 mt-0.5" />
+                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet4")}</span>
                       </li>
                     </ul>
                   </div>

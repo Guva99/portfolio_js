@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function LoadingScreen() {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950"
@@ -50,7 +53,7 @@ export function LoadingScreen() {
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          Loading
+          {t("loading")}
         </motion.p>
       </div>
     </motion.div>

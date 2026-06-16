@@ -1,0 +1,543 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "experience": "Experience",
+    "contactMe": "Contact Me",
+    "menu": "Menu",
+    "healthcare": "Healthcare",
+    "travel": "Travel",
+    "smartHome": "Smart Home",
+    "media": "Media",
+    "social": "Social",
+    "connectivity": "Connectivity"
+  },
+  "cvUrl": "https://docs.google.com/document/d/13DAw9ZNvOmFzWTHhtzZMwi-rtbF1Fii3N3Rs-S93Gac/edit?usp=sharing",
+  "hero": {
+    "tagline1": "Idea.",
+    "tagline2": "Code.",
+    "tagline3": "Release.",
+    "tagline4": "Done.",
+    "description": "Hi, my name is Guvanch. I develop Flutter applications and have over 5 years of commercial experience. I build solutions for iOS, Android, Web, Smart TV, and embedded devices. Throughout my career, I have developed and contributed to the technical growth of complex mobile applications across various domains — from startups to large enterprise systems. My main focus is clean architecture, scalability, high performance, and fast delivery of quality product solutions that help improve the product and enhance the user experience.",
+    "downloadCv": "Download CV",
+    "contactMe": "Contact Me",
+    "currentStatus": "CURRENT STATUS",
+    "availableForProjects": "Available for projects",
+    "yearsExp": "Years Exp."
+  },
+  "skills": {
+    "clientCollaboration": "I prioritize client collaboration, fostering open communication",
+    "timezone": "I'm very flexible with time zone communications",
+    "techStackImprove": "I constantly try to improve",
+    "myTechStack": "My tech stack",
+    "techEnthusiast": "Tech enthusiast with a passion for development.",
+    "startProjectTogether": "Do you want to start a project together?",
+    "copyEmail": "Copy Email Address",
+    "emailCopied": "g_avezov@bk.ru Copied!",
+    "exploringHorizons": "Exploring New Horizons",
+    "flutterSolutions": "Mobile, Web, TV finding unconventional Flutter solutions"
+  },
+  "projects": {
+    "title": "Expertise",
+    "titleHighlight": "Domains",
+    "subtitle": "Specialized experience across diverse industries, delivering tailored solutions with modern technology stacks.",
+    "technologies": "Technologies",
+    "healthcare": {
+      "description": "Digital health solutions focusing on patient adherence, tracking, and medical resource management."
+    },
+    "travel": {
+      "description": "Comprehensive booking platforms and travel companions handling complex itineraries and real-time updates."
+    },
+    "smarthome": {
+      "description": "IoT ecosystems integrating hardware control, real-time telemetry, and automation for modern living spaces."
+    },
+    "media": {
+      "description": "High-load content delivery platforms for news, streaming, and regional information aggregation."
+    },
+    "social": {
+      "description": "Real-time communication platforms featuring matching algorithms, chat systems, and social graphs."
+    },
+    "connectivity": {
+      "description": "Telecommunications solutions including eSIM management, global roaming, and network connectivity."
+    }
+  },
+  "recommendations": {
+    "title": "Recommendation",
+    "titleHighlight": "Letters",
+    "mobileAppDeveloper": "Mobile Application Developer",
+    "flutterDeveloper": "Flutter Developer",
+    "mobileDeveloper": "Mobile Developer"
+  },
+  "experienceSection": {
+    "highlightsTitle": "Professional",
+    "highlightsTitleHighlight": "Highlights",
+    "highlightsSubtitle": "Key achievements that define my engineering journey",
+    "experience": "Experience",
+    "years": "Years",
+    "workExperience": "Work",
+    "workExperienceHighlight": "Experience",
+    "getToKnowMe": "Get to know me better",
+    "readyToCreate": "FROM IDEA TO",
+    "uniqueExperience": "RELEASE IN STORE",
+    "letsDoItTogether": "LET'S DO IT TOGETHER!",
+    "learnMoreAboutJourney": "Learn more about my journey",
+    "contactMeNow": "Contact me now",
+    "highlights": {
+      "appsReleased": "10+ applications released in App Store / Google Play",
+      "projectsFromScratch": "Projects from scratch: architecture → release → support",
+      "teamLead": "Team Lead & architectural decision making",
+      "multiPlatform": "Mobile + Web + TV apps expertise",
+      "cleanArch": "Clean Architecture & Scalable Solutions"
+    },
+    "jobs": {
+      "apeiron": {
+        "role": "Lead Flutter Developer",
+        "company": "Wise City",
+        "period": "May 2025 - Jun 2026",
+        "achievements": [
+          "Developed Add-to-App integration modules for iOS and Android",
+          "Built a Web module for integration with a Sber product on Cordova",
+          "Collaborated with external teams to assist with module integration"
+        ]
+      },
+      "freelance": {
+        "role": "Lead Flutter Developer",
+        "company": "Apeiron Space",
+        "period": "Sep 2023 - Aug 2025",
+        "achievements": [
+          "Led development of the main Apeiron Space mobile application (iOS)",
+          "Delivered and maintained internal systems: ODS & SpaceKeeper",
+          "Owned application architecture, release cycles, and internal tooling"
+        ]
+      },
+      "twosky": {
+        "role": "Senior Flutter Developer / Team Lead",
+        "company": "2Sky Mobile",
+        "period": "Oct 2022 - Aug 2023",
+        "achievements": [
+          "Initiated and led the project from scratch",
+          "Defined product roadmap and application architecture",
+          "Provided ongoing support across Web, Android, and iOS platforms"
+        ]
+      },
+      "wowtickets": {
+        "role": "Middle Flutter Developer",
+        "company": "Wowtickets",
+        "period": "Nov 2021 - Oct 2022",
+        "achievements": [
+          "Full technical ownership and independent development",
+          "Released app to Google Play, App Store, and AppGallery",
+          "Solved complex architectural challenges"
+        ]
+      },
+      "lofty": {
+        "role": "Junior Flutter Developer",
+        "company": "Lofty",
+        "period": "Mar 2020 - Feb 2021",
+        "achievements": [
+          "Developed the application from concept to production release",
+          "Full development lifecycle: requirements, architecture, development, testing",
+          "Platforms: Android and iOS"
+        ]
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Flutter Developer Portfolio. Crafted with passion."
+  },
+  "loading": "Loading",
+  "notFound": {
+    "title": "404 Page Not Found",
+    "description": "Did you forget to add the page to the router?"
+  },
+  "experiencePage": {
+    "title": "Experience",
+    "titleHighlight": "& Education",
+    "downloadCv": "Download CV",
+    "workExperience": "Work Experience",
+    "totalExperience": "5 yrs 8 mos",
+    "education": "Education",
+    "hobbies": "Interests",
+    "robotics": "Robotics & AI",
+    "roboticsTitle": "KUKA Manipulator Software Development",
+    "roboticsDesc": "As part of my additional education, I am deepening my knowledge in robotics, computer vision, and intelligent control systems. I am also pursuing postgraduate studies, focusing on research into methods for safe interaction between an industrial manipulator and its surrounding environment.",
+    "roboticsBullet1": "Processing RGB-D data and point clouds for object detection.",
+    "roboticsBullet2": "Researching methods for collision prevention within the robot workspace.",
+    "roboticsBullet3": "Developing components of a computer vision system for an industrial manipulator.",
+    "roboticsBullet4": "Studying intelligent robotic systems as part of postgraduate research.",
+    "about": {
+      "name": "Guvanch Avezov",
+      "role": "Lead Flutter Developer",
+      "bio1": "Hi, my name is Guvanch. I develop Flutter applications and have over 5 years of commercial experience. I build solutions for iOS, Android, Web, Smart TV, and embedded devices. Throughout my career, I have developed and contributed to the technical growth of complex mobile applications across various domains — from startups to large enterprise systems.",
+      "bio2": "My main focus is clean architecture, scalability, high performance, and fast delivery of quality product solutions that help improve the product and enhance the user experience."
+    },
+    "techFocus": "Technical Focus",
+    "techFocusItems": ["Flutter / Dart", "Clean Architecture", "CI/CD", "Cross-Platform"],
+    "jobs": {
+      "apeiron": {
+        "company": "Apeiron Space",
+        "role": "Lead Flutter Developer",
+        "period": "September 2023 — August 2025",
+        "location": "Remote",
+        "description": "Apeiron Space is a smart hotel ecosystem where guests control smart-space features through a mobile app. Led Flutter development of internal operational products and the growth of the main client application.",
+        "achievements": [
+          "Built two internal products for the hotel ecosystem from scratch",
+          "ODS — managing kitchen processes and breakfast tracking",
+          "SpaceKeeper — automating the housekeeping team's workflow",
+          "Contributed to development and support of the main ApeironSpace app",
+          "Owned architectural decisions and technical delivery of Flutter products"
+        ]
+      },
+      "freelance": {
+        "company": "Wise City",
+        "role": "Lead Flutter Developer",
+        "period": "May 2025 — June 2026",
+        "location": "Remote",
+        "description": "Developing integration modules for the mobile application that connect Flutter functionality to the company's existing products.",
+        "achievements": [
+          "Implemented an Add-to-App module for embedding Flutter functionality into native iOS and Android apps",
+          "Built a separate Web module for integration with a Sber product running on Cordova",
+          "Worked with external development teams: helped connect, configure, and roll out modules into existing applications"
+        ]
+      },
+      "twosky": {
+        "company": "2Sky Mobile",
+        "role": "Senior Flutter Developer / Team Lead",
+        "period": "October 2022 — August 2023",
+        "location": "USA (Remote)",
+        "description": "Senior/Lead Flutter development of a cross-platform product on a White Label architecture with Web, Android, and iOS support.",
+        "achievements": [
+          "Developed and maintained the client side of the web application",
+          "Defined the product roadmap and application architecture from scratch",
+          "Provided support across Web, Android, and iOS platforms",
+          "Coordinated development and release processes"
+        ]
+      },
+      "wowtickets": {
+        "company": "Wowtickets",
+        "role": "Middle Flutter Developer",
+        "period": "November 2021 — October 2022",
+        "location": "UK (Remote)",
+        "description": "WOW Tickets is an online service for finding and booking cheap flights, with access to 350+ airlines worldwide.",
+        "achievements": [
+          "Built the app from scratch — from architecture design to store publication",
+          "Implemented key user flows — searching, filtering, and booking flights",
+          "Integrated secure online payments and e-ticket issuance",
+          "Released the app to Google Play, the App Store, and AppGallery",
+          "Ensured production stability and quality at every stage of development"
+        ]
+      },
+      "lofty": {
+        "company": "Lofty",
+        "role": "Junior Flutter Developer",
+        "period": "March 2020 — February 2021",
+        "location": "UK (Remote)",
+        "description": "Built and rapidly shipped utility apps with a short \"idea → release\" cycle on Google Play and the App Store.",
+        "achievements": [
+          "Built and published a range of utility apps for Android and iOS with Flutter",
+          "VDX – Video Downloader — downloading videos by link and offline viewing; 100,000+ installs on Google Play",
+          "Foxy VPN — private and secure internet access (IP masking, traffic encryption); 10,000+ installs",
+          "Went through the full development cycle on tight deadlines: from prototype to release and store support"
+        ]
+      }
+    },
+    "edu": {
+      "mtuci1": {
+        "school": "Moscow Technical University of Communications and Informatics (MTUCI)",
+        "degree": "PhD in Telecommunications Systems, Networks and Devices — Robotics",
+        "year": "2024 — 2028 (Expected)"
+      },
+      "mtuci2": {
+        "school": "Moscow Technical University of Communications and Informatics (MTUCI)",
+        "degree": "Master's in Digital Business Transformation — Economics",
+        "year": "2022 — 2024"
+      },
+      "mtuci3": {
+        "school": "Moscow Technical University of Communications and Informatics (MTUCI)",
+        "degree": "Bachelor's in Information Technology — System Technologies",
+        "year": "2018 — 2022"
+      }
+    },
+    "hobbiesItems": {
+      "openSource": { "name": "Robotics", "desc": "Research in computer vision and manipulators" },
+      "mentoring": { "name": "Mentoring", "desc": "Guiding junior developers" },
+      "travel": { "name": "Travel", "desc": "Exploring new cultures" },
+      "architecture": { "name": "Architecture", "desc": "Designing scalable systems" }
+    }
+  },
+  "technologiesPage": {
+    "title": "Technologies",
+    "titleHighlight": "& Expertise",
+    "subtitle": "A deep dive into the technical skills and tools I've mastered throughout my career.",
+    "heroTitle": "Flutter Application",
+    "heroTitleHighlight": "Development",
+    "heroDesc": "Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+    "myTechStack": "My Tech",
+    "myTechStackHighlight": "Stack",
+    "expertise": "Areas of",
+    "expertiseHighlight": "Expertise",
+    "expertiseSubtitle": "Delivering specialized development solutions tailored to diverse business needs and project scales.",
+    "ctaTitle": "Ready to bring your",
+    "ctaTitleHighlight": "ideas to life?",
+    "ctaDesc": "Let's collaborate to build scalable, high-performance applications that deliver exceptional user experiences across all platforms.",
+    "ctaButton": "Start a Project",
+    "expertiseItems": {
+      "startup": {
+        "title": "Startup Ecosystems",
+        "description": "Helping founders navigate from zero to one. I build scalable architectures that allow rapid iteration and growth without technical debt."
+      },
+      "crossPlatform": {
+        "title": "Cross-Platform Mastery",
+        "description": "Unified development for iOS, Android, and Web. Native performance with 40% less development time and consistent brand identity."
+      },
+      "mvp": {
+        "title": "Rapid MVP Delivery",
+        "description": "Speed to market matters. I prioritize core value propositions to validate business hypotheses with functional, polished prototypes."
+      },
+      "enterprise": {
+        "title": "Enterprise Scale",
+        "description": "Robust solutions for complex domains. Clean architecture, automated testing, and CI/CD pipelines for mission-critical applications."
+      },
+      "automation": {
+        "title": "Business Automation",
+        "description": "Digitalizing workflows. Custom internal tools and dashboards that optimize operations and provide actionable data insights."
+      }
+    }
+  },
+  "projectPage": {
+    "visitWebsite": "Visit Website",
+    "projectOverview": "Project Overview",
+    "keyContributions": "Key Contributions",
+    "techStack": "Tech Stack",
+    "result": "Result",
+    "recommendation": "Recommendation",
+    "myContribution": "My Contribution",
+    "technicalHighlights": "Technical Highlights",
+    "achievementsResults": "Achievements & Results",
+    "responsibleFor": "As part of my work on this project, I was responsible for:",
+    "keyFeaturesContributions": "Key Features & Contributions:",
+    "keyFeatures": "Key Features:",
+    "myKeyResponsibilities": "My Key Responsibilities:",
+    "myKeyContributions": "My Key Contributions (Lead Developer):",
+    "capabilities": "Capabilities:",
+    "downloadOn": "Download on the",
+    "getItOn": "Get it on",
+    "exploreItOn": "Explore it on",
+    "tapToViewDetails": "Tap to view details →",
+    "healthcare": {
+      "badge": "Healthcare",
+      "title": "PulSarBonus",
+      "titleHighlight": "App",
+      "h2": "Easy & Smart",
+      "h2Highlight": "Health Management",
+      "description": "PulSarBonus is more than just a loyalty program - it's a comprehensive digital health assistant. Users can manage their home medicine cabinet, track treatment courses, and quickly find medications at nearby pharmacies.",
+      "responsibilities": [
+        "Designing and developing key features, including Home Medicine Cabinet, Course Treatment Tracker, and Pharmacy Map.",
+        "Ensuring cross-platform support (Web & Mobile) to provide a seamless experience for all users.",
+        "Optimizing the interface and user experience, making the service intuitive and easy to use.",
+        "Implementing geolocation and barcode scanning technologies to simplify app interactions."
+      ],
+      "overview": "I participated in the development of both the mobile application and the responsive website for PulSarBonus, a comprehensive loyalty program for pharmacy chains. The platform creates a seamless ecosystem connecting customers with pharmacies.",
+      "overview2": "The solution was built to handle complex user data while providing an intuitive interface for users of all ages. My role involved full-cycle development, from architecture design to frontend implementation and backend integration.",
+      "contributions": {
+        "firstAidKit": {
+          "title": "Home First Aid Kit",
+          "desc": "Designed and implemented a feature allowing users to digitally track their medicine inventory, expiration dates, and get reminders for restocking."
+        },
+        "courseTreatment": {
+          "title": "Course Treatment",
+          "desc": "Built a smart notification system for medication adherence, helping users track their treatment progress and stay compliant with doctor prescriptions."
+        },
+        "interactiveMaps": {
+          "title": "Interactive Maps",
+          "desc": "Integrated map services to help users locate nearby pharmacies, check stock availability in real-time, and get turn-by-turn directions."
+        }
+      },
+      "resultText": "Successfully launched the platform with over 10k+ active users in the first month. Improved user retention by 40% through the course treatment feature."
+    },
+    "travel": {
+      "badge": "Travel",
+      "title": "WowTickets",
+      "titleHighlight": "App",
+      "h2": "Book Cheap",
+      "h2Highlight": "Airline Tickets",
+      "description": "WowTickets is a comprehensive flight booking platform designed to help users find the best deals on airline tickets worldwide. It features a seamless booking experience across web and mobile platforms.",
+      "responsibilities": [
+        "Developing the mobile application using Flutter for iOS and Android platforms.",
+        "Implementing complex search and filter algorithms for flight results.",
+        "Integrating payment gateways and secure booking flows.",
+        "Ensuring responsive design and smooth user experience across all devices."
+      ],
+      "overview": "I built the WowTickets mobile application from scratch, designing the entire architecture and successfully leading it to release. The project focused on simplifying the flight booking process while offering competitive prices and a user-friendly interface.",
+      "overview2": "The platform connects to multiple global distribution systems (GDS) to aggregate flight data, requiring optimized backend performance and a responsive frontend to handle real-time updates and bookings.",
+      "contributions": {
+        "architecture": {
+          "title": "Architecture & Development",
+          "desc": "Designed and built the scalable Flutter architecture from the ground up, ensuring code maintainability and high performance across both iOS and Android platforms."
+        },
+        "teamLeadership": {
+          "title": "Team Leadership",
+          "desc": "As a Senior Developer, I managed a team of two developers, performing code reviews, task decomposition, and overseeing the entire development lifecycle through to release."
+        },
+        "localization": {
+          "title": "Global Localization",
+          "desc": "Added support for multiple languages and currencies to cater to a global audience, ensuring a localized experience for every user."
+        }
+      },
+      "resultText": "Successfully published the application on Google Play and Huawei AppGallery, achieving a 30% increase in booking conversions and expanding the user base to over 50 countries."
+    },
+    "smarthome": {
+      "badge": "Smart Home",
+      "title": "Smart Home",
+      "titleHighlight": "Solutions",
+      "description": "Developing intelligent ecosystems for modern living. A showcase of my work in the IoT and Smart Home sector, focusing on seamless integration and user-centric control.",
+      "keyTechnologies": "Key Technologies",
+      "apeironDesc": "A comprehensive smart home ecosystem where I led the development of three major sub-projects. I was responsible for the entire mobile architecture, ensuring a seamless experience for guests and staff through deep digital integration.",
+      "apeironPoints": [
+        {"label": "Apeiron Space App:", "text": "Main guest application for booking rooms and controlling the smart home environment, including lighting, climate, and curtains."},
+        {"label": "SpaceKeeper:", "text": "Housekeeping & staff management app with task tracking and smart home controls for efficient room service and maintenance."},
+        {"label": "ODS (Kitchen Display):", "text": "System for chefs to track incoming orders from the guest application ensuring timely food preparation and delivery."}
+      ],
+      "wiseDesc": "Developed a versatile \"Add to App\" SDK for Wise Home partners, enabling seamless IoT device onboarding integration into third-party mobile and web applications.",
+      "addToAppModule": "Add to App Module",
+      "addToAppDesc": "Designed a cross-platform module for native Android and iOS apps, plus a web module for hybrid Cordova environments. This solution enabled clients to rapidly integrate IoT services without restructuring their main architecture.",
+      "techItems": [
+        {"name": "Mobile Dev", "desc": "React Native, Swift, Kotlin"},
+        {"name": "Backend", "desc": "Node.js, Python, MQTT"},
+        {"name": "Data", "desc": "Redis, PostgreSQL"},
+        {"name": "Connectivity", "desc": "BLE, WebSocket, Zigbee"}
+      ]
+    },
+    "media": {
+      "badge": "Media & Streaming",
+      "h2": "A Seamless",
+      "h2Highlight": "Streaming Experience",
+      "description": "The Tavria.TV app combines stability, a user-friendly interface, and high-quality streaming, making it easy to enjoy your favorite content anytime, anywhere, on any device.",
+      "keyFeatures": "Key Features:",
+      "features": [
+        {"label": "Live Streaming:", "text": "Watch broadcasts in real-time with low latency."},
+        {"label": "Custom Video Player:", "text": "Optimized playback, smooth scrubbing, and video quality control using FFmpeg & HLS."},
+        {"label": "Smart TV Support:", "text": "Remote-friendly navigation with an interface adapted for large screens."},
+        {"label": "On-Demand Archives:", "text": "Access past broadcasts and exclusive content anytime."}
+      ],
+      "smartTVBadge": "Smart TV Experience",
+      "bigScreenTitle": "Big Screen",
+      "bigScreenHighlight": "Innovation",
+      "bigScreenDesc": "Fully optimized application for Android TV and Apple tvOS, featuring a custom-built keyboard for seamless navigation on remote-controlled devices.",
+      "downloadTvApp": "Download TV App on RuStore",
+      "tvFeatures": [
+        {"title": "Custom Keyboard", "desc": "Developed a custom on-screen keyboard in Flutter specifically optimized for D-pad navigation."},
+        {"title": "Android TV", "desc": "Full compatibility with Android TV ecosystem, supporting voice search and recommendations."},
+        {"title": "Apple tvOS", "desc": "Native-like experience on Apple TV with smooth animations and focus engine integration."}
+      ],
+      "myContribution": "My Contribution",
+      "contributions": [
+        {"title": "Cross-Platform Development", "desc": "Built a powerful multimedia platform from the ground up for Android, iOS, and various TV platforms using Flutter & Dart."},
+        {"title": "Video Engineering", "desc": "Optimized user experience for Smart TV, ensuring seamless interaction. Implemented FFmpeg & HLS Streaming for robust video processing and broadcasting."},
+        {"title": "System Stability", "desc": "Achieved high system performance and stability. Successfully published the platform on App Store, Google Play, and other markets with automated CI/CD pipelines."}
+      ],
+      "roleOutcome": "Role & Outcome",
+      "leadDeveloper": "Lead Developer",
+      "leadDesc": "Decomposed tasks, managed sprints, interacted directly with the client, and created technical specifications for the development team.",
+      "resultLabel": "Result",
+      "resultText": "The project was successfully completed and launched. I fully implemented the ecosystem for Smart TV (Android TV & Apple tvOS) as well as mobile applications for both iOS and Android."
+    },
+    "social": {
+      "badge": "Social & Dating",
+      "h2": "Connect & Meet",
+      "h2Highlight": "Real People",
+      "description": "True for Two is a modern dating application designed to foster genuine connections. It features real-time matching, secure messaging, and a user-friendly interface that prioritizes safety and authentic interactions.",
+      "responsibilities": [
+        {"label": "Lead Developer:", "text": "Led the development team, ensuring successful deadline compliance and high-quality delivery."},
+        {"label": "", "text": "Implemented complex WebSocket chat with integrated moderation flows."},
+        {"label": "", "text": "Integrated native gallery features for seamless media selection and handling."},
+        {"label": "", "text": "Developed custom libraries to optimize performance across different devices."}
+      ],
+      "contributions": [
+        {"title": "Real-time Messaging", "desc": "Built a robust WebSocket chat system with instant delivery and integrated moderation flows for user safety."},
+        {"title": "Optimization & Custom Libs", "desc": "Wrote custom libraries to ensure smooth performance and layout optimization across all device types."}
+      ],
+      "resultText": "Successfully published on the App Store and Google Play, delivering a seamless user flow with polished animations. The user experience was optimized through rigorous A/B testing, resulting in a rapidly growing active user base."
+    },
+    "connectivity": {
+      "badge": "eSIM & Connectivity",
+      "h2": "eSIM Management",
+      "h2Highlight": "Platform",
+      "description": "2SkyMobile is a convenient and reliable solution for managing eSIMs. Users can choose tariffs, manage connections, and make payments directly within the app. The platform includes a mobile app, a tablet version, and a responsive website built on Flutter Web.",
+      "responsibilities": [
+        {"label": "Project Leadership:", "text": "Built the project from scratch, creating a comprehensive roadmap and designing the entire architecture on a single code base."},
+        {"label": "Cross-Platform Development:", "text": "Successfully implemented and supported mobile, tablet, and Flutter Web versions."},
+        {"label": "Team Collaboration:", "text": "Maintained close interaction with clients and backend developers to ensure seamless integration and timely delivery."},
+        {"label": "Technical Execution:", "text": "Integrated Stripe, implemented complex eSIM flows, and optimized performance across all platforms."}
+      ],
+      "contributions": [
+        {"title": "Unified Codebase", "desc": "Designed a single codebase architecture supporting Mobile (iOS/Android), Tablet, and Web (Flutter Web) platforms."},
+        {"title": "Client Recommendation", "desc": "Received a recommendation letter highlighting successful project delivery, architectural expertise, and effective team leadership."}
+      ]
+    },
+    "apeiron": {
+      "badge": "Smart Hotel",
+      "h2": "Future of Hospitality",
+      "h2Highlight": "In Your Pocket",
+      "description": "The first smart hotel in Russia, fully controlled from your smartphone. ApeironSpace allows guests to manage their entire stay digitally - from booking and check-in to controlling room lighting, climate, and ordering room service.",
+      "responsibilities": [
+        "Integrating payment systems for commercial services.",
+        "Refactoring code to enhance performance and maintainability.",
+        "Developing smart home functionality, including IoT device integration.",
+        "Creating internal tools for staff and kitchen personnel to automate processes."
+      ],
+      "spaceKeeperBadge": "Staff App",
+      "spaceKeeperTitle": "SpaceKeeper",
+      "spaceKeeperHighlight": "Staff Management",
+      "spaceKeeperDesc": "An internal super-app for hotel personnel. SpaceKeeper digitizes all operational workflows - from housekeeping and maintenance tasks to room inspections and inventory management.",
+      "spaceKeeperFeatures": [
+        "Real-time task assignment and tracking for housekeeping.",
+        "Room status monitoring and instant maintenance reporting.",
+        "Digital checklists for quality control and inspections.",
+        "Integrated inventory management for hotel supplies."
+      ],
+      "odsBadge": "Kitchen Display",
+      "odsTitle": "ODS",
+      "odsHighlight": "Orders Display System",
+      "odsDesc": "A dedicated tablet application for kitchen staff and service personnel. ODS provides a real-time visualization of incoming orders from guests, ensuring timely preparation and delivery.",
+      "odsCapabilities": [
+        "Instant order notification with audible alerts.",
+        "Detailed order breakdown with guest preferences and notes.",
+        "Status tracking (Received, Preparing, Ready for Delivery)."
+      ],
+      "overview": "ApeironSpace is an innovative company specializing in space technologies and hospitality. As a lead mobile developer, I worked on creating a seamless ecosystem that bridges the physical and digital worlds for hotel guests.",
+      "overview2": "The application integrates complex systems including IoT control, secure payments, booking engines, and staff management tools into a single, user-friendly interface. My focus was on architectural stability, performance optimization, and implementing key features that define the smart hotel experience.",
+      "contributions": [
+        {"title": "Performance Optimization", "desc": "Increased application performance and simplified maintenance via extensive code refactoring and implementing Clean Architecture principles."},
+        {"title": "IoT Integration", "desc": "Provided seamless IoT device management, allowing guests to control lights, curtains, TV, and climate directly from their phone with low latency."},
+        {"title": "Process Optimization", "desc": "Optimized internal processes improving team efficiency and established a structured project framework that enhanced collaboration."},
+        {"title": "Product Strategy & Mentorship", "desc": "Played a key role in roadmap planning and decision-making. Created architectural flowcharts to visualize the ecosystem and mentored junior developers to accelerate their growth."}
+      ],
+      "resultText": "Developed 2 full-fledged products from scratch (SpaceKeeper & ODS), expanding the Apeiron ecosystem.",
+      "resultItems": [
+        "Contributed to the development of in-app Chat and Smart Home features for the guest application.",
+        "Integrated secure payment systems including Alfa Pay and SBP (Faster Payments System)."
+      ]
+    },
+    "wise": {
+      "badge": "Smart Home Platform",
+      "h2": "Unified Platform for",
+      "h2Highlight": "Residential Complexes",
+      "description": "WiseCity is a comprehensive smart home platform for residential complexes, providing residents with a unified mobile app for device control, utility bill payments, service requests, news, polls, cameras, and intercom functionality.",
+      "responsibilities": [
+        "Add-to-App Integration: Embedding Flutter modules into existing native Android and iOS applications.",
+        "Deep Integration with Native Services: Handling push notifications, deep links, authentication, and platform permissions via a bridge between Flutter and native code.",
+        "Video Streaming & Communication: Implemented WebRTC for real-time intercom video calls and RTSP streams for surveillance cameras.",
+        "Web Modules for Cordova: Separate web builds adapted for the Cordova shell and browser limitations while preserving a consistent UX.",
+        "Unified Codebase: A shared business-logic and UI layer for mobile and web clients."
+      ],
+      "contributions": [
+        {"title": "Stable Production Launch", "desc": "Launched a stable smart home app for residential complexes into production, serving thousands of residents."},
+        {"title": "Performance Optimization", "desc": "Reduced loading time of key screens and improved UI responsiveness through detailed optimizations."},
+        {"title": "Stability Improvements", "desc": "Decreased the number of critical errors and crashes via code refactoring and implementing clear state management."}
+      ],
+      "addToAppTitle": "Add to App Module",
+      "addToAppDesc": "Developed a cross-platform module for Wise clients designed for integration into native Android and iOS applications."
+    }
+  }
+}

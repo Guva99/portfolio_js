@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import heroPortrait from "@/assets/images/hero-portrait.webp";
 import bgTexture from "@/assets/images/bg-texture.webp";
 import { Download, ChevronRight, Linkedin, Mail, Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 pb-16">
       {/* Background with texture overlay */}
@@ -67,10 +70,9 @@ export function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold leading-tight tracking-tighter">
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Idea.</span>
-              <span className="block text-violet-500 text-glow">Code.</span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Release.</span>
-              <span className="block text-cyan-400 text-glow">Done.</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">{t("hero.tagline1")}</span>
+              <span className="block text-violet-500 text-glow">{t("hero.tagline2")}</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">{t("hero.tagline3")}</span>
             </h1>
           </motion.div>
 
@@ -81,8 +83,7 @@ export function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl text-slate-400 max-w-lg font-light border-l-2 border-violet-500 pl-6"
           >
-            I am a Flutter developer with over 5 years of commercial experience. Throughout my career, I've built and led the development of complex, high-performance mobile applications across varlous industrles
-            - from startups to large-scale enterprise systems. My focus has always been on clean architecture, scalability, and creating products that deliver real value to users.
+            {t("hero.description")}
           </motion.p>
 
           <motion.div 
@@ -92,9 +93,9 @@ export function HeroSection() {
             transition={{ delay: 0.3, duration: 0.4 }}
             className="flex flex-row flex-wrap items-center gap-3"
           >
-            <a href="https://docs.google.com/document/d/1xLWBrmvplRhp6I5BuJBSSJp-_VmLavbwK5gob2VuN6k/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href={t("cvUrl")} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="h-12 px-6 bg-violet-600 hover:bg-violet-700 text-white rounded-full text-base shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all hover:scale-105">
-                Download CV <Download className="ml-2 w-4 h-4" />
+                {t("hero.downloadCv")} <Download className="ml-2 w-4 h-4" />
               </Button>
             </a>
             <Button 
@@ -103,7 +104,7 @@ export function HeroSection() {
               className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-base backdrop-blur-sm bg-white/5"
               onClick={() => window.open('https://t.me/guvva', '_blank')}
             >
-              Contact Me <ChevronRight className="ml-2 w-4 h-4" />
+              {t("hero.contactMe")} <ChevronRight className="ml-2 w-4 h-4" />
             </Button>
             <a href="https://www.linkedin.com/in/guvanch-avezov-29810a349/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-[#0A66C2] rounded-full text-base backdrop-blur-sm bg-white/5 hover:bg-[#0A66C2]/10">
@@ -154,15 +155,15 @@ export function HeroSection() {
             <div className="absolute bottom-6 left-6 right-6 p-6 glass-panel rounded-xl z-20">
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-sm text-cyan-400 font-mono mb-1">CURRENT STATUS</p>
+                  <p className="text-sm text-cyan-400 font-mono mb-1">{t("hero.currentStatus")}</p>
                   <p className="text-white font-semibold flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    Available for projects
+                    {t("hero.availableForProjects")}
                   </p>
                 </div>
                 <div className="text-right">
                   <p className="text-3xl font-bold text-white">5+</p>
-                  <p className="text-xs text-slate-400 uppercase tracking-wider">Years Exp.</p>
+                  <p className="text-xs text-slate-400 uppercase tracking-wider">{t("hero.yearsExp")}</p>
                 </div>
               </div>
             </div>

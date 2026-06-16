@@ -3,12 +3,11 @@ import { Navbar } from "@/components/ui/navbar";
 import { BackgroundElements } from "@/components/ui/background-elements";
 import Lottie from "lottie-react";
 import mobileAnimation from "@/assets/animations/mobile-devices.json";
+import { useTranslation } from "react-i18next";
 
-// Import logos (using lucide icons as placeholders for now, in a real app these would be SVGs)
-import { Database, Cloud, BarChart, FileJson, ArrowRight, CheckCircle, Code, Layers, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase, Globe, Monitor, Tv, Laptop, Flame } from "lucide-react";
+import { Code, Smartphone, Zap, Rocket, MonitorSmartphone, Server, Briefcase, Globe, Monitor, Tv, Flame } from "lucide-react";
 import { SiFlutter, SiSqlite, SiFirebase, SiDart } from "react-icons/si";
 
-// Mock data for tech stack
 const techStack = [
   { name: "Flame Engine", icon: Flame, color: "text-[#FF4040]" },
   { name: "Dart Backend (gRPC)", icon: SiDart, color: "text-[#00B4AB]" },
@@ -17,40 +16,42 @@ const techStack = [
   { name: "SQLite", icon: SiSqlite, color: "text-[#003B57]" }
 ];
 
-const expertiseAreas = [
-  {
-    title: "Startup Ecosystems",
-    description: "Helping founders navigate from zero to one. I build scalable architectures that allow rapid iteration and growth without technical debt.",
-    icon: Rocket,
-    color: "text-orange-500"
-  },
-  {
-    title: "Cross-Platform Mastery",
-    description: "Unified development for iOS, Android, and Web. Native performance with 40% less development time and consistent brand identity.",
-    icon: MonitorSmartphone,
-    color: "text-cyan-500"
-  },
-  {
-    title: "Rapid MVP Delivery",
-    description: "Speed to market matters. I prioritize core value propositions to validate business hypotheses with functional, polished prototypes.",
-    icon: Zap,
-    color: "text-yellow-500"
-  },
-  {
-    title: "Enterprise Scale",
-    description: "Robust solutions for complex domains. Clean architecture, automated testing, and CI/CD pipelines for mission-critical applications.",
-    icon: Server,
-    color: "text-purple-500"
-  },
-  {
-    title: "Business Automation",
-    description: "Digitalizing workflows. Custom internal tools and dashboards that optimize operations and provide actionable data insights.",
-    icon: Briefcase,
-    color: "text-emerald-500"
-  }
-];
-
 export default function Technologies() {
+  const { t } = useTranslation();
+
+  const expertiseAreas = [
+    {
+      titleKey: "technologiesPage.expertiseItems.startup.title",
+      descKey: "technologiesPage.expertiseItems.startup.description",
+      icon: Rocket,
+      color: "text-orange-500"
+    },
+    {
+      titleKey: "technologiesPage.expertiseItems.crossPlatform.title",
+      descKey: "technologiesPage.expertiseItems.crossPlatform.description",
+      icon: MonitorSmartphone,
+      color: "text-cyan-500"
+    },
+    {
+      titleKey: "technologiesPage.expertiseItems.mvp.title",
+      descKey: "technologiesPage.expertiseItems.mvp.description",
+      icon: Zap,
+      color: "text-yellow-500"
+    },
+    {
+      titleKey: "technologiesPage.expertiseItems.enterprise.title",
+      descKey: "technologiesPage.expertiseItems.enterprise.description",
+      icon: Server,
+      color: "text-purple-500"
+    },
+    {
+      titleKey: "technologiesPage.expertiseItems.automation.title",
+      descKey: "technologiesPage.expertiseItems.automation.description",
+      icon: Briefcase,
+      color: "text-emerald-500"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 z-50"></div>
@@ -89,12 +90,12 @@ export default function Technologies() {
                 </motion.div>
                 
                 <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
-                  Flutter Application <br />
-                  <span className="text-[#00d3f3]">Development</span>
+                  {t("technologiesPage.heroTitle")} <br />
+                  <span className="text-[#00d3f3]">{t("technologiesPage.heroTitleHighlight")}</span>
                 </h1>
                 
                 <p className="text-xl text-slate-400 leading-relaxed mb-8 md:pr-[30px]">
-                  Building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
+                  {t("technologiesPage.heroDesc")}
                 </p>
 
                 {/* Platform Icons */}
@@ -158,7 +159,7 @@ export default function Technologies() {
 
           {/* Tech Stack Strip */}
           <div className="max-w-6xl mx-auto mb-20 md:mb-32">
-            <h2 className="text-3xl font-bold text-center mb-8 md:mb-12">My Tech <span className="text-[#00d3f3]">Stack</span></h2>
+            <h2 className="text-3xl font-bold text-center mb-8 md:mb-12">{t("technologiesPage.myTechStack")} <span className="text-[#00d3f3]">{t("technologiesPage.myTechStackHighlight")}</span></h2>
             <div className="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-2xl py-6 md:py-8 px-4 overflow-hidden">
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
                 {techStack.map((tech, index) => (
@@ -180,9 +181,9 @@ export default function Technologies() {
 
           {/* Areas of Expertise (New Section) */}
           <div className="max-w-6xl mx-auto mb-20 md:mb-32">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Areas of <span className="text-[#00d3f3]">Expertise</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{t("technologiesPage.expertise")} <span className="text-[#00d3f3]">{t("technologiesPage.expertiseHighlight")}</span></h2>
             <p className="text-slate-400 text-center max-w-2xl mx-auto mb-10 md:mb-16 text-lg">
-              Delivering specialized development solutions tailored to diverse business needs and project scales.
+              {t("technologiesPage.expertiseSubtitle")}
             </p>
             
             <div className="flex flex-wrap justify-center gap-6">
@@ -216,9 +217,9 @@ export default function Technologies() {
                       <area.icon className={`w-12 h-12 ${area.color}`} strokeWidth={1.5} />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors tracking-wide">{area.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors tracking-wide">{t(area.titleKey)}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed mb-2 flex-grow">
-                      {area.description}
+                      {t(area.descKey)}
                     </p>
                   </div>
                 </motion.div>
@@ -246,11 +247,11 @@ export default function Technologies() {
               {/* Text Content */}
               <div className="relative z-10 text-center md:text-left max-w-3xl">
                 <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                  Ready to bring your <br />
-                  <span className="text-[#8b5cf6]">ideas to life?</span>
+                  {t("technologiesPage.ctaTitle")} <br />
+                  <span className="text-[#8b5cf6]">{t("technologiesPage.ctaTitleHighlight")}</span>
                 </h2>
                 <p className="text-slate-400 text-lg leading-relaxed mb-0">
-                  Let's collaborate to build scalable, high-performance applications that deliver exceptional user experiences across all platforms.
+                  {t("technologiesPage.ctaDesc")}
                 </p>
               </div>
               
@@ -265,7 +266,7 @@ export default function Technologies() {
                   className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b5cf6] text-white font-bold text-lg rounded-xl hover:bg-[#7c3aed] transition-colors shadow-lg shadow-violet-500/20"
                 >
                   <Rocket className="w-5 h-5 fill-current" />
-                  <span>Start a Project</span>
+                  <span>{t("technologiesPage.ctaButton")}</span>
                 </motion.a>
               </div>
             </motion.div>

@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Copy, Check, Heart, Terminal } from "lucide-react";
+import { Copy, Check, Heart, Terminal } from "lucide-react";
 import { useState } from "react";
 import bentoLaptop from "@/assets/images/bento-laptop.webp";
 import bentoMap from "@/assets/images/bento-map.webp";
 import bentoCode from "@/assets/images/bento-code.webp";
+import { useTranslation } from "react-i18next";
 
 export function SkillsSection() {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
@@ -18,8 +20,6 @@ export function SkillsSection() {
     <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          
-          {/* Top Row: Laptop (Left) & Right Column (Map + Tech Stack) */}
           
           {/* Laptop Card - Spans 7 cols */}
           <motion.div 
@@ -36,12 +36,8 @@ export function SkillsSection() {
             />
             <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
               <h3 className="text-2xl md:text-3xl font-bold text-white max-w-md leading-tight">
-                I prioritize client collaboration, fostering open communication
+                {t("skills.clientCollaboration")}
               </h3>
-            </div>
-            {/* Arrow decoration */}
-            <div className="absolute top-1/2 left-[10%] -translate-y-1/2 hidden md:block">
-               {/* This would be the purple arrow/pill graphic overlay if needed, using CSS or SVG */}
             </div>
           </motion.div>
 
@@ -64,7 +60,7 @@ export function SkillsSection() {
               
               <div className="absolute top-6 left-6 max-w-[200px]">
                 <h3 className="text-xl font-bold text-white leading-tight drop-shadow-md">
-                  I'm very flexible with time zone communications
+                  {t("skills.timezone")}
                 </h3>
               </div>
             </motion.div>
@@ -78,12 +74,12 @@ export function SkillsSection() {
               className="rounded-[2rem] bg-[#111]/50 backdrop-blur-md p-8 border border-white/5 flex flex-col justify-between flex-1 min-h-[240px] overflow-hidden"
             >
               <div className="mb-6 relative z-10">
-                <p className="text-slate-400 text-sm mb-1">I constantly try to improve</p>
-                <h3 className="text-2xl font-bold text-white">My tech stack</h3>
+                <p className="text-slate-400 text-sm mb-1">{t("skills.techStackImprove")}</p>
+                <h3 className="text-2xl font-bold text-white">{t("skills.myTechStack")}</h3>
               </div>
               
               <div className="relative w-full overflow-hidden mask-linear-gradient">
-                {/* Row 1 - Left Scroll (Flutter Ecosystem) */}
+                {/* Row 1 - Left Scroll */}
                 <div className="flex gap-2 mb-3 animate-scroll-left w-max">
                    {[
                     "Flutter", "Dart", "Riverpod", "Bloc", "Clean Architecture", 
@@ -102,7 +98,7 @@ export function SkillsSection() {
                   ))}
                 </div>
 
-                {/* Row 2 - Right Scroll (General/Backend/Process) */}
+                {/* Row 2 - Right Scroll */}
                 <div className="flex gap-2 animate-scroll-right w-max">
                   {[
                     "Firebase", "Startup MVP", "CI/CD", "App Store Deploy", 
@@ -140,7 +136,7 @@ export function SkillsSection() {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <h3 className="text-xl font-bold text-white relative z-10 leading-snug">
-                Tech enthusiast with a passion for development.
+                {t("skills.techEnthusiast")}
               </h3>
               <div className="mt-4 flex gap-3 relative z-10">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/5 shadow-inner">
@@ -161,14 +157,14 @@ export function SkillsSection() {
               className="rounded-[2rem] bg-gradient-to-br from-[#1a1a1a]/50 to-[#0f0f0f]/50 backdrop-blur-md p-8 border border-white/5 flex flex-col justify-center items-start"
             >
               <h3 className="text-xl font-bold text-white mb-6 leading-snug">
-                Do you want to start a project together?
+                {t("skills.startProjectTogether")}
               </h3>
               <button 
                 onClick={copyEmail}
                 className="bg-white/10 hover:bg-white/20 active:scale-95 transition-all text-white px-5 py-3 rounded-xl flex items-center gap-2 text-sm font-medium backdrop-blur-sm border border-white/10 w-full justify-center"
               >
                 {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
-                {copied ? "g_avezov@bk.ru Copied!" : "Copy Email Address"}
+                {copied ? t("skills.emailCopied") : t("skills.copyEmail")}
               </button>
             </motion.div>
 
@@ -191,9 +187,10 @@ export function SkillsSection() {
             
             <div className="flex h-full flex-col md:flex-row items-center relative z-20">
               <div className="p-8 md:p-12 md:w-3/4">
-                <p className="text-slate-400 text-sm mb-2 uppercase tracking-wider">Exploring New Horizons</p>
+                <p className="text-slate-400 text-sm mb-2 uppercase tracking-wider">{t("skills.exploringHorizons")}</p>
                 <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                  Mobile, Web, TV finding unconventional <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Flutter solutions</span>
+                  {t("skills.flutterSolutions").split("Flutter solutions")[0]}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Flutter solutions</span>
                 </h3>
               </div>
             </div>

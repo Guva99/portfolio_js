@@ -1,104 +1,10 @@
 import { motion } from "framer-motion";
-import { Briefcase, Layers, Rocket, Monitor, Cpu, CheckCircle, ArrowRight, Code, Database, Globe, MessageSquare } from "lucide-react";
+import { Briefcase, Layers, Rocket, Monitor, Cpu, CheckCircle, ArrowRight, MessageSquare, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 
-const highlights = [
-  {
-    icon: Rocket,
-    text: "10+ applications released in App Store / Google Play",
-    color: "group-hover:text-rose-400",
-    bg: "group-hover:bg-rose-500/10",
-    border: "group-hover:border-rose-500/20"
-  },
-  {
-    icon: Layers,
-    text: "Projects from scratch: architecture → release → support",
-    color: "group-hover:text-amber-400",
-    bg: "group-hover:bg-amber-500/10",
-    border: "group-hover:border-amber-500/20"
-  },
-  {
-    icon: Briefcase,
-    text: "Team Lead & architectural decision making",
-    color: "group-hover:text-emerald-400",
-    bg: "group-hover:bg-emerald-500/10",
-    border: "group-hover:border-emerald-500/20"
-  },
-  {
-    icon: Monitor,
-    text: "Mobile + Web + TV apps expertise",
-    color: "group-hover:text-blue-400",
-    bg: "group-hover:bg-blue-500/10",
-    border: "group-hover:border-blue-500/20"
-  },
-  {
-    icon: Cpu,
-    text: "Clean Architecture & Scalable Solutions",
-    color: "group-hover:text-violet-400",
-    bg: "group-hover:bg-violet-500/10",
-    border: "group-hover:border-violet-500/20"
-  }
-];
-
-const experiences = [
-  {
-    role: "Lead Flutter Developer",
-    company: "Apeiron Space",
-    period: "Aug 2024 - Jan 2026",
-    color: "bg-emerald-500",
-    achievements: [
-      "Led development of the main Apeiron Space mobile application (iOS)",
-      "Delivered and maintained internal systems: ODS & SpaceKeeper",
-      "Owned application architecture, release cycles, and internal tooling"
-    ]
-  },
-  {
-    role: "Freelance / Contract Flutter Developer",
-    company: "Freelance",
-    period: "Sep 2023 - Jan 2025",
-    color: "bg-amber-500",
-    achievements: [
-      "Full-cycle Flutter development on commercial projects (WiseCity, Tavria Media, True for Two, PulsarBonus)",
-      "Development of mobile (iOS, Android) and Smart TV applications",
-      "Integration with REST APIs, Firebase, and third-party services"
-    ]
-  },
-  {
-    role: "Senior Flutter Developer / Team Lead",
-    company: "2Sky Mobile",
-    period: "Oct 2022 - Aug 2023",
-    color: "bg-blue-600",
-    achievements: [
-      "Initiated and led the project from scratch",
-      "Defined product roadmap and application architecture",
-      "Provided ongoing support across Web, Android, and iOS platforms"
-    ]
-  },
-  {
-    role: "Middle Flutter Developer",
-    company: "Wowtickets",
-    period: "Nov 2021 - Oct 2022",
-    color: "bg-violet-600",
-    achievements: [
-      "Full technical ownership and independent development",
-      "Released app to Google Play, App Store, and AppGallery",
-      "Solved complex architectural challenges"
-    ]
-  },
-  {
-    role: "Junior Flutter Developer",
-    company: "Lofty",
-    period: "Jan 2021 - Nov 2021",
-    color: "bg-rose-500",
-    achievements: [
-      "Developed the application from concept to production release",
-      "Full development lifecycle: requirements, architecture, development, testing",
-      "Platforms: Android and iOS"
-    ]
-  }
-];
-
-function TechCard({ item, index }: { item: any; index: number }) {
+function TechCard({ item, index }: { item: { icon: any; text: string; color: string; bg: string; border: string }; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -108,11 +14,9 @@ function TechCard({ item, index }: { item: any; index: number }) {
       className="h-full"
     >
       <div className={`group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 p-6 flex flex-col transition-all duration-300 hover:border-white/10 ${item.bg}`}>
-        {/* Minimalist Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
         <div className="relative z-10 flex flex-col h-full">
-          {/* Header */}
           <div className="flex justify-between items-start mb-6">
             <div className={`p-2 rounded-md bg-white/5 border border-white/5 transition-colors duration-300 ${item.color} ${item.border}`}>
               <item.icon className="w-5 h-5" strokeWidth={1.5} />
@@ -122,7 +26,6 @@ function TechCard({ item, index }: { item: any; index: number }) {
             </div>
           </div>
 
-          {/* Text Content */}
           <div className="mb-4">
             <h4 className="text-lg font-medium text-slate-200 group-hover:text-white transition-colors duration-300 leading-snug">
               {item.text}
@@ -134,7 +37,6 @@ function TechCard({ item, index }: { item: any; index: number }) {
           </div>
         </div>
         
-        {/* Hover Corner Accents */}
         <div className="absolute top-0 right-0 w-0 h-0 border-t-[1px] border-r-[1px] border-transparent group-hover:border-white/20 group-hover:w-4 group-hover:h-4 transition-all duration-300"></div>
         <div className="absolute bottom-0 left-0 w-0 h-0 border-b-[1px] border-l-[1px] border-transparent group-hover:border-white/20 group-hover:w-4 group-hover:h-4 transition-all duration-300"></div>
       </div>
@@ -143,6 +45,89 @@ function TechCard({ item, index }: { item: any; index: number }) {
 }
 
 export function ExperienceSection() {
+  const { t } = useTranslation();
+
+  const highlights = [
+    {
+      icon: Rocket,
+      text: t("experienceSection.highlights.appsReleased"),
+      color: "group-hover:text-rose-400",
+      bg: "group-hover:bg-rose-500/10",
+      border: "group-hover:border-rose-500/20"
+    },
+    {
+      icon: Layers,
+      text: t("experienceSection.highlights.projectsFromScratch"),
+      color: "group-hover:text-amber-400",
+      bg: "group-hover:bg-amber-500/10",
+      border: "group-hover:border-amber-500/20"
+    },
+    {
+      icon: Briefcase,
+      text: t("experienceSection.highlights.teamLead"),
+      color: "group-hover:text-emerald-400",
+      bg: "group-hover:bg-emerald-500/10",
+      border: "group-hover:border-emerald-500/20"
+    },
+    {
+      icon: Monitor,
+      text: t("experienceSection.highlights.multiPlatform"),
+      color: "group-hover:text-blue-400",
+      bg: "group-hover:bg-blue-500/10",
+      border: "group-hover:border-blue-500/20"
+    },
+    {
+      icon: Cpu,
+      text: t("experienceSection.highlights.cleanArch"),
+      color: "group-hover:text-violet-400",
+      bg: "group-hover:bg-violet-500/10",
+      border: "group-hover:border-violet-500/20"
+    }
+  ];
+
+  const experiences = [
+    {
+      role: t("experienceSection.jobs.apeiron.role"),
+      company: t("experienceSection.jobs.apeiron.company"),
+      period: t("experienceSection.jobs.apeiron.period"),
+      color: "bg-emerald-500",
+      achievements: t("experienceSection.jobs.apeiron.achievements", { returnObjects: true }) as string[],
+      projectUrl: "/projects/wise"
+    },
+    {
+      role: t("experienceSection.jobs.freelance.role"),
+      company: t("experienceSection.jobs.freelance.company"),
+      period: t("experienceSection.jobs.freelance.period"),
+      color: "bg-amber-500",
+      achievements: t("experienceSection.jobs.freelance.achievements", { returnObjects: true }) as string[],
+      projectUrl: "/projects/apeiron"
+    },
+    {
+      role: t("experienceSection.jobs.twosky.role"),
+      company: t("experienceSection.jobs.twosky.company"),
+      period: t("experienceSection.jobs.twosky.period"),
+      color: "bg-blue-600",
+      achievements: t("experienceSection.jobs.twosky.achievements", { returnObjects: true }) as string[],
+      projectUrl: "/projects/2sky"
+    },
+    {
+      role: t("experienceSection.jobs.wowtickets.role"),
+      company: t("experienceSection.jobs.wowtickets.company"),
+      period: t("experienceSection.jobs.wowtickets.period"),
+      color: "bg-violet-600",
+      achievements: t("experienceSection.jobs.wowtickets.achievements", { returnObjects: true }) as string[],
+      projectUrl: "/projects/travel"
+    },
+    {
+      role: t("experienceSection.jobs.lofty.role"),
+      company: t("experienceSection.jobs.lofty.company"),
+      period: t("experienceSection.jobs.lofty.period"),
+      color: "bg-rose-500",
+      achievements: t("experienceSection.jobs.lofty.achievements", { returnObjects: true }) as string[],
+      projectUrl: null
+    }
+  ];
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background Elements */}
@@ -155,10 +140,10 @@ export function ExperienceSection() {
         {/* Highlights Section */}
         <div className="max-w-6xl mx-auto mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Professional <span className="text-cyan-400 text-glow">Highlights</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{t("experienceSection.highlightsTitle")} <span className="text-cyan-400 text-glow">{t("experienceSection.highlightsTitleHighlight")}</span></h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">
               <span className="font-mono text-xs text-cyan-500 mr-2">[SYSTEM_LOG]</span>
-              Key achievements that define my engineering journey
+              {t("experienceSection.highlightsSubtitle")}
             </p>
           </div>
           
@@ -167,7 +152,7 @@ export function ExperienceSection() {
               <TechCard key={index} item={item} index={index} />
             ))}
             
-            {/* Stats Card - Minimal Style */}
+            {/* Stats Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -175,19 +160,17 @@ export function ExperienceSection() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center min-h-[200px]"
             >
-              {/* Minimal Circle Background */}
               <div className="absolute inset-0 flex items-center justify-center opacity-5">
                  <div className="w-32 h-32 border border-white rounded-full"></div>
                  <div className="absolute w-24 h-24 border border-white rounded-full border-dashed"></div>
               </div>
 
               <div className="relative z-10 text-center">
-                 <div className="font-mono text-[10px] text-slate-500 mb-2 tracking-widest uppercase">Experience</div>
+                 <div className="font-mono text-[10px] text-slate-500 mb-2 tracking-widest uppercase">{t("experienceSection.experience")}</div>
                  <h3 className="text-6xl font-light text-white mb-1 tracking-tighter">5+</h3>
-                 <p className="text-slate-500 text-xs uppercase tracking-widest">Years</p>
+                 <p className="text-slate-500 text-xs uppercase tracking-widest">{t("experienceSection.years")}</p>
               </div>
 
-              {/* Minimal Corners */}
               <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20"></div>
               <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20"></div>
             </motion.div>
@@ -197,7 +180,7 @@ export function ExperienceSection() {
         {/* Experience Section */}
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">Work <span className="text-[#00d3f3]">Experience</span></h2>
+            <h2 className="text-4xl font-bold mb-6">{t("experienceSection.workExperience")} <span className="text-[#00d3f3]">{t("experienceSection.workExperienceHighlight")}</span></h2>
             
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -205,7 +188,7 @@ export function ExperienceSection() {
               href="/experience"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-violet-500/30 text-slate-300 hover:text-white transition-all backdrop-blur-sm"
             >
-              <span className="font-medium">Get to know me better</span>
+              <span className="font-medium">{t("experienceSection.getToKnowMe")}</span>
               <ArrowRight className="w-4 h-4" />
             </motion.a>
           </div>
@@ -220,14 +203,20 @@ export function ExperienceSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative pl-8 md:pl-12"
               >
-                {/* Timeline Dot */}
                 <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full ${exp.color} ring-4 ring-[#050505] shadow-lg shadow-violet-500/20`}></div>
                 
                 <div className="glass-card p-6 md:p-8 rounded-2xl group hover:bg-white/5 transition-colors border border-white/5">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-2">
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-1">{exp.role}</h3>
-                      <p className="text-lg text-violet-300 font-medium">{exp.company}</p>
+                      {exp.projectUrl ? (
+                        <Link href={exp.projectUrl} className="inline-flex items-center gap-1 text-lg text-violet-300 font-medium hover:text-violet-100 transition-colors group">
+                          {exp.company}
+                          <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </Link>
+                      ) : (
+                        <p className="text-lg text-violet-300 font-medium">{exp.company}</p>
+                      )}
                     </div>
                     <span className="text-sm font-mono text-cyan-400 py-1 px-3 bg-cyan-900/20 rounded-full border border-cyan-500/20 whitespace-nowrap">
                       {exp.period}
@@ -251,21 +240,18 @@ export function ExperienceSection() {
 
       <div className="container mx-auto px-4 mt-32 relative">
         <div className="relative bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
-          {/* Background Glow */}
           <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-900/20 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-          {/* Text Content */}
           <div className="relative z-10 text-left">
             <h3 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight">
-              READY TO CREATE
+              {t("experienceSection.readyToCreate")}
             </h3>
             <h3 className="text-3xl md:text-5xl font-bold text-[#9d74f5] mb-3 tracking-tight relative inline-block">
-              A UNIQUE EXPERIENCE ?
-              {/* Decorative Plus */}
+              {t("experienceSection.uniqueExperience")}
               <div className="absolute -left-16 top-1/2 -translate-y-1/2 text-white/10 text-9xl font-light pointer-events-none select-none blur-[2px] hidden md:block">+</div>
             </h3>
             <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-8">
-              LET'S DO IT TOGETHER!
+              {t("experienceSection.letsDoItTogether")}
             </h3>
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -273,11 +259,10 @@ export function ExperienceSection() {
               href="/experience"
               className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5 text-lg"
             >
-              Learn more about my journey <ArrowRight className="w-4 h-4" />
+              {t("experienceSection.learnMoreAboutJourney")} <ArrowRight className="w-4 h-4" />
             </motion.a>
           </div>
 
-          {/* Button Section */}
           <div className="relative z-10 flex flex-col items-center min-w-[200px]">
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -288,10 +273,9 @@ export function ExperienceSection() {
               className="flex items-center gap-3 px-8 py-4 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white rounded-2xl font-semibold text-lg transition-all shadow-[0_0_30px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_0_40px_-5px_rgba(139,92,246,0.5)]"
             >
               <MessageSquare className="w-5 h-5 fill-white" />
-              <span>Contact me now</span>
+              <span>{t("experienceSection.contactMeNow")}</span>
             </motion.a>
             
-            {/* Decorative Circles */}
             <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-12 h-8 opacity-40">
               <div className="absolute left-0 top-0 w-6 h-6 rounded-full border border-slate-400"></div>
               <div className="absolute left-3 top-2 w-6 h-6 rounded-full border border-slate-400"></div>

@@ -1,39 +1,45 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, BookOpen, HeartPulse, Plane, Home as HomeIcon, Tv, Code, User, Briefcase, Users, Wifi } from "lucide-react";
+import { Menu, X, ChevronDown, HeartPulse, Plane, Home as HomeIcon, Tv, Code, Briefcase, Users, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-
-const menuItems = [
-  {
-    title: "Projects",
-    href: "/#projects",
-    dropdown: [
-      { title: "Healthcare", icon: HeartPulse, href: "/projects/healthcare" },
-      { title: "Travel", icon: Plane, href: "/projects/travel" },
-      { title: "Smart Home", icon: HomeIcon, href: "/projects/smarthome" },
-      { title: "Media", icon: Tv, href: "/projects/media" },
-      { title: "Social", icon: Users, href: "/projects/truefortwo" },
-      { title: "Connectivity", icon: Wifi, href: "/projects/2sky" },
-    ]
-  },
-  {
-    title: "Technologies",
-    href: "/technologies",
-    icon: Code
-  },
-  {
-    title: "Experience",
-    href: "/experience",
-    icon: Briefcase
-  }
-];
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [location] = useLocation();
+
+  const menuItems = [
+    {
+      title: t("nav.projects"),
+      href: "/#projects",
+      dropdown: [
+        { title: t("nav.healthcare"), icon: HeartPulse, href: "/projects/healthcare" },
+        { title: t("nav.travel"), icon: Plane, href: "/projects/travel" },
+        { title: t("nav.smartHome"), icon: HomeIcon, href: "/projects/smarthome" },
+        { title: t("nav.media"), icon: Tv, href: "/projects/media" },
+        { title: t("nav.social"), icon: Users, href: "/projects/truefortwo" },
+        { title: t("nav.connectivity"), icon: Wifi, href: "/projects/2sky" },
+      ]
+    },
+    {
+      title: t("nav.technologies"),
+      href: "/technologies",
+      icon: Code
+    },
+    {
+      title: t("nav.experience"),
+      href: "/experience",
+      icon: Briefcase
+    }
+  ];
+
+  const toggleLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +59,33 @@ export function Navbar() {
       document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
+
+  const currentLang = i18n.language?.startsWith("ru") ? "ru" : "en";
+
+  const LangSwitcher = ({ className = "" }: { className?: string }) => (
+    <div className={`flex items-center gap-0.5 bg-white/5 border border-white/10 rounded-full p-0.5 ${className}`}>
+      <button
+        onClick={() => toggleLanguage("en")}
+        className={`px-3 py-1 rounded-full text-sm font-semibold transition-all duration-200 ${
+          currentLang === "en"
+            ? "bg-cyan-400 text-slate-900"
+            : "text-slate-400 hover:text-white"
+        }`}
+      >
+        EN
+      </button>
+      <button
+        onClick={() => toggleLanguage("ru")}
+        className={`px-3 py-1 rounded-full text-sm font-semibold transition-all duration-200 ${
+          currentLang === "ru"
+            ? "bg-cyan-400 text-slate-900"
+            : "text-slate-400 hover:text-white"
+        }`}
+      >
+        RU
+      </button>
+    </div>
+  );
 
   return (
     <>
@@ -123,13 +156,21 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white p-2"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <Menu className="w-8 h-8" />
-          </button>
+          {/* Desktop Right: Lang Switcher */}
+          <div className="hidden md:flex items-center gap-3">
+            <LangSwitcher />
+          </div>
+
+          {/* Mobile: Lang Switcher + Burger */}
+          <div className="md:hidden flex items-center gap-2">
+            <LangSwitcher />
+            <button
+              className="text-white p-2"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <Menu className="w-8 h-8" />
+            </button>
+          </div>
         </div>
       </motion.header>
 
@@ -144,7 +185,7 @@ export function Navbar() {
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex justify-between items-center mb-8">
-                <span className="text-2xl font-bold font-mono text-white">Menu</span>
+                <span className="text-2xl font-bold font-mono text-white">{t("nav.menu")}</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-2 rounded-full bg-white/5 text-white hover:bg-white/10 transition-colors"
@@ -181,7 +222,7 @@ export function Navbar() {
                   className="w-full h-14 text-lg bg-gradient-to-r from-violet-600 to-cyan-600 rounded-xl"
                   onClick={() => window.open('https://t.me/guvva', '_blank')}
                 >
-                  Contact Me
+                  {t("nav.contactMe")}
                 </Button>
               </div>
             </div>

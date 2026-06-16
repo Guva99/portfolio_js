@@ -6,14 +6,17 @@ import apeironImage from "@assets/image_1770921547262.png";
 import wiseImage from "@assets/image_1770921682400.png";
 import apeironLogo from "@assets/01_splashscreen_1770922545091.png";
 import wiseLogo from "@assets/Frame_26_1770922552516.png";
-
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectSmartHome() {
+  const { t } = useTranslation();
+  const techItems = t("projectPage.smarthome.techItems", { returnObjects: true }) as { name: string; desc: string }[];
+  const apeironPoints = t("projectPage.smarthome.apeironPoints", { returnObjects: true }) as { label: string; text: string }[];
+
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
       <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 z-50"></div>
-      {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob-1"></div>
@@ -31,22 +34,20 @@ export default function ProjectSmartHome() {
             transition={{ duration: 0.5 }}
             className="max-w-6xl mx-auto"
           >
-            {/* Header */}
             <div className="mb-16">
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-medium border border-cyan-500/20 flex items-center gap-1.5">
-                  <Home className="w-3.5 h-3.5" /> Smart Home
+                  <Home className="w-3.5 h-3.5" /> {t("projectPage.smarthome.badge")}
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                Smart Home <span className="text-cyan-400">Solutions</span>
+                {t("projectPage.smarthome.title")} <span className="text-cyan-400">{t("projectPage.smarthome.titleHighlight")}</span>
               </h1>
               <p className="text-slate-300 text-lg leading-relaxed max-w-2xl">
-                Developing intelligent ecosystems for modern living. A showcase of my work in the IoT and Smart Home sector, focusing on seamless integration and user-centric control.
+                {t("projectPage.smarthome.description")}
               </p>
             </div>
 
-            {/* Projects Grid */}
             <div className="grid lg:grid-cols-2 gap-8 mb-20">
               
               {/* ApeironSpace Project */}
@@ -74,23 +75,15 @@ export default function ProjectSmartHome() {
                        <h2 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">ApeironSpace</h2>
                     </div>
                     
-                    <p className="text-slate-300 mb-6 leading-relaxed">
-                      A comprehensive smart home ecosystem where I led the development of three major sub-projects. I was responsible for the entire mobile architecture, ensuring a seamless experience for guests and staff through deep digital integration.
-                    </p>
+                    <p className="text-slate-300 mb-6 leading-relaxed">{t("projectPage.smarthome.apeironDesc")}</p>
 
                     <div className="space-y-4 mb-8 flex-grow">
-                      <div className="flex items-start gap-3">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-shadow duration-300"></div>
-                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">Apeiron Space App:</span> Main guest application for booking rooms and controlling the smart home environment, including lighting, climate, and curtains.</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-shadow duration-300"></div>
-                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">SpaceKeeper:</span> Housekeeping & staff management app with task tracking and smart home controls for efficient room service and maintenance.</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-shadow duration-300"></div>
-                        <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">ODS (Kitchen Display):</span> System for chefs to track incoming orders from the guest application ensuring timely food preparation and delivery.</p>
-                      </div>
+                      {apeironPoints.map((point, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-shadow duration-300"></div>
+                          <p className="text-sm text-slate-400"><span className="text-slate-200 font-medium">{point.label}</span> {point.text}</p>
+                        </div>
+                      ))}
                     </div>
 
                     <div className="flex flex-wrap gap-2 mt-auto">
@@ -102,9 +95,8 @@ export default function ProjectSmartHome() {
                     </div>
                   </div>
                 </motion.div>
-                {/* Mobile tap indicator text - visible only on small screens */}
                 <div className="absolute bottom-4 right-4 text-xs text-cyan-400 font-medium md:hidden opacity-70">
-                  Tap to view details &rarr;
+                  {t("projectPage.tapToViewDetails")}
                 </div>
               </Link>
 
@@ -133,18 +125,14 @@ export default function ProjectSmartHome() {
                      <h2 className="text-2xl font-bold text-white">Wise Home</h2>
                   </div>
                   
-                  <p className="text-slate-300 mb-6 leading-relaxed">
-                    Developed a versatile "Add to App" SDK for Wise Home partners, enabling seamless IoT device onboarding integration into third-party mobile and web applications.
-                  </p>
+                  <p className="text-slate-300 mb-6 leading-relaxed">{t("projectPage.smarthome.wiseDesc")}</p>
 
                   <div className="bg-slate-800/50 rounded-xl p-5 border border-white/5 mb-8 flex-grow">
                     <h3 className="text-white font-medium mb-2 flex items-center gap-2">
                       <Code className="w-4 h-4 text-blue-400" />
-                      Add to App Module
+                      {t("projectPage.smarthome.addToAppModule")}
                     </h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">
-                      Designed a cross-platform module for native Android and iOS apps, plus a web module for hybrid Cordova environments. This solution enabled clients to rapidly integrate IoT services without restructuring their main architecture.
-                    </p>
+                    <p className="text-sm text-slate-400 leading-relaxed">{t("projectPage.smarthome.addToAppDesc")}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-auto">
@@ -156,9 +144,8 @@ export default function ProjectSmartHome() {
                   </div>
                 </div>
               </motion.div>
-                {/* Mobile tap indicator text - visible only on small screens */}
                 <div className="absolute bottom-4 right-4 text-xs text-blue-400 font-medium md:hidden opacity-70">
-                  Tap to view details &rarr;
+                  {t("projectPage.tapToViewDetails")}
                 </div>
               </Link>
 
@@ -168,23 +155,22 @@ export default function ProjectSmartHome() {
             <div className="border-t border-white/5 pt-12">
               <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
                 <Wifi className="w-5 h-5 text-cyan-400" />
-                Key Technologies
+                {t("projectPage.smarthome.keyTechnologies")}
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  { icon: <Smartphone className="w-5 h-5" />, name: "Mobile Dev", desc: "React Native, Swift, Kotlin" },
-                  { icon: <Server className="w-5 h-5" />, name: "Backend", desc: "Node.js, Python, MQTT" },
-                  { icon: <Database className="w-5 h-5" />, name: "Data", desc: "Redis, PostgreSQL" },
-                  { icon: <Wifi className="w-5 h-5" />, name: "Connectivity", desc: "BLE, WebSocket, Zigbee" },
-                ].map((item, i) => (
-                  <div key={i} className="p-4 rounded-xl bg-slate-900/40 border border-white/5 flex items-start gap-3">
-                    <div className="text-cyan-400 mt-1">{item.icon}</div>
-                    <div>
-                      <div className="text-white font-medium text-sm">{item.name}</div>
-                      <div className="text-slate-500 text-xs">{item.desc}</div>
+                {techItems.map((item, i) => {
+                  const icons = [Smartphone, Server, Database, Wifi];
+                  const Icon = icons[i];
+                  return (
+                    <div key={i} className="p-4 rounded-xl bg-slate-900/40 border border-white/5 flex items-start gap-3">
+                      <div className="text-cyan-400 mt-1"><Icon className="w-5 h-5" /></div>
+                      <div>
+                        <div className="text-white font-medium text-sm">{item.name}</div>
+                        <div className="text-slate-500 text-xs">{item.desc}</div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

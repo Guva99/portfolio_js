@@ -4,35 +4,37 @@ import letter2Sky from "@/assets/images/letter-2sky.png";
 import letterWowTickets from "@/assets/images/letter-wowtickets.png";
 import { ZoomIn } from "lucide-react";
 import { useState } from "react";
-
-const recommendations = [
-  {
-    image: letterWowTickets,
-    alt: "WowTickets Recommendation Letter",
-    company: "Wowtickets.com",
-    role: "Mobile Application Developer"
-  },
-  {
-    image: letter2Sky,
-    alt: "2Sky Mobile Recommendation Letter",
-    company: "2Sky Mobile",
-    role: "Flutter Developer"
-  },
-  {
-    image: letterApeiron,
-    alt: "ApeironSpace Recommendation Letter",
-    company: "ApeironSpace",
-    role: "Mobile Developer"
-  }
-];
+import { useTranslation } from "react-i18next";
 
 export function RecommendationsSection() {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const recommendations = [
+    {
+      image: letterWowTickets,
+      alt: "WowTickets Recommendation Letter",
+      company: "Wowtickets.com",
+      role: t("recommendations.mobileAppDeveloper")
+    },
+    {
+      image: letter2Sky,
+      alt: "2Sky Mobile Recommendation Letter",
+      company: "2Sky Mobile",
+      role: t("recommendations.flutterDeveloper")
+    },
+    {
+      image: letterApeiron,
+      alt: "ApeironSpace Recommendation Letter",
+      company: "ApeironSpace",
+      role: t("recommendations.mobileDeveloper")
+    }
+  ];
 
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-16 text-center">Recommendation <span className="text-[#00d3f3]">Letters</span></h2>
+        <h2 className="text-4xl font-bold mb-16 text-center">{t("recommendations.title")} <span className="text-[#00d3f3]">{t("recommendations.titleHighlight")}</span></h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {recommendations.map((rec, index) => (

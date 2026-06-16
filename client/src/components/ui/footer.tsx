@@ -1,6 +1,9 @@
 import { Linkedin, Mail, Send, Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="pt-10 pb-10 border-t border-white/5 bg-slate-950/50 backdrop-blur-sm">
       <div className="container mx-auto px-4">
@@ -20,7 +23,7 @@ export function Footer() {
         </div>
         
         <div className="text-center text-slate-600 text-sm border-t border-white/5 pt-8">
-          <p>© 2024 Flutter Developer Portfolio. Crafted with passion.</p>
+          <p>{t("footer.copyright")}</p>
         </div>
       </div>
     </footer>
