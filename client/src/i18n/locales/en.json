@@ -18,7 +18,7 @@
     "tagline2": "Code.",
     "tagline3": "Release.",
     "tagline4": "Done.",
-    "description": "Hi, my name is Guvanch. I develop Flutter applications and have over 5 years of commercial experience. I build solutions for iOS, Android, Web, Smart TV, and embedded devices. Throughout my career, I have developed and contributed to the technical growth of complex mobile applications across various domains — from startups to large enterprise systems. My main focus is clean architecture, scalability, high performance, and fast delivery of quality product solutions that help improve the product and enhance the user experience.",
+    "description": "Hi, my name is Guvanch. I develop Flutter applications and have over 5 years of commercial experience. I build solutions for iOS, Android, Web, Smart TV, and embedded devices. Throughout my career, I have developed and contributed to the technical growth of complex mobile applications across various domains — from startups to large enterprise systems. My main focus is clean architecture, scalability, high performance, and shipping quality solutions fast — ones that move the product forward and improve the user experience.",
     "downloadCv": "Download CV",
     "contactMe": "Contact Me",
     "currentStatus": "CURRENT STATUS",
@@ -26,16 +26,17 @@
     "yearsExp": "Years Exp."
   },
   "skills": {
-    "clientCollaboration": "I prioritize client collaboration, fostering open communication",
-    "timezone": "I'm very flexible with time zone communications",
-    "techStackImprove": "I constantly try to improve",
+    "clientCollaboration": "I work closely with clients and keep them in the loop — no surprises along the way.",
+    "timezone": "I work flexibly across time zones.",
+    "techStackImprove": "Always leveling up my stack",
     "myTechStack": "My tech stack",
-    "techEnthusiast": "Tech enthusiast with a passion for development.",
+    "techEnthusiast": "I build apps that ship to the store and keep running.",
     "startProjectTogether": "Do you want to start a project together?",
     "copyEmail": "Copy Email Address",
     "emailCopied": "g_avezov@bk.ru Copied!",
     "exploringHorizons": "Exploring New Horizons",
-    "flutterSolutions": "Mobile, Web, TV finding unconventional Flutter solutions"
+    "flutterSolutions": "Mobile, Web, TV — unconventional",
+    "flutterSolutionsHighlight": "Flutter solutions"
   },
   "projects": {
     "title": "Expertise",
@@ -71,7 +72,7 @@
   "experienceSection": {
     "highlightsTitle": "Professional",
     "highlightsTitleHighlight": "Highlights",
-    "highlightsSubtitle": "Key achievements that define my engineering journey",
+    "highlightsSubtitle": "Key achievements from my work as an engineer",
     "experience": "Experience",
     "years": "Years",
     "workExperience": "Work",
@@ -143,7 +144,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Flutter Developer Portfolio. Crafted with passion."
+    "copyright": "© 2024 Guvanch Avezov. Flutter Developer Portfolio."
   },
   "loading": "Loading",
   "notFound": {
@@ -153,13 +154,14 @@
   "experiencePage": {
     "title": "Experience",
     "titleHighlight": "& Education",
+    "aboutMe": "About Me",
     "downloadCv": "Download CV",
     "workExperience": "Work Experience",
     "totalExperience": "5 yrs 8 mos",
     "education": "Education",
     "hobbies": "Interests",
     "robotics": "Robotics & AI",
-    "roboticsTitle": "KUKA Manipulator Software Development",
+    "roboticsTitle": "Computer Vision System for an Industrial Manipulator",
     "roboticsDesc": "As part of my additional education, I am deepening my knowledge in robotics, computer vision, and intelligent control systems. I am also pursuing postgraduate studies, focusing on research into methods for safe interaction between an industrial manipulator and its surrounding environment.",
     "roboticsBullet1": "Processing RGB-D data and point clouds for object detection.",
     "roboticsBullet2": "Researching methods for collision prevention within the robot workspace.",
@@ -168,8 +170,11 @@
     "about": {
       "name": "Guvanch Avezov",
       "role": "Lead Flutter Developer",
+      "heading1": "Senior",
+      "headingHighlight": "Flutter Developer",
+      "heading2": "& Team Lead",
       "bio1": "Hi, my name is Guvanch. I develop Flutter applications and have over 5 years of commercial experience. I build solutions for iOS, Android, Web, Smart TV, and embedded devices. Throughout my career, I have developed and contributed to the technical growth of complex mobile applications across various domains — from startups to large enterprise systems.",
-      "bio2": "My main focus is clean architecture, scalability, high performance, and fast delivery of quality product solutions that help improve the product and enhance the user experience."
+      "bio2": "My main focus is clean architecture, scalability, high performance, and shipping quality solutions fast — ones that move the product forward and improve the user experience."
     },
     "techFocus": "Technical Focus",
     "techFocusItems": ["Flutter / Dart", "Clean Architecture", "CI/CD", "Cross-Platform"],
@@ -330,7 +335,7 @@
       "titleHighlight": "App",
       "h2": "Easy & Smart",
       "h2Highlight": "Health Management",
-      "description": "PulSarBonus is more than just a loyalty program - it's a comprehensive digital health assistant. Users can manage their home medicine cabinet, track treatment courses, and quickly find medications at nearby pharmacies.",
+      "description": "PulSarBonus is more than just a loyalty program — it's a comprehensive digital health assistant. Users can manage their home medicine cabinet, track treatment courses, and quickly find medications at nearby pharmacies.",
       "responsibilities": [
         "Designing and developing key features, including Home Medicine Cabinet, Course Treatment Tracker, and Pharmacy Map.",
         "Ensuring cross-platform support (Web & Mobile) to provide a seamless experience for all users.",
@@ -353,7 +358,7 @@
           "desc": "Integrated map services to help users locate nearby pharmacies, check stock availability in real-time, and get turn-by-turn directions."
         }
       },
-      "resultText": "Successfully launched the platform with over 10k+ active users in the first month. Improved user retention by 40% through the course treatment feature."
+      "resultText": "Successfully launched the platform with 10,000+ active users in the first month. Improved user retention by 40% through the course treatment feature."
     },
     "travel": {
       "badge": "Travel",
@@ -396,9 +401,9 @@
       "apeironPoints": [
         {"label": "Apeiron Space App:", "text": "Main guest application for booking rooms and controlling the smart home environment, including lighting, climate, and curtains."},
         {"label": "SpaceKeeper:", "text": "Housekeeping & staff management app with task tracking and smart home controls for efficient room service and maintenance."},
-        {"label": "ODS (Kitchen Display):", "text": "System for chefs to track incoming orders from the guest application ensuring timely food preparation and delivery."}
+        {"label": "ODS (Kitchen Display):", "text": "System for chefs to track incoming orders from the guest application, ensuring timely food preparation and delivery."}
       ],
-      "wiseDesc": "Developed a versatile \"Add to App\" SDK for Wise Home partners, enabling seamless IoT device onboarding integration into third-party mobile and web applications.",
+      "wiseDesc": "Developed a versatile \"Add to App\" SDK for Wise Home partners, enabling seamless IoT device integration into third-party mobile and web applications.",
       "addToAppModule": "Add to App Module",
       "addToAppDesc": "Designed a cross-platform module for native Android and iOS apps, plus a web module for hybrid Cordova environments. This solution enabled clients to rapidly integrate IoT services without restructuring their main architecture.",
       "techItems": [
@@ -479,7 +484,7 @@
       "badge": "Smart Hotel",
       "h2": "Future of Hospitality",
       "h2Highlight": "In Your Pocket",
-      "description": "The first smart hotel in Russia, fully controlled from your smartphone. ApeironSpace allows guests to manage their entire stay digitally - from booking and check-in to controlling room lighting, climate, and ordering room service.",
+      "description": "The first smart hotel in Russia, fully controlled from your smartphone. ApeironSpace allows guests to manage their entire stay digitally — from booking and check-in to controlling room lighting, climate, and ordering room service.",
       "responsibilities": [
         "Integrating payment systems for commercial services.",
         "Refactoring code to enhance performance and maintainability.",
@@ -489,7 +494,7 @@
       "spaceKeeperBadge": "Staff App",
       "spaceKeeperTitle": "SpaceKeeper",
       "spaceKeeperHighlight": "Staff Management",
-      "spaceKeeperDesc": "An internal super-app for hotel personnel. SpaceKeeper digitizes all operational workflows - from housekeeping and maintenance tasks to room inspections and inventory management.",
+      "spaceKeeperDesc": "An internal super-app for hotel personnel. SpaceKeeper digitizes all operational workflows — from housekeeping and maintenance tasks to room inspections and inventory management.",
       "spaceKeeperFeatures": [
         "Real-time task assignment and tracking for housekeeping.",
         "Room status monitoring and instant maintenance reporting.",

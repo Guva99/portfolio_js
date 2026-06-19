@@ -189,8 +189,8 @@ export function SkillsSection() {
               <div className="p-8 md:p-12 md:w-3/4">
                 <p className="text-slate-400 text-sm mb-2 uppercase tracking-wider">{t("skills.exploringHorizons")}</p>
                 <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                  {t("skills.flutterSolutions").split("Flutter solutions")[0]}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Flutter solutions</span>
+                  {t("skills.flutterSolutions")}{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">{t("skills.flutterSolutionsHighlight")}</span>
                 </h3>
               </div>
             </div>

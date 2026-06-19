@@ -118,15 +118,15 @@ export default function Experience() {
             <div className="mb-20">
               <div className="flex items-center gap-3 mb-6">
                 <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium border border-blue-500/20 flex items-center gap-1.5">
-                  <User className="w-3.5 h-3.5" /> About Me
+                  <User className="w-3.5 h-3.5" /> {t("experiencePage.aboutMe")}
                 </span>
               </div>
-              
+
               <div className="grid md:grid-cols-[1.5fr_1fr] gap-12 items-start">
                 <div>
                   <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-8">
-                    Senior <span className="text-blue-500">Flutter Developer</span><br />
-                    & Team Lead
+                    {t("experiencePage.about.heading1")} <span className="text-blue-500">{t("experiencePage.about.headingHighlight")}</span><br />
+                    {t("experiencePage.about.heading2")}
                   </h1>
                   <div className="prose prose-lg prose-invert text-slate-300 max-w-none">
                     <p>
