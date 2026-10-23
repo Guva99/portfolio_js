@@ -1,10 +1,31 @@
 import { motion } from "framer-motion";
-import { Copy, Check, Heart, Terminal } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { useState } from "react";
-import bentoLaptop from "@/assets/images/bento-laptop.webp";
 import bentoMap from "@/assets/images/bento-map.webp";
-import bentoCode from "@/assets/images/bento-code.webp";
+import pulsarScreen from "@/assets/images/pulsar/screen1.webp";
+import wowScreen from "@/assets/images/wowtickets/screen1.webp";
+import apeironScreen from "@assets/apeiron1_1770928057161.webp";
+import tavriaTv from "@/assets/images/tavria-tv-ui.webp";
 import { useTranslation } from "react-i18next";
+
+const stack = [
+  "Flutter", "Dart", "BLoC", "Riverpod", "MobX", "Clean Architecture",
+  "Flutter Web", "Add-to-App", "Firebase", "REST API", "GraphQL",
+  "WebSocket", "WebRTC", "FFmpeg / HLS", "Stripe", "CI/CD", "Integration tests",
+];
+
+const phoneScreens = [
+  { src: pulsarScreen, alt: "PulSarBonus" },
+  { src: wowScreen, alt: "WowTickets" },
+  { src: apeironScreen, alt: "Apeiron Space" },
+];
+
+const reveal = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+} as const;
 
 export function SkillsSection() {
   const { t } = useTranslation();
@@ -17,182 +38,113 @@ export function SkillsSection() {
   };
 
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden">
+    <section className="py-12 md:py-24 relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          
-          {/* Laptop Card - Spans 7 cols */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-span-7 rounded-[2rem] overflow-hidden relative group h-[300px] md:h-auto min-h-[300px]"
+
+          {/* Real app screens */}
+          <motion.div
+            {...reveal}
+            className="md:col-span-7 rounded-[2rem] overflow-hidden relative bg-slate-900/60 border border-white/5 min-h-[380px] flex flex-col"
           >
-            <div className="absolute inset-0 bg-[#0F111A]"></div>
-            <img 
-              src={bentoLaptop} 
-              alt="Laptop displaying project" 
-              className="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+            <div className="flex-1 flex items-end justify-center gap-4 px-8 pt-10 overflow-hidden">
+              {phoneScreens.map(({ src, alt }, i) => (
+                <img
+                  key={alt}
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  className={`w-[28%] max-w-[150px] rounded-2xl border border-white/10 shadow-[0_16px_32px_-8px_rgba(0,0,0,0.6)] ${i === 1 ? "mb-6" : "-mb-6"}`}
+                />
+              ))}
+            </div>
+            <div className="relative p-8 pt-6 bg-slate-950/80 border-t border-white/5">
               <h3 className="text-2xl md:text-3xl font-bold text-white max-w-md leading-tight">
-                {t("skills.clientCollaboration")}
+                {t("skills.techEnthusiast")}
               </h3>
             </div>
           </motion.div>
 
-          {/* Right Column Container - Spans 5 cols */}
           <div className="md:col-span-5 flex flex-col gap-6">
-            
-            {/* Map Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-[2rem] overflow-hidden relative bg-[#0a0a0a]/20 backdrop-blur-md h-[240px] border border-white/5"
+            <motion.div
+              {...reveal}
+              className="rounded-[2rem] overflow-hidden relative bg-slate-900/40 h-[240px] border border-white/5"
             >
-              <img 
-                src={bentoMap} 
-                alt="World Map Timezones" 
+              <img
+                src={bentoMap}
+                alt=""
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
               />
-              
-              <div className="absolute top-6 left-6 max-w-[200px]">
+              <div className="absolute top-6 left-6 max-w-[220px]">
                 <h3 className="text-xl font-bold text-white leading-tight drop-shadow-md">
                   {t("skills.timezone")}
                 </h3>
               </div>
             </motion.div>
 
-            {/* Tech Stack Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="rounded-[2rem] bg-[#111]/50 backdrop-blur-md p-8 border border-white/5 flex flex-col justify-between flex-1 min-h-[240px] overflow-hidden"
+            <motion.div
+              {...reveal}
+              className="rounded-[2rem] bg-slate-900/60 p-8 border border-white/5 flex-1"
             >
-              <div className="mb-6 relative z-10">
-                <p className="text-slate-400 text-sm mb-1">{t("skills.techStackImprove")}</p>
-                <h3 className="text-2xl font-bold text-white">{t("skills.myTechStack")}</h3>
-              </div>
-              
-              <div className="relative w-full overflow-hidden mask-linear-gradient">
-                {/* Row 1 - Left Scroll */}
-                <div className="flex gap-2 mb-3 animate-scroll-left w-max">
-                   {[
-                    "Flutter", "Dart", "Riverpod", "Bloc", "Clean Architecture", 
-                    "Animations", "Material 3", "Cupertino", "Widget Testing", 
-                    "Flutter Web", "Performance", "State Management",
-                    "Flutter", "Dart", "Riverpod", "Bloc", "Clean Architecture", 
-                    "Animations", "Material 3", "Cupertino", "Widget Testing", 
-                    "Flutter Web", "Performance", "State Management"
-                   ].map((tech, i) => (
-                    <span 
-                      key={`row1-${i}`} 
-                      className="px-4 py-2 rounded-full bg-[#1A1A2E] text-slate-300 text-xs font-medium border border-white/5 hover:border-violet-500/50 hover:text-violet-300 transition-colors cursor-default whitespace-nowrap"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Row 2 - Right Scroll */}
-                <div className="flex gap-2 animate-scroll-right w-max">
-                  {[
-                    "Firebase", "Startup MVP", "CI/CD", "App Store Deploy", 
-                    "Roadmap Strategy", "Projects from Scratch", "REST API", "GraphQL",
-                    "Push Notifications", "Analytics", "Agile", "UI/UX",
-                    "Firebase", "Startup MVP", "CI/CD", "App Store Deploy", 
-                    "Roadmap Strategy", "Projects from Scratch", "REST API", "GraphQL",
-                    "Push Notifications", "Analytics", "Agile", "UI/UX"
-                  ].map((tech, i) => (
-                    <span 
-                      key={`row2-${i}`} 
-                      className="px-4 py-2 rounded-full bg-[#1A1A2E] text-slate-300 text-xs font-medium border border-white/5 hover:border-violet-500/50 hover:text-violet-300 transition-colors cursor-default whitespace-nowrap"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold text-white mb-5">{t("skills.myTechStack")}</h3>
+              <ul className="flex flex-wrap gap-2">
+                {stack.map((tech) => (
+                  <li
+                    key={tech}
+                    className="px-3 py-1.5 rounded-full bg-white/5 text-slate-300 text-sm border border-white/10"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-
           </div>
 
-          {/* Bottom Row */}
-
-          {/* Left Column Container - Spans 4 cols */}
           <div className="md:col-span-4 flex flex-col gap-6">
-            
-            {/* Tech Enthusiast Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="rounded-[2rem] bg-[#1a1a1a]/50 backdrop-blur-md p-8 border border-white/5 relative overflow-hidden group"
+            <motion.div
+              {...reveal}
+              className="rounded-[2rem] bg-slate-900/60 p-8 border border-white/5"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <h3 className="text-xl font-bold text-white relative z-10 leading-snug">
-                {t("skills.techEnthusiast")}
+              <h3 className="text-xl font-bold text-white leading-snug">
+                {t("skills.clientCollaboration")}
               </h3>
-              <div className="mt-4 flex gap-3 relative z-10">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/5 shadow-inner">
-                  <Heart className="w-5 h-5 text-rose-500 fill-rose-500/20" />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/5 shadow-inner">
-                  <Terminal className="w-5 h-5 text-violet-400" />
-                </div>
-              </div>
             </motion.div>
 
-            {/* CTA Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="rounded-[2rem] bg-gradient-to-br from-[#1a1a1a]/50 to-[#0f0f0f]/50 backdrop-blur-md p-8 border border-white/5 flex flex-col justify-center items-start"
+            <motion.div
+              {...reveal}
+              className="rounded-[2rem] bg-slate-900/60 p-8 border border-white/5 flex flex-col justify-center items-start"
             >
               <h3 className="text-xl font-bold text-white mb-6 leading-snug">
                 {t("skills.startProjectTogether")}
               </h3>
-              <button 
+              <button
                 onClick={copyEmail}
-                className="bg-white/10 hover:bg-white/20 active:scale-95 transition-all text-white px-5 py-3 rounded-xl flex items-center gap-2 text-sm font-medium backdrop-blur-sm border border-white/10 w-full justify-center"
+                className="bg-white/10 hover:bg-white/20 active:scale-95 transition-all text-white px-5 py-3 rounded-xl flex items-center gap-2 text-sm font-medium border border-white/10 w-full justify-center"
               >
                 {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
                 {copied ? t("skills.emailCopied") : t("skills.copyEmail")}
               </button>
             </motion.div>
-
           </div>
 
-          {/* Code Snippet Card - Spans 8 cols */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-[#0e0e12]/50 backdrop-blur-md min-h-[300px] group border border-white/5"
+          {/* Tavria.TV on Smart TV */}
+          <motion.div
+            {...reveal}
+            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-slate-950 min-h-[300px] border border-white/10"
           >
-            <img 
-              src={bentoCode} 
-              alt="Code snippet" 
-              className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105" 
+            <img
+              src={tavriaTv}
+              alt="Tavria.TV — Smart TV"
+              loading="lazy"
+              className="absolute inset-y-0 right-0 h-full w-full md:w-1/2 object-cover object-[center_75%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
-            
-            <div className="flex h-full flex-col md:flex-row items-center relative z-20">
-              <div className="p-8 md:p-12 md:w-3/4">
-                <p className="text-slate-400 text-sm mb-2 uppercase tracking-wider">{t("skills.exploringHorizons")}</p>
-                <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                  {t("skills.flutterSolutions")}{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">{t("skills.flutterSolutionsHighlight")}</span>
-                </h3>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 md:via-slate-950/60 to-slate-950/10"></div>
+            <div className="relative p-8 md:p-12 md:w-3/5 h-full flex items-center">
+              <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                {t("skills.flutterSolutions")}{" "}
+                <span className="text-violet-400">{t("skills.flutterSolutionsHighlight")}</span>
+              </h3>
             </div>
           </motion.div>
 

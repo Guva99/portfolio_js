@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
-import { BackgroundElements } from "@/components/ui/background-elements";
 import { ArrowUpRight, Home, Smartphone, Layers, Code, Database, Server, Wifi } from "lucide-react";
-import apeironImage from "@assets/image_1770921547262.png";
-import wiseImage from "@assets/image_1770921682400.png";
+import apeironImage from "@assets/image_1770921547262.webp";
+import wiseImage from "@assets/image_1770921682400.webp";
 import apeironLogo from "@assets/01_splashscreen_1770922545091.png";
-import wiseLogo from "@assets/Frame_26_1770922552516.png";
+import wiseLogo from "@assets/Frame_26_1770922552516.webp";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+import { ProjectNext } from "@/components/ui/project-next";
 
 export default function ProjectSmartHome() {
   const { t } = useTranslation();
@@ -16,15 +16,13 @@ export default function ProjectSmartHome() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 z-50"></div>
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob-1"></div>
-          <div className="absolute bottom-[-20%] right-[20%] w-[600px] h-[600px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob-3"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20"></div>
+          <div className="absolute bottom-[-20%] right-[20%] w-[600px] h-[600px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20"></div>
         </div>
       </div>
       <div className="relative z-10">
-        <BackgroundElements />
         <Navbar />
 
         <div className="container mx-auto px-4 pt-32 pb-24">
@@ -64,13 +62,13 @@ export default function ProjectSmartHome() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10 pointer-events-none"></div>
                   <div className="h-64 overflow-hidden shrink-0 pointer-events-none">
-                     <img src={apeironImage} alt="ApeironSpace" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                     <img loading="lazy" src={apeironImage} alt="ApeironSpace" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   
                   <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow pointer-events-none">
                     <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                        <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow duration-500">
-                          <img src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
+                          <img loading="lazy" src={apeironLogo} alt="Apeiron Logo" className="w-full h-full object-cover" />
                        </div>
                        <h2 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">ApeironSpace</h2>
                     </div>
@@ -114,13 +112,13 @@ export default function ProjectSmartHome() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950 z-10 pointer-events-none"></div>
                 <div className="h-64 overflow-hidden shrink-0 pointer-events-none">
-                   <img src={wiseImage} alt="Wise Home" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                   <img loading="lazy" src={wiseImage} alt="Wise Home" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 
                 <div className="relative z-20 p-8 mt-[-100px] flex flex-col flex-grow pointer-events-none">
                   <div className="flex items-center gap-3 mt-[60px] mb-[60px]">
                      <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20">
-                        <img src={wiseLogo} alt="Wise Logo" className="w-full h-full object-cover" />
+                        <img loading="lazy" src={wiseLogo} alt="Wise Logo" className="w-full h-full object-cover" />
                      </div>
                      <h2 className="text-2xl font-bold text-white">Wise Home</h2>
                   </div>
@@ -174,6 +172,8 @@ export default function ProjectSmartHome() {
               </div>
             </div>
 
+
+            <ProjectNext current="smarthome" next="apeiron" />
           </motion.div>
         </div>
       </div>

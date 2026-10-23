@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
-import { BackgroundElements } from "@/components/ui/background-elements";
 import { ExternalLink, Tv, Server, Play, Download, ChevronLeft, ChevronRight, Monitor, Keyboard } from "lucide-react";
-import tavriaHero from "@assets/image_1770932932101.png";
+import tavriaHero from "@assets/image_1770932932101.webp";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
 import iconAppGallery from "@assets/Vector_1770972155250.png";
 import appTv1 from "@assets/apptv_1_1770932465780.webp";
@@ -20,6 +19,8 @@ import screen6 from "@assets/tavria7_1770931443692.webp";
 import screen7 from "@assets/tavria8_1770931443692.webp";
 import screen8 from "@assets/tavria9_1770931443693.webp";
 import { useTranslation } from "react-i18next";
+import { ProjectFacts } from "@/components/ui/project-facts";
+import { ProjectNext } from "@/components/ui/project-next";
 
 const column1 = [screen2, screen4, screen6, screen2, screen4, screen6];
 const column2 = [screen3, screen8, screen1, screen3, screen8, screen1];
@@ -44,19 +45,15 @@ export default function ProjectMedia() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-[#FECB0E]/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] z-50"></div>
       
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
-          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-yellow-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10 animate-blob-2 animation-delay-4000"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#FECB0E] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10"></div>
         </div>
       </div>
 
       <div className="relative z-10">
-        <BackgroundElements />
         <Navbar />
 
         <div className="container mx-auto px-4 pt-32 pb-24">
@@ -90,15 +87,7 @@ export default function ProjectMedia() {
               </div>
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group aspect-video md:aspect-[21/9]"
-            >
-               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
-               <img src={tavriaHero} alt="Tavria.TV Platform Interface" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-            </motion.div>
+            <ProjectFacts id="media" accent="#FECB0E" />
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-24 items-center">
               <div>
@@ -126,9 +115,9 @@ export default function ProjectMedia() {
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95">
                        <div className="absolute inset-0 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
+                          <img loading="lazy" src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">{t("projectPage.downloadOn")}</span>
+                             <span className="text-xs text-slate-400 uppercase font-medium">{t("projectPage.downloadOn")}</span>
                              <span className="text-sm font-bold text-white">App Store</span>
                           </div>
                        </div>
@@ -139,7 +128,7 @@ export default function ProjectMedia() {
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
                           <Download className="w-6 h-6 text-[#FECB0E]" />
                           <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">{t("projectPage.getItOn")}</span>
+                             <span className="text-xs text-slate-400 uppercase font-medium">{t("projectPage.getItOn")}</span>
                              <span className="text-sm font-bold text-white">RuStore</span>
                           </div>
                        </div>
@@ -148,9 +137,9 @@ export default function ProjectMedia() {
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95">
                        <div className="absolute inset-0 bg-gradient-to-r from-[#FECB0E] via-yellow-400 to-[#FECB0E] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconAppGallery} alt="AppGallery" className="w-6 h-6 object-contain" />
+                          <img loading="lazy" src={iconAppGallery} alt="AppGallery" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">{t("projectPage.exploreItOn")}</span>
+                             <span className="text-xs text-slate-400 uppercase font-medium">{t("projectPage.exploreItOn")}</span>
                              <span className="text-sm font-bold text-white">AppGallery</span>
                           </div>
                        </div>
@@ -163,22 +152,32 @@ export default function ProjectMedia() {
                  <div className="grid grid-cols-3 gap-4 h-full">
                     <div className="relative overflow-hidden h-full">
                        <motion.div animate={{ y: ["0%", "-50%"] }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="flex flex-col gap-4 w-full">
-                         {column1.map((img, i) => (<img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />))}
+                         {column1.map((img, i) => (<img loading="lazy" key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />))}
                        </motion.div>
                     </div>
                     <div className="relative overflow-hidden h-full">
                        <motion.div animate={{ y: ["-50%", "0%"] }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} className="flex flex-col gap-4 w-full">
-                         {column2.map((img, i) => (<img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />))}
+                         {column2.map((img, i) => (<img loading="lazy" key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />))}
                        </motion.div>
                     </div>
                     <div className="relative overflow-hidden h-full">
                        <motion.div animate={{ y: ["0%", "-50%"] }} transition={{ duration: 22, repeat: Infinity, ease: "linear" }} className="flex flex-col gap-4 w-full">
-                         {column3.map((img, i) => (<img key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />))}
+                         {column3.map((img, i) => (<img loading="lazy" key={i} src={img} alt={`App Screen ${i}`} className="w-full rounded-xl border border-white/10" />))}
                        </motion.div>
                     </div>
                  </div>
               </div>
             </div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group aspect-video md:aspect-[21/9]"
+            >
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
+               <img loading="lazy" src={tavriaHero} alt="Tavria.TV Platform Interface" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            </motion.div>
 
             <div className="mb-24">
                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
@@ -204,7 +203,7 @@ export default function ProjectMedia() {
                        <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentTvSlide * 100}%)` }}>
                          {tvScreens.map((screen, index) => (
                            <div key={index} className="min-w-full h-full relative">
-                             <img src={screen} alt={`TV Screen ${index + 1}`} className="w-full h-full object-cover" />
+                             <img loading="lazy" src={screen} alt={`TV Screen ${index + 1}`} className="w-full h-full object-cover" />
                            </div>
                          ))}
                        </div>
@@ -226,7 +225,7 @@ export default function ProjectMedia() {
                        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"></div>
                        <div className="relative flex items-center gap-1.5 opacity-50">
                          <div className="w-1 h-1 rounded-full bg-red-500 animate-pulse"></div>
-                         <span className="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase">Smart TV</span>
+                         <span className="text-xs font-bold tracking-[0.2em] text-slate-500 uppercase">Smart TV</span>
                        </div>
                     </div>
                  </div>
@@ -274,7 +273,7 @@ export default function ProjectMedia() {
               <div className="md:col-span-1 mt-14">
                 <div className="sticky top-32 space-y-8">
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
-                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">{t("projectPage.techStack")}</h4>
+                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">{t("projectPage.techStack")}</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Flutter", "Dart", "Firebase", "REST API", "GraphQL", "FFmpeg", "HLS", "Provider", "Bloc", "Fastlane", "Codemagic"].map((tech) => (
                         <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5 hover:border-[#FECB0E]/30 transition-colors">
@@ -301,6 +300,8 @@ export default function ProjectMedia() {
               </div>
             </div>
 
+
+            <ProjectNext current="media" />
           </motion.div>
         </div>
       </div>

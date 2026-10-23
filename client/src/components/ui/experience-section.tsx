@@ -14,22 +14,17 @@ function TechCard({ item, index }: { item: { icon: any; text: string; color: str
       className="h-full"
     >
       <div className={`group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 p-6 flex flex-col transition-all duration-300 hover:border-white/10 ${item.bg}`}>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-
         <div className="relative z-10 flex flex-col h-full">
           <div className="flex justify-between items-start mb-6">
             <div className={`p-2 rounded-md bg-white/5 border border-white/5 transition-colors duration-300 ${item.color} ${item.border}`}>
               <item.icon className="w-5 h-5" strokeWidth={1.5} />
             </div>
-            <div className="font-mono text-[10px] text-slate-600 tracking-wider">
-              0{index + 1}
-            </div>
           </div>
 
           <div className="mb-4">
-            <h4 className="text-lg font-medium text-slate-200 group-hover:text-white transition-colors duration-300 leading-snug">
+            <h3 className="text-lg font-medium text-slate-200 group-hover:text-white transition-colors duration-300 leading-snug">
               {item.text}
-            </h4>
+            </h3>
           </div>
           
           <div className="mt-auto pt-4 border-t border-white/5 flex items-center">
@@ -140,9 +135,8 @@ export function ExperienceSection() {
         {/* Highlights Section */}
         <div className="max-w-6xl mx-auto mb-32">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{t("experienceSection.highlightsTitle")} <span className="text-cyan-400 text-glow">{t("experienceSection.highlightsTitleHighlight")}</span></h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">
-              <span className="font-mono text-xs text-cyan-500 mr-2">[SYSTEM_LOG]</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{t("experienceSection.highlightsTitle")} <span className="text-cyan-400">{t("experienceSection.highlightsTitleHighlight")}</span></h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
               {t("experienceSection.highlightsSubtitle")}
             </p>
           </div>
@@ -160,13 +154,8 @@ export function ExperienceSection() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center min-h-[200px]"
             >
-              <div className="absolute inset-0 flex items-center justify-center opacity-5">
-                 <div className="w-32 h-32 border border-white rounded-full"></div>
-                 <div className="absolute w-24 h-24 border border-white rounded-full border-dashed"></div>
-              </div>
-
               <div className="relative z-10 text-center">
-                 <div className="font-mono text-[10px] text-slate-500 mb-2 tracking-widest uppercase">{t("experienceSection.experience")}</div>
+                 <div className="text-xs text-slate-400 mb-2 tracking-widest uppercase">{t("experienceSection.experience")}</div>
                  <h3 className="text-6xl font-light text-white mb-1 tracking-tighter">5+</h3>
                  <p className="text-slate-500 text-xs uppercase tracking-widest">{t("experienceSection.years")}</p>
               </div>

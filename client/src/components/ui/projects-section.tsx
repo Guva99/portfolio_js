@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowUpRight, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Code, Server, Globe, Smartphone, Zap } from "lucide-react";
-import { SiFlutter, SiFirebase, SiGooglemaps, SiApple, SiAndroid } from "react-icons/si";
+import { ArrowUpRight, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Code, Server, Globe, Zap } from "lucide-react";
+import { SiFlutter, SiFirebase, SiGooglemaps, SiStripe } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 
 export function ProjectsSection() {
@@ -10,6 +10,7 @@ export function ProjectsSection() {
   const categories = [
     { 
       id: "healthcare", 
+      product: "PulSarBonus",
       titleKey: "nav.healthcare",
       icon: HeartPulse, 
       color: "text-green-400",
@@ -25,6 +26,7 @@ export function ProjectsSection() {
     },
     { 
       id: "travel", 
+      product: "WowTickets",
       titleKey: "nav.travel",
       icon: Plane, 
       color: "text-blue-400",
@@ -40,6 +42,7 @@ export function ProjectsSection() {
     },
     { 
       id: "smarthome", 
+      product: "Apeiron Space · Wise City",
       titleKey: "nav.smartHome",
       icon: HomeIcon, 
       color: "text-cyan-400",
@@ -55,6 +58,7 @@ export function ProjectsSection() {
     },
     { 
       id: "media", 
+      product: "Tavria.TV",
       titleKey: "nav.media",
       icon: Tv, 
       color: "text-yellow-400",
@@ -62,14 +66,15 @@ export function ProjectsSection() {
       borderColor: "border-yellow-500/20",
       descKey: "projects.media.description",
       tech: [
-        { name: "Mobile", icon: Smartphone },
-        { name: "Web", icon: Globe },
-        { name: "High Load", icon: Server }
+        { name: "Flutter", icon: SiFlutter },
+        { name: "Smart TV", icon: Tv },
+        { name: "HLS", icon: Server }
       ],
       link: "/projects/media"
     },
     { 
       id: "social", 
+      product: "True for Two",
       titleKey: "nav.social",
       icon: Users, 
       color: "text-fuchsia-400",
@@ -85,6 +90,7 @@ export function ProjectsSection() {
     },
     { 
       id: "connectivity", 
+      product: "2SkyMobile",
       titleKey: "nav.connectivity",
       icon: Wifi, 
       color: "text-indigo-400",
@@ -92,9 +98,9 @@ export function ProjectsSection() {
       borderColor: "border-indigo-500/20",
       descKey: "projects.connectivity.description",
       tech: [
-        { name: "iOS", icon: SiApple },
-        { name: "Android", icon: SiAndroid },
-        { name: "API", icon: Server }
+        { name: "Flutter", icon: SiFlutter },
+        { name: "Flutter Web", icon: Globe },
+        { name: "Stripe", icon: SiStripe }
       ],
       link: "/projects/2sky"
     },
@@ -139,7 +145,8 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{t(category.titleKey)}</h3>
+                <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{category.product}</h3>
+                <p className="text-sm text-slate-400 mt-1 mb-3">{t(category.titleKey)}</p>
                 <p className="text-slate-400 leading-relaxed mb-8 flex-grow">
                   {t(category.descKey)}
                 </p>

@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
-import { BackgroundElements } from "@/components/ui/background-elements";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
-import { ExternalLink, Smartphone, Layout, FileText } from "lucide-react";
-import project2Sky from "@assets/image_1770975442018.png";
+import { ExternalLink, Smartphone, Layout, CreditCard } from "lucide-react";
+import project2Sky from "@assets/image_1770975442018.webp";
 
 import screen1 from "@assets/twosky6_1770975112969.webp";
 import screen2 from "@assets/twosky7_1770975112969.webp";
@@ -17,6 +16,8 @@ import screen8 from "@assets/twosky9_1770975112973.webp";
 import screen9 from "@assets/twosky11_1770975112973.webp";
 import screen10 from "@assets/twosky8_1770975112973.webp";
 import { useTranslation } from "react-i18next";
+import { ProjectFacts } from "@/components/ui/project-facts";
+import { ProjectNext } from "@/components/ui/project-next";
 
 const column1 = [screen1, screen2, screen3, screen4, screen1, screen2];
 const column2 = [screen5, screen6, screen7, screen5, screen6, screen7];
@@ -26,22 +27,19 @@ export default function Project2Sky() {
   const { t } = useTranslation();
   const responsibilities = t("projectPage.connectivity.responsibilities", { returnObjects: true }) as { label: string; text: string }[];
   const contributions = t("projectPage.connectivity.contributions", { returnObjects: true }) as { title: string; desc: string }[];
-  const contribIcons = [Layout, FileText];
+  const contribIcons = [Layout, CreditCard];
 
   return (
     <div className="min-h-[100dvh] bg-slate-950 text-white selection:bg-blue-600/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 z-50"></div>
       
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
-          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-indigo-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20"></div>
         </div>
       </div>
 
       <div className="relative z-10">
-        <BackgroundElements />
         <Navbar />
 
         <div className="container mx-auto px-4 pt-32 pb-24">
@@ -75,21 +73,7 @@ export default function Project2Sky() {
               </div>
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
-            >
-               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
-               <ImageWithShimmer 
-                 src={project2Sky} 
-                 alt="2Sky Mobile Application Interface" 
-                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                 shimmerColor="bg-blue-600/20"
-                 wrapperClassName="w-full h-full"
-               />
-            </motion.div>
+            <ProjectFacts id="connectivity" accent="#3B82F6" />
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-24 items-center">
               <div>
@@ -143,6 +127,22 @@ export default function Project2Sky() {
               </div>
             </div>
 
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
+            >
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
+               <ImageWithShimmer 
+                 src={project2Sky} 
+                 alt="2Sky Mobile Application Interface" 
+                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                 shimmerColor="bg-blue-600/20"
+                 wrapperClassName="w-full h-full"
+               />
+            </motion.div>
+
             <div className="grid md:grid-cols-3 gap-10 md:gap-16">
               <div className="md:col-span-2">
                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -170,7 +170,7 @@ export default function Project2Sky() {
               <div className="md:col-span-1">
                 <div className="sticky top-32 space-y-8">
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
-                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">{t("projectPage.techStack")}</h4>
+                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">{t("projectPage.techStack")}</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Flutter", "Flutter Web", "Dart", "BLoC", "Provider", "Firebase Auth", "Stripe API", "REST API", "GraphQL"].map((tech) => (
                         <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5">
@@ -183,6 +183,8 @@ export default function Project2Sky() {
               </div>
             </div>
 
+
+            <ProjectNext current="2sky" />
           </motion.div>
         </div>
       </div>

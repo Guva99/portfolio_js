@@ -33,6 +33,8 @@ export function ImageWithShimmer({
           className
         )}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         onLoad={(e) => {
           setIsLoading(false);
           if (onLoad) onLoad(e);

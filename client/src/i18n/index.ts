@@ -24,4 +24,10 @@ i18n
     },
   });
 
+const syncHtmlLang = (lng: string) => {
+  document.documentElement.lang = lng.startsWith("ru") ? "ru" : "en";
+};
+syncHtmlLang(i18n.resolvedLanguage ?? i18n.language ?? "ru");
+i18n.on("languageChanged", syncHtmlLang);
+
 export default i18n;

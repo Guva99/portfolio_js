@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
-import { BackgroundElements } from "@/components/ui/background-elements";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
-import { ExternalLink, Server, Wifi, Zap, Layers, CheckCircle2, ZoomIn, X, Users } from "lucide-react";
-import apeironHero from "@assets/image_1770928345854.png";
+import { ExternalLink, Server, Wifi, Zap, Layers, CheckCircle2, Users } from "lucide-react";
+import apeironHero from "@assets/image_1770928345854.webp";
 import iconGooglePlay from "@assets/Group_1770916804080.png";
 import iconAppStore from "@assets/Page-1_1770916804079.png";
 import screen1 from "@assets/apeiron1_1770928057161.webp";
@@ -26,10 +24,11 @@ import odsSplash from "@assets/00_-_splash_1770929401621.png";
 import odsLogin from "@assets/00_-_login_screen_1770929401621.png";
 import odsOrders1 from "@assets/01_-_Экран_подачи_завтраков_(1)_1770929401622.png";
 import odsOrders2 from "@assets/01_-_Экран_подачи_завтраков_1770929401622.png";
-import letterApeiron from "@/assets/images/letter-apeiron.png";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useTranslation } from "react-i18next";
+import { ProjectFacts } from "@/components/ui/project-facts";
+import { ProjectNext } from "@/components/ui/project-next";
 
 const column1 = [screen1, screen2, screen4, screen1, screen2, screen4];
 const column2 = [screen5, screen6, screen5, screen6, screen5, screen6];
@@ -42,7 +41,6 @@ const odsImages = [odsSplash, odsLogin, odsOrders1, odsOrders2];
 export default function ProjectApeiron() {
   const { t } = useTranslation();
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })]);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const responsibilities = t("projectPage.apeiron.responsibilities", { returnObjects: true }) as string[];
   const spaceKeeperFeatures = t("projectPage.apeiron.spaceKeeperFeatures", { returnObjects: true }) as string[];
@@ -53,19 +51,15 @@ export default function ProjectApeiron() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-[#326159]/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#326159] via-[#4A857C] to-[#326159] z-50"></div>
       
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#326159] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1"></div>
-          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-[#4A857C] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-3"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#326159] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20 animate-blob-1 animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#326159] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10 animate-blob-2 animation-delay-4000"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#326159] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#326159] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10"></div>
         </div>
       </div>
 
       <div className="relative z-10">
-        <BackgroundElements />
         <Navbar />
 
         <div className="container mx-auto px-4 pt-32 pb-24">
@@ -94,15 +88,7 @@ export default function ProjectApeiron() {
               </div>
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
-            >
-               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
-               <ImageWithShimmer src={apeironHero} alt="ApeironSpace Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" shimmerColor="bg-[#326159]/20" wrapperClassName="w-full h-full" />
-            </motion.div>
+            <ProjectFacts id="apeiron" accent="#4A857C" />
 
             {/* Main App Section */}
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-24 items-center">
@@ -127,9 +113,9 @@ export default function ProjectApeiron() {
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95">
                        <div className="absolute inset-0 bg-gradient-to-r from-[#326159] via-[#4A857C] to-[#326159] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
+                          <img loading="lazy" src={iconAppStore} alt="App Store" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">{t("projectPage.downloadOn")}</span>
+                             <span className="text-xs text-slate-400 uppercase font-medium">{t("projectPage.downloadOn")}</span>
                              <span className="text-sm font-bold text-white">App Store</span>
                           </div>
                        </div>
@@ -138,9 +124,9 @@ export default function ProjectApeiron() {
                        className="group relative inline-flex items-center justify-center p-0.5 rounded-xl overflow-hidden transition-transform active:scale-95">
                        <div className="absolute inset-0 bg-gradient-to-r from-[#326159] via-[#4A857C] to-[#326159] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-border-spin"></div>
                        <div className="relative flex items-center gap-2 px-5 py-2.5 bg-slate-900 rounded-[10px] group-hover:bg-slate-900/90 transition-colors">
-                          <img src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain" />
+                          <img loading="lazy" src={iconGooglePlay} alt="Google Play" className="w-6 h-6 object-contain" />
                           <div className="flex flex-col items-start leading-none">
-                             <span className="text-[10px] text-slate-400 uppercase font-medium">{t("projectPage.getItOn")}</span>
+                             <span className="text-xs text-slate-400 uppercase font-medium">{t("projectPage.getItOn")}</span>
                              <span className="text-sm font-bold text-white">Google Play</span>
                           </div>
                        </div>
@@ -156,6 +142,16 @@ export default function ProjectApeiron() {
                  </div>
               </div>
             </div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-24 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 relative group"
+            >
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 z-10"></div>
+               <ImageWithShimmer src={apeironHero} alt="ApeironSpace Application Interface" className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" shimmerColor="bg-[#326159]/20" wrapperClassName="w-full h-full" />
+            </motion.div>
 
             {/* SpaceKeeper Section */}
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-24 items-center">
@@ -274,7 +270,7 @@ export default function ProjectApeiron() {
               <div className="md:col-span-1">
                 <div className="sticky top-32 space-y-8">
                   <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6">
-                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">{t("projectPage.techStack")}</h4>
+                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">{t("projectPage.techStack")}</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Flutter", "Clean Architecture", "Bloc/Cubit", "Firebase", "REST API", "Mockito", "CI/CD", "Git"].map((tech) => (
                         <span key={tech} className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 text-sm border border-white/5">{tech}</span>
@@ -291,41 +287,15 @@ export default function ProjectApeiron() {
                       </ul>
                     </div>
                   </div>
-
-                  <div className="bg-slate-900/60 backdrop-blur-md border border-white/5 rounded-2xl p-6 mt-6">
-                    <h4 className="text-lg font-bold text-white mb-4">{t("projectPage.recommendation")}</h4>
-                    <motion.div 
-                      animate={{ y: [0, -10, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="group relative cursor-pointer overflow-hidden rounded-xl border border-slate-700 aspect-[3/4]"
-                      onClick={() => setIsLightboxOpen(true)}
-                    >
-                      <img src={letterApeiron} alt="ApeironSpace Recommendation Letter" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
-                      <div className="absolute inset-0 bg-[#326159]/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                         <div className="bg-white/90 p-3 rounded-full shadow-lg backdrop-blur-sm">
-                           <ZoomIn className="w-6 h-6 text-[#326159]" />
-                         </div>
-                      </div>
-                    </motion.div>
-                  </div>
                 </div>
               </div>
             </div>
 
+
+            <ProjectNext current="apeiron" />
           </motion.div>
         </div>
       </div>
-
-      {isLightboxOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4" onClick={() => setIsLightboxOpen(false)}>
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="relative max-w-3xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
-            <img src={letterApeiron} alt="Recommendation Letter Full" className="w-full h-full max-h-[90vh] object-contain rounded-lg shadow-2xl bg-white" />
-            <button className="absolute -top-12 right-0 md:top-4 md:right-4 bg-white/10 text-white p-2 rounded-full hover:bg-white/20 transition-colors" onClick={() => setIsLightboxOpen(false)}>
-              <X className="w-6 h-6" />
-            </button>
-          </motion.div>
-        </div>
-      )}
     </div>
   );
 }

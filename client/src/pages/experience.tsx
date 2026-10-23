@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
-import { BackgroundElements } from "@/components/ui/background-elements";
-import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, BrainCircuit, Microscope, Award, Download, ExternalLink, CheckCircle2 } from "lucide-react";
-import kukaArm from "@/assets/images/kuka-arm.png";
+import { Briefcase, GraduationCap, Heart, Code, User, Calendar, MapPin, Building2, Bot, Download, ExternalLink, CheckCircle2 } from "lucide-react";
+import kukaArm from "@/assets/images/kuka-arm.webp";
 import kukaVision from "@/assets/images/kuka-collision.jpg";
-import profilePhoto from "@/assets/images/profile-photo.png";
+import profilePhoto from "@/assets/images/profile-photo.webp";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 
@@ -91,20 +90,16 @@ export default function Experience() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-blue-500/30 font-sans overflow-x-hidden relative">
-      <div className="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-blue-600 z-50"></div>
       
       {/* Background Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-slate-950">
         <div className="absolute inset-0 w-full h-full">
-          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1"></div>
-          <div className="absolute bottom-[-20%] left-[20%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-pink-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-3"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-40 animate-blob-1 animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-30 animate-blob-2 animation-delay-4000"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-15"></div>
         </div>
       </div>
 
       <div className="relative z-10">
-        <BackgroundElements />
         <Navbar />
 
         <div className="container mx-auto px-4 pt-32 pb-24">
@@ -142,7 +137,7 @@ export default function Experience() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                   <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[3/4] md:aspect-[4/5] shadow-2xl">
                     <div className="absolute inset-0 bg-blue-900/10 mix-blend-overlay z-10"></div>
-                    <img 
+                    <img loading="lazy" 
                       src={profilePhoto} 
                       alt="Avezov Guvanch" 
                       className="w-full h-full object-cover"
@@ -300,61 +295,37 @@ export default function Experience() {
               <div className="bg-slate-900/40 border border-white/10 rounded-2xl overflow-hidden">
                 <div className="grid md:grid-cols-2 gap-0">
                   <div className="p-8 flex flex-col justify-center">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold border border-cyan-500/20 uppercase tracking-wider">
-                        Robotics Research
-                      </span>
-                      <span className="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold border border-purple-500/20 uppercase tracking-wider">
-                        Computer Vision
-                      </span>
-                    </div>
-                    
                     <h3 className="text-2xl font-bold text-white mb-4">{t("experiencePage.roboticsTitle")}</h3>
-                    
+
                     <p className="text-slate-300 mb-6 leading-relaxed">
                       {t("experiencePage.roboticsDesc")}
                     </p>
 
-                    <ul className="space-y-3 mb-8">
-                      <li className="flex items-start gap-3">
-                        <BrainCircuit className="w-5 h-5 text-cyan-400 mt-0.5" />
-                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet1")}</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Microscope className="w-5 h-5 text-cyan-400 mt-0.5" />
-                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet2")}</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Award className="w-5 h-5 text-cyan-400 mt-0.5" />
-                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet3")}</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Bot className="w-5 h-5 text-cyan-400 mt-0.5" />
-                        <span className="text-slate-300 text-sm">{t("experiencePage.roboticsBullet4")}</span>
-                      </li>
+                    <ul className="space-y-3">
+                      {[t("experiencePage.roboticsBullet1"), t("experiencePage.roboticsBullet2")].map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <div className="mt-2 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></div>
+                          <span className="text-slate-300">{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
-                  
-                  <div className="relative h-full min-h-[300px] bg-slate-800/50">
-                    <div className="absolute inset-0 grid grid-rows-2">
-                       <div className="relative overflow-hidden group">
-                         <div className="absolute inset-0 bg-cyan-900/20 group-hover:bg-transparent transition-colors z-10"></div>
-                         <img 
-                           src={kukaArm} 
-                           alt="KUKA Manipulator" 
-                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                         />
-                       </div>
-                       <div className="relative overflow-hidden group border-t border-white/10">
-                         <div className="absolute inset-0 bg-purple-900/20 group-hover:bg-transparent transition-colors z-10"></div>
-                         <img 
-                           src={kukaVision} 
-                           alt="Computer Vision Analysis" 
-                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                         />
-                       </div>
-                    </div>
-                  </div>
+
+                  <figure className="flex flex-col bg-slate-800/50">
+                    <img loading="lazy"
+                      src={kukaArm}
+                      alt={t("experiencePage.roboticsArmAlt")}
+                      className="w-full h-[200px] md:h-[220px] object-cover"
+                    />
+                    <img loading="lazy"
+                      src={kukaVision}
+                      alt={t("experiencePage.roboticsCaption")}
+                      className="w-full h-[260px] md:h-auto md:flex-1 md:min-h-[300px] object-cover border-t border-white/10"
+                    />
+                    <figcaption className="px-5 py-3 text-sm text-slate-300 bg-slate-950/60 border-t border-white/10">
+                      {t("experiencePage.roboticsCaption")}
+                    </figcaption>
+                  </figure>
                 </div>
               </div>
             </div>

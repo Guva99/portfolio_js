@@ -1,9 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, HeartPulse, Plane, Home as HomeIcon, Tv, Code, Briefcase, Users, Wifi } from "lucide-react";
+import { Menu, X, ChevronDown, HeartPulse, Plane, Home as HomeIcon, Hotel, Tv, Code, Briefcase, Users, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
+import { projects, projectHref } from "@/lib/projects";
+
+const projectIcons = {
+  healthcare: HeartPulse,
+  travel: Plane,
+  apeiron: Hotel,
+  wise: HomeIcon,
+  media: Tv,
+  truefortwo: Users,
+  "2sky": Wifi,
+};
 
 export function Navbar() {
   const { t, i18n } = useTranslation();
@@ -16,14 +27,12 @@ export function Navbar() {
     {
       title: t("nav.projects"),
       href: "/#projects",
-      dropdown: [
-        { title: t("nav.healthcare"), icon: HeartPulse, href: "/projects/healthcare" },
-        { title: t("nav.travel"), icon: Plane, href: "/projects/travel" },
-        { title: t("nav.smartHome"), icon: HomeIcon, href: "/projects/smarthome" },
-        { title: t("nav.media"), icon: Tv, href: "/projects/media" },
-        { title: t("nav.social"), icon: Users, href: "/projects/truefortwo" },
-        { title: t("nav.connectivity"), icon: Wifi, href: "/projects/2sky" },
-      ]
+      dropdown: projects.map((p) => ({
+        title: p.name,
+        subtitle: t(`projectPage.${p.i18nId}.badge`),
+        icon: projectIcons[p.slug],
+        href: projectHref(p.slug),
+      }))
     },
     {
       title: t("nav.technologies"),
@@ -98,10 +107,8 @@ export function Navbar() {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold font-mono tracking-tighter group cursor-pointer">
-            <span className="text-violet-500">&lt;</span>
-            <span className="text-white group-hover:text-cyan-400 transition-colors">Dev</span>
-            <span className="text-violet-500">/&gt;</span>
+          <Link href="/" className="text-lg font-bold tracking-tight text-white hover:text-violet-300 transition-colors cursor-pointer">
+            {t("hero.name")}
           </Link>
 
           {/* Desktop Menu */}
@@ -134,7 +141,6 @@ export function Navbar() {
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 p-2 rounded-xl bg-slate-900/70 backdrop-blur-2xl border border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] overflow-hidden"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-cyan-500/10 pointer-events-none" />
                         
                         <div className="relative flex flex-col gap-1">
                           {item.dropdown.map((subItem, subIndex) => (
@@ -142,8 +148,9 @@ export function Navbar() {
                                 <div className="p-2 rounded-md bg-white/5 group-hover/item:bg-violet-500/20 group-hover/item:text-violet-300 text-slate-400 transition-colors">
                                   <subItem.icon className="w-5 h-5" />
                                 </div>
-                                <span className="text-sm font-medium text-slate-200 group-hover/item:text-white">
-                                  {subItem.title}
+                                <span className="flex flex-col">
+                                  <span className="text-sm font-medium text-slate-200 group-hover/item:text-white">{subItem.title}</span>
+                                  <span className="text-xs text-slate-400">{subItem.subtitle}</span>
                                 </span>
                             </Link>
                           ))}
@@ -167,6 +174,7 @@ export function Navbar() {
             <button
               className="text-white p-2"
               onClick={() => setMobileMenuOpen(true)}
+              aria-label={t("nav.openMenu")}
             >
               <Menu className="w-8 h-8" />
             </button>
@@ -185,10 +193,11 @@ export function Navbar() {
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex justify-between items-center mb-8">
-                <span className="text-2xl font-bold font-mono text-white">{t("nav.menu")}</span>
+                <span className="text-2xl font-bold text-white">{t("nav.menu")}</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-2 rounded-full bg-white/5 text-white hover:bg-white/10 transition-colors"
+                  aria-label={t("nav.closeMenu")}
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -208,7 +217,10 @@ export function Navbar() {
                         {item.dropdown.map((subItem, subIndex) => (
                           <Link key={subIndex} href={subItem.href} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 transition-all">
                               <subItem.icon className="w-5 h-5 text-violet-400" />
-                              <span className="text-lg text-slate-200">{subItem.title}</span>
+                              <span className="flex flex-col">
+                                <span className="text-lg text-slate-200">{subItem.title}</span>
+                                <span className="text-sm text-slate-400">{subItem.subtitle}</span>
+                              </span>
                           </Link>
                         ))}
                       </div>
@@ -219,7 +231,7 @@ export function Navbar() {
 
             <div className="mt-8 pt-8 border-t border-white/10">
                 <Button 
-                  className="w-full h-14 text-lg bg-gradient-to-r from-violet-600 to-cyan-600 rounded-xl"
+                  className="w-full h-14 text-lg bg-violet-600 hover:bg-violet-500 rounded-xl"
                   onClick={() => window.open('https://t.me/guvva', '_blank')}
                 >
                   {t("nav.contactMe")}

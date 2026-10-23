@@ -1,177 +1,103 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import heroPortrait from "@/assets/images/hero-portrait.webp";
-import bgTexture from "@/assets/images/bg-texture.webp";
-import { Download, ChevronRight, Linkedin, Mail, Briefcase } from "lucide-react";
+import { FileText, Send, Check, Linkedin, Mail, Briefcase } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
   const { t } = useTranslation();
+  const proofValue = t("hero.proof", { returnObjects: true });
+  const proof = Array.isArray(proofValue) ? (proofValue as string[]) : [];
+
+  const secondaryLinks = [
+    { label: "hh.ru", href: "https://hh.ru/resume/8e35e946ff0910b7b00039ed1f4c6a6666666c", icon: Briefcase },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/guvanch-avezov-29810a349/", icon: Linkedin },
+    { label: "g_avezov@bk.ru", href: "mailto:g_avezov@bk.ru", icon: Mail },
+  ];
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* Background with texture overlay */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent opacity-90 z-10"></div>
-        
-        {/* Animated Orbs */}
-        <motion.div 
-          animate={{ 
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/30 rounded-full blur-[120px] mix-blend-screen"
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-600/30 rounded-full blur-[120px] mix-blend-screen"
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, 50, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.4, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen"
-        />
-
-        <motion.img 
-          src={bgTexture}  
-          alt="Texture" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay z-20"
-          animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.3, 0.2],
-            filter: ["hue-rotate(0deg)", "hue-rotate(15deg)", "hue-rotate(0deg)"]
-          }}
-          transition={{ 
-            duration: 15, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        />
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 z-20"></div>
-      </div>
-
-      <div className="container mx-auto px-4 z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold leading-tight tracking-tighter">
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">{t("hero.tagline1")}</span>
-              <span className="block text-violet-500 text-glow">{t("hero.tagline2")}</span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">{t("hero.tagline3")}</span>
-            </h1>
-          </motion.div>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl text-slate-400 max-w-lg font-light border-l-2 border-violet-500 pl-6"
-          >
-            {t("hero.description")}
-          </motion.p>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.3, duration: 0.4 }}
-            className="flex flex-row flex-wrap items-center gap-3"
-          >
-            <a href={t("cvUrl")} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="h-12 px-6 bg-violet-600 hover:bg-violet-700 text-white rounded-full text-base shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all hover:scale-105">
-                {t("hero.downloadCv")} <Download className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-base backdrop-blur-sm bg-white/5"
-              onClick={() => window.open('https://t.me/guvva', '_blank')}
-            >
-              {t("hero.contactMe")} <ChevronRight className="ml-2 w-4 h-4" />
-            </Button>
-            <a href="https://www.linkedin.com/in/guvanch-avezov-29810a349/" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-[#0A66C2] rounded-full text-base backdrop-blur-sm bg-white/5 hover:bg-[#0A66C2]/10">
-                LinkedIn <Linkedin className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-            <a href="mailto:g_avezov@bk.ru">
-              <Button variant="outline" size="lg" className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-white rounded-full text-base backdrop-blur-sm bg-white/5">
-                Email <Mail className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-            <a href="https://hh.ru/resume/8e35e946ff0910b7b00039ed1f4c6a6666666c" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="h-12 px-6 border-slate-700 text-slate-300 hover:text-white hover:border-red-500 rounded-full text-base backdrop-blur-sm bg-white/5 hover:bg-red-500/10">
-                hh.ru <Briefcase className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-          </motion.div>
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          animate={{ y: [0, -20, 0] }}
-          transition={{ 
-            opacity: { delay: 0.2, duration: 1 },
-            scale: { delay: 0.2, duration: 1 },
-            y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="relative lg:h-[600px] flex items-center justify-center"
+    <section className="relative lg:min-h-[100dvh] flex items-center pt-28 pb-16 lg:pt-24">
+      <div className="container mx-auto px-4 z-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="relative z-10 w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden neon-border group">
-            {/* Tech Scan Line */}
-            <motion.div 
-              className="absolute w-full h-[2px] bg-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.8)] z-20 pointer-events-none"
-              initial={{ top: "0%", opacity: 0 }}
-              animate={{ top: "100%", opacity: [0, 1, 1, 0] }}
-              transition={{ delay: 1, duration: 2, ease: "linear" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-violet-900/80 to-transparent z-10 mix-blend-multiply"></div>
-            <img 
-              src={heroPortrait} 
-              alt="Developer Portrait" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            
-            {/* Overlay Card */}
-            <div className="absolute bottom-6 left-6 right-6 p-6 glass-panel rounded-xl z-20">
-              <div className="flex justify-between items-end">
-                <div>
-                  <p className="text-sm text-cyan-400 font-mono mb-1">{t("hero.currentStatus")}</p>
-                  <p className="text-white font-semibold flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    {t("hero.availableForProjects")}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-3xl font-bold text-white">5+</p>
-                  <p className="text-xs text-slate-400 uppercase tracking-wider">{t("hero.yearsExp")}</p>
-                </div>
-              </div>
-            </div>
+          <h1 className="font-bold tracking-tight">
+            <span className="block text-5xl sm:text-6xl lg:text-7xl leading-[1.05] text-white">{t("hero.name")}</span>
+            <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-violet-400">{t("hero.role")}</span>
+          </h1>
+
+          <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-xl leading-relaxed">
+            {t("hero.pitch")}
+          </p>
+
+          <ul className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-2 max-w-xl text-slate-300">
+            {proof.map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <Check className="w-4 h-4 mt-1 shrink-0 text-violet-400" aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href={t("cvUrl")} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="w-full sm:w-auto h-12 px-6 bg-violet-600 hover:bg-violet-500 text-white rounded-full text-base">
+                <FileText className="mr-2 w-4 h-4" aria-hidden="true" /> {t("hero.viewCv")}
+              </Button>
+            </a>
+            <a href="https://t.me/guvva" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto h-12 px-6 border-slate-600 text-slate-200 hover:text-white hover:border-white rounded-full text-base bg-transparent"
+              >
+                <Send className="mr-2 w-4 h-4" aria-hidden="true" /> {t("hero.telegram")}
+              </Button>
+            </a>
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-violet-600/20 rounded-full blur-[100px]"></div>
-          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-cyan-600/20 rounded-full blur-[100px]"></div>
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-400">
+            {secondaryLinks.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 py-1 hover:text-white underline-offset-4 hover:underline transition-colors"
+              >
+                <Icon className="w-4 h-4" aria-hidden="true" /> {label}
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end"
+        >
+          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)]">
+            <img
+              src={heroPortrait}
+              alt={t("hero.name")}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+            <div className="absolute bottom-5 left-5 right-5 px-5 py-4 glass-panel rounded-xl flex justify-between items-center gap-4">
+              <p className="text-white font-semibold flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500" aria-hidden="true"></span>
+                {t("hero.availableForProjects")}
+              </p>
+              <p className="text-slate-300 text-sm text-right">
+                <span className="text-2xl font-bold text-white mr-1">5+</span>
+                {t("hero.yearsExp")}
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
