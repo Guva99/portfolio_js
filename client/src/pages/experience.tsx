@@ -12,6 +12,16 @@ export default function Experience() {
 
   const experiences = [
     {
+      company: t("experiencePage.jobs.sellup.company"),
+      role: t("experiencePage.jobs.sellup.role"),
+      period: t("experiencePage.jobs.sellup.period"),
+      location: t("experiencePage.jobs.sellup.location"),
+      description: t("experiencePage.jobs.sellup.description"),
+      achievements: t("experiencePage.jobs.sellup.achievements", { returnObjects: true }) as string[],
+      technologies: ["Flutter", "Backend", "Architecture"],
+      projectUrl: null
+    },
+    {
       company: t("experiencePage.jobs.freelance.company"),
       role: t("experiencePage.jobs.freelance.role"),
       period: t("experiencePage.jobs.freelance.period"),

@@ -82,6 +82,14 @@ export function ExperienceSection() {
 
   const experiences = [
     {
+      role: t("experienceSection.jobs.sellup.role"),
+      company: t("experienceSection.jobs.sellup.company"),
+      period: t("experienceSection.jobs.sellup.period"),
+      color: "bg-violet-500",
+      achievements: t("experienceSection.jobs.sellup.achievements", { returnObjects: true }) as string[],
+      projectUrl: null
+    },
+    {
       role: t("experienceSection.jobs.apeiron.role"),
       company: t("experienceSection.jobs.apeiron.company"),
       period: t("experienceSection.jobs.apeiron.period"),

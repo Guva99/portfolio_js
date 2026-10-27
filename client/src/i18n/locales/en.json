@@ -87,10 +87,16 @@
       "cleanArch": "Clean Architecture & Scalable Solutions"
     },
     "jobs": {
+      "sellup": {
+        "role": "Full-stack Developer",
+        "company": "Freelance / SellUp",
+        "period": "Sep 2026 — Present",
+        "achievements": ["Product architecture", "Backend development", "Mobile app development"]
+      },
       "apeiron": {
         "role": "Lead Flutter Developer",
         "company": "Wise City",
-        "period": "May 2025 — Jun 2026",
+        "period": "May 2025 — Aug 2026",
         "achievements": [
           "Developed Add-to-App integration modules for iOS and Android",
           "Built a Web module for integration with a Sber product on Cordova",
@@ -100,7 +106,7 @@
       "freelance": {
         "role": "Lead Flutter Developer",
         "company": "Apeiron Space",
-        "period": "Sep 2023 — Apr 2025",
+        "period": "Sep 2023 — Aug 2025",
         "achievements": [
           "Led development of two internal products from scratch: ODS & SpaceKeeper",
           "Contributed to the main Apeiron Space guest app (iOS)",
@@ -159,7 +165,7 @@
     "aboutMe": "About Me",
     "downloadCv": "View CV",
     "workExperience": "Work Experience",
-    "totalExperience": "5 yrs 8 mos",
+    "totalExperience": "5 yrs 10 mos",
     "education": "Education",
     "hobbies": "Interests",
     "robotics": "Robotics & AI",
@@ -181,10 +187,18 @@
     "techFocus": "Technical Focus",
     "techFocusItems": ["Flutter / Dart", "Clean Architecture", "CI/CD", "Cross-Platform"],
     "jobs": {
+      "sellup": {
+        "company": "Freelance / SellUp",
+        "role": "Full-stack Developer",
+        "period": "September 2026 — Present",
+        "location": "Remote",
+        "description": "Full-stack development of the SellUp product: architecture, backend, and mobile app.",
+        "achievements": ["Product architecture", "Backend development", "Mobile app development"]
+      },
       "apeiron": {
         "company": "Apeiron Space",
         "role": "Lead Flutter Developer",
-        "period": "September 2023 — April 2025",
+        "period": "September 2023 — August 2025",
         "location": "Remote",
         "description": "Apeiron Space is a smart hotel where guests control their room through a mobile app. Led Flutter development of internal operational products and contributed to the main guest app.",
         "achievements": [
@@ -198,7 +212,7 @@
       "freelance": {
         "company": "Wise City",
         "role": "Lead Flutter Developer",
-        "period": "May 2025 — June 2026",
+        "period": "May 2025 — August 2026",
         "location": "Remote",
         "description": "Developing integration modules for the mobile application that connect Flutter functionality to the company's existing products.",
         "achievements": [
@@ -495,7 +509,7 @@
     },
     "apeiron": {
       "badge": "Smart Hotel",
-      "facts": {"role": "Lead Flutter Developer", "period": "Sep 2023 — Apr 2025", "platforms": "iOS, Android, tablets", "result": "2 products from scratch: SpaceKeeper & ODS"},
+      "facts": {"role": "Lead Flutter Developer", "period": "Sep 2023 — Aug 2025", "platforms": "iOS, Android, tablets", "result": "2 products from scratch: SpaceKeeper & ODS"},
       "h2": "Future of Hospitality",
       "h2Highlight": "In Your Pocket",
       "description": "The first smart hotel in Russia, fully controlled from your smartphone. ApeironSpace allows guests to manage their entire stay digitally — from booking and check-in to controlling room lighting, climate, and ordering room service.",
@@ -540,7 +554,7 @@
     },
     "wise": {
       "badge": "Smart Home Platform",
-      "facts": {"role": "Lead Flutter Developer", "period": "May 2025 — Jun 2026", "platforms": "iOS, Android, Web (Cordova)", "result": "In production, serving thousands of residents"},
+      "facts": {"role": "Lead Flutter Developer", "period": "May 2025 — Aug 2026", "platforms": "iOS, Android, Web (Cordova)", "result": "In production, serving thousands of residents"},
       "h2": "Unified Platform for",
       "h2Highlight": "Residential Complexes",
       "description": "Wise City is a smart home platform for residential complexes: one app for device control, utility payments, service requests, news, polls, cameras, and the intercom.",

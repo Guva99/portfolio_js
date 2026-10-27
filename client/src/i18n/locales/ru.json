@@ -87,10 +87,16 @@
       "cleanArch": "Чистая архитектура и масштабируемые решения"
     },
     "jobs": {
+      "sellup": {
+        "role": "Full-stack Developer",
+        "company": "Фриланс / SellUp",
+        "period": "Сен 2026 — н. в.",
+        "achievements": ["Архитектура продукта", "Разработка бэкенда", "Разработка мобильного приложения"]
+      },
       "apeiron": {
         "role": "Lead Flutter Developer",
         "company": "Wise City",
-        "period": "Май 2025 — Июн 2026",
+        "period": "Май 2025 — Авг 2026",
         "achievements": [
           "Разработка интеграционных модулей Add-to-App для iOS и Android",
           "Разработка Web-модуля для интеграции с продуктом Сбера на Cordova",
@@ -100,7 +106,7 @@
       "freelance": {
         "role": "Lead Flutter Developer",
         "company": "Apeiron Space",
-        "period": "Сен 2023 — Апр 2025",
+        "period": "Сен 2023 — Авг 2025",
         "achievements": [
           "Руководил разработкой двух внутренних продуктов с нуля: ODS и SpaceKeeper",
           "Участвовал в разработке основного гостевого приложения Apeiron Space (iOS)",
@@ -159,7 +165,7 @@
     "aboutMe": "Обо мне",
     "downloadCv": "Открыть резюме",
     "workExperience": "Опыт работы",
-    "totalExperience": "5 лет 8 месяцев",
+    "totalExperience": "5 лет 10 месяцев",
     "education": "Образование",
     "hobbies": "Интересы",
     "robotics": "Робототехника и ИИ",
@@ -181,10 +187,18 @@
     "techFocus": "Технический фокус",
     "techFocusItems": ["Flutter / Dart", "Чистая архитектура", "CI/CD", "Кросс-платформа"],
     "jobs": {
+      "sellup": {
+        "company": "Фриланс / SellUp",
+        "role": "Full-stack Developer",
+        "period": "Сентябрь 2026 — н. в.",
+        "location": "Удалённо",
+        "description": "Full-stack-разработка продукта SellUp: архитектура, бэкенд и мобильное приложение.",
+        "achievements": ["Архитектура продукта", "Разработка бэкенда", "Разработка мобильного приложения"]
+      },
       "apeiron": {
         "company": "Apeiron Space",
         "role": "Lead Flutter Developer",
-        "period": "Сентябрь 2023 — Апрель 2025",
+        "period": "Сентябрь 2023 — Август 2025",
         "location": "Удалённо",
         "description": "Apeiron Space — умный отель, где гость управляет номером через мобильное приложение. Руководил Flutter-разработкой внутренних операционных продуктов и участвовал в развитии основного гостевого приложения.",
         "achievements": [
@@ -198,7 +212,7 @@
       "freelance": {
         "company": "Wise City",
         "role": "Lead Flutter Developer",
-        "period": "Май 2025 — Июнь 2026",
+        "period": "Май 2025 — Август 2026",
         "location": "Удалённо",
         "description": "Разработка интеграционных модулей для мобильного приложения, которые подключают функциональность на Flutter к существующим продуктам компании.",
         "achievements": [
@@ -495,7 +509,7 @@
     },
     "apeiron": {
       "badge": "Умный отель",
-      "facts": {"role": "Lead Flutter Developer", "period": "Сен 2023 — Апр 2025", "platforms": "iOS, Android, планшеты", "result": "2 продукта с нуля: SpaceKeeper и ODS"},
+      "facts": {"role": "Lead Flutter Developer", "period": "Сен 2023 — Авг 2025", "platforms": "iOS, Android, планшеты", "result": "2 продукта с нуля: SpaceKeeper и ODS"},
       "h2": "Будущее гостеприимства",
       "h2Highlight": "в вашем кармане",
       "description": "Первый в России умный отель, где всё пребывание управляется со смартфона: бронирование, заселение, свет, климат и заказ еды в номер.",
@@ -540,7 +554,7 @@
     },
     "wise": {
       "badge": "Платформа умного дома",
-      "facts": {"role": "Lead Flutter Developer", "period": "Май 2025 — Июн 2026", "platforms": "iOS, Android, Web (Cordova)", "result": "Приложение в продакшне для тысяч жильцов"},
+      "facts": {"role": "Lead Flutter Developer", "period": "Май 2025 — Авг 2026", "platforms": "iOS, Android, Web (Cordova)", "result": "Приложение в продакшне для тысяч жильцов"},
       "h2": "Единая платформа для",
       "h2Highlight": "жилых комплексов",
       "description": "Wise City — платформа умного дома для жилых комплексов: одно приложение для управления устройствами, оплаты ЖКХ, заявок, новостей, опросов, камер и домофона.",
