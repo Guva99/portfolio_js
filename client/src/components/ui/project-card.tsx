@@ -75,15 +75,19 @@ export function ProjectCard({
         <p className="mt-2 text-sm leading-relaxed text-white/75 line-clamp-2">{description}</p>
         <p className="mt-3 text-xs font-medium text-white/60">{tech.join(" · ")}</p>
 
-        <div
-          className={cn(
-            "mt-5 flex items-center justify-between rounded-xl px-4 py-3 backdrop-blur-md transition-colors duration-300",
-            "border border-[hsl(var(--accent)/0.3)] bg-[hsl(var(--accent)/0.12)]",
-            "group-hover:border-[hsl(var(--accent)/0.55)] group-hover:bg-[hsl(var(--accent)/0.22)]",
-          )}
-        >
-          <span className="text-sm font-semibold">{cta}</span>
-          <ArrowRight className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" aria-hidden="true" />
+        <div className="mt-5 flex items-center gap-2">
+          <span className="relative pb-1.5 text-sm font-semibold">
+            {cta}
+            {/* Underline draws in from the left on hover / keyboard focus */}
+            <span
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 rounded-full bg-[hsl(var(--accent))] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 group-focus-visible:scale-x-100"
+            />
+          </span>
+          <ArrowRight
+            className="mb-1.5 h-4 w-4 text-[hsl(var(--accent))] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:translate-x-1"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </Link>
