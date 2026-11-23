@@ -141,18 +141,18 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 p-2 rounded-xl bg-slate-900/70 backdrop-blur-2xl border border-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] overflow-hidden"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] max-w-[calc(100vw-2rem)] p-2 rounded-2xl bg-slate-900 border border-white/10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8)] overflow-hidden"
                       >
                         
-                        <div className="relative flex flex-col gap-1">
+                        <div className="relative grid grid-cols-2 gap-1">
                           {item.dropdown.map((subItem, subIndex) => (
-                            <Link key={subIndex} href={subItem.href} className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/5 transition-colors group/item">
-                                <div className="p-2 rounded-md bg-white/5 group-hover/item:bg-violet-500/20 group-hover/item:text-violet-300 text-slate-400 transition-colors">
-                                  <subItem.icon className="w-5 h-5" />
+                            <Link key={subIndex} href={subItem.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <div className="shrink-0 p-2 rounded-lg bg-white/5 group-hover/item:bg-violet-500/20 group-hover/item:text-violet-300 text-slate-400 transition-colors">
+                                  <subItem.icon className="w-4 h-4" />
                                 </div>
-                                <span className="flex flex-col">
+                                <span className="flex min-w-0 flex-col">
                                   <span className="text-sm font-medium text-slate-200 group-hover/item:text-white">{subItem.title}</span>
-                                  <span className="text-xs text-slate-400">{subItem.subtitle}</span>
+                                  <span className="truncate text-xs text-slate-400">{subItem.subtitle}</span>
                                 </span>
                             </Link>
                           ))}
