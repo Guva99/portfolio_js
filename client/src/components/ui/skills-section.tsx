@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { ConnectionMap } from "@/components/ui/connection-map";
@@ -14,11 +14,15 @@ import apeiron2 from "@assets/apeiron2_1770928057161.webp";
 import apeiron4 from "@assets/apeiron4_1770928057162.webp";
 import tavriaTv from "@/assets/images/tavria-tv-ui.webp";
 
-const stack = [
-  "Flutter", "Dart", "BLoC", "Riverpod", "MobX", "Clean Architecture",
-  "Flutter Web", "Add-to-App", "Firebase", "REST API", "GraphQL",
-  "WebSocket", "WebRTC", "FFmpeg / HLS", "Stripe", "CI/CD", "Integration tests",
-  "Go", "Python", "JavaScript", "LLM / AI",
+// Tech stack as a brick wall, listed bottom (foundation) → top (still being built).
+// Odd rows are offset by half a brick, like a running bond.
+const wallRows = [
+  ["Flutter", "Dart", "BLoC", "Riverpod", "MobX"],
+  ["Clean Architecture", "Flutter Web", "Add-to-App"],
+  ["Firebase", "REST API", "GraphQL", "WebSocket"],
+  ["WebRTC", "FFmpeg / HLS", "Stripe", "CI/CD"],
+  ["Integration tests", "Go", "Python"],
+  ["JavaScript", "LLM / AI"],
 ];
 
 // Each phone cycles through real screens of one project.
@@ -120,35 +124,106 @@ function ChatLoop() {
     return () => window.clearTimeout(id);
   }, [reduceMotion, inView]);
 
-  const bubble = { initial: { opacity: 0, y: 8, scale: 0.96 }, animate: { opacity: 1, y: 0, scale: 1 }, exit: { opacity: 0 } };
+  const showClient = reduceMotion || step <= 2;
+  const showTyping = !reduceMotion && step === 1;
+  const showReply = reduceMotion || step === 2;
+  const fade = (visible: boolean) => ({
+    opacity: visible ? 1 : 0,
+    y: visible ? 0 : 8,
+    scale: visible ? 1 : 0.97,
+  });
+  const spring = { type: "spring", stiffness: 380, damping: 30 } as const;
 
   return (
-    <div ref={ref} className="mt-5 flex min-h-[112px] flex-col gap-2 text-sm" aria-hidden="true">
-      <AnimatePresence initial={false}>
-        {reduceMotion || step <= 2 ? (
-          <motion.div key="client" {...bubble} className="max-w-[85%] self-start rounded-2xl rounded-bl-md bg-white/5 border border-white/10 px-3 py-2 text-slate-300">
-            {t("skills.chatClient")}
-          </motion.div>
-        ) : null}
-        {!reduceMotion && step === 1 && (
-          <motion.div key="typing" {...bubble} className="self-end flex gap-1 rounded-2xl rounded-br-md bg-violet-600/30 px-3 py-3">
-            {[0, 1, 2].map((d) => (
-              <motion.span
-                key={d}
-                className="h-1.5 w-1.5 rounded-full bg-violet-200"
-                animate={{ opacity: [0.3, 1, 0.3] }}
-                transition={{ duration: 1, repeat: Infinity, delay: d * 0.15 }}
-              />
-            ))}
-          </motion.div>
-        )}
-        {(reduceMotion || step === 2) && (
-          <motion.div key="me" {...bubble} className="max-w-[85%] self-end rounded-2xl rounded-br-md bg-violet-600/80 px-3 py-2 text-white">
-            {t("skills.chatMe")}
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div ref={ref} className="mt-5 flex flex-col gap-2 text-sm" aria-hidden="true">
+      <motion.div
+        initial={false}
+        animate={fade(showClient)}
+        transition={spring}
+        className="max-w-[85%] self-start rounded-2xl rounded-bl-md bg-white/5 border border-white/10 px-3 py-2 text-slate-300"
+      >
+        {t("skills.chatClient")}
+      </motion.div>
+
+      {/* The reply's box always reserves its height; the typing dots sit on top of it */}
+      <div className="relative max-w-[85%] self-end">
+        <motion.div
+          initial={false}
+          animate={fade(showReply)}
+          transition={spring}
+          className="rounded-2xl rounded-br-md bg-violet-600/80 px-3 py-2 text-white"
+        >
+          {t("skills.chatMe")}
+        </motion.div>
+        <motion.div
+          initial={false}
+          animate={fade(showTyping)}
+          transition={spring}
+          className="absolute right-0 top-0 flex gap-1 rounded-2xl rounded-br-md bg-violet-600/30 px-3 py-3"
+        >
+          {[0, 1, 2].map((d) => (
+            <motion.span
+              key={d}
+              className="h-1.5 w-1.5 rounded-full bg-violet-200"
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1, repeat: Infinity, delay: d * 0.15 }}
+            />
+          ))}
+        </motion.div>
+      </div>
     </div>
+  );
+}
+
+/** Bricks drop into place row by row, bottom-up; the top row stays unfinished. */
+function BrickWall() {
+  const brick =
+    "flex-auto min-w-0 truncate rounded-md border border-white/10 bg-white/[0.06] px-2.5 py-1.5 text-center text-xs sm:text-sm text-slate-300 " +
+    "shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] cursor-default transition-colors duration-200 " +
+    "hover:border-violet-400/50 hover:bg-violet-500/15 hover:text-white";
+  const halfBrick = "w-4 sm:w-5 shrink-0 rounded-md border border-white/5 bg-white/[0.03]";
+  let order = 0;
+
+  return (
+    <ul className="flex flex-col-reverse gap-1.5" aria-label="Tech stack">
+      {wallRows.map((row, r) => {
+        const offset = r % 2 === 1;
+        const isTop = r === wallRows.length - 1;
+        return (
+          <li key={r} className="flex gap-1.5">
+            {offset && <span className={halfBrick} aria-hidden="true" />}
+            {row.map((tech) => {
+              const delay = order++ * 0.05 + r * 0.08;
+              return (
+                <motion.span
+                  key={tech}
+                  initial={{ opacity: 0, y: -28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ type: "spring", stiffness: 520, damping: 26, delay }}
+                  className={isTop ? brick.replace("flex-auto", "flex-none") : brick}
+                >
+                  {tech}
+                </motion.span>
+              );
+            })}
+            {isTop ? (
+              // Unfinished top row: an empty slot waiting for the next brick
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: order * 0.05 + r * 0.08 + 0.2 }}
+                className="w-20 shrink-0 rounded-md border border-dashed border-violet-400/40 animate-pulse"
+                aria-hidden="true"
+              />
+            ) : (
+              offset && <span className={halfBrick} aria-hidden="true" />
+            )}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
@@ -193,20 +268,7 @@ export function SkillsSection() {
               className="rounded-[2rem] bg-slate-900/60 p-8 border border-white/5 flex-1"
             >
               <h3 className="text-2xl font-bold text-white mb-5">{t("skills.myTechStack")}</h3>
-              <ul className="flex flex-wrap gap-2">
-                {stack.map((tech, i) => (
-                  <motion.li
-                    key={tech}
-                    initial={{ opacity: 0, y: 6 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: i * 0.025 }}
-                    className="px-3 py-1.5 rounded-full bg-white/5 text-slate-300 text-sm border border-white/10 cursor-default transition-colors duration-200 hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white"
-                  >
-                    {tech}
-                  </motion.li>
-                ))}
-              </ul>
+              <BrickWall />
             </motion.div>
           </div>
 
