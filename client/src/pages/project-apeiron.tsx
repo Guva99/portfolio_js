@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BeamsBackground } from "@/components/ui/beams-background";
 import { Navbar } from "@/components/ui/navbar";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
 import { ExternalLink, Server, Wifi, Zap, Layers, CheckCircle2, Users } from "lucide-react";
@@ -58,6 +59,12 @@ export default function ProjectApeiron() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#326159] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-10"></div>
         </div>
       </div>
+
+      <BeamsBackground
+        hue={[160, 185]}
+        intensity="strong"
+        className="!absolute inset-x-0 top-0 h-[120vh] pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_40%,rgba(0,0,0,0.35)_70%,transparent_100%)]"
+      />
 
       <div className="relative z-10">
         <Navbar />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BeamsBackground } from "@/components/ui/beams-background";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/ui/navbar";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
@@ -38,6 +39,12 @@ export default function Project2Sky() {
           <div className="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-20"></div>
         </div>
       </div>
+
+      <BeamsBackground
+        hue={[205, 240]}
+        intensity="strong"
+        className="!absolute inset-x-0 top-0 h-[120vh] pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_40%,rgba(0,0,0,0.35)_70%,transparent_100%)]"
+      />
 
       <div className="relative z-10">
         <Navbar />

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BeamsBackground } from "@/components/ui/beams-background";
 import { ExternalLink, ScanBarcode, Route, Rocket } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Navbar } from "@/components/ui/navbar";
@@ -42,6 +43,12 @@ export default function ProjectMubi() {
         <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] md:w-[520px] md:h-[520px] bg-[#22D46B] rounded-full blur-[90px] md:blur-[130px] opacity-[0.1]"></div>
         <div className="absolute bottom-[-15%] right-[-10%] w-[300px] h-[300px] md:w-[480px] md:h-[480px] bg-emerald-800 rounded-full blur-[90px] md:blur-[130px] opacity-[0.15]"></div>
       </div>
+
+      <BeamsBackground
+        hue={[130, 160]}
+        intensity="strong"
+        className="!absolute inset-x-0 top-0 h-[120vh] pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_40%,rgba(0,0,0,0.35)_70%,transparent_100%)]"
+      />
 
       <div className="relative z-10">
         <Navbar />

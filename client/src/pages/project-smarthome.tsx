@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BeamsBackground } from "@/components/ui/beams-background";
 import { Navbar } from "@/components/ui/navbar";
 import { ArrowUpRight, Home, Smartphone, Layers, Code, Database, Server, Wifi } from "lucide-react";
 import apeironImage from "@assets/image_1770921547262.webp";
@@ -22,6 +23,12 @@ export default function ProjectSmartHome() {
           <div className="absolute bottom-[-20%] right-[20%] w-[600px] h-[600px] bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20"></div>
         </div>
       </div>
+      <BeamsBackground
+        hue={[180, 210]}
+        intensity="strong"
+        className="!absolute inset-x-0 top-0 h-[120vh] pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_40%,rgba(0,0,0,0.35)_70%,transparent_100%)]"
+      />
+
       <div className="relative z-10">
         <Navbar />
 

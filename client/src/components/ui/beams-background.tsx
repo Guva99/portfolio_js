@@ -5,6 +5,8 @@ interface BeamsBackgroundProps {
   className?: string;
   children?: React.ReactNode;
   intensity?: "subtle" | "medium" | "strong";
+  /** Hue range of the beams in degrees, e.g. [190, 260] for cyan→violet. */
+  hue?: [number, number];
 }
 
 interface Beam {
@@ -23,7 +25,7 @@ interface Beam {
 const opacityMap = { subtle: 0.8, medium: 1.2, strong: 1.6 } as const;
 const BEAM_COUNT = 30;
 
-function createBeam(width: number, height: number): Beam {
+function createBeam(width: number, height: number, [hueMin, hueMax]: [number, number]): Beam {
   return {
     x: Math.random() * width * 1.5 - width * 0.25,
     y: Math.random() * height * 1.5 - height * 0.25,
@@ -32,7 +34,7 @@ function createBeam(width: number, height: number): Beam {
     angle: -35 + Math.random() * 10,
     speed: 0.6 + Math.random() * 1.2,
     opacity: 0.12 + Math.random() * 0.16,
-    hue: 190 + Math.random() * 70,
+    hue: hueMin + Math.random() * (hueMax - hueMin),
     pulse: Math.random() * Math.PI * 2,
     pulseSpeed: 0.02 + Math.random() * 0.03,
   };
@@ -43,7 +45,8 @@ function createBeam(width: number, height: number): Beam {
  * absolutely positioned layer), pauses when off-screen and renders a single
  * static frame for users who prefer reduced motion.
  */
-export function BeamsBackground({ className, children, intensity = "medium" }: BeamsBackgroundProps) {
+export function BeamsBackground({ className, children, intensity = "medium", hue = [190, 260] }: BeamsBackgroundProps) {
+  const [hueMin, hueMax] = hue;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -66,7 +69,7 @@ export function BeamsBackground({ className, children, intensity = "medium" }: B
       beam.x = (index % 3) * spacing + spacing / 2 + (Math.random() - 0.5) * spacing * 0.5;
       beam.width = 100 + Math.random() * 100;
       beam.speed = 0.5 + Math.random() * 0.4;
-      beam.hue = 190 + (index * 70) / beams.length;
+      beam.hue = hueMin + (index * (hueMax - hueMin)) / beams.length;
       beam.opacity = 0.2 + Math.random() * 0.1;
     };
 
@@ -117,7 +120,7 @@ export function BeamsBackground({ className, children, intensity = "medium" }: B
       height = Math.max(1, Math.round(rect.height));
       canvas.width = width;
       canvas.height = height;
-      beams = Array.from({ length: BEAM_COUNT }, () => createBeam(width, height));
+      beams = Array.from({ length: BEAM_COUNT }, () => createBeam(width, height, [hueMin, hueMax]));
       start();
     };
 
@@ -136,7 +139,7 @@ export function BeamsBackground({ className, children, intensity = "medium" }: B
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
     };
-  }, [intensity]);
+  }, [intensity, hueMin, hueMax]);
 
   return (
     <div ref={wrapperRef} className={cn("relative w-full overflow-hidden", className)}>

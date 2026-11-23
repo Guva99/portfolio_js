@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BeamsBackground } from "@/components/ui/beams-background";
 import { Navbar } from "@/components/ui/navbar";
 import { ImageWithShimmer } from "@/components/ui/image-with-shimmer";
 import { ExternalLink, Activity, Map, Pill } from "lucide-react";
@@ -34,6 +35,12 @@ export default function ProjectHealthcare() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-[#06BA00] rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-15"></div>
         </div>
       </div>
+
+      <BeamsBackground
+        hue={[105, 135]}
+        intensity="strong"
+        className="!absolute inset-x-0 top-0 h-[120vh] pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_40%,rgba(0,0,0,0.35)_70%,transparent_100%)]"
+      />
 
       <div className="relative z-10">
         <Navbar />
