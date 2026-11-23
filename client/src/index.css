@@ -183,6 +183,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Skills bento: connection map, TV card */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
 @keyframes packet-flow {
   from { stroke-dashoffset: 100; }
   to { stroke-dashoffset: 0; }

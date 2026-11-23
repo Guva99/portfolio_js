@@ -168,7 +168,13 @@
           "Platforms: Android and iOS"
         ]
       }
-    }
+    },
+    "stages": {
+      "arch": "Architecture",
+      "release": "Release",
+      "support": "Support"
+    },
+    "experienceYears": "Years of commercial development, since 2020"
   },
   "footer": {
     "copyright": "© {{year}} Guvanch Avezov. Flutter Developer Portfolio."

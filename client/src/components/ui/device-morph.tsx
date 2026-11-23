@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
 import { Smartphone, Globe, Tv } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -18,22 +18,24 @@ const spring = { type: "spring", stiffness: 170, damping: 24 } as const;
 
 /** Frame geometry for each device, derived from the available stage size. */
 function frameFor(id: DeviceId, stageW: number, stageH: number) {
-  const maxW = Math.min(stageW * 0.92, 380);
   if (id === "mobile") {
-    const h = Math.min(stageH - 24, 236);
-    return { width: Math.round(h * 0.47), height: h, borderRadius: 24, bezel: 5 };
+    const h = Math.min(stageH - 12, 340);
+    return { width: Math.round(h * 0.47), height: h, borderRadius: 28, bezel: 6 };
   }
   if (id === "web") {
-    return { width: maxW, height: Math.round(maxW * 0.6), borderRadius: 12, bezel: 0 };
+    const w = Math.min(stageW, 500, (stageH - 8) / 0.62);
+    return { width: Math.round(w), height: Math.round(w * 0.62), borderRadius: 12, bezel: 0 };
   }
-  return { width: maxW, height: Math.round(maxW * 0.5625), borderRadius: 8, bezel: 6 };
+  // TV leaves room for its stand
+  const w = Math.min(stageW, 500, (stageH - 28) / 0.5625);
+  return { width: Math.round(w), height: Math.round(w * 0.5625), borderRadius: 8, bezel: 6 };
 }
 
 /**
  * One Tavria.TV app flowing between phone, browser and TV frames — the same
  * product on every screen. Auto-advances while visible; the tabs switch it by hand.
  */
-export function DeviceMorph() {
+export function DeviceMorph({ title }: { title: ReactNode }) {
   const { t } = useTranslation();
   const stageRef = useRef<HTMLDivElement>(null);
   const inView = useInView(stageRef, { margin: "-60px" });
@@ -65,8 +67,33 @@ export function DeviceMorph() {
   const isTv = device.id === "tv";
 
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-5">
-      <div ref={stageRef} className="relative flex w-full flex-1 items-center justify-center min-h-[230px]">
+    <div className="grid h-full items-center gap-6 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)]">
+      <div className="flex flex-col gap-6">
+        {title}
+        <div role="group" aria-label={t("skills.deviceSwitch")} className="flex w-fit gap-1 rounded-full border border-white/10 bg-slate-950/60 p-1">
+          {devices.map((d, i) => {
+            const active = i === index;
+            const Icon = d.icon;
+            return (
+              <button
+                key={d.id}
+                type="button"
+                aria-pressed={active}
+                onClick={() => {
+                  setIndex(i);
+                  setPausedUntil(Date.now() + 8000);
+                }}
+                className={`relative flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${active ? "text-white" : "text-slate-400 hover:text-white"}`}
+              >
+                {active && <motion.span layoutId="device-tab" transition={spring} className="absolute inset-0 rounded-full bg-violet-600" />}
+                <Icon className="relative h-3.5 w-3.5" aria-hidden="true" />
+                <span className="relative">{d.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      <div ref={stageRef} className="relative flex w-full items-center justify-center h-[300px] md:h-[360px]">
         <div className="flex flex-col items-center">
           <motion.div
             initial={false}
@@ -131,34 +158,6 @@ export function DeviceMorph() {
         </div>
       </div>
 
-      <div role="group" aria-label={t("skills.deviceSwitch")} className="flex gap-1 rounded-full border border-white/10 bg-slate-900/80 p-1">
-        {devices.map((d, i) => {
-          const active = i === index;
-          const Icon = d.icon;
-          return (
-            <button
-              key={d.id}
-              type="button"
-              aria-pressed={active}
-              onClick={() => {
-                setIndex(i);
-                setPausedUntil(Date.now() + 8000);
-              }}
-              className={`relative flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${active ? "text-white" : "text-slate-400 hover:text-white"}`}
-            >
-              {active && (
-                <motion.span
-                  layoutId="device-tab"
-                  transition={spring}
-                  className="absolute inset-0 rounded-full bg-violet-600"
-                />
-              )}
-              <Icon className="relative h-3.5 w-3.5" aria-hidden="true" />
-              <span className="relative">{d.label}</span>
-            </button>
-          );
-        })}
-      </div>
     </div>
   );
 }

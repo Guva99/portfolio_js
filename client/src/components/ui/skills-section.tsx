@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useInView, useReducedMotion, type TargetAndTransition } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { ConnectionMap } from "@/components/ui/connection-map";
@@ -344,43 +344,170 @@ function YourProjectBrick() {
   );
 }
 
-/** Bricks drop into place row by row, bottom-up; the top row stays unfinished. */
+type Fall = { x: number; y: number; rotate: number; delay: number; duration: number; back: number };
+
+// Lands with a couple of small bounces and never sinks below the floor.
+function bounceOut(t: number) {
+  const n = 7.5625, d = 2.75;
+  if (t < 1 / d) return n * t * t;
+  if (t < 2 / d) return n * (t -= 1.5 / d) * t + 0.75;
+  if (t < 2.5 / d) return n * (t -= 2.25 / d) * t + 0.9375;
+  return n * (t -= 2.625 / d) * t + 0.984375;
+}
+const rnd = (n: number) => {
+  const x = Math.sin(n * 12.9898) * 43758.5453;
+  return x - Math.floor(x);
+};
+
+/**
+ * Bricks drop into place row by row, bottom-up; the top row stays unfinished.
+ * Hovering the wall knocks it down into a heap at its foot; leaving rebuilds it.
+ */
 function BrickWall() {
+  const wallRef = useRef<HTMLUListElement>(null);
+  const pieces = useRef<(HTMLElement | null)[]>([]);
+  const seed = useRef(0);
+  const inView = useInView(wallRef, { once: true, margin: "-40px" });
+  const reduceMotion = useReducedMotion();
+  const [collapsed, setCollapsed] = useState(false);
+  const [falls, setFalls] = useState<Fall[] | null>(null);
+
+  const collapse = () => {
+    const wall = wallRef.current;
+    if (!wall || reduceMotion || !inView || collapsed) return;
+    const W = wall.offsetWidth;
+    const H = wall.offsetHeight;
+    seed.current += 1;
+    const sd = seed.current * 31;
+    const items = pieces.current
+      .map((el, i) => (el ? { i, x0: el.offsetLeft, y0: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight } : null))
+      .filter((v): v is { i: number; x0: number; y0: number; w: number; h: number } => v !== null)
+      .sort((a, b) => rnd(a.i + sd) - rnd(b.i + sd));
+
+    // Pack into layers that get narrower towards the top, overlapping like rubble.
+    const layers: (typeof items)[] = [[]];
+    let sum = 0;
+    for (const it of items) {
+      const k = layers.length - 1;
+      const cap = W * Math.max(1.7 - 0.32 * k, 0.5);
+      if (sum + it.w > cap && layers[k].length) {
+        layers.push([]);
+        sum = 0;
+      }
+      layers[layers.length - 1].push(it);
+      sum += it.w;
+    }
+
+    const next: Fall[] = [];
+    layers.forEach((layer, k) => {
+      const total = layer.reduce((a, it) => a + it.w, 0);
+      const span = Math.min(total, W * Math.max(0.98 - 0.15 * k, 0.35));
+      const left = (W - span) / 2 + (rnd(k + sd) - 0.5) * 24;
+      let cum = 0;
+      layer.forEach((it) => {
+        const centre = left + ((cum + it.w / 2) * span) / total;
+        cum += it.w;
+        const x = Math.min(Math.max(centre - it.w / 2, -8), W - it.w + 8);
+        const y = H - it.h - k * it.h * 0.7 - rnd(it.i + sd + 7) * 4;
+        const dy = y - it.y0;
+        next[it.i] = {
+          x: x - it.x0,
+          y: dy,
+          rotate: (rnd(it.i + sd + 3) - 0.5) * (14 + k * 8),
+          delay: rnd(it.i + sd + 5) * 0.12,
+          duration: 0.5 + 0.35 * Math.sqrt(Math.max(dy, 0) / H),
+          back: (1 - it.y0 / H) * 0.28 + rnd(it.i + sd + 9) * 0.06,
+        };
+      });
+    });
+    setFalls(next);
+    setCollapsed(true);
+  };
+
+  const rebuild = () => setCollapsed(false);
+
+  // One element per piece: entrance drop, fall into the heap and rebuild share the same transform.
+  let slot = 0;
+  const piece = (entranceDelay: number) => {
+    const i = slot++;
+    const f = falls?.[i];
+    let animate: TargetAndTransition;
+    if (!inView) animate = { opacity: 0, y: -28 };
+    else if (collapsed && f) {
+      const ease = { duration: f.duration, delay: f.delay };
+      animate = {
+        opacity: 1,
+        x: f.x,
+        y: f.y,
+        rotate: f.rotate,
+        transition: {
+          y: { ...ease, ease: bounceOut },
+          x: { ...ease, ease: "easeOut" },
+          rotate: { ...ease, ease: "easeOut" },
+        },
+      };
+    } else {
+      animate = {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        rotate: 0,
+        transition: f
+          ? { type: "spring" as const, stiffness: 260, damping: 24, delay: f.back }
+          : { type: "spring" as const, stiffness: 520, damping: 26, delay: entranceDelay },
+      };
+    }
+    return {
+      ref: (el: HTMLElement | null) => {
+        pieces.current[i] = el;
+      },
+      initial: { opacity: 0, y: -28 },
+      animate,
+    };
+  };
+
   const brick =
-    "flex-auto min-w-0 truncate rounded-md border border-white/10 bg-white/[0.06] px-2.5 py-1.5 text-center text-xs sm:text-sm text-slate-300 " +
+    "flex-auto min-w-0 truncate rounded-md border border-white/10 bg-slate-800/90 px-2.5 py-1.5 text-center text-xs sm:text-sm text-slate-300 " +
     "shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] cursor-default transition-colors duration-200 " +
-    "hover:border-violet-400/50 hover:bg-violet-500/15 hover:text-white";
-  const halfBrick = "w-4 sm:w-5 shrink-0 rounded-md border border-white/5 bg-white/[0.03]";
+    "hover:border-violet-400/50 hover:bg-violet-950 hover:text-white";
+  const halfBrick = "w-4 sm:w-5 shrink-0 rounded-md border border-white/5 bg-slate-800/60";
   let order = 0;
 
   return (
-    <ul className="flex flex-col-reverse gap-1.5" aria-label="Tech stack">
+    <ul
+      ref={wallRef}
+      className="relative flex flex-col-reverse gap-1.5"
+      aria-label="Tech stack"
+      onMouseEnter={collapse}
+      onMouseLeave={rebuild}
+      onClick={() => {
+        // Touch screens have no hover: a tap toggles the collapse instead.
+        if (window.matchMedia("(hover: none)").matches) (collapsed ? rebuild : collapse)();
+      }}
+    >
       {wallRows.map((row, r) => {
         const offset = r % 2 === 1;
         const isTop = r === wallRows.length - 1;
+        const rowDelay = r * 0.08;
         return (
           <li key={r} className="flex gap-1.5">
-            {offset && <span className={halfBrick} aria-hidden="true" />}
-            {row.map((tech) => {
-              const delay = order++ * 0.05 + r * 0.08;
-              return (
-                <motion.span
-                  key={tech}
-                  initial={{ opacity: 0, y: -28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ type: "spring", stiffness: 520, damping: 26, delay }}
-                  className={isTop ? brick.replace("flex-auto", "flex-none") : brick}
-                >
-                  {tech}
-                </motion.span>
-              );
-            })}
+            {offset && <motion.span {...piece(rowDelay)} className={halfBrick} aria-hidden="true" />}
+            {row.map((tech) => (
+              <motion.span
+                key={tech}
+                {...piece(order++ * 0.05 + rowDelay)}
+                className={isTop ? brick.replace("flex-auto", "flex-none") : brick}
+              >
+                {tech}
+              </motion.span>
+            ))}
             {isTop ? (
               // Unfinished top row: the missing brick is the visitor's project
-              <YourProjectBrick />
+              <motion.span {...piece(order * 0.05 + rowDelay + 0.2)} className="flex shrink-0">
+                <YourProjectBrick />
+              </motion.span>
             ) : (
-              offset && <span className={halfBrick} aria-hidden="true" />
+              offset && <motion.span {...piece(rowDelay)} className={halfBrick} aria-hidden="true" />
             )}
           </li>
         );
@@ -472,13 +599,16 @@ export function SkillsSection() {
           {/* One app across Mobile, Web and TV */}
           <motion.div
             {...reveal}
-            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-slate-900/60 min-h-[300px] border border-white/5 grid md:grid-cols-[1fr_1.2fr] items-center gap-6 p-8 md:p-10"
+            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-slate-900/60 border border-white/5 p-8 md:p-10"
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-              {t("skills.flutterSolutions")}{" "}
-              <span className="text-violet-400">{t("skills.flutterSolutionsHighlight")}</span>
-            </h3>
-            <DeviceMorph />
+            <DeviceMorph
+              title={
+                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+                  {t("skills.flutterSolutions")}{" "}
+                  <span className="text-violet-400">{t("skills.flutterSolutionsHighlight")}</span>
+                </h3>
+              }
+            />
           </motion.div>
 
         </div>

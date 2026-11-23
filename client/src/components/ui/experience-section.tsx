@@ -1,84 +1,11 @@
 import { motion } from "framer-motion";
-import { Briefcase, Layers, Rocket, Monitor, Cpu, CheckCircle, ArrowRight, MessageSquare, ExternalLink } from "lucide-react";
-import { useState } from "react";
+import { CheckCircle, ArrowRight, MessageSquare, ExternalLink } from "lucide-react";
+import { AchievementsBento } from "@/components/ui/achievements-bento";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 
-function TechCard({ item, index }: { item: { icon: any; text: string; color: string; bg: string; border: string }; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="h-full"
-    >
-      <div className={`group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 p-6 flex flex-col transition-all duration-300 hover:border-white/10 ${item.bg}`}>
-        <div className="relative z-10 flex flex-col h-full">
-          <div className="flex justify-between items-start mb-6">
-            <div className={`p-2 rounded-md bg-white/5 border border-white/5 transition-colors duration-300 ${item.color} ${item.border}`}>
-              <item.icon className="w-5 h-5" strokeWidth={1.5} />
-            </div>
-          </div>
-
-          <div className="mb-4">
-            <h3 className="text-lg font-medium text-slate-200 group-hover:text-white transition-colors duration-300 leading-snug">
-              {item.text}
-            </h3>
-          </div>
-          
-          <div className="mt-auto pt-4 border-t border-white/5 flex items-center">
-            <div className="h-px w-8 bg-slate-700 group-hover:w-16 group-hover:bg-slate-500 transition-all duration-500"></div>
-          </div>
-        </div>
-        
-        <div className="absolute top-0 right-0 w-0 h-0 border-t-[1px] border-r-[1px] border-transparent group-hover:border-white/20 group-hover:w-4 group-hover:h-4 transition-all duration-300"></div>
-        <div className="absolute bottom-0 left-0 w-0 h-0 border-b-[1px] border-l-[1px] border-transparent group-hover:border-white/20 group-hover:w-4 group-hover:h-4 transition-all duration-300"></div>
-      </div>
-    </motion.div>
-  );
-}
-
 export function ExperienceSection() {
   const { t } = useTranslation();
-
-  const highlights = [
-    {
-      icon: Rocket,
-      text: t("experienceSection.highlights.appsReleased"),
-      color: "group-hover:text-rose-400",
-      bg: "group-hover:bg-rose-500/10",
-      border: "group-hover:border-rose-500/20"
-    },
-    {
-      icon: Layers,
-      text: t("experienceSection.highlights.projectsFromScratch"),
-      color: "group-hover:text-amber-400",
-      bg: "group-hover:bg-amber-500/10",
-      border: "group-hover:border-amber-500/20"
-    },
-    {
-      icon: Briefcase,
-      text: t("experienceSection.highlights.teamLead"),
-      color: "group-hover:text-emerald-400",
-      bg: "group-hover:bg-emerald-500/10",
-      border: "group-hover:border-emerald-500/20"
-    },
-    {
-      icon: Monitor,
-      text: t("experienceSection.highlights.multiPlatform"),
-      color: "group-hover:text-blue-400",
-      bg: "group-hover:bg-blue-500/10",
-      border: "group-hover:border-blue-500/20"
-    },
-    {
-      icon: Cpu,
-      text: t("experienceSection.highlights.cleanArch"),
-      color: "group-hover:text-violet-400",
-      bg: "group-hover:bg-violet-500/10",
-      border: "group-hover:border-violet-500/20"
-    }
-  ];
 
   const experiences = [
     {
@@ -149,29 +76,7 @@ export function ExperienceSection() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {highlights.map((item, index) => (
-              <TechCard key={index} item={item} index={index} />
-            ))}
-            
-            {/* Stats Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="group relative h-full bg-black/40 backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center min-h-[200px]"
-            >
-              <div className="relative z-10 text-center">
-                 <div className="text-xs text-slate-400 mb-2 tracking-widest uppercase">{t("experienceSection.experience")}</div>
-                 <h3 className="text-6xl font-light text-white mb-1 tracking-tighter">5+</h3>
-                 <p className="text-slate-500 text-xs uppercase tracking-widest">{t("experienceSection.years")}</p>
-              </div>
-
-              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20"></div>
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20"></div>
-            </motion.div>
-          </div>
+          <AchievementsBento />
         </div>
 
         {/* Experience Section */}
