@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { Rocket, Layers, Users, MonitorSmartphone, Boxes, CalendarClock, Smartphone, Laptop, Tv, Crown, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
+import { projects } from "@/lib/projects";
 
 /** Number that counts up once when it scrolls into view. */
 function CountUp({ to, suffix = "", className }: { to: number; suffix?: string; className?: string }) {
@@ -84,38 +86,40 @@ function Card({
   );
 }
 
-const storeApps = [
-  { letter: "S", color: "#F06A2A" },
-  { letter: "M", color: "#22C55E" },
-  { letter: "P", color: "#06BA00" },
-  { letter: "W", color: "#B632DA" },
-  { letter: "A", color: "#4A857C" },
-  { letter: "W", color: "#2F6FDB" },
-  { letter: "T", color: "#F59E0B" },
-  { letter: "2", color: "#0EA5E9" },
-  { letter: "L", color: "#E11D48" },
-  { letter: "H", color: "#14B8A6" },
-];
+// Brand colour per case study, used for the dot next to each product name.
+const productColors: Record<string, string> = {
+  sellup: "#F06A2A",
+  mubi: "#22D46B",
+  healthcare: "#06BA00",
+  travel: "#B632DA",
+  apeiron: "#4A857C",
+  wise: "#2F6FDB",
+  media: "#FECB0E",
+  truefortwo: "#E11D48",
+  "2sky": "#0EA5E9",
+};
 
-/** 10+ apps: big counter over a drifting shelf of app icons. */
+/** 10+ apps: big counter over a drifting shelf of real products, each linking to its case. */
 function AppsVisual() {
-  const row = [...storeApps, ...storeApps];
+  const row = [...projects, ...projects];
   return (
     <div className="flex w-full flex-col items-center gap-5">
       <CountUp to={10} suffix="+" className="text-6xl md:text-7xl font-bold tracking-tight text-white" />
-      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-        <div className="flex w-max gap-3 animate-[marquee_22s_linear_infinite] group-hover:[animation-play-state:paused]">
-          {row.map((app, i) => (
-            <span
-              key={i}
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-base font-bold text-white shadow-lg ring-1 ring-white/10"
-              style={{ backgroundColor: app.color }}
-              aria-hidden="true"
-            >
-              {app.letter}
-            </span>
+      <div className="relative w-full overflow-hidden py-1 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+        <ul className="flex w-max gap-2.5 animate-[marquee_28s_linear_infinite] hover:[animation-play-state:paused]">
+          {row.map((p, i) => (
+            <li key={i} aria-hidden={i >= projects.length || undefined}>
+              <Link
+                href={`/projects/${p.slug}`}
+                tabIndex={i >= projects.length ? -1 : undefined}
+                className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-slate-800/80 px-3.5 py-2 text-sm font-semibold text-slate-200 transition-colors hover:border-white/25 hover:bg-slate-700 hover:text-white"
+              >
+                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: productColors[p.slug] ?? "#a78bfa" }} />
+                {p.name}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

@@ -305,45 +305,6 @@ function ChatLoop() {
 }
 
 
-/** Empty slot at the top of the wall; a "Your project" brick keeps dropping into it. */
-function YourProjectBrick() {
-  const { t } = useTranslation();
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { margin: "-40px" });
-  const reduceMotion = useReducedMotion();
-  const [placed, setPlaced] = useState(false);
-
-  useEffect(() => {
-    if (reduceMotion) {
-      setPlaced(true);
-      return;
-    }
-    if (!inView) return;
-    const id = window.setTimeout(() => setPlaced((p) => !p), placed ? 2600 : 1400);
-    return () => window.clearTimeout(id);
-  }, [placed, inView, reduceMotion]);
-
-  return (
-    <span ref={ref} className="relative shrink-0 rounded-md border border-dashed border-violet-400/40" aria-hidden="true">
-      {/* Invisible label sizes the slot to the brick */}
-      <span className="invisible block px-2.5 py-1.5 text-xs sm:text-sm font-semibold">{t("skills.yourProject")}</span>
-      <AnimatePresence>
-        {placed && (
-          <motion.span
-            initial={{ opacity: 0, y: -36, rotate: -4 }}
-            animate={{ opacity: 1, y: 0, rotate: 0 }}
-            exit={{ opacity: 0, y: -14 }}
-            transition={{ type: "spring", stiffness: 420, damping: 18 }}
-            className="absolute inset-0 grid place-items-center rounded-md border border-violet-400/60 bg-violet-600/80 text-xs sm:text-sm font-semibold text-white shadow-[0_0_18px_-2px_rgba(139,92,246,0.7)]"
-          >
-            {t("skills.yourProject")}
-          </motion.span>
-        )}
-      </AnimatePresence>
-    </span>
-  );
-}
-
 type Fall = { x: number; y: number; rotate: number; delay: number; duration: number; back: number };
 
 // Lands with a couple of small bounces and never sinks below the floor.
@@ -360,7 +321,7 @@ const rnd = (n: number) => {
 };
 
 /**
- * Bricks drop into place row by row, bottom-up; the top row stays unfinished.
+ * Bricks drop into place row by row, bottom-up; the short top row leaves the wall unfinished.
  * Hovering the wall knocks it down into a heap at its foot; leaving rebuilds it.
  */
 function BrickWall() {
@@ -501,14 +462,7 @@ function BrickWall() {
                 {tech}
               </motion.span>
             ))}
-            {isTop ? (
-              // Unfinished top row: the missing brick is the visitor's project
-              <motion.span {...piece(order * 0.05 + rowDelay + 0.2)} className="flex shrink-0">
-                <YourProjectBrick />
-              </motion.span>
-            ) : (
-              offset && <motion.span {...piece(rowDelay)} className={halfBrick} aria-hidden="true" />
-            )}
+            {!isTop && offset && <motion.span {...piece(rowDelay)} className={halfBrick} aria-hidden="true" />}
           </li>
         );
       })}
