@@ -46,7 +46,14 @@
     "chatMe": "Сборка уже в TestFlight — отправил ссылку и список изменений.",
     "cityNY": "Нью-Йорк",
     "cityBerlin": "Берлин",
-    "cityMoscow": "Москва"
+    "cityMoscow": "Москва",
+    "storeTitle": "Топ бесплатных приложений",
+    "storeGet": "Загрузить",
+    "catMedical": "Медицина",
+    "catTravel": "Путешествия",
+    "catLifestyle": "Образ жизни",
+    "yourProject": "Ваш проект",
+    "deviceSwitch": "Показать приложение на устройстве"
   },
   "projects": {
     "title": "Избранные",

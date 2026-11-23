@@ -46,7 +46,14 @@
     "chatMe": "The build is in TestFlight — sent you the link and the changelog.",
     "cityNY": "New York",
     "cityBerlin": "Berlin",
-    "cityMoscow": "Moscow"
+    "cityMoscow": "Moscow",
+    "storeTitle": "Top free apps",
+    "storeGet": "Get",
+    "catMedical": "Medical",
+    "catTravel": "Travel",
+    "catLifestyle": "Lifestyle",
+    "yourProject": "Your project",
+    "deviceSwitch": "Show the app on a device"
   },
   "projects": {
     "title": "Selected",

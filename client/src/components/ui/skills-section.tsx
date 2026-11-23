@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { ConnectionMap } from "@/components/ui/connection-map";
+import { DeviceMorph } from "@/components/ui/device-morph";
 import pulsar1 from "@/assets/images/pulsar/screen1.webp";
 import pulsar2 from "@/assets/images/pulsar/screen2.webp";
 import pulsar3 from "@/assets/images/pulsar/screen3.webp";
@@ -12,7 +13,6 @@ import wow3 from "@/assets/images/wowtickets/screen3.webp";
 import apeiron1 from "@assets/apeiron1_1770928057161.webp";
 import apeiron2 from "@assets/apeiron2_1770928057161.webp";
 import apeiron4 from "@assets/apeiron4_1770928057162.webp";
-import tavriaTv from "@/assets/images/tavria-tv-ui.webp";
 
 // Tech stack as a brick wall, listed bottom (foundation) → top (still being built).
 // Odd rows are offset by half a brick, like a running bond.
@@ -62,7 +62,7 @@ function PhoneStack() {
   const indices = usePhoneScreens(inView && !reduceMotion);
 
   return (
-    <div ref={ref} className="flex-1 flex items-end justify-center gap-4 px-8 pt-10 overflow-hidden">
+    <div ref={ref} className="relative h-full flex items-end justify-center gap-4 px-8 pt-10 overflow-hidden">
       {phones.map((phone, i) => (
         <motion.div
           key={phone.name}
@@ -70,7 +70,7 @@ function PhoneStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-          className={`w-[28%] max-w-[150px] ${phone.offset}`}
+          className={`w-[28%] max-w-[140px] ${phone.offset}`}
         >
           {/* Hover fan-out lives on its own wrapper so it never fights the idle float */}
           <div className={`transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${phone.fan}`}>
@@ -94,6 +94,135 @@ function PhoneStack() {
       ))}
       {/* Soft violet glow under the stack, brightens on hover */}
       <div className="pointer-events-none absolute bottom-24 left-1/2 h-40 w-2/3 -translate-x-1/2 rounded-full bg-violet-600/20 blur-3xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
+    </div>
+  );
+}
+
+
+type ChartRow = { id: string; name?: string; catKey?: string; color?: string; letter?: string };
+
+const ourApps: Record<string, ChartRow> = {
+  pulsar: { id: "pulsar", name: "PulSarBonus", catKey: "skills.catMedical", color: "#06BA00", letter: "P" },
+  wow: { id: "wow", name: "WowTickets", catKey: "skills.catTravel", color: "#B632DA", letter: "W" },
+  apeiron: { id: "apeiron", name: "Apeiron Space", catKey: "skills.catLifestyle", color: "#4A857C", letter: "A" },
+};
+// Successive chart orders: our three apps climb past placeholder rows to the top.
+const chartSteps = [
+  ["f1", "f2", "pulsar", "f3", "wow", "f4", "apeiron"],
+  ["f1", "pulsar", "f2", "wow", "f3", "apeiron", "f4"],
+  ["pulsar", "f1", "wow", "f2", "apeiron", "f3", "f4"],
+  ["pulsar", "wow", "f1", "apeiron", "f2", "f3", "f4"],
+  ["pulsar", "wow", "apeiron", "f1", "f2", "f3", "f4"],
+];
+
+/** App Store–style top chart (stylised) where the apps rise to the top. */
+function StoreChart() {
+  const { t } = useTranslation();
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const ids = chartSteps.slice(1).map((_, i) => window.setTimeout(() => setStep(i + 1), 600 + i * 620));
+    return () => ids.forEach(window.clearTimeout);
+  }, []);
+
+  const order = chartSteps[step];
+  const prev = chartSteps[Math.max(step - 1, 0)];
+  const done = step === chartSteps.length - 1;
+
+  return (
+    <div className="w-[min(92%,420px)] rounded-2xl border border-white/10 bg-slate-950/90 p-4 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)] backdrop-blur-md">
+      <p className="text-[11px] font-semibold text-slate-500">App Store</p>
+      <p className="mb-3 text-base font-bold text-white">{t("skills.storeTitle")}</p>
+      <ol className="relative max-h-[212px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_75%,transparent)]">
+        {order.map((id, rank) => {
+          const app = ourApps[id];
+          const climbing = app && prev.indexOf(id) > rank;
+          return (
+            <motion.li
+              key={id}
+              layout
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className={`flex items-center gap-3 rounded-xl px-2 py-1.5 ${app && done ? "bg-violet-500/10" : ""}`}
+            >
+              <span className="w-4 text-right text-sm font-semibold tabular-nums text-slate-500">{rank + 1}</span>
+              {app ? (
+                <>
+                  <span
+                    className="grid h-8 w-8 shrink-0 place-items-center rounded-[9px] text-sm font-bold text-white"
+                    style={{ backgroundColor: app.color }}
+                  >
+                    {app.letter}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-sm font-semibold text-white">{app.name}</span>
+                    <span className="block text-xs text-slate-400">{t(app.catKey!)}</span>
+                  </span>
+                  <span className={`text-xs font-bold text-green-400 transition-opacity ${climbing ? "opacity-100" : "opacity-0"}`} aria-hidden="true">▲</span>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-violet-300">{t("skills.storeGet")}</span>
+                </>
+              ) : (
+                <>
+                  <span className="h-8 w-8 shrink-0 rounded-[9px] bg-white/[0.06]" />
+                  <span className="flex flex-1 flex-col gap-1.5">
+                    <span className="h-2 w-2/3 rounded-full bg-white/[0.08]" />
+                    <span className="h-1.5 w-1/3 rounded-full bg-white/[0.05]" />
+                  </span>
+                  <span className="h-6 w-16 rounded-full bg-white/[0.05]" />
+                </>
+              )}
+            </motion.li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+}
+
+/**
+ * Looping showcase: the three apps → they sink into an App Store top chart where
+ * they climb to the top → the chart zooms past the viewer and the apps open up again.
+ */
+function AppShowcase() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: "-80px" });
+  const reduceMotion = useReducedMotion();
+  const [stage, setStage] = useState<"apps" | "store">("apps");
+
+  useEffect(() => {
+    if (!inView || reduceMotion) return;
+    const id = window.setTimeout(() => setStage((s) => (s === "apps" ? "store" : "apps")), stage === "apps" ? 4200 : 4800);
+    return () => window.clearTimeout(id);
+  }, [stage, inView, reduceMotion]);
+
+  const ease = [0.16, 1, 0.3, 1] as const;
+
+  return (
+    <div ref={ref} className="relative h-[320px] md:h-[400px] overflow-hidden">
+      <AnimatePresence initial={false}>
+        {stage === "apps" ? (
+          <motion.div
+            key="apps"
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.82, filter: "blur(4px)" }}
+            transition={{ duration: 0.8, ease }}
+          >
+            <PhoneStack />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="store"
+            className="absolute inset-0 flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.88, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 1.35, filter: "blur(6px)" }}
+            transition={{ duration: 0.8, ease }}
+          >
+            <StoreChart />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -175,6 +304,46 @@ function ChatLoop() {
   );
 }
 
+
+/** Empty slot at the top of the wall; a "Your project" brick keeps dropping into it. */
+function YourProjectBrick() {
+  const { t } = useTranslation();
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { margin: "-40px" });
+  const reduceMotion = useReducedMotion();
+  const [placed, setPlaced] = useState(false);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setPlaced(true);
+      return;
+    }
+    if (!inView) return;
+    const id = window.setTimeout(() => setPlaced((p) => !p), placed ? 2600 : 1400);
+    return () => window.clearTimeout(id);
+  }, [placed, inView, reduceMotion]);
+
+  return (
+    <span ref={ref} className="relative shrink-0 rounded-md border border-dashed border-violet-400/40" aria-hidden="true">
+      {/* Invisible label sizes the slot to the brick */}
+      <span className="invisible block px-2.5 py-1.5 text-xs sm:text-sm font-semibold">{t("skills.yourProject")}</span>
+      <AnimatePresence>
+        {placed && (
+          <motion.span
+            initial={{ opacity: 0, y: -36, rotate: -4 }}
+            animate={{ opacity: 1, y: 0, rotate: 0 }}
+            exit={{ opacity: 0, y: -14 }}
+            transition={{ type: "spring", stiffness: 420, damping: 18 }}
+            className="absolute inset-0 grid place-items-center rounded-md border border-violet-400/60 bg-violet-600/80 text-xs sm:text-sm font-semibold text-white shadow-[0_0_18px_-2px_rgba(139,92,246,0.7)]"
+          >
+            {t("skills.yourProject")}
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </span>
+  );
+}
+
 /** Bricks drop into place row by row, bottom-up; the top row stays unfinished. */
 function BrickWall() {
   const brick =
@@ -208,15 +377,8 @@ function BrickWall() {
               );
             })}
             {isTop ? (
-              // Unfinished top row: an empty slot waiting for the next brick
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: order * 0.05 + r * 0.08 + 0.2 }}
-                className="w-20 shrink-0 rounded-md border border-dashed border-violet-400/40 animate-pulse"
-                aria-hidden="true"
-              />
+              // Unfinished top row: the missing brick is the visitor's project
+              <YourProjectBrick />
             ) : (
               offset && <span className={halfBrick} aria-hidden="true" />
             )}
@@ -247,7 +409,7 @@ export function SkillsSection() {
             {...reveal}
             className="group md:col-span-7 rounded-[2rem] overflow-hidden relative bg-slate-900/60 border border-white/5 min-h-[380px] flex flex-col transition-colors duration-500 hover:border-violet-400/20"
           >
-            <PhoneStack />
+            <AppShowcase />
             <div className="relative p-8 pt-6 bg-slate-950/80 border-t border-white/5">
               <h3 className="text-2xl md:text-3xl font-bold text-white max-w-md leading-tight">
                 {t("skills.techEnthusiast")}
@@ -307,34 +469,16 @@ export function SkillsSection() {
             </motion.div>
           </div>
 
-          {/* Tavria.TV on Smart TV */}
+          {/* One app across Mobile, Web and TV */}
           <motion.div
             {...reveal}
-            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-slate-950 min-h-[300px] border border-white/10"
+            className="md:col-span-8 rounded-[2rem] overflow-hidden relative bg-slate-900/60 min-h-[300px] border border-white/5 grid md:grid-cols-[1fr_1.2fr] items-center gap-6 p-8 md:p-10"
           >
-            <div className="absolute inset-y-0 right-0 w-full md:w-1/2 overflow-hidden">
-              <img
-                src={tavriaTv}
-                alt="Tavria.TV — Smart TV"
-                loading="lazy"
-                className="h-full w-full object-cover object-[center_75%] animate-[ken-burns_18s_ease-in-out_infinite]"
-              />
-              {/* Live badge + playback progress, like a TV player */}
-              <span className="absolute top-5 right-5 flex items-center gap-1.5 rounded-md bg-black/60 px-2 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" aria-hidden="true"></span>
-                LIVE
-              </span>
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-white/10" aria-hidden="true">
-                <div className="h-full origin-left bg-[#FECB0E] animate-[tv-progress_12s_linear_infinite]"></div>
-              </div>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 md:via-slate-950/60 to-slate-950/10"></div>
-            <div className="relative p-8 md:p-12 md:w-3/5 h-full flex items-center">
-              <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                {t("skills.flutterSolutions")}{" "}
-                <span className="text-violet-400">{t("skills.flutterSolutionsHighlight")}</span>
-              </h3>
-            </div>
+            <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+              {t("skills.flutterSolutions")}{" "}
+              <span className="text-violet-400">{t("skills.flutterSolutionsHighlight")}</span>
+            </h3>
+            <DeviceMorph />
           </motion.div>
 
         </div>
