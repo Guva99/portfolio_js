@@ -45,8 +45,8 @@ export function ProjectCard({
       style={{ "--theme": themeColor, "--accent": accentColor } as React.CSSProperties}
       className={cn(
         "group relative block h-[440px] rounded-3xl overflow-hidden border border-white/10 bg-slate-900",
-        "shadow-[0_0_40px_-18px_hsl(var(--accent)/0.35)] transition-[transform,box-shadow,border-color] duration-500 ease-out",
-        "hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_0_60px_-15px_hsl(var(--accent)/0.5)] motion-safe:hover:-translate-y-1",
+        "shadow-[0_0_40px_-18px_hsl(var(--accent)/0.35)] transition-[box-shadow,border-color] duration-500 ease-out",
+        "hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_0_60px_-15px_hsl(var(--accent)/0.5)]",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--accent))] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950",
         className,
       )}
@@ -76,13 +76,17 @@ export function ProjectCard({
         <p className="mt-3 text-xs font-medium text-white/60">{tech.join(" · ")}</p>
 
         <div className="mt-5 flex items-center gap-2">
-          <span className="relative pb-1.5 text-sm font-semibold">
+          {/* Underline draws in from the left on hover / keyboard focus. It is painted as a
+              background (not a scaled layer), so its color stays identical during and after the animation. */}
+          <span
+            className={cn(
+              "pb-1.5 text-sm font-semibold bg-no-repeat bg-left-bottom",
+              "bg-[linear-gradient(hsl(var(--accent)),hsl(var(--accent)))] bg-[length:0%_2px]",
+              "transition-[background-size] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+              "group-hover:bg-[length:100%_2px] group-focus-visible:bg-[length:100%_2px]",
+            )}
+          >
             {cta}
-            {/* Underline draws in from the left on hover / keyboard focus */}
-            <span
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 rounded-full bg-[hsl(var(--accent))] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 group-focus-visible:scale-x-100"
-            />
           </span>
           <ArrowRight
             className="mb-1.5 h-4 w-4 text-[hsl(var(--accent))] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:translate-x-1"
