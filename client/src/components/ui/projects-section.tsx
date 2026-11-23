@@ -4,6 +4,12 @@ import { ArrowUpRight, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Cod
 import { SiFlutter, SiFirebase, SiGooglemaps, SiStripe, SiGo, SiPython, SiNextdotjs } from "react-icons/si";
 import sellupDashboard from "@/assets/images/sellup/dashboard.webp";
 import mubiDesktop from "@/assets/images/mubi/desktop.webp";
+import pulsarImage from "@/assets/images/pulsar-bonus.webp";
+import wowImage from "@/assets/images/wowtickets/main.webp";
+import apeironImage from "@assets/image_1770921547262.webp";
+import tavriaImage from "@assets/image_1770932932101.webp";
+import trueForTwoImage from "@assets/Group_1_1770974052433.webp";
+import twoSkyImage from "@assets/image_1770975442018.webp";
 import { useTranslation } from "react-i18next";
 
 export function ProjectsSection() {
@@ -75,7 +81,9 @@ export function ProjectsSection() {
         { name: "MobX", icon: Zap },
         { name: "Maps", icon: SiGooglemaps }
       ],
-      link: "/projects/healthcare"
+      link: "/projects/healthcare",
+      image: pulsarImage,
+      imageBg: "bg-white"
     },
     { 
       id: "travel", 
@@ -91,7 +99,9 @@ export function ProjectsSection() {
         { name: "BLoC", icon: Code },
         { name: "Clean Arch", icon: Server }
       ],
-      link: "/projects/travel"
+      link: "/projects/travel",
+      image: wowImage,
+      imageBg: "bg-white"
     },
     { 
       id: "smarthome", 
@@ -107,7 +117,9 @@ export function ProjectsSection() {
         { name: "WebSockets", icon: Zap },
         { name: "IoT", icon: Wifi }
       ],
-      link: "/projects/smarthome"
+      link: "/projects/smarthome",
+      image: apeironImage,
+      imageBg: "bg-slate-900"
     },
     { 
       id: "media", 
@@ -123,7 +135,9 @@ export function ProjectsSection() {
         { name: "Smart TV", icon: Tv },
         { name: "HLS", icon: Server }
       ],
-      link: "/projects/media"
+      link: "/projects/media",
+      image: tavriaImage,
+      imageBg: "bg-white"
     },
     { 
       id: "social", 
@@ -139,7 +153,9 @@ export function ProjectsSection() {
         { name: "Firebase", icon: SiFirebase },
         { name: "Riverpod", icon: Code }
       ],
-      link: "/projects/truefortwo"
+      link: "/projects/truefortwo",
+      image: trueForTwoImage,
+      imageBg: "bg-white"
     },
     { 
       id: "connectivity", 
@@ -155,7 +171,9 @@ export function ProjectsSection() {
         { name: "Flutter Web", icon: Globe },
         { name: "Stripe", icon: SiStripe }
       ],
-      link: "/projects/2sky"
+      link: "/projects/2sky",
+      image: twoSkyImage,
+      imageBg: "bg-slate-900"
     },
   ];
 
@@ -198,7 +216,7 @@ export function ProjectsSection() {
                 </div>
 
                 {category.image && (
-                  <div className={`hidden lg:block -mx-6 mb-6 overflow-hidden border-y border-white/5 h-56 ${category.imageBg ?? ""}`}>
+                  <div className={`-mx-6 mb-6 overflow-hidden border-y border-white/5 h-44 md:h-48 lg:h-56 ${category.imageBg ?? ""}`}>
                     <img
                       src={category.image}
                       alt=""
