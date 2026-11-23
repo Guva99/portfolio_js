@@ -1,5 +1,7 @@
 // Single ordered list of case studies: drives the navbar dropdown and "next project" links.
 export const projects = [
+  { slug: "sellup", name: "SellUp", i18nId: "sellup" },
+  { slug: "mubi", name: "MUBI", i18nId: "mubi" },
   { slug: "healthcare", name: "PulSarBonus", i18nId: "healthcare" },
   { slug: "travel", name: "WowTickets", i18nId: "travel" },
   { slug: "apeiron", name: "Apeiron Space", i18nId: "apeiron" },

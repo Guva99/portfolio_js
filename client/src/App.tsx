@@ -15,6 +15,8 @@ import ProjectApeiron from "@/pages/project-apeiron";
 import ProjectMedia from "@/pages/project-media";
 import ProjectTrueForTwo from "@/pages/project-truefortwo";
 import Project2Sky from "@/pages/project-2sky";
+import ProjectSellUp from "@/pages/project-sellup";
+import ProjectMubi from "@/pages/project-mubi";
 import Experience from "@/pages/experience";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
@@ -25,6 +27,8 @@ function Router() {
     <Switch>
       <Route path="/technologies" component={Technologies} />
       <Route path="/experience" component={Experience} />
+      <Route path="/projects/sellup" component={ProjectSellUp} />
+      <Route path="/projects/mubi" component={ProjectMubi} />
       <Route path="/projects/healthcare" component={ProjectHealthcare} />
       <Route path="/projects/travel" component={ProjectTravel} />
       <Route path="/projects/smarthome" component={ProjectSmartHome} />

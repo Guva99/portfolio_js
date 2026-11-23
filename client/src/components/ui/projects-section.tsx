@@ -1,13 +1,66 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowUpRight, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Code, Server, Globe, Zap } from "lucide-react";
-import { SiFlutter, SiFirebase, SiGooglemaps, SiStripe } from "react-icons/si";
+import { ArrowUpRight, HeartPulse, Plane, Home as HomeIcon, Tv, Users, Wifi, Code, Server, Globe, Zap, Store, Package, Bot, ScanBarcode } from "lucide-react";
+import { SiFlutter, SiFirebase, SiGooglemaps, SiStripe, SiGo, SiPython, SiNextdotjs } from "react-icons/si";
+import sellupDashboard from "@/assets/images/sellup/dashboard.webp";
+import mubiDesktop from "@/assets/images/mubi/desktop.webp";
 import { useTranslation } from "react-i18next";
 
 export function ProjectsSection() {
   const { t } = useTranslation();
 
-  const categories = [
+  const categories: {
+    id: string;
+    product: string;
+    titleKey: string;
+    icon: React.ComponentType<{ className?: string }>;
+    color: string;
+    bgColor: string;
+    borderColor: string;
+    descKey: string;
+    tech: { name: string; icon: React.ComponentType<{ className?: string }> }[];
+    link: string;
+    image?: string;
+    imageBg?: string;
+    wide?: boolean;
+  }[] = [
+    {
+      id: "sellup",
+      product: "SellUp",
+      titleKey: "nav.commerce",
+      icon: Store,
+      color: "text-orange-400",
+      bgColor: "bg-orange-500/10",
+      borderColor: "border-orange-500/20",
+      descKey: "projects.sellup.description",
+      tech: [
+        { name: "Go", icon: SiGo },
+        { name: "Python", icon: SiPython },
+        { name: "AI", icon: Bot }
+      ],
+      link: "/projects/sellup",
+      image: sellupDashboard,
+      imageBg: "bg-[#f7f4ef]",
+      wide: true
+    },
+    {
+      id: "mubi",
+      product: "MUBI",
+      titleKey: "nav.logistics",
+      icon: Package,
+      color: "text-emerald-400",
+      bgColor: "bg-emerald-500/10",
+      borderColor: "border-emerald-500/20",
+      descKey: "projects.mubi.description",
+      tech: [
+        { name: "Next.js", icon: SiNextdotjs },
+        { name: "Scanner", icon: ScanBarcode },
+        { name: "SellUp", icon: Store }
+      ],
+      link: "/projects/mubi",
+      image: mubiDesktop,
+      imageBg: "bg-[#f4f2ee]"
+    },
     { 
       id: "healthcare", 
       product: "PulSarBonus",
@@ -126,7 +179,7 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category, index) => (
-            <Link href={category.link} key={category.id}>
+            <Link href={category.link} key={category.id} className={category.wide ? "lg:col-span-2" : undefined}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -143,6 +196,17 @@ export function ProjectsSection() {
                     <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
                   </div>
                 </div>
+
+                {category.image && (
+                  <div className={`hidden lg:block -mx-6 mb-6 overflow-hidden border-y border-white/5 h-56 ${category.imageBg ?? ""}`}>
+                    <img
+                      src={category.image}
+                      alt=""
+                      loading="lazy"
+                      className={`w-full h-full object-cover ${category.wide ? "object-top" : "object-[70%_center]"} transition-transform duration-700 group-hover:scale-[1.02]`}
+                    />
+                  </div>
+                )}
 
                 {/* Content */}
                 <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{category.product}</h3>

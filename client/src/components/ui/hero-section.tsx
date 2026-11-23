@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import heroPortrait from "@/assets/images/hero-portrait.webp";
 import { FileText, Send, Check, Linkedin, Mail, Briefcase } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { BeamsBackground } from "@/components/ui/beams-background";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -17,6 +18,10 @@ export function HeroSection() {
 
   return (
     <section className="relative lg:min-h-[100dvh] flex items-center pt-28 pb-16 lg:pt-24">
+      <BeamsBackground
+        intensity="strong"
+        className="!absolute inset-x-0 top-0 -bottom-64 pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_45%,rgba(0,0,0,0.35)_75%,transparent_100%)]"
+      />
       <div className="container mx-auto px-4 z-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

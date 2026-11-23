@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, HeartPulse, Plane, Home as HomeIcon, Hotel, Tv, Code, Briefcase, Users, Wifi } from "lucide-react";
+import { Menu, X, ChevronDown, HeartPulse, Plane, Home as HomeIcon, Hotel, Tv, Code, Briefcase, Users, Wifi, Store, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
 import { projects, projectHref } from "@/lib/projects";
 
 const projectIcons = {
+  sellup: Store,
+  mubi: Package,
   healthcare: HeartPulse,
   travel: Plane,
   apeiron: Hotel,

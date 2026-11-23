@@ -12,6 +12,7 @@ const stack = [
   "Flutter", "Dart", "BLoC", "Riverpod", "MobX", "Clean Architecture",
   "Flutter Web", "Add-to-App", "Firebase", "REST API", "GraphQL",
   "WebSocket", "WebRTC", "FFmpeg / HLS", "Stripe", "CI/CD", "Integration tests",
+  "Go", "Python", "JavaScript", "LLM / AI",
 ];
 
 const phoneScreens = [

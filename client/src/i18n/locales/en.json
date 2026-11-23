@@ -12,13 +12,15 @@
     "smartHome": "Smart Home",
     "media": "Media",
     "social": "Social",
-    "connectivity": "Connectivity"
+    "connectivity": "Connectivity",
+    "commerce": "ERP / E-commerce",
+    "logistics": "E-commerce / Logistics"
   },
   "cvUrl": "https://docs.google.com/document/d/13DAw9ZNvOmFzWTHhtzZMwi-rtbF1Fii3N3Rs-S93Gac/edit?usp=sharing",
   "hero": {
     "name": "Guvanch Avezov",
-    "role": "Senior Flutter Developer",
-    "pitch": "I build Flutter apps for iOS, Android, web, and Smart TV — from architecture to store release — and embed Flutter modules into native apps.",
+    "role": "Senior / Lead Flutter Developer (Fullstack, AI)",
+    "pitch": "I build Flutter apps for iOS, Android, Web and Smart TV, plus the backend behind them — from architecture to release. Currently leading full-stack development of the SellUp ERP platform with an AI sales assistant.",
     "proof": [
       "10+ apps on the App Store and Google Play",
       "VDX: 100,000+ installs",
@@ -63,6 +65,12 @@
     },
     "connectivity": {
       "description": "Telecommunications solutions including eSIM management, global roaming, and network connectivity."
+    },
+    "sellup": {
+      "description": "Retail ERP/CRM: storefront, inventory, orders, CRM and every sales channel in one panel. Full-stack work and leading a team of three developers."
+    },
+    "mubi": {
+      "description": "Order goods from Russian marketplaces with delivery to Tajikistan. Service architecture and a barcode scanner for the warehouse."
     }
   },
   "experienceSection": {
@@ -91,7 +99,11 @@
         "role": "Full-stack Developer",
         "company": "Freelance / SellUp",
         "period": "Sep 2026 — Present",
-        "achievements": ["Product architecture", "Backend development", "Mobile app development"]
+        "achievements": [
+          "Product architecture",
+          "Backend development",
+          "Mobile app development"
+        ]
       },
       "apeiron": {
         "role": "Lead Flutter Developer",
@@ -185,7 +197,12 @@
       "bio2": "My main focus is clean architecture, scalability, high performance, and shipping quality solutions fast — ones that move the product forward and improve the user experience."
     },
     "techFocus": "Technical Focus",
-    "techFocusItems": ["Flutter / Dart", "Clean Architecture", "CI/CD", "Cross-Platform"],
+    "techFocusItems": [
+      "Flutter / Dart",
+      "Clean Architecture",
+      "CI/CD",
+      "Cross-Platform"
+    ],
     "jobs": {
       "sellup": {
         "company": "Freelance / SellUp",
@@ -193,7 +210,11 @@
         "period": "September 2026 — Present",
         "location": "Remote",
         "description": "Full-stack development of the SellUp product: architecture, backend, and mobile app.",
-        "achievements": ["Product architecture", "Backend development", "Mobile app development"]
+        "achievements": [
+          "Product architecture",
+          "Backend development",
+          "Mobile app development"
+        ]
       },
       "apeiron": {
         "company": "Apeiron Space",
@@ -280,10 +301,22 @@
       }
     },
     "hobbiesItems": {
-      "openSource": { "name": "Robotics", "desc": "Research in computer vision and manipulators" },
-      "mentoring": { "name": "Mentoring", "desc": "Guiding junior developers" },
-      "travel": { "name": "Travel", "desc": "Exploring new cultures" },
-      "architecture": { "name": "Architecture", "desc": "Designing scalable systems" }
+      "openSource": {
+        "name": "Robotics",
+        "desc": "Research in computer vision and manipulators"
+      },
+      "mentoring": {
+        "name": "Mentoring",
+        "desc": "Guiding junior developers"
+      },
+      "travel": {
+        "name": "Travel",
+        "desc": "Exploring new cultures"
+      },
+      "architecture": {
+        "name": "Architecture",
+        "desc": "Designing scalable systems"
+      }
     }
   },
   "technologiesPage": {
@@ -353,7 +386,11 @@
     "tapToViewDetails": "Tap to view details →",
     "healthcare": {
       "badge": "Healthcare",
-      "facts": {"role": "Flutter Developer", "platforms": "iOS, Android, Web", "result": "10,000+ users in the first month, +40% retention"},
+      "facts": {
+        "role": "Flutter Developer",
+        "platforms": "iOS, Android, Web",
+        "result": "10,000+ users in the first month, +40% retention"
+      },
       "title": "PulSarBonus",
       "titleHighlight": "App",
       "h2": "Easy & Smart",
@@ -385,7 +422,12 @@
     },
     "travel": {
       "badge": "Travel",
-      "facts": {"role": "Middle Flutter Developer", "period": "Nov 2021 — Oct 2022", "platforms": "iOS, Android", "result": "+30% booking conversion, users in 50+ countries"},
+      "facts": {
+        "role": "Middle Flutter Developer",
+        "period": "Nov 2021 — Oct 2022",
+        "platforms": "iOS, Android",
+        "result": "+30% booking conversion, users in 50+ countries"
+      },
       "title": "WowTickets",
       "titleHighlight": "App",
       "h2": "Book Cheap",
@@ -423,32 +465,69 @@
       "keyTechnologies": "Key Technologies",
       "apeironDesc": "A smart hotel ecosystem of three apps. I led development of two internal products — SpaceKeeper and ODS — and contributed to the main guest app.",
       "apeironPoints": [
-        {"label": "Apeiron Space App:", "text": "Main guest application for booking rooms and controlling the smart home environment, including lighting, climate, and curtains."},
-        {"label": "SpaceKeeper:", "text": "Housekeeping & staff management app with task tracking and smart home controls for efficient room service and maintenance."},
-        {"label": "ODS (Kitchen Display):", "text": "System for chefs to track incoming orders from the guest application, ensuring timely food preparation and delivery."}
+        {
+          "label": "Apeiron Space App:",
+          "text": "Main guest application for booking rooms and controlling the smart home environment, including lighting, climate, and curtains."
+        },
+        {
+          "label": "SpaceKeeper:",
+          "text": "Housekeeping & staff management app with task tracking and smart home controls for efficient room service and maintenance."
+        },
+        {
+          "label": "ODS (Kitchen Display):",
+          "text": "System for chefs to track incoming orders from the guest application, ensuring timely food preparation and delivery."
+        }
       ],
       "wiseDesc": "Developed the Wise City Add-to-App module for embedding IoT device control into partners' mobile and web apps.",
       "addToAppModule": "Add to App Module",
       "addToAppDesc": "Designed a cross-platform module for native Android and iOS apps, plus a web module for hybrid Cordova environments. This solution enabled clients to rapidly integrate IoT services without restructuring their main architecture.",
       "techItems": [
-        {"name": "Mobile Dev", "desc": "Flutter, React Native, Swift, Kotlin"},
-        {"name": "Backend", "desc": "Node.js, Python, MQTT"},
-        {"name": "Data", "desc": "Redis, PostgreSQL"},
-        {"name": "Connectivity", "desc": "BLE, WebSocket, Zigbee"}
+        {
+          "name": "Mobile Dev",
+          "desc": "Flutter, React Native, Swift, Kotlin"
+        },
+        {
+          "name": "Backend",
+          "desc": "Node.js, Python, MQTT"
+        },
+        {
+          "name": "Data",
+          "desc": "Redis, PostgreSQL"
+        },
+        {
+          "name": "Connectivity",
+          "desc": "BLE, WebSocket, Zigbee"
+        }
       ]
     },
     "media": {
       "badge": "Media & Streaming",
-      "facts": {"role": "Lead Developer", "platforms": "Android TV, tvOS, iOS, Android", "result": "TV and mobile apps in four stores"},
+      "facts": {
+        "role": "Lead Developer",
+        "platforms": "Android TV, tvOS, iOS, Android",
+        "result": "TV and mobile apps in four stores"
+      },
       "h2": "Streaming for",
       "h2Highlight": "Phones and TVs",
       "description": "Tavria.TV is an app for live broadcasts and the program archive on phones, tablets, and Smart TVs.",
       "keyFeatures": "Key Features:",
       "features": [
-        {"label": "Live Streaming:", "text": "Watch broadcasts in real-time with low latency."},
-        {"label": "Custom Video Player:", "text": "Optimized playback, smooth scrubbing, and video quality control using FFmpeg & HLS."},
-        {"label": "Smart TV Support:", "text": "Remote-friendly navigation with an interface adapted for large screens."},
-        {"label": "On-Demand Archives:", "text": "Access past broadcasts and exclusive content anytime."}
+        {
+          "label": "Live Streaming:",
+          "text": "Watch broadcasts in real-time with low latency."
+        },
+        {
+          "label": "Custom Video Player:",
+          "text": "Optimized playback, smooth scrubbing, and video quality control using FFmpeg & HLS."
+        },
+        {
+          "label": "Smart TV Support:",
+          "text": "Remote-friendly navigation with an interface adapted for large screens."
+        },
+        {
+          "label": "On-Demand Archives:",
+          "text": "Access past broadcasts and exclusive content anytime."
+        }
       ],
       "smartTVBadge": "Smart TV",
       "bigScreenTitle": "Built for",
@@ -456,15 +535,33 @@
       "bigScreenDesc": "An app for Android TV and Apple tvOS with a custom on-screen keyboard built for remote-control navigation.",
       "downloadTvApp": "Download TV App on RuStore",
       "tvFeatures": [
-        {"title": "Custom Keyboard", "desc": "Developed a custom on-screen keyboard in Flutter specifically optimized for D-pad navigation."},
-        {"title": "Android TV", "desc": "Full compatibility with Android TV ecosystem, supporting voice search and recommendations."},
-        {"title": "Apple tvOS", "desc": "Native-like experience on Apple TV with smooth animations and focus engine integration."}
+        {
+          "title": "Custom Keyboard",
+          "desc": "Developed a custom on-screen keyboard in Flutter specifically optimized for D-pad navigation."
+        },
+        {
+          "title": "Android TV",
+          "desc": "Full compatibility with Android TV ecosystem, supporting voice search and recommendations."
+        },
+        {
+          "title": "Apple tvOS",
+          "desc": "Native-like experience on Apple TV with smooth animations and focus engine integration."
+        }
       ],
       "myContribution": "My Contribution",
       "contributions": [
-        {"title": "Cross-Platform Development", "desc": "Built a multimedia platform from the ground up for Android, iOS, and TV platforms using Flutter & Dart."},
-        {"title": "Video Engineering", "desc": "Optimized the Smart TV experience and implemented FFmpeg video processing and HLS streaming."},
-        {"title": "Stability & Releases", "desc": "Kept the apps stable under load and published them on the App Store, Google Play, RuStore, and AppGallery, with builds and releases automated through CI/CD."}
+        {
+          "title": "Cross-Platform Development",
+          "desc": "Built a multimedia platform from the ground up for Android, iOS, and TV platforms using Flutter & Dart."
+        },
+        {
+          "title": "Video Engineering",
+          "desc": "Optimized the Smart TV experience and implemented FFmpeg video processing and HLS streaming."
+        },
+        {
+          "title": "Stability & Releases",
+          "desc": "Kept the apps stable under load and published them on the App Store, Google Play, RuStore, and AppGallery, with builds and releases automated through CI/CD."
+        }
       ],
       "roleOutcome": "Role & Outcome",
       "leadDeveloper": "Lead Developer",
@@ -474,42 +571,92 @@
     },
     "social": {
       "badge": "Social & Dating",
-      "facts": {"role": "Lead Developer", "platforms": "iOS, Android", "result": "Rapid active-user growth after A/B testing"},
+      "facts": {
+        "role": "Lead Developer",
+        "platforms": "iOS, Android",
+        "result": "Rapid active-user growth after A/B testing"
+      },
       "h2": "Connect & Meet",
       "h2Highlight": "Real People",
       "description": "True for Two is a dating app with real-time matching, secure chat, and moderation.",
       "responsibilities": [
-        {"label": "Lead Developer:", "text": "Led the development team and owned release deadlines and quality."},
-        {"label": "", "text": "Implemented complex WebSocket chat with integrated moderation flows."},
-        {"label": "", "text": "Integrated the native gallery for media selection and handling."},
-        {"label": "", "text": "Developed custom libraries to optimize performance across different devices."}
+        {
+          "label": "Lead Developer:",
+          "text": "Led the development team and owned release deadlines and quality."
+        },
+        {
+          "label": "",
+          "text": "Implemented complex WebSocket chat with integrated moderation flows."
+        },
+        {
+          "label": "",
+          "text": "Integrated the native gallery for media selection and handling."
+        },
+        {
+          "label": "",
+          "text": "Developed custom libraries to optimize performance across different devices."
+        }
       ],
       "contributions": [
-        {"title": "Real-time Messaging", "desc": "Built a robust WebSocket chat system with instant delivery and integrated moderation flows for user safety."},
-        {"title": "Optimization & Custom Libs", "desc": "Wrote custom libraries to ensure smooth performance and layout optimization across all device types."}
+        {
+          "title": "Real-time Messaging",
+          "desc": "Built a robust WebSocket chat system with instant delivery and integrated moderation flows for user safety."
+        },
+        {
+          "title": "Optimization & Custom Libs",
+          "desc": "Wrote custom libraries to ensure smooth performance and layout optimization across all device types."
+        }
       ],
       "resultText": "Published on the App Store and Google Play. User flows and animations were refined through A/B testing, which led to rapid growth of the active user base."
     },
     "connectivity": {
       "badge": "eSIM & Connectivity",
-      "facts": {"role": "Senior Flutter Developer / Team Lead", "period": "Oct 2022 — Aug 2023", "platforms": "iOS, Android, tablet, web", "result": "One codebase for four platforms"},
+      "facts": {
+        "role": "Senior Flutter Developer / Team Lead",
+        "period": "Oct 2022 — Aug 2023",
+        "platforms": "iOS, Android, tablet, web",
+        "result": "One codebase for four platforms"
+      },
       "h2": "eSIM Management",
       "h2Highlight": "Platform",
       "description": "2SkyMobile is an eSIM management app: users choose plans, manage connections, and pay right in the app. The platform includes a mobile app, a tablet version, and a responsive website built on Flutter Web.",
       "responsibilities": [
-        {"label": "Project Leadership:", "text": "Built the project from scratch, defined the roadmap, and designed the architecture on a single codebase."},
-        {"label": "Cross-Platform Development:", "text": "Implemented and supported the mobile, tablet, and Flutter Web versions."},
-        {"label": "Team Collaboration:", "text": "Worked closely with the client and backend developers to keep integration smooth and on schedule."},
-        {"label": "Technical Execution:", "text": "Integrated Stripe, implemented complex eSIM flows, and optimized performance across all platforms."}
+        {
+          "label": "Project Leadership:",
+          "text": "Built the project from scratch, defined the roadmap, and designed the architecture on a single codebase."
+        },
+        {
+          "label": "Cross-Platform Development:",
+          "text": "Implemented and supported the mobile, tablet, and Flutter Web versions."
+        },
+        {
+          "label": "Team Collaboration:",
+          "text": "Worked closely with the client and backend developers to keep integration smooth and on schedule."
+        },
+        {
+          "label": "Technical Execution:",
+          "text": "Integrated Stripe, implemented complex eSIM flows, and optimized performance across all platforms."
+        }
       ],
       "contributions": [
-        {"title": "Unified Codebase", "desc": "Designed a single codebase architecture supporting Mobile (iOS/Android), Tablet, and Web (Flutter Web) platforms."},
-        {"title": "Payments & eSIM", "desc": "Integrated Stripe payments and implemented eSIM flows across every version of the app."}
+        {
+          "title": "Unified Codebase",
+          "desc": "Designed a single codebase architecture supporting Mobile (iOS/Android), Tablet, and Web (Flutter Web) platforms."
+        },
+        {
+          "title": "Payments & eSIM",
+          "desc": "Integrated Stripe payments and implemented eSIM flows across every version of the app."
+        }
       ]
     },
     "apeiron": {
       "badge": "Smart Hotel",
-      "facts": {"role": "Lead Flutter Developer", "period": "Sep 2023 — Aug 2025", "platforms": "iOS, Android, tablets", "result": "2 products from scratch: SpaceKeeper & ODS"},
+      "facts": {
+        "role": "Lead Flutter Developer",
+        "period": "Sep 2023 — Aug 2025",
+        "platforms": "iOS, Android, tablets",
+        "result": "2 products from scratch: SpaceKeeper & ODS"
+      },
       "h2": "Future of Hospitality",
       "h2Highlight": "In Your Pocket",
       "description": "The first smart hotel in Russia, fully controlled from your smartphone. ApeironSpace allows guests to manage their entire stay digitally — from booking and check-in to controlling room lighting, climate, and ordering room service.",
@@ -541,10 +688,22 @@
       "overview": "ApeironSpace is a smart hotel where guests control their room and services from their phone. As Lead Flutter Developer, I led development of two internal products — SpaceKeeper and ODS — and contributed to the guest app.",
       "overview2": "The application integrates complex systems including IoT control, secure payments, booking engines, and staff management tools into a single, user-friendly interface. My focus was on architectural stability, performance optimization, and implementing key features that define the smart hotel experience.",
       "contributions": [
-        {"title": "Performance Optimization", "desc": "Increased application performance and simplified maintenance via extensive code refactoring and implementing Clean Architecture principles."},
-        {"title": "IoT Integration", "desc": "Delivered IoT device control: guests manage lights, curtains, TV, and climate from their phone with low latency."},
-        {"title": "Process Optimization", "desc": "Optimized internal processes improving team efficiency and established a structured project framework that enhanced collaboration."},
-        {"title": "Product Strategy & Mentorship", "desc": "Played a key role in roadmap planning and decision-making. Created architectural flowcharts to visualize the ecosystem and mentored junior developers to accelerate their growth."}
+        {
+          "title": "Performance Optimization",
+          "desc": "Increased application performance and simplified maintenance via extensive code refactoring and implementing Clean Architecture principles."
+        },
+        {
+          "title": "IoT Integration",
+          "desc": "Delivered IoT device control: guests manage lights, curtains, TV, and climate from their phone with low latency."
+        },
+        {
+          "title": "Process Optimization",
+          "desc": "Optimized internal processes improving team efficiency and established a structured project framework that enhanced collaboration."
+        },
+        {
+          "title": "Product Strategy & Mentorship",
+          "desc": "Played a key role in roadmap planning and decision-making. Created architectural flowcharts to visualize the ecosystem and mentored junior developers to accelerate their growth."
+        }
       ],
       "resultText": "Developed 2 full-fledged products from scratch (SpaceKeeper & ODS), expanding the Apeiron ecosystem.",
       "resultItems": [
@@ -554,7 +713,12 @@
     },
     "wise": {
       "badge": "Smart Home Platform",
-      "facts": {"role": "Lead Flutter Developer", "period": "May 2025 — Aug 2026", "platforms": "iOS, Android, Web (Cordova)", "result": "In production, serving thousands of residents"},
+      "facts": {
+        "role": "Lead Flutter Developer",
+        "period": "May 2025 — Aug 2026",
+        "platforms": "iOS, Android, Web (Cordova)",
+        "result": "In production, serving thousands of residents"
+      },
       "h2": "Unified Platform for",
       "h2Highlight": "Residential Complexes",
       "description": "Wise City is a smart home platform for residential complexes: one app for device control, utility payments, service requests, news, polls, cameras, and the intercom.",
@@ -566,12 +730,107 @@
         "Unified Codebase: A shared business-logic and UI layer for mobile and web clients."
       ],
       "contributions": [
-        {"title": "Stable Production Launch", "desc": "Launched a stable smart home app for residential complexes into production, serving thousands of residents."},
-        {"title": "Performance Optimization", "desc": "Reduced loading time of key screens and improved UI responsiveness through detailed optimizations."},
-        {"title": "Stability Improvements", "desc": "Decreased the number of critical errors and crashes via code refactoring and implementing clear state management."}
+        {
+          "title": "Stable Production Launch",
+          "desc": "Launched a stable smart home app for residential complexes into production, serving thousands of residents."
+        },
+        {
+          "title": "Performance Optimization",
+          "desc": "Reduced loading time of key screens and improved UI responsiveness through detailed optimizations."
+        },
+        {
+          "title": "Stability Improvements",
+          "desc": "Decreased the number of critical errors and crashes via code refactoring and implementing clear state management."
+        }
       ],
       "addToAppTitle": "Add to App Module",
       "addToAppDesc": "Developed a cross-platform module for Wise City partners that embeds into native Android and iOS apps."
+    },
+    "modulesTitle": "Platform modules",
+    "challengesTitle": "Hard problems",
+    "sellup": {
+      "badge": "Retail ERP/CRM",
+      "facts": {
+        "role": "Full-stack Developer, team of 3 developers",
+        "period": "Sep 2026 — present",
+        "platforms": "Web (desktop and mobile), admin panel, mobile app",
+        "result": "In production: 4 companies, a new client goes live in 2–4 weeks"
+      },
+      "h2": "Storefront, CRM and inventory —",
+      "h2Highlight": "in one panel",
+      "description": "SellUp is a platform for shops that sell across several channels at once: their website, Ozon and Wildberries, Telegram, WhatsApp and VK. Orders, stock, customers and conversations share one database, and a sale in any channel updates stock everywhere instantly.",
+      "responsibilities": [
+        "Full-stack development: Go and Python backend, JavaScript web interfaces.",
+        "Platform architecture: modules, integrations and every client's data on one codebase.",
+        "A single inventory and order feed for all sales channels with automatic stock write-off.",
+        "Integrations: 1C, MoySklad, Ozon, Wildberries, CDEK, Telegram, WhatsApp, VK.",
+        "Omnichannel chat and an AI sales assistant that answers customers and places orders.",
+        "Catalog import from YML, XML and Excel, plus a scheduled supplier-site parser."
+      ],
+      "contributions": [
+        {
+          "title": "One stock level for every channel",
+          "desc": "A sale on the website, a marketplace or in a messenger writes off stock everywhere at once. To prevent selling the same item twice, channel events go through a queue with reservations and idempotent processing."
+        },
+        {
+          "title": "AI sales assistant in chats",
+          "desc": "Messages from the website, Telegram, WhatsApp and VK land in one feed. The AI answers using live stock and prices, places the order and hands the conversation to a manager when a human is needed."
+        },
+        {
+          "title": "Leading a team of three developers",
+          "desc": "I break down tasks, review code and make architecture decisions while still writing backend code myself. The team rolls the platform out to several clients in parallel without breaking the shared codebase."
+        }
+      ],
+      "modules": [
+        "Sales",
+        "Inventory",
+        "Orders",
+        "CRM",
+        "Mobile app",
+        "Analytics",
+        "Parser",
+        "AI assistant",
+        "Delivery",
+        "SEO",
+        "Site builder",
+        "Chat"
+      ],
+      "galleryStore": "Storefront and mobile version",
+      "galleryChat": "On-site chat",
+      "gallerySocial": "Shop on VK",
+      "gallerySeo": "SEO analytics"
+    },
+    "mubi": {
+      "badge": "Delivery from Russia to Tajikistan",
+      "facts": {
+        "role": "Full-stack Developer, architecture and launch",
+        "period": "2026",
+        "platforms": "Web (mobile and desktop), light and dark theme",
+        "result": "Live: orders from Russian marketplaces delivered in 5 days"
+      },
+      "h2": "Marketplace shopping —",
+      "h2Highlight": "delivered to Tajikistan",
+      "description": "MUBI is a service for people in Tajikistan: customers order goods from Russian marketplaces, and MUBI buys them, delivers in 5 days and shows the cost and status at every step. The project runs on the SellUp platform.",
+      "responsibilities": [
+        "Designed the service architecture and configured SellUp for MUBI's processes.",
+        "Connected a barcode scanner: an item scanned at the warehouse appears in the system right away.",
+        "Delivery status and cost at every step, from purchase in Russia to pickup in Tajikistan.",
+        "Onboarding, sign-up and account area for mobile web, with light and dark themes."
+      ],
+      "contributions": [
+        {
+          "title": "Scanning instead of manual entry",
+          "desc": "Staff scan a barcode and the product card is found or created automatically — no manual typing, no SKU mistakes."
+        },
+        {
+          "title": "Transparent delivery",
+          "desc": "Customers see where their order is and what delivery costs, so there are fewer support requests."
+        },
+        {
+          "title": "Launch on a ready platform",
+          "desc": "Instead of building from scratch, SellUp was configured for cross-border logistics — faster and cheaper for the client."
+        }
+      ]
     }
   }
 }
