@@ -41,7 +41,12 @@
     "copyEmail": "Копировать Email",
     "emailCopied": "g_avezov@bk.ru скопировано!",
     "flutterSolutions": "Mobile, Web, TV — нестандартные",
-    "flutterSolutionsHighlight": "Flutter-решения"
+    "flutterSolutionsHighlight": "Flutter-решения",
+    "chatClient": "Как продвигается релиз?",
+    "chatMe": "Сборка уже в TestFlight — отправил ссылку и список изменений.",
+    "cityNY": "Нью-Йорк",
+    "cityBerlin": "Берлин",
+    "cityMoscow": "Москва"
   },
   "projects": {
     "title": "Избранные",

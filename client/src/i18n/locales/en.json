@@ -41,7 +41,12 @@
     "copyEmail": "Copy Email Address",
     "emailCopied": "g_avezov@bk.ru copied!",
     "flutterSolutions": "Mobile, Web, TV — unconventional",
-    "flutterSolutionsHighlight": "Flutter solutions"
+    "flutterSolutionsHighlight": "Flutter solutions",
+    "chatClient": "How's the release going?",
+    "chatMe": "The build is in TestFlight — sent you the link and the changelog.",
+    "cityNY": "New York",
+    "cityBerlin": "Berlin",
+    "cityMoscow": "Moscow"
   },
   "projects": {
     "title": "Selected",

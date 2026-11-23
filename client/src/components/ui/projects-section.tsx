@@ -6,6 +6,7 @@ import mubiDesktop from "@/assets/images/mubi/desktop.webp";
 import pulsarImage from "@/assets/images/pulsar-bonus.webp";
 import wowImage from "@/assets/images/wowtickets/main.webp";
 import apeironImage from "@assets/image_1770921547262.webp";
+import wiseImage from "@assets/image_1770921682400.webp";
 import tavriaImage from "@assets/image_1770932932101.webp";
 import trueForTwoImage from "@assets/Group_1_1770974052433.webp";
 import twoSkyImage from "@assets/image_1770975442018.webp";
@@ -47,14 +48,19 @@ const projects: ProjectItem[] = [
     image: wowImage, imagePosition: "center top", theme: "287 50% 16%", accent: "287 69% 60%",
   },
   {
-    id: "smarthome", product: "Apeiron Space · Wise City", titleKey: "nav.smartHome", descKey: "projects.smarthome.description",
-    tech: ["Flutter", "WebSockets", "IoT"], link: "/projects/smarthome",
-    image: apeironImage, imagePosition: "center", theme: "185 45% 12%", accent: "172 40% 55%",
+    id: "apeiron", product: "Apeiron Space", titleKey: "projectPage.apeiron.badge", descKey: "projectPage.apeiron.description",
+    tech: ["Flutter", "BLoC", "Firebase", "REST API"], link: "/projects/apeiron",
+    image: apeironImage, imagePosition: "center", theme: "175 40% 11%", accent: "172 40% 55%",
+  },
+  {
+    id: "wise", product: "Wise City", titleKey: "projectPage.wise.badge", descKey: "projectPage.wise.description",
+    tech: ["Flutter", "WebRTC", "Add-to-App"], link: "/projects/wise",
+    image: wiseImage, imagePosition: "right center", theme: "220 60% 14%", accent: "220 86% 58%",
   },
   {
     id: "media", product: "Tavria.TV", titleKey: "nav.media", descKey: "projects.media.description",
     tech: ["Flutter", "Smart TV", "HLS"], link: "/projects/media",
-    image: tavriaImage, imagePosition: "left top", theme: "42 55% 12%", accent: "47 99% 53%",
+    image: tavriaImage, imagePosition: "left top", theme: "42 55% 12%", accent: "47 99% 53%", wide: true,
   },
   {
     id: "social", product: "True for Two", titleKey: "nav.social", descKey: "projects.social.description",
@@ -64,7 +70,7 @@ const projects: ProjectItem[] = [
   {
     id: "connectivity", product: "2SkyMobile", titleKey: "nav.connectivity", descKey: "projects.connectivity.description",
     tech: ["Flutter", "Flutter Web", "Stripe"], link: "/projects/2sky",
-    image: twoSkyImage, imagePosition: "70% center", theme: "225 55% 16%", accent: "217 91% 60%",
+    image: twoSkyImage, imagePosition: "70% center", theme: "225 55% 16%", accent: "217 91% 60%", wide: true,
   },
 ];
 
