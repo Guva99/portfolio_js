@@ -71,7 +71,8 @@
     },
     "mubi": {
       "description": "Order goods from Russian marketplaces with delivery to Tajikistan. Service architecture and a barcode scanner for the warehouse."
-    }
+    },
+    "viewCase": "View case study"
   },
   "experienceSection": {
     "highlightsTitle": "Professional",
